@@ -177,7 +177,7 @@ class QueryGenerator:
         for k, queries in emb_by_k.items():
             self._write_sql(f"dataset_embedded_queries_k{k}.sql", queries)
         for k, queries in conc_by_k.items():
-            self._write_sql(f"generated_concat_embedded_queries_k{k}.sql", queries)
+            self._write_sql(f"dataset_concat_embedded_queries_k{k}.sql", queries)
 
         print(f"✅ Dataset keyword workloads written to {self.output_dir}")
 
