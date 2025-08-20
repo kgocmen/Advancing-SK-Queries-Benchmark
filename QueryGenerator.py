@@ -73,7 +73,7 @@ class QueryGenerator:
             f"ST_Distance(geom, ST_SetSRID(ST_MakePoint({lon}, {lat}), 4326)::geography) AS distance "
             "FROM PoIs "
             f"WHERE ST_DWithin(geom, ST_SetSRID(ST_MakePoint({lon}, {lat}), 4326)::geography, {self.radius}) "
-            f"AND tags ? '{keyword}' "
+            f"AND tags @> '{keyword}' "
             "ORDER BY distance "
             f"LIMIT {k};"
         )
@@ -132,7 +132,7 @@ class QueryGenerator:
         print(f"✅ Query workloads written to {self.output_dir}")
 
     # ---------- Exact keyword + kNN from PoIs CSV ----------
-    def generate_from_dataset(self, csv_file: str,point_count: int = POINT_COUNT):
+    def generate_from_dataset(self, csv_file: str,point_count: int = POINT_COUNT, search: list = ["amenity","name"]):
         df = pd.read_csv(csv_file)
         df["tags"] = df["tags"].fillna("{}").apply(safe_parse_json)
         non_by_k: Dict[int, List[str]] = {k: [] for k in self.k_values}
@@ -140,28 +140,23 @@ class QueryGenerator:
         conc_by_k: Dict[int, List[str]] = {k: [] for k in self.k_values}
 
         idxs = df.index.to_list()
-        n = min(point_count, len(df))
-        for _ in range(n):
+        for _ in range(point_count):
             pos_idx = random.choice(idxs)
             ref_lat = float(df.at[pos_idx, "lat"])
             ref_lon = float(df.at[pos_idx, "lon"])
 
-            # pick donor row (must be different and have 'name' or 'addr:street')
-            value = None
-            attempts = 0
-            while attempts < 50 and not value:
-                kw_idx = random.choice(idxs)
-                donor_tags = df.at[kw_idx, "tags"]
+            # pick donor row (must be different and have 'name' or 'amenity')
+            keyword = None
+            while not keyword:
+                donor_tags = df.at[random.choice(idxs), "tags"]
                 if isinstance(donor_tags, dict):
-                    if isinstance(donor_tags.get("name"), str) and donor_tags["name"].strip():
-                        value = donor_tags["name"].strip()
-                    elif isinstance(donor_tags.get("addr:street"), str) and donor_tags["addr:street"].strip():
-                        value = donor_tags["addr:street"].strip()
-                attempts += 1
+                    for s in search:
+                        if isinstance(donor_tags.get(s), str):
+                            keyword = "{\"" + s + "\":\"" + str(donor_tags[s]) + "\"}"
+                            break
 
-            keyword = value
 
-            qvec = generate_semantic_embedding_query(keyword)
+            qvec = generate_semantic_embedding_query(keyword)  
             qvec_str = _as_pgvector(qvec)
             cvec = generate_concat_embedding_query(qvec, λ, ref_lat, ref_lon)
             cvec_str = _as_pgvector(cvec)
@@ -315,13 +310,15 @@ if __name__ == "__main__":
     )
 
     # embedded and concat queries
-    query_path = gen._get_query_path()
-    if args.queries:
-        gen.produce_from_file(args.queries)
-    elif os.path.exists(query_path):
-        gen.produce_from_file(query_path)
-    else:
-        print("Nothing created from csv/txt query file!")
+    
+    if "custom" in SOURCE:
+        query_path = gen._get_query_path()
+        if args.queries:
+            gen.produce_from_file(args.queries)
+        elif os.path.exists(query_path):
+            gen.produce_from_file(query_path)
+        else:
+            print("Nothing created from csv/txt query file!")
 
     if "dataset" in SOURCE:
         gen.generate_from_dataset(args.input, args.cnt)

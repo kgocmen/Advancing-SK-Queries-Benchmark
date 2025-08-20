@@ -104,10 +104,11 @@ def run_scenario(records: List[Tuple], queries: List[str], index_creation_func, 
     print("Creating indexes...")
     start_time = time.time()
     index_sql = index_creation_func()
-    with connect_db() as conn, conn.cursor() as cur:
-        for q in index_sql:
-            cur.execute(q)
-        conn.commit()
+    if index_sql:
+        with connect_db() as conn, conn.cursor() as cur:
+            for q in index_sql:
+                cur.execute(q)
+            conn.commit()
     indexing_time = (time.time() - start_time)
     print("All indexes created in:", indexing_time)
 

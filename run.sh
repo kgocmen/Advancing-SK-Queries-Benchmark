@@ -1,14 +1,14 @@
 # =====================
 # Common experiment config
 # =====================
-EXP=all_K10_L1_R5000_custom_melbourne100k
-SOURCES="custom dataset"
+EXP=ne_K10_L1_R5000_dataset_melbourne100k
+SOURCES="dataset"
 K="10"
 L=1
-R=5000
+R=20000
 CNT=50
 INPUT=./data/melbourne_cleaned_sampled_100k.csv
-SCE=embedded
+SCE=non_embedded
 IDX=hnsw
 
 # =====================
@@ -35,4 +35,3 @@ python3 ResultReader.py \
   --so $SOURCES \
   --k $K \
   --sce $SCE
-rm -rf ./data/workloads

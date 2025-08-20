@@ -271,11 +271,11 @@ class QueryResultsParser:
                         t = it.get("tags")
                         texts.append(str(ast.literal_eval(t)) if isinstance(t, str) else str(t))
                     if len(texts) == 0:
-                        series.append(float("nan"))
-                        continue
-                    emb = parser._st_model.encode(texts)       # (k,d)
-                    sim_mat = cosine_similarity(emb, emb)      # kxk
-                    series.append(float(sim_mat.mean()))
+                        series.append(0)
+                    else:
+                        emb = parser._st_model.encode(texts)       # (k,d)
+                        sim_mat = cosine_similarity(emb, emb)      # kxk
+                        series.append(float(sim_mat.mean()))
                 if not series:
                     continue
 
