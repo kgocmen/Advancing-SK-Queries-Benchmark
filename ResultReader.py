@@ -122,13 +122,18 @@ class QueryResultsParser:
         return f"QueryResultsParser({self.json_path})"
 
     @staticmethod
-    def produce_plots_for_group(test_files: List[str], source: str, k: int, experiment: str):
+    def produce_plots_for_group(test_files: List[str], source: str, k: int, experiment: str, scenario: str):
         """
         Build plots for a (source, k) group using multiple results JSON files (one per method).
-        - Line chart: per-query execution times; each method is a line.
-        - Grouped bar chart: insertion, index creation, avg query time per method.
+        - Line chart: per-query execution times; each method is a line (values annotated).
+        - Grouped bar chart: insertion, index creation per method (values annotated).
+        - Semantic coherence per query (values annotated).
         Output directory: ./results/<experiment>/plots/
         """
+        import os, json
+        import numpy as np
+        import matplotlib.pyplot as plt
+
         # --- Collect data from the available files ---
         records = []  # each: {method, insertion_time, index_creation_time, avg_exec, exec_times}
         for path in test_files:
@@ -147,8 +152,7 @@ class QueryResultsParser:
             method = name
 
             insertion_time = float(data.get("insertion_time", 0.0))
-            # index_creation may be dict or missing; normalize to float time
-            index_creation_time = (data.get("index_creation") or {}).get("time", 0.0)
+            index_creation_time = float((data.get("index_creation") or {}).get("time", 0.0))
 
             # per-query execution times (sorted by numeric key if possible)
             qres = data.get("query_results", {}) or {}
@@ -178,6 +182,33 @@ class QueryResultsParser:
         out_dir = os.path.join("./results", str(experiment), "plots")
         os.makedirs(out_dir, exist_ok=True)
 
+        # Helpers ---------------------------------------------------------------
+        def _fmt_s(v):     # format seconds nicely
+            if v >= 1:
+                return f"{v:.2f}s"
+            return f"{v*1000:.0f}ms"
+
+        def _annotate_points(ax, xs, ys, yoffset=0.02, fontsize=8):
+            # place labels just above each marker (relative offset based on data span)
+            if len(ys) == 0:
+                return
+            y_span = (max(ys) - min(ys)) or 1.0
+            for x, y in zip(xs, ys):
+                ax.annotate(_fmt_s(y), (x, y),
+                            textcoords="offset points",
+                            xytext=(0, max(6, int(yoffset * 100))), ha="center",
+                            fontsize=fontsize, rotation=0, va="bottom")
+
+        def _annotate_bars(ax, rects, fontsize=9):
+            for r in rects:
+                h = r.get_height()
+                ax.annotate(_fmt_s(h),
+                            xy=(r.get_x() + r.get_width() / 2, h),
+                            xytext=(0, 5),
+                            textcoords="offset points",
+                            ha="center", va="bottom",
+                            fontsize=fontsize)
+
         # NEW: stable method order + tiny x-jitter per method (to avoid perfect overlap)
         methods = [r["method"] for r in records]
         max_jitter = 0.12
@@ -190,6 +221,7 @@ class QueryResultsParser:
 
         # --- 1) Line chart: per-query execution time, one line per method ---
         plt.figure(figsize=(10, 6))
+        ax1 = plt.gca()
         max_len = 0
         for rec in records:
             y = rec["exec_times"]
@@ -203,6 +235,10 @@ class QueryResultsParser:
             # add dotted mean line in same color, jittered horizontally
             mean_val = float(np.mean(y))
             plt.hlines(mean_val, 1 + off, len(y) + off, linestyles=":", linewidth=1.5, colors=line.get_color())
+            # annotate mean at end of its line segment
+            ax1.annotate(f"mean={_fmt_s(mean_val)}", (len(y) + off, mean_val),
+                        xytext=(6, 0), textcoords="offset points",
+                        fontsize=8, color=line.get_color(), va="center")
 
         plt.title(f"Per-Query Execution Times - source={source}, k={k}")
         plt.xlabel("Query #")
@@ -211,7 +247,7 @@ class QueryResultsParser:
             plt.xticks(np.arange(1, max_len + 1))  # keep integer query ticks
         plt.grid(True, linestyle="--", alpha=0.4)
         plt.legend()
-        line_path = os.path.join(out_dir, f"{source}_k{k}_execution.png")
+        line_path = os.path.join(out_dir, f"{source}_k{k}_execution_{scenario}.png")
         plt.tight_layout()
         plt.savefig(line_path, dpi=150)
         plt.close()
@@ -225,8 +261,9 @@ class QueryResultsParser:
         width = 0.35
 
         plt.figure(figsize=(12, 6))
-        plt.bar(x - width/2, insertion, width, label="Insertion")
-        plt.bar(x + width/2, index_t,   width, label="Index Creation")
+        ax2 = plt.gca()
+        bars1 = ax2.bar(x - width/2, insertion, width, label="Insertion")
+        bars2 = ax2.bar(x + width/2, index_t,   width, label="Index Creation")
 
         plt.title(f"Timing Summary by Method — source={source}, k={k}")
         plt.xlabel("Method")
@@ -235,7 +272,11 @@ class QueryResultsParser:
         plt.grid(True, axis="y", linestyle="--", alpha=0.4)
         plt.legend()
 
-        bars_path = os.path.join(out_dir, f"{source}_k{k}_insertion_indexing.png")
+        # annotate bar heights
+        _annotate_bars(ax2, bars1)
+        _annotate_bars(ax2, bars2)
+
+        bars_path = os.path.join(out_dir, f"{source}_k{k}_insertion_indexing_{scenario}.png")
         plt.tight_layout()
         plt.savefig(bars_path, dpi=150)
         plt.close()
@@ -247,6 +288,7 @@ class QueryResultsParser:
         import ast
 
         plt.figure(figsize=(10, 6))
+        ax3 = plt.gca()
         any_series = False
 
         for path, method in zip(test_files, methods):
@@ -271,7 +313,7 @@ class QueryResultsParser:
                         t = it.get("tags")
                         texts.append(str(ast.literal_eval(t)) if isinstance(t, str) else str(t))
                     if len(texts) == 0:
-                        series.append(0)
+                        series.append(0.0)
                     else:
                         emb = parser._st_model.encode(texts)       # (k,d)
                         sim_mat = cosine_similarity(emb, emb)      # kxk
@@ -287,6 +329,10 @@ class QueryResultsParser:
                 # dotted mean line for this method (same color), jittered horizontally
                 avg_coh = float(np.nanmean(series))
                 plt.hlines(avg_coh, 1 + off, len(series) + off, linestyles=":", linewidth=1.5, colors=line.get_color())
+                ax3.annotate(f"mean={avg_coh:.3f}", (len(series) + off, avg_coh),
+                            xytext=(6, 0), textcoords="offset points",
+                            fontsize=8, color=line.get_color(), va="center")
+
             except Exception:
                 continue
 
@@ -294,12 +340,11 @@ class QueryResultsParser:
             plt.title(f"Per-Query Semantic Coherence — source={source}, k={k}")
             plt.xlabel("Query #")
             plt.ylabel(f"Semantic coherence@{k}")
-            # keep integer ticks at true query numbers
             if 'keys_sorted' in locals() and len(keys_sorted) > 0:
                 plt.xticks(np.arange(1, len(keys_sorted) + 1))
             plt.grid(True, linestyle="--", alpha=0.4)
             plt.legend()
-            coh_path = os.path.join(out_dir, f"{source}_k{k}_coherence.png")
+            coh_path = os.path.join(out_dir, f"{source}_k{k}_coherence_{scenario}.png")
             plt.tight_layout()
             plt.savefig(coh_path, dpi=150)
             plt.close()
@@ -351,4 +396,4 @@ if __name__ == "__main__":
                     continue
                 query_parser = QueryResultsParser(test_file)
                 query_parser.print_report(k=k)
-            query_parser.produce_plots_for_group(test_files, source, k, EXPERIMENT)
+            query_parser.produce_plots_for_group(test_files, source, k, EXPERIMENT, SCENARIO)

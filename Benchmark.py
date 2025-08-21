@@ -24,9 +24,6 @@ SCENARIOS = {
         "concat_embedding": create_concat_pgvector_index
     },
     "existing": {
-        "no_index": lambda: None,
-        "spatial_index": create_spatial_index,
-        "keyword_index": create_keyword_index,
         "spatial_keyword_index": create_spatial_keyword_index,
         "pgvector_embedding": create_pgvector_index,
         "spatial_and_pgvector_embedding": create_embedding_spatial_index
@@ -108,6 +105,7 @@ def run_scenario(records: List[Tuple], queries: List[str], index_creation_func, 
         with connect_db() as conn, conn.cursor() as cur:
             for q in index_sql:
                 cur.execute(q)
+            cur.execute("ANALYZE PoIs;")
             conn.commit()
     indexing_time = (time.time() - start_time)
     print("All indexes created in:", indexing_time)

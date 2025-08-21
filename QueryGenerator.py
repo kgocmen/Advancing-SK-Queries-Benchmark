@@ -5,6 +5,7 @@ import ast
 from typing import List, Tuple, Iterable, Dict
 import random
 import pandas as pd
+import json
 import numpy as np
 from sentence_transformers import SentenceTransformer
 from sklearn.metrics.pairwise import cosine_similarity
@@ -32,7 +33,7 @@ def _ensure_dir(path: str):
 
 def _as_pgvector(arr) -> str:
     a = np.asarray(arr, dtype=float).reshape(-1)
-    vals = ", ".join(f"{float(x):.8f}" for x in a)
+    vals = ", ".join(f"{float(x):.6f}" for x in a)
     return f"ARRAY[{vals}]::vector"
     #return f"ARRAY{list(arr)}::vector" -> this yields an error
 
@@ -66,36 +67,75 @@ class QueryGenerator:
         base = os.path.basename(self.input_csv)
         prefix = re.split(r'[_.]', base)[0]
         return os.path.join("data", "queries", f"{prefix}.csv")
+
     
-    def _sql(self,lon,lat,keyword,k):
+    def _m2deg(self, meters: float) -> float:
+        # Rough, good for city-scale radii; you chose 2–20 km.
+        return float(meters) / 111_320.0
+
+    def _sql(self, lon, lat, key_or_pair, k):
+        """
+        key_or_pair:
+        - "amenity"           -> key existence (tags ? 'amenity')
+        - ("amenity","restaurant") -> key=value containment (tags @> '{"amenity":"restaurant"}'::jsonb)
+        Both forms are GIN-usable with your GIN(tags) index.
+        """
+        lon_str = f"{float(lon):.8f}"
+        lat_str = f"{float(lat):.8f}"
+        pt = f"ST_SetSRID(ST_MakePoint({lon_str}, {lat_str}), 4326)"
+        deg_radius = self._m2deg(self.radius)
+
+        if isinstance(key_or_pair, (tuple, list)) and len(key_or_pair) == 2:
+            key = str(key_or_pair[0]).replace("'", "''")
+            val = str(key_or_pair[1]).replace("'", "''")
+            rhs = json.dumps({key: val})                # safe JSON: {"key":"value"}
+            predicate = f"tags @> '{rhs}'::jsonb"
+        else:
+            key = str(key_or_pair).replace("'", "''")   # key-existence fallback
+            predicate = f"tags ? '{key}'"
+
         return (
             "SELECT id, tags, "
-            f"ST_Distance(geom, ST_SetSRID(ST_MakePoint({lon}, {lat}), 4326)::geography) AS distance "
+            f"ST_Distance(geom::geography, {pt}::geography) AS distance "
             "FROM PoIs "
-            f"WHERE ST_DWithin(geom, ST_SetSRID(ST_MakePoint({lon}, {lat}), 4326)::geography, {self.radius}) "
-            f"AND tags @> '{keyword}' "
-            "ORDER BY distance "
-            f"LIMIT {k};"
+            f"WHERE ST_DWithin(geom, {pt}, {deg_radius}) "
+            f"  AND {predicate} "
+            f"ORDER BY distance "
+            f"LIMIT {int(k)};"
         )
-    def _c_sql(self,lon,lat,vec,k):
-        return  (
-            "SELECT id, tags, "
-            f"ST_Distance(geom, ST_SetSRID(ST_MakePoint({lon}, {lat}), 4326)::geography) AS distance, "
-            f"1.0 - (embedding <=> {vec}) AS similarity "
-            "FROM PoIs "
-            "ORDER BY similarity DESC, distance ASC "
-            f"LIMIT {k};"
-        )
-    def _e_sql(self,lon,lat,vec,k):
+
+
+
+    def _c_sql(self, lon, lat, vec, k):
+        lon_str = f"{float(lon):.8f}"
+        lat_str = f"{float(lat):.8f}"
+        pt = f"ST_SetSRID(ST_MakePoint({lon_str}, {lat_str}), 4326)"
+
         return (
             "SELECT id, tags, "
-            f"ST_Distance(geom, ST_SetSRID(ST_MakePoint({lon}, {lat}), 4326)::geography) AS distance, "
+            f"ST_Distance(geom::geography, {pt}::geography) AS distance, "
             f"1.0 - (embedding <=> {vec}) AS similarity "
             "FROM PoIs "
-            f"WHERE ST_DWithin(geom, ST_SetSRID(ST_MakePoint({lon}, {lat}), 4326)::geography, {self.radius}) "
-            "ORDER BY similarity DESC, distance ASC "
-            f"LIMIT {k};"
+            f"ORDER BY similarity DESC, distance ASC "
+            f"LIMIT {int(k)};"
         )
+
+    def _e_sql(self, lon, lat, vec, k):
+        lon_str = f"{float(lon):.8f}"
+        lat_str = f"{float(lat):.8f}"
+        pt = f"ST_SetSRID(ST_MakePoint({lon_str}, {lat_str}), 4326)"
+        deg_radius = self._m2deg(self.radius)
+
+        return (
+            "SELECT id, tags, "
+            f"ST_Distance(geom::geography, {pt}::geography) AS distance, "
+            f"1.0 - (embedding <=> {vec}) AS similarity "
+            "FROM PoIs "
+            f"WHERE ST_DWithin(geom, {pt}, {deg_radius}) "
+            f"ORDER BY similarity DESC, distance ASC "
+            f"LIMIT {int(k)};"
+        )
+
 
     
 
@@ -132,40 +172,52 @@ class QueryGenerator:
         print(f"✅ Query workloads written to {self.output_dir}")
 
     # ---------- Exact keyword + kNN from PoIs CSV ----------
-    def generate_from_dataset(self, csv_file: str,point_count: int = POINT_COUNT, search: list = ["amenity","name"]):
+    def generate_from_dataset(self, csv_file: str, point_count: int = POINT_COUNT,
+                            search: list = ("amenity","shop","name","cuisine")):
         df = pd.read_csv(csv_file)
         df["tags"] = df["tags"].fillna("{}").apply(safe_parse_json)
+
         non_by_k: Dict[int, List[str]] = {k: [] for k in self.k_values}
         emb_by_k: Dict[int, List[str]] = {k: [] for k in self.k_values}
         conc_by_k: Dict[int, List[str]] = {k: [] for k in self.k_values}
 
         idxs = df.index.to_list()
-        for _ in range(point_count):
+        n = min(point_count, len(df))
+        for _ in range(n):
             pos_idx = random.choice(idxs)
             ref_lat = float(df.at[pos_idx, "lat"])
             ref_lon = float(df.at[pos_idx, "lon"])
 
-            # pick donor row (must be different and have 'name' or 'amenity')
-            keyword = None
-            while not keyword:
+            # pick (key,value) from a random donor row
+            kv = None
+            while kv is None:
                 donor_tags = df.at[random.choice(idxs), "tags"]
                 if isinstance(donor_tags, dict):
                     for s in search:
-                        if isinstance(donor_tags.get(s), str):
-                            keyword = "{\"" + s + "\":\"" + str(donor_tags[s]) + "\"}"
-                            break
+                        if s in donor_tags and donor_tags[s] is not None:
+                            v = donor_tags[s]
+                            # accept common scalar types; cast to str for JSON
+                            if isinstance(v, (str, int, float, bool)):
+                                vs = str(v).strip()
+                                if vs:
+                                    kv = (s, vs)
+                                    break
+            if kv is None:
+                continue
 
-
-            qvec = generate_semantic_embedding_query(keyword)  
+            # semantic text: prefer "value" (or "key:value" if you like)
+            text = kv[1]
+            qvec = generate_semantic_embedding_query(text)
             qvec_str = _as_pgvector(qvec)
             cvec = generate_concat_embedding_query(qvec, λ, ref_lat, ref_lon)
             cvec_str = _as_pgvector(cvec)
 
-
             for k in self.k_values:
-                non_by_k[k].append(self._sql(lon=ref_lon,lat=ref_lat,keyword=keyword,k=k))
-                emb_by_k[k].append(self._e_sql(lon=ref_lon,lat=ref_lat,vec=qvec_str,k=k))
-                conc_by_k[k].append(self._c_sql(lon=ref_lon,lat=ref_lat,vec=cvec_str,k=k))
+                # 🔹 exact key=value using JSONB containment (GIN-friendly)
+                non_by_k[k].append(self._sql(lon=ref_lon, lat=ref_lat, key_or_pair=kv, k=k))
+                # 🔹 embedding workloads unchanged
+                emb_by_k[k].append(self._e_sql(lon=ref_lon, lat=ref_lat, vec=qvec_str, k=k))
+                conc_by_k[k].append(self._c_sql(lon=ref_lon, lat=ref_lat, vec=cvec_str, k=k))
 
         for k, queries in non_by_k.items():
             self._write_sql(f"dataset_queries_k{k}.sql", queries)
@@ -175,6 +227,8 @@ class QueryGenerator:
             self._write_sql(f"dataset_concat_embedded_queries_k{k}.sql", queries)
 
         print(f"✅ Dataset keyword workloads written to {self.output_dir}")
+
+
 
 
     # ---------- Internals ----------
@@ -270,7 +324,7 @@ def parse_args():
     p.add_argument("--l", type=int, default=λ)
     p.add_argument("--r", type=int, default=RADIUS)
     p.add_argument("--cnt", type=int, default=POINT_COUNT)
-    p.add_argument("--queries", type=str, default=None,
+    p.add_argument("--q", type=str, default=None,
                    help="Path to .txt or .csv with rows: <keyword>,<lat>,<lon> for embedded workloads")
     p.add_argument("--input", type=str, default=INPUT_CSV,
                    help="PoIs CSV for exact keyword workloads (samples popular tag KEYS and random points)")
@@ -298,8 +352,8 @@ if __name__ == "__main__":
     print(f"Source       : {args.so}")
     print(f"Radius       : {args.r}")
     print(f"Point Count  : {args.cnt}")
-    if args.queries:
-        print(f"Query CSV/TXT: {args.queries}"  )
+    if args.q:
+        print(f"Query CSV/TXT: {args.q}"  )
     print("==============================")
 
     gen = QueryGenerator(
@@ -313,8 +367,8 @@ if __name__ == "__main__":
     
     if "custom" in SOURCE:
         query_path = gen._get_query_path()
-        if args.queries:
-            gen.produce_from_file(args.queries)
+        if args.q:
+            gen.produce_from_file(args.q)
         elif os.path.exists(query_path):
             gen.produce_from_file(query_path)
         else:

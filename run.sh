@@ -1,37 +1,23 @@
-# =====================
-# Common experiment config
-# =====================
-EXP=ne_K10_L1_R5000_dataset_melbourne100k
-SOURCES="dataset"
-K="10"
-L=1
-R=20000
-CNT=50
-INPUT=./data/melbourne_cleaned_sampled_100k.csv
-SCE=non_embedded
-IDX=hnsw
+#!/usr/bin/env bash
+set -euo pipefail
 
-# =====================
-# Run scripts
-# =====================
-python3 QueryGenerator.py \
-  --exp $EXP \
-  --so $SOURCES \
-  --k $K \
-  --l $L \
-  --r $R \
-  --cnt $CNT \
-  --input $INPUT
-python3 Benchmark.py \
-  --exp $EXP \
-  --so $SOURCES \
-  --k $K \
-  --sce $SCE \
-  --l $L \
-  --idx $IDX \
-  --input $INPUT
-python3 ResultReader.py \
-  --exp $EXP \
-  --so $SOURCES \
-  --k $K \
-  --sce $SCE
+K=10
+R_ARR=(2000 5000 10000 20000 50000)
+SCE=non_embedded
+DS=("dataset")                             # --so accepts multiple; keep as array
+INPUT="./data/melbourne_cleaned.csv"
+CNT=50
+
+for R in "${R_ARR[@]}"; do
+  EXP="bigdata_${SCE}_${R}"
+  echo "=== Running EXP=${EXP} ==="
+  
+  # 1) Generate SQL workloads for this combo
+  python3 QueryGenerator.py --exp "$EXP" --so "$DS" --k "$K" --input "$INPUT" --r "$R" --cnt "$CNT"
+
+  # 2) Run benchmarks
+  python3 Benchmark.py --exp "$EXP" --so "$DS" --k "$K" --input "$INPUT" --sce "$SCE"
+
+  # 3) Read and print results
+  python3 ResultReader.py --exp "$EXP" --so "$DS" --k "$K" --sce "$SCE"
+done 

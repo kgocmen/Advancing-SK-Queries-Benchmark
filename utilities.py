@@ -77,37 +77,32 @@ def insert_data(records, embeddings):
 
 def run_queries(queries: Union[str, List[str]]):
     queries = [queries] if isinstance(queries, str) else queries
-
-    conn = connect_db()
-    cur = conn.cursor()
-    
     results = {}
+
     for i, query in enumerate(queries):
-        start_time = time.time()
-        cur.execute(query)
-        rows = cur.fetchall()
-        execution_time = time.time() - start_time
+        conn = connect_db()
+        conn.autocommit = True  # so DISCARD works cleanly
+        cur = conn.cursor()
+        try:
+            # keep plans deterministic and avoid JIT warmups
+            cur.execute("SET local jit = off;")
+            cur.execute("DISCARD ALL;")  # clear session-local caches
 
-        results[i] = {
-            "execution_time": execution_time,
-            "results": []
-        }
+            start_time = time.time()
+            cur.execute(query)
+            rows = cur.fetchall()
+            execution_time = time.time() - start_time
 
-        ids   = [row[0] for row in rows]
-        tags  = [row[1] for row in rows]
-        dists = [row[2] for row in rows]
+            # ... same result packaging as before ...
+            has_sims = (len(rows) > 0 and len(rows[0]) >= 4)
+            results[i] = {"execution_time": execution_time, "results": []}
+            for row in rows:
+                item = {"id": row[0], "tags": row[1], "distance": row[2]}
+                if has_sims:
+                    item["sims"] = row[3]
+                results[i]["results"].append(item)
+        finally:
+            cur.close()
+            conn.close()
 
-        # detect if we selected similarity (embedded/concat)
-        has_sims = (len(rows) > 0 and len(rows[0]) >= 4)
-
-        for j in range(len(ids)):
-            item = {"id": ids[j], "distance": dists[j], "tags": tags[j]}
-            if has_sims:
-                item["sims"] = rows[j][3]  # 4th column = similarity
-            results[i]["results"].append(item)
-
-    
-    cur.close()
-    conn.close()
-    
     return results
