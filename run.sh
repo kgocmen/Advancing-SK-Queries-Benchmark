@@ -8,16 +8,23 @@ DS=("dataset")                             # --so accepts multiple; keep as arra
 INPUT="./data/melbourne_cleaned.csv"
 CNT=50
 
+
+: <<'EXP-1'
 for R in "${R_ARR[@]}"; do
-  EXP="bigdata_${SCE}_${R}"
+  EXP="${SCE}_${R}"
   echo "=== Running EXP=${EXP} ==="
-  
-  # 1) Generate SQL workloads for this combo
-  python3 QueryGenerator.py --exp "$EXP" --so "$DS" --k "$K" --input "$INPUT" --r "$R" --cnt "$CNT"
+  python3 QueryGenerator.py --exp "$EXP" --so "$DS" --k $K --input $INPUT --r "$R" --cnt "$CNT"
+  python3 Benchmark.py --exp "$EXP" --so "$DS" --k $K --input $INPUT --sce "$SCE"
+  python3 ResultReader.py --exp "$EXP" --so "$DS" --k $K --sce "$SCE"
+done
+EXP-1
 
-  # 2) Run benchmarks
-  python3 Benchmark.py --exp "$EXP" --so "$DS" --k "$K" --input "$INPUT" --sce "$SCE"
-
-  # 3) Read and print results
-  python3 ResultReader.py --exp "$EXP" --so "$DS" --k "$K" --sce "$SCE"
-done 
+#: <<'EXP-2'
+R=10000
+K="1 5 10 20 50"
+EXP="bigdata_${SCE}_${R}_multi-k"
+echo "=== Running EXP=${EXP} ==="
+python3 QueryGenerator.py --exp "$EXP" --so "$DS" --k $K --input "$INPUT" --r "$R" --cnt "$CNT"
+python3 Benchmark.py --exp "$EXP" --so "$DS" --k $K --input "$INPUT" --sce "$SCE"
+python3 ResultReader.py --exp "$EXP" --so "$DS" --k $K --sce "$SCE"
+#EXP-2

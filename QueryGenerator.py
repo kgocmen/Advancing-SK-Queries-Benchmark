@@ -16,7 +16,7 @@ from DataEmbedding import (
     generate_concat_embedding_query,
 )
 from constants import *
-
+WHERE = 1
 # -----------------------
 # Helpers
 # -----------------------
@@ -94,12 +94,16 @@ class QueryGenerator:
             key = str(key_or_pair).replace("'", "''")   # key-existence fallback
             predicate = f"tags ? '{key}'"
 
+        wcl= ""
+        if WHERE:
+            wcl = f"AND ST_DWithin(geom, {pt}, {deg_radius}) "
+
         return (
             "SELECT id, tags, "
             f"ST_Distance(geom::geography, {pt}::geography) AS distance "
             "FROM PoIs "
-            f"WHERE ST_DWithin(geom, {pt}, {deg_radius}) "
-            f"  AND {predicate} "
+            f"WHERE {predicate} "
+            f"{wcl} "
             f"ORDER BY distance "
             f"LIMIT {int(k)};"
         )
@@ -126,12 +130,16 @@ class QueryGenerator:
         pt = f"ST_SetSRID(ST_MakePoint({lon_str}, {lat_str}), 4326)"
         deg_radius = self._m2deg(self.radius)
 
+        wcl = ""
+        if WHERE:
+            wcl = f"WHERE ST_DWithin(geom, {pt}, {deg_radius}) "
+
         return (
             "SELECT id, tags, "
             f"ST_Distance(geom::geography, {pt}::geography) AS distance, "
             f"1.0 - (embedding <=> {vec}) AS similarity "
             "FROM PoIs "
-            f"WHERE ST_DWithin(geom, {pt}, {deg_radius}) "
+            f"{wcl} "
             f"ORDER BY similarity DESC, distance ASC "
             f"LIMIT {int(k)};"
         )
@@ -324,6 +332,7 @@ def parse_args():
     p.add_argument("--l", type=int, default=λ)
     p.add_argument("--r", type=int, default=RADIUS)
     p.add_argument("--cnt", type=int, default=POINT_COUNT)
+    p.add_argument("--w", type=int, default=WHERE)
     p.add_argument("--q", type=str, default=None,
                    help="Path to .txt or .csv with rows: <keyword>,<lat>,<lon> for embedded workloads")
     p.add_argument("--input", type=str, default=INPUT_CSV,
@@ -343,6 +352,7 @@ if __name__ == "__main__":
     RADIUS = args.r
     POINT_COUNT = args.cnt
     INPUT_CSV = args.input
+    WHERE = args.w
 
     print("=== Query Generator Config ===")
     print(f"Input CSV    : {args.input}")
@@ -352,6 +362,7 @@ if __name__ == "__main__":
     print(f"Source       : {args.so}")
     print(f"Radius       : {args.r}")
     print(f"Point Count  : {args.cnt}")
+    print(f"Where Clause : {bool(args.w)}")
     if args.q:
         print(f"Query CSV/TXT: {args.q}"  )
     print("==============================")
