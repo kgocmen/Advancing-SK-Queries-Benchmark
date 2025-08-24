@@ -24,6 +24,7 @@ SCENARIOS = {
         "concat_embedding": create_concat_pgvector_index
     },
     "existing": {
+        "no_index": lambda: None,
         "spatial_keyword_index": create_spatial_keyword_index,
         "pgvector_embedding": create_pgvector_index,
         "spatial_and_pgvector_embedding": create_embedding_spatial_index

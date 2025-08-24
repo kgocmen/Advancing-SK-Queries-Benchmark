@@ -317,7 +317,8 @@ class QueryResultsParser:
                     else:
                         emb = parser._st_model.encode(texts)       # (k,d)
                         sim_mat = cosine_similarity(emb, emb)      # kxk
-                        series.append(float(sim_mat.mean()))
+                        mean = round(float(sim_mat.mean()),3)
+                        series.append(mean)
                 if not series:
                     continue
 
@@ -395,5 +396,5 @@ if __name__ == "__main__":
                     print(f"⚠️  Missing results file, skipping: {test_file}")
                     continue
                 query_parser = QueryResultsParser(test_file)
-                query_parser.print_report(k=k)
+                #query_parser.print_report(k=k)
             query_parser.produce_plots_for_group(test_files, source, k, EXPERIMENT, SCENARIO)

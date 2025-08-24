@@ -16,7 +16,7 @@ from DataEmbedding import (
     generate_concat_embedding_query,
 )
 from constants import *
-WHERE = 1
+
 # -----------------------
 # Helpers
 # -----------------------
@@ -95,7 +95,7 @@ class QueryGenerator:
             predicate = f"tags ? '{key}'"
 
         wcl= ""
-        if WHERE:
+        if RADIUS:
             wcl = f"AND ST_DWithin(geom, {pt}, {deg_radius}) "
 
         return (
@@ -131,7 +131,7 @@ class QueryGenerator:
         deg_radius = self._m2deg(self.radius)
 
         wcl = ""
-        if WHERE:
+        if RADIUS:
             wcl = f"WHERE ST_DWithin(geom, {pt}, {deg_radius}) "
 
         return (
@@ -332,7 +332,6 @@ def parse_args():
     p.add_argument("--l", type=int, default=λ)
     p.add_argument("--r", type=int, default=RADIUS)
     p.add_argument("--cnt", type=int, default=POINT_COUNT)
-    p.add_argument("--w", type=int, default=WHERE)
     p.add_argument("--q", type=str, default=None,
                    help="Path to .txt or .csv with rows: <keyword>,<lat>,<lon> for embedded workloads")
     p.add_argument("--input", type=str, default=INPUT_CSV,
@@ -352,7 +351,6 @@ if __name__ == "__main__":
     RADIUS = args.r
     POINT_COUNT = args.cnt
     INPUT_CSV = args.input
-    WHERE = args.w
 
     print("=== Query Generator Config ===")
     print(f"Input CSV    : {args.input}")
@@ -362,7 +360,6 @@ if __name__ == "__main__":
     print(f"Source       : {args.so}")
     print(f"Radius       : {args.r}")
     print(f"Point Count  : {args.cnt}")
-    print(f"Where Clause : {bool(args.w)}")
     if args.q:
         print(f"Query CSV/TXT: {args.q}"  )
     print("==============================")
