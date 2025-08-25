@@ -13,7 +13,9 @@ import argparse
 import os
 
 SCENARIOS = {
-    "fused": {"concat_embedding": create_concat_pgvector_index},
+    "fused": {
+        "concat_embedding": create_concat_pgvector_index
+    },
     "all": {
         "no_index": lambda: None,
         "spatial_index": create_spatial_index,
@@ -41,6 +43,7 @@ SCENARIOS = {
         "concat_embedding": create_concat_pgvector_index
     }
 }
+INPUT_LEN = 0
 
 def safe_parse_json(tag_str):
     if isinstance(tag_str, str):
@@ -127,6 +130,8 @@ def run_scenario(records: List[Tuple], queries: List[str], index_creation_func, 
 
 def benchmark(csv_file: str, k_values: List[int], index_functions: Dict[str, callable], output_dir: str = "./results/" + str(EXPERIMENT)):
     records = load_csv_data(csv_file)
+    INPUT_LEN = len(records)
+    print(f"{INPUT_CSV} has {INPUT_LEN} rows.")
     os.makedirs(output_dir, exist_ok=True)
 
     for index_name, index_func in index_functions.items():

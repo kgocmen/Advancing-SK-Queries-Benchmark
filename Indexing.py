@@ -8,7 +8,7 @@ def create_keyword_index():
 def create_pgvector_index():
     if INDEX_TYPE == "ivfflat":
         q = ("CREATE INDEX IF NOT EXISTS idx_pois_embedding "
-             "ON PoIs USING ivfflat (embedding vector_cosine_ops) WITH (lists = 100);")
+             f"ON PoIs USING ivfflat (embedding vector_cosine_ops) WITH (lists = 300);")
     else:
         q = ("CREATE INDEX IF NOT EXISTS idx_pois_embedding "
              "ON PoIs USING hnsw (embedding vector_cosine_ops) "

@@ -166,7 +166,7 @@ class QueryGenerator:
             cvec_str = _as_pgvector(cvec)
 
             for k in self.k_values:
-                non_by_k[k].append(self._sql(lon=lon,lat=lat,keyword=keyword,k=k))
+                non_by_k[k].append(self._sql(lon=lon,lat=lat,key_or_pair=keyword,k=k))
                 emb_by_k[k].append(self._e_sql(lon=lon,lat=lat,vec=qvec_str,k=k))
                 conc_by_k[k].append(self._c_sql(lon=lon,lat=lat,vec=cvec_str,k=k))
 

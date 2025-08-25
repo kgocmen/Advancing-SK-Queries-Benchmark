@@ -55,10 +55,49 @@ for R in "${R_ARR[@]}"; do
 done
 EXP-4
 
-#: <<'EXP-5'
+: <<'EXP-5'
 EXP="${EX}_noradius_k10_ds_${H}"
 echo "=== Running EXP=${EXP} ==="
 python3 QueryGenerator.py --exp "$EXP" --so "$DS" --k $K --input "$INPUT" --r "0" --cnt "$CNT"
 python3 Benchmark.py --exp "$EXP" --so "$DS" --k $K --input "$INPUT" --sce "$EX" --idx $H
 python3 ResultReader.py --exp "$EXP" --so "$DS" --k $K --sce "$EX"
-#EXP-5
+EXP-5
+
+#: <<'EXP-6'
+EXP="${E}_k10_r10000_l1"
+echo "=== Queries Generating for EXP=${EXP} ==="
+python3 QueryGenerator.py --exp "$EXP" --so $DS $CUS --k $K --input "$INPUT" --cnt "$CNT" --r "10000"
+EXPH="${EXP}_H"
+EXPIF="${EXP}_IF"
+rm -rf ./data/workloads/${EXPH}
+rm -rf ./data/workloads/${EXPIF}
+cp -r ./data/workloads/${EXP} ./data/workloads/${EXPH}
+cp -r ./data/workloads/${EXP} ./data/workloads/${EXPIF}
+rm -rf ./data/workloads/${EXP}
+echo "=== Running EXP=${EXPH} ==="
+python3 Benchmark.py --exp "$EXPH" --so $DS $CUS --k $K --input "$INPUT" --sce "$E" --idx $H --l "1" 
+echo "=== Running EXP=${EXPIF} ==="
+python3 Benchmark.py --exp "$EXPIF" --so $DS $CUS --k $K --input "$INPUT" --sce "$E" --idx $IF --l "1"
+python3 ResultReader.py --exp "$EXPH" --so $DS $CUS --k $K --sce "$E"
+python3 ResultReader.py --exp "$EXPIF" --so $DS $CUS --k $K --sce "$E"
+#EXP-6
+
+: <<'EXP-7'
+INPUT="./data/melbourne_cleaned.csv"
+EXP="bigdata_${E}_k10_r10000_l1"
+echo "=== Queries Generating for EXP=${EXP} ==="
+python3 QueryGenerator.py --exp "$EXP" --so $DS $CUS --k $K --input "$INPUT" --cnt "$CNT" --r "10000"
+EXPH="${EXP}_H"
+EXPIF="${EXP}_IF"
+rm -rf ./data/workloads/${EXPH}
+rm -rf ./data/workloads/${EXPIF}
+cp -r ./data/workloads/${EXP} ./data/workloads/${EXPH}
+cp -r ./data/workloads/${EXP} ./data/workloads/${EXPIF}
+rm -rf ./data/workloads/${EXP}
+echo "=== Running EXP=${EXPH} ==="
+python3 Benchmark.py --exp "$EXPH" --so $DS $CUS --k $K --input "$INPUT" --sce "$E" --idx $H --l "1"
+python3 ResultReader.py --exp "$EXPH" --so $DS $CUS --k $K --sce "$E"
+echo "=== Running EXP=${EXPIF} ==="
+python3 Benchmark.py --exp "$EXPIF" --so $DS $CUS --k $K --input "$INPUT" --sce "$E" --idx $IF --l "1"
+python3 ResultReader.py --exp "$EXPIF" --so $DS $CUS --k $K --sce "$E"
+EXP-7
