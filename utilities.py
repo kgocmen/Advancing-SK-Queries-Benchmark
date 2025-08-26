@@ -10,7 +10,6 @@ def connect_db():
     return psycopg2.connect(**DB_PARAMS)
 
 def setup_database(dim=VECTOR_DIM):
-    print("Setting up database...")
     conn = connect_db()
     cur = conn.cursor()
     cur.execute("CREATE EXTENSION IF NOT EXISTS postgis;")
@@ -35,8 +34,6 @@ def setup_database(dim=VECTOR_DIM):
         raise RuntimeError("Table 'PoIs' was not created successfully.")
     cur.close()
     conn.close()
-
-    print("Table 'PoIs' is ready.")
 
 
 def insert_data(records, embeddings):

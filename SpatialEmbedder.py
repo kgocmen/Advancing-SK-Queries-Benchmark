@@ -29,7 +29,7 @@ class SpatialEmbedder:
                 print("Spatial Embeddings:", embedding.shape[0] == csv_rows)
                 return
         os.makedirs(os.path.dirname(output_npy), exist_ok=True)
-        print("🔧 Generating spatial-only embeddings")
+        print("Generating spatial-only embeddings")
         fused_array = np.lib.format.open_memmap(
             output_npy,
             dtype=np.float32,
@@ -40,7 +40,7 @@ class SpatialEmbedder:
 
         for start in range(0, self.total_rows, self.chunk_size):
             end = min(start + self.chunk_size, self.total_rows)
-            print(f"➡️ Processing rows {start} to {end}")
+            print(f"Processing rows {start} to {end}")
 
             for j, (_, row) in tqdm(
                 enumerate(self.df.iloc[start:end].iterrows()),

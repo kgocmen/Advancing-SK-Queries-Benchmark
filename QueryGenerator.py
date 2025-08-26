@@ -175,7 +175,7 @@ class QueryGenerator:
         for k, queries in conc_by_k.items():
             self._write_sql(f"custom_concat_embedded_queries_k{k}.sql", queries)
 
-        print(f"✅ Query workloads written to {self.output_dir}")
+        print(f"Custom queries written to {self.output_dir}")
 
     # ---------- Exact keyword + kNN from PoIs CSV ----------
     def generate_from_dataset(self, csv_file: str, point_count: int = POINT_COUNT,
@@ -232,7 +232,7 @@ class QueryGenerator:
         for k, queries in conc_by_k.items():
             self._write_sql(f"dataset_concat_embedded_queries_k{k}.sql", queries)
 
-        print(f"✅ Dataset keyword workloads written to {self.output_dir}")
+        print(f"Dataset generated queries written to {self.output_dir}")
 
 
 
@@ -320,7 +320,7 @@ class QueryGenerator:
         path = os.path.join(self.output_dir, filename)
         with open(path, "w", encoding="utf-8") as f:
             f.write("\n".join(queries) + ("\n" if queries else ""))
-        print(f"📝 Wrote {len(queries)} queries → {path}")
+        print(f"Wrote {len(queries)} {filename} queries")
 
 def parse_args():
     p = argparse.ArgumentParser(description="Generate SQL workloads for PoI retrieval.")
@@ -359,7 +359,9 @@ if __name__ == "__main__":
     print(f"Radius       : {args.r}")
     print(f"Point Count  : {args.cnt}")
     if args.q:
-        print(f"Query CSV/TXT: {args.q}"  )
+        print(f"Query CSV/TXT: {args.q}")
+    else:
+        print(f"Query CSV/TXT: Not specified.")
     print("==============================")
 
     gen = QueryGenerator(

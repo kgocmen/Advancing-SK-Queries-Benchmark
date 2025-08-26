@@ -115,7 +115,6 @@ class QueryResultsParser:
         print(f"\nReport for {self.json_path}")
         for key, value in results.items():
             print(f"{key}: {value}")
-        print("==========================================\n")
 
     def __repr__(self):
         return f"QueryResultsParser({self.json_path})"
@@ -250,7 +249,7 @@ class QueryResultsParser:
         plt.tight_layout()
         plt.savefig(line_path, dpi=150)
         plt.close()
-        print(f"📈 Saved line chart: {line_path}")
+        print(f"Saved line chart: {line_path}")
 
         # --- 2) Grouped bar chart: insertion, index per method ---
         insertion = [r["insertion_time"] for r in records]
@@ -279,7 +278,7 @@ class QueryResultsParser:
         plt.tight_layout()
         plt.savefig(bars_path, dpi=150)
         plt.close()
-        print(f"📊 Saved bars chart: {bars_path}")
+        print(f"Saved bars chart: {bars_path}")
 
         # --- 3) Semantic coherence per query (line chart), + dotted mean per method ---
         from ResultReader import QueryResultsParser
@@ -348,7 +347,7 @@ class QueryResultsParser:
             plt.tight_layout()
             plt.savefig(coh_path, dpi=150)
             plt.close()
-            print(f"🧩 Saved semantic coherence line chart: {coh_path}")
+            print(f"Saved semantic coherence line chart: {coh_path}")
         else:
             print("⚠️  No coherence series to plot.")
 

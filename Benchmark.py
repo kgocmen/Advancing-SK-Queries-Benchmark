@@ -72,7 +72,7 @@ def finish_embedding_and_setup_database(func,file, length):
     embeddings = []
     if func == create_pgvector_index or func == create_embedding_spatial_index: 
         setup_database()
-        
+        print("Table 'PoIs' constructed.")
         semantic_path = "./semantic/semantic_embeddings_" + file.split("/")[-1].replace(".csv", ".npy")
         sem = SemanticEmbedder.SemanticEmbedder(file, semantic_path)
         sem.run()
@@ -81,7 +81,7 @@ def finish_embedding_and_setup_database(func,file, length):
     elif func == create_concat_pgvector_index:
         total_dim = VECTOR_DIM + 4 * λ
         setup_database(total_dim)
-
+        print("Table 'PoIs' constructed.")
         semantic_path = "./semantic/semantic_embeddings_" + file.split("/")[-1].replace(".csv", ".npy")
         sem = SemanticEmbedder.SemanticEmbedder(file, semantic_path)
         sem.run()
@@ -93,30 +93,29 @@ def finish_embedding_and_setup_database(func,file, length):
         embeddings = generate_concat_embedding(semantic_path=semantic_path, spatial_path=spatial_path, dim=VECTOR_DIM + 4 * λ)
     else:
         setup_database()
-        embeddings = [None] * length 
+        print("Table 'PoIs' constructed.")
+        embeddings = [None] * length
+    
+    
     return embeddings
 
 def run_scenario(records: List[Tuple], queries: List[str], index_creation_func, csv_file: str):
     embeddings = finish_embedding_and_setup_database(index_creation_func, csv_file, len(records))
-
-    print("Inserting data...")
     insertion_time = insert_data(records, embeddings)
-    
-    print("Creating indexes...")
     start_time = time.time()
     index_sql = index_creation_func()
     if index_sql:
         with connect_db() as conn, conn.cursor() as cur:
             for q in index_sql:
                 cur.execute(q)
-            cur.execute("ANALYZE PoIs;")
+                cur.execute("ANALYZE PoIs;")
             conn.commit()
     indexing_time = (time.time() - start_time)
     print("All indexes created in:", indexing_time)
 
-    print(f"Running queries...")
     results = run_queries(queries=queries)
-    
+    print("All queries executed.")
+
     return {
         "insertion_time": insertion_time,
         "index_creation": 
@@ -149,7 +148,7 @@ def benchmark(csv_file: str, k_values: List[int], index_functions: Dict[str, cal
                     print(f"  ⚠️  No {source} SQL found for k={k} (prefix='{prefix}').")
                     continue
 
-                print(f"Running scenario: {index_name} on {source} (k={k})")
+                print(f"Running scenario: {index_name} on {source}, k={k})")
                 results = run_scenario(records, queries, index_func, csv_file)
 
                 result_file = os.path.join(
@@ -157,7 +156,7 @@ def benchmark(csv_file: str, k_values: List[int], index_functions: Dict[str, cal
                 )
                 with open(result_file, "w") as f:
                     json.dump(results, f, indent=4)
-                print(f"✅ Results saved to {result_file}\n")
+                print(f"Results saved to {result_file}\n")
 
 def parse_args():
     p = argparse.ArgumentParser(

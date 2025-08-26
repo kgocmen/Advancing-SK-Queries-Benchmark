@@ -3,7 +3,6 @@ import ast
 import numpy as np
 import pandas as pd
 from tqdm import tqdm
-from sentence_transformers import SentenceTransformer
 import time
 from constants import *
 
@@ -71,10 +70,10 @@ class SemanticEmbedder:
 
             # Skip chunks that are already done
             if chunk_end <= self.processed_rows:
-                print(f"⏩ Skipping chunk {i} (rows {chunk_start}-{chunk_end})")
+                print(f"Skipping chunk {i} (rows {chunk_start}-{chunk_end})")
                 continue
 
-            print(f"\n🔄 Processing chunk {i} (rows {chunk_start}-{chunk_end})")
+            print(f"\nProcessing chunk {i} (rows {chunk_start}-{chunk_end})")
 
             # --------------------------------------------------------------
             # 1. Parse tags column safely
@@ -93,10 +92,10 @@ class SemanticEmbedder:
             self._append_embeddings(embeddings)
 
             total_rows += len(embeddings)
-            print(f"✅ Appended {len(embeddings)} embeddings (total written: {total_rows})")
+            print(f"Appended {len(embeddings)} embeddings (total written: {total_rows})")
         
         self.elapsed_time += time.time() - start_time
-        print(f"\n🎉 Done! All embeddings saved to '{self.output_npy}'")
+        print(f"\n\tDone! All embeddings saved to '{self.output_npy}'")
         return
 
     # --------------------------------------------------------------------- #
