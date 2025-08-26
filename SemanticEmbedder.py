@@ -5,6 +5,7 @@ import pandas as pd
 from tqdm import tqdm
 from sentence_transformers import SentenceTransformer
 import time
+from constants import *
 
 class SemanticEmbedder:
     """
@@ -24,13 +25,13 @@ class SemanticEmbedder:
         self,
         input_csv: str,
         output_npy: str,
-        model_name: str = "sentence-transformers/all-MiniLM-L6-v2",
+        model_name: str = SEMANTIC,
         chunk_size: int = 100_000,
     ):
         self.input_csv = input_csv
         self.output_npy = output_npy
         self.chunk_size = chunk_size
-        self.model = SentenceTransformer(model_name)
+        self.model = model_name
 
         self.elapsed_time = 0
 

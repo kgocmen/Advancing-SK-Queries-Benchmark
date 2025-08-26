@@ -1,3 +1,5 @@
+from sentence_transformers import SentenceTransformer
+
 # Database connection settings
 DB_PARAMS = {
     "host": "localhost",
@@ -7,7 +9,7 @@ DB_PARAMS = {
     "password": "secret",
 }
 
-VECTOR_DIM = 384
+
 
 EXPERIMENT = "melbourne_sampled"
 SOURCE = ["custom"]
@@ -18,3 +20,7 @@ POINT_COUNT = 50
 INPUT_CSV = "./data/melbourne_cleaned_sampled_100k.csv"
 SCENARIO = "embedded"
 INDEX_TYPE = "hnsw" 
+
+
+SEMANTIC = SentenceTransformer("sentence-transformers/all-MiniLM-L6-v2")
+VECTOR_DIM = 384

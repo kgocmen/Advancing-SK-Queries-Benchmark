@@ -8,7 +8,6 @@ import ast
 import argparse
 from Benchmark import SCENARIOS
 import matplotlib.pyplot as plt
-import numpy as np
 
 class QueryResultsParser:
     def __init__(self, json_path: str):
@@ -17,7 +16,7 @@ class QueryResultsParser:
         self.insertion_time = self.data.get("insertion_time", 0)
         self.index_creation_time = self.data.get("index_creation", None)["time"]
         self.query_results = self.data.get("query_results", {})
-        self._st_model = SentenceTransformer("sentence-transformers/all-MiniLM-L6-v2")
+        self._st_model = SEMANTIC
 
     def _load_json(self) -> Dict:
         if not os.path.exists(self.json_path):

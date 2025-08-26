@@ -1,11 +1,9 @@
-from sentence_transformers import SentenceTransformer
-import json
 import numpy as np
 from constants import *
 from sklearn.preprocessing import normalize
 import SpatialEmbedder
 
-model = SentenceTransformer("sentence-transformers/all-MiniLM-L6-v2")
+model = SEMANTIC
 
 def open_embedding(path: str):
     embedding = np.load(path, mmap_mode='r')

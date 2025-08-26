@@ -7,7 +7,6 @@ import random
 import pandas as pd
 import json
 import numpy as np
-from sentence_transformers import SentenceTransformer
 from sklearn.metrics.pairwise import cosine_similarity
 import argparse
 
@@ -48,7 +47,6 @@ class QueryGenerator:
         self.k_values = list(k_values)
         self.radius = radius
         self.prepositions = ["in","at","on","near","by","around","to","from","with","about","inside","outside","between","among","across","through","over","under"]
-        self.model_name = "sentence-transformers/all-MiniLM-L6-v2"
 
         _ensure_dir(self.output_dir)
 
@@ -259,7 +257,7 @@ class QueryGenerator:
             poi_df = pd.read_csv(self.input_csv)
             poi_coords = poi_df[["lat", "lon"]].values
 
-            model = SentenceTransformer(self.model_name)
+            model = SEMANTIC
             out: List[Tuple[str, float, float]] = []
             for q in texts:
                 short_q = self._extract_after_preposition(q)
