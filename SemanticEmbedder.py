@@ -7,19 +7,6 @@ import time
 from constants import *
 
 class SemanticEmbedder:
-    """
-    Stream a large CSV in chunks, create sentence-transformer embeddings
-    from each row's `tags` column, and append to a single .npy file
-    (with automatic resume capability).
-
-    Parameters
-    ----------
-    input_csv : str  - Path to the CSV containing a `tags` column
-    output_npy : str - Target file for embeddings
-    model_name : str - Sentence-Transformer model identifier
-    chunk_size : int - Rows per pandas chunk (default 100_000)
-    """
-
     def __init__(
         self,
         input_csv: str,
@@ -46,10 +33,7 @@ class SemanticEmbedder:
             self._embeddings = None
             self.processed_rows = 0
             self._first_write = True
-
-    # --------------------------------------------------------------------- #
-    #  Public API
-    # --------------------------------------------------------------------- #
+            
     def run(self):
         if os.path.exists(self.output_npy):
             self._embeddings = np.load(self.output_npy, mmap_mode='r')
@@ -97,10 +81,7 @@ class SemanticEmbedder:
         self.elapsed_time += time.time() - start_time
         print(f"\n\tDone! All embeddings saved to '{self.output_npy}'")
         return
-
-    # --------------------------------------------------------------------- #
-    #  Helpers
-    # --------------------------------------------------------------------- #
+    
     def _embed_chunk(self, tags_series, chunk_idx):
         """Convert a pandas Series of tag dictionaries into vectors."""
         vectors = []

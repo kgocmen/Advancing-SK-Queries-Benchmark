@@ -13,9 +13,6 @@ CUS="custom"
 INPUT="./data/melbourne_cleaned_sampled_100k.csv"
 CNT=50
 
-B="bigdata_"
-
-
 : <<'EXP-1'
 for R in "${R_ARR[@]}"; do
   EXP="${NE}_${R}"
@@ -84,8 +81,7 @@ python3 ResultReader.py --exp "$EXPIF" --so $DS $CUS --k $K --sce "$E"
 EXP-6
 
 : <<'EXP-6'
-INPUT="./data/melbourne_cleaned.csv"
-EXP="${B}${E}_k10_r10000_l1"
+EXP="${E}_k10_r10000_l1"
 
 echo "=== 6. Queries Generating for EXP=${EXP} ==="
 python3 QueryGenerator.py --exp "$EXP" --so $DS $CUS --k $K --input "$INPUT" --cnt "$CNT" --r "10000"
@@ -105,10 +101,21 @@ python3 ResultReader.py --exp "$EXPIF" --so $DS $CUS --k $K --sce "$E"
 EXP-6
 
 
-#: <<'EXP-7'
-EXP="${E}_k10_noradius_l1_h"
-echo "=== 7. Running EXP=${EXP} ==="
+: <<'EXP-7'
+EXP="${E}_k10_noradius_l1"
+echo "=== 7. Queries Generating for EXP=${EXP} ==="
 python3 QueryGenerator.py --exp "$EXP" --so $DS $CUS --k $K --input "$INPUT" --cnt "$CNT" --r "0"
-python3 Benchmark.py --exp "$EXP" --so $DS $CUS --k $K --input "$INPUT" --sce "$E" --idx $H --l "1" 
+EXPH="${EXP}_H"
+EXPIF="${EXP}_IF"
+rm -rf ./data/workloads/${EXPH}
+rm -rf ./data/workloads/${EXPIF}
+cp -r ./data/workloads/${EXP} ./data/workloads/${EXPH}
+cp -r ./data/workloads/${EXP} ./data/workloads/${EXPIF}
+rm -rf ./data/workloads/${EXP}
+echo "=== Running EXP=${EXPH} ==="
+python3 Benchmark.py --exp "$EXPH" --so $DS $CUS --k $K --input "$INPUT" --sce "$E" --idx $H --l "1"
+python3 ResultReader.py --exp "$EXPH" --so $DS $CUS --k $K --sce "$E"
+echo "=== Running EXP=${EXPIF} ==="
+python3 Benchmark.py --exp "$EXPIF" --so $DS $CUS --k $K --input "$INPUT" --sce "$E" --idx $IF --l "1"
 python3 ResultReader.py --exp "$EXPIF" --so $DS $CUS --k $K --sce "$E"
-#EXP-7
+EXP-7

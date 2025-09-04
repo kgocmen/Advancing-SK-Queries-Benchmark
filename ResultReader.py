@@ -2,7 +2,6 @@ import json
 import os
 from typing import Dict, List
 from constants import *
-from sentence_transformers import SentenceTransformer
 from sklearn.metrics.pairwise import cosine_similarity
 import ast
 import argparse

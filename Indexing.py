@@ -16,6 +16,10 @@ def create_pgvector_index():
     return [q]
 def create_concat_pgvector_index():
     return create_pgvector_index()
+def create_hashing_pgvector_index():
+    pass
+def create_contrastive_pgvector_index():
+    pass
 def create_spatial_keyword_index():
     return create_spatial_index() + create_keyword_index()
 def create_embedding_spatial_index():
