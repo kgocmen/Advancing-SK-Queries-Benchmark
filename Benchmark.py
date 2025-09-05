@@ -180,8 +180,12 @@ if __name__ == "__main__":
     EXPERIMENT = args.exp
     SOURCE = args.so
     K_VALUES = args.k
-    λ = args.l 
+    import Indexing as IDX
+    import DataEmbedding as DE
+    λ = args.l
+    DE.λ = args.l 
     INDEX_TYPE = args.idx
+    IDX.INDEX_TYPE = args.idx
     INPUT_CSV = args.input
 
     scenario_funcs = SCENARIOS[args.sce]

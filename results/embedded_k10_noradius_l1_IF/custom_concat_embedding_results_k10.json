@@ -1,14 +1,14 @@
 {
-    "insertion_time": 89.28585982322693,
+    "insertion_time": 78.04000115394592,
     "index_creation": {
         "func": [
-            "CREATE INDEX IF NOT EXISTS idx_pois_embedding ON PoIs USING hnsw (embedding vector_cosine_ops) WITH (m = 16, ef_construction = 64);"
+            "CREATE INDEX IF NOT EXISTS idx_pois_embedding ON PoIs USING ivfflat (embedding vector_cosine_ops) WITH (lists = 300);"
         ],
-        "time": 35.05921697616577
+        "time": 2.70576548576355
     },
     "query_results": {
         "0": {
-            "execution_time": 0.1894829273223877,
+            "execution_time": 0.19157767295837402,
             "results": [
                 {
                     "id": 1357413436,
@@ -133,7 +133,7 @@
             ]
         },
         "1": {
-            "execution_time": 0.1862497329711914,
+            "execution_time": 0.1895589828491211,
             "results": [
                 {
                     "id": 6237887803,
@@ -237,7 +237,7 @@
             ]
         },
         "2": {
-            "execution_time": 0.19026565551757812,
+            "execution_time": 0.19126248359680176,
             "results": [
                 {
                     "id": 3840017767,
@@ -333,7 +333,7 @@
             ]
         },
         "3": {
-            "execution_time": 0.18703317642211914,
+            "execution_time": 0.18613791465759277,
             "results": [
                 {
                     "id": 6741639490,
@@ -421,7 +421,7 @@
             ]
         },
         "4": {
-            "execution_time": 0.18665528297424316,
+            "execution_time": 0.18675589561462402,
             "results": [
                 {
                     "id": 2596278947,
@@ -516,7 +516,7 @@
             ]
         },
         "5": {
-            "execution_time": 0.1996464729309082,
+            "execution_time": 0.19176506996154785,
             "results": [
                 {
                     "id": 5213608175,
@@ -611,7 +611,7 @@
             ]
         },
         "6": {
-            "execution_time": 0.19657325744628906,
+            "execution_time": 0.18955421447753906,
             "results": [
                 {
                     "id": 6138135274,
@@ -743,7 +743,7 @@
             ]
         },
         "7": {
-            "execution_time": 0.19027328491210938,
+            "execution_time": 0.18802833557128906,
             "results": [
                 {
                     "id": 10566587781,
@@ -898,7 +898,7 @@
             ]
         },
         "8": {
-            "execution_time": 0.19112062454223633,
+            "execution_time": 0.1837148666381836,
             "results": [
                 {
                     "id": 6297092810,
@@ -994,7 +994,7 @@
             ]
         },
         "9": {
-            "execution_time": 0.18275785446166992,
+            "execution_time": 0.19201231002807617,
             "results": [
                 {
                     "id": 6989600887,
@@ -1107,7 +1107,7 @@
             ]
         },
         "10": {
-            "execution_time": 0.18796467781066895,
+            "execution_time": 0.1959092617034912,
             "results": [
                 {
                     "id": 6741639490,
@@ -1198,7 +1198,7 @@
             ]
         },
         "11": {
-            "execution_time": 0.1876850128173828,
+            "execution_time": 0.19538617134094238,
             "results": [
                 {
                     "id": 1453185997,
@@ -1317,7 +1317,7 @@
             ]
         },
         "12": {
-            "execution_time": 0.18761968612670898,
+            "execution_time": 0.19569134712219238,
             "results": [
                 {
                     "id": 2332735915,
@@ -1409,7 +1409,7 @@
             ]
         },
         "13": {
-            "execution_time": 0.1915292739868164,
+            "execution_time": 0.1853950023651123,
             "results": [
                 {
                     "id": 687164065,
@@ -1503,7 +1503,7 @@
             ]
         },
         "14": {
-            "execution_time": 0.1909928321838379,
+            "execution_time": 0.18793702125549316,
             "results": [
                 {
                     "id": 1636014201,
@@ -1614,7 +1614,7 @@
             ]
         },
         "15": {
-            "execution_time": 0.18723583221435547,
+            "execution_time": 0.19426488876342773,
             "results": [
                 {
                     "id": 7844240440,
@@ -1699,7 +1699,7 @@
             ]
         },
         "16": {
-            "execution_time": 0.19829821586608887,
+            "execution_time": 0.18927216529846191,
             "results": [
                 {
                     "id": 11607743497,
@@ -1805,7 +1805,7 @@
             ]
         },
         "17": {
-            "execution_time": 0.1862800121307373,
+            "execution_time": 0.18832612037658691,
             "results": [
                 {
                     "id": 6033469818,
@@ -1905,7 +1905,7 @@
             ]
         },
         "18": {
-            "execution_time": 0.19089746475219727,
+            "execution_time": 0.19166064262390137,
             "results": [
                 {
                     "id": 9141577934,
@@ -2002,7 +2002,7 @@
             ]
         },
         "19": {
-            "execution_time": 0.19656634330749512,
+            "execution_time": 0.18973731994628906,
             "results": [
                 {
                     "id": 5288512523,

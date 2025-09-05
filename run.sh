@@ -5,11 +5,15 @@ K=10
 R_ARR=(2000 5000 10000 20000 50000)
 H="hnsw"
 IF="ivfflat"
+
 NE="non_embedded"
 EX="existing"
 E="embedded"
+F="fused"
+
 DS="dataset"
 CUS="custom"
+
 INPUT="./data/melbourne_cleaned_sampled_100k.csv"
 CNT=50
 
@@ -80,27 +84,6 @@ python3 Benchmark.py --exp "$EXPIF" --so $DS $CUS --k $K --input "$INPUT" --sce 
 python3 ResultReader.py --exp "$EXPIF" --so $DS $CUS --k $K --sce "$E"
 EXP-6
 
-: <<'EXP-6'
-EXP="${E}_k10_r10000_l1"
-
-echo "=== 6. Queries Generating for EXP=${EXP} ==="
-python3 QueryGenerator.py --exp "$EXP" --so $DS $CUS --k $K --input "$INPUT" --cnt "$CNT" --r "10000"
-EXPH="${EXP}_H"
-EXPIF="${EXP}_IF"
-rm -rf ./data/workloads/${EXPH}
-rm -rf ./data/workloads/${EXPIF}
-cp -r ./data/workloads/${EXP} ./data/workloads/${EXPH}
-cp -r ./data/workloads/${EXP} ./data/workloads/${EXPIF}
-rm -rf ./data/workloads/${EXP}
-echo "=== Running EXP=${EXPH} ==="
-python3 Benchmark.py --exp "$EXPH" --so $DS $CUS --k $K --input "$INPUT" --sce "$E" --idx $H --l "1"
-python3 ResultReader.py --exp "$EXPH" --so $DS $CUS --k $K --sce "$E"
-echo "=== Running EXP=${EXPIF} ==="
-python3 Benchmark.py --exp "$EXPIF" --so $DS $CUS --k $K --input "$INPUT" --sce "$E" --idx $IF --l "1"
-python3 ResultReader.py --exp "$EXPIF" --so $DS $CUS --k $K --sce "$E"
-EXP-6
-
-
 : <<'EXP-7'
 EXP="${E}_k10_noradius_l1"
 echo "=== 7. Queries Generating for EXP=${EXP} ==="
@@ -119,3 +102,26 @@ echo "=== Running EXP=${EXPIF} ==="
 python3 Benchmark.py --exp "$EXPIF" --so $DS $CUS --k $K --input "$INPUT" --sce "$E" --idx $IF --l "1"
 python3 ResultReader.py --exp "$EXPIF" --so $DS $CUS --k $K --sce "$E"
 EXP-7
+
+
+: <<'EXP-8'
+LAMBDAS="2 3 4"
+for L in $LAMBDAS
+do
+  EXP="${F}_k${K}_l${L}"
+  echo "=== 8. Queries Generating for EXP=${EXP} ==="
+  python3 QueryGenerator.py --exp "$EXP" --so $DS $CUS --k $K --input "$INPUT" --cnt "$CNT" --l "$L"
+  EXPH="${EXP}_H"
+  EXPIF="${EXP}_IF"
+  rm -rf ./data/workloads/${EXPH} ./data/workloads/${EXPIF}
+  cp -r ./data/workloads/${EXP} ./data/workloads/${EXPH}
+  cp -r ./data/workloads/${EXP} ./data/workloads/${EXPIF}
+  rm -rf ./data/workloads/${EXP}
+  echo "=== Running EXP=${EXPH} ==="
+  python3 Benchmark.py --exp "$EXPH" --so $DS $CUS --k $K --input "$INPUT" --sce "$F" --idx $H --l "$L"
+  python3 ResultReader.py --exp "$EXPH" --so $DS $CUS --k $K --sce "$F"
+  echo "=== Running EXP=${EXPIF} ==="
+  python3 Benchmark.py --exp "$EXPIF" --so $DS $CUS --k $K --input "$INPUT" --sce "$F" --idx $IF --l "$L"
+  python3 ResultReader.py --exp "$EXPIF" --so $DS $CUS --k $K --sce "$F"
+done
+EXP-8
