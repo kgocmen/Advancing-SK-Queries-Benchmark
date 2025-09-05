@@ -68,16 +68,9 @@ class QueryGenerator:
 
     
     def _m2deg(self, meters: float) -> float:
-        # Rough, good for city-scale radii; you chose 2–20 km.
         return float(meters) / 111_320.0
 
     def _sql(self, lon, lat, key_or_pair, k):
-        """
-        key_or_pair:
-        - "amenity"           -> key existence (tags ? 'amenity')
-        - ("amenity","restaurant") -> key=value containment (tags @> '{"amenity":"restaurant"}'::jsonb)
-        Both forms are GIN-usable with your GIN(tags) index.
-        """
         lon_str = f"{float(lon):.8f}"
         lat_str = f"{float(lat):.8f}"
         pt = f"ST_SetSRID(ST_MakePoint({lon_str}, {lat_str}), 4326)"
@@ -179,7 +172,7 @@ class QueryGenerator:
 
     # ---------- Exact keyword + kNN from PoIs CSV ----------
     def generate_from_dataset(self, csv_file: str, point_count: int = POINT_COUNT,
-                            search: list = ("amenity","shop","name","cuisine")):
+                            search: list = ("amenity","shop","name","cuisine","building","tourism","leisure","highway","public_transport","office")):
         df = pd.read_csv(csv_file)
         df["tags"] = df["tags"].fillna("{}").apply(safe_parse_json)
 

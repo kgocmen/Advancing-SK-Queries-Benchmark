@@ -1,0 +1,760 @@
+{
+    "insertion_time": 106.95432233810425,
+    "index_creation": {
+        "func": [
+            "CREATE INDEX IF NOT EXISTS idx_pois_geom ON PoIs USING GIST (geom);",
+            "CREATE INDEX IF NOT EXISTS idx_pois_tags ON PoIs USING GIN (tags);"
+        ],
+        "time": 5.245028018951416
+    },
+    "query_results": {
+        "0": {
+            "execution_time": 0.017206907272338867,
+            "results": [
+                {
+                    "id": 2131396011,
+                    "tags": {
+                        "bus": "yes",
+                        "ref": "9485",
+                        "name": "Brentwood Cl/Clayton Rd",
+                        "highway": "bus_stop",
+                        "public_transport": "platform"
+                    },
+                    "distance": 43723.484813
+                }
+            ]
+        },
+        "1": {
+            "execution_time": 0.021717071533203125,
+            "results": [
+                {
+                    "id": 9380740018,
+                    "tags": {
+                        "name": "Sottile's Pizza & Family Restaurant",
+                        "phone": "+61 3 9748 0600",
+                        "amenity": "restaurant",
+                        "cuisine": "pizza",
+                        "website": "https://www.sottilespizza.com.au/",
+                        "addr:unit": "1",
+                        "addr:street": "Branton Road",
+                        "opening_hours": "Mo-Su 17:00-22:00",
+                        "addr:housenumber": "19"
+                    },
+                    "distance": 3195.23213401
+                }
+            ]
+        },
+        "2": {
+            "execution_time": 0.015717029571533203,
+            "results": [
+                {
+                    "id": 11725809132,
+                    "tags": {
+                        "name": "Wireless Institute of Australia",
+                        "email": "nationaloffice@wia.org.au",
+                        "office": "association",
+                        "website": "https://www.wia.org.au/",
+                        "wikidata": "Q8026842",
+                        "addr:unit": "20",
+                        "wikipedia": "en:Wireless Institute of Australia",
+                        "addr:state": "VIC",
+                        "addr:street": "Havelock Road",
+                        "addr:suburb": "Bayswater",
+                        "addr:postcode": "3153",
+                        "opening_hours": "Mo-Fr 09:00-17:00",
+                        "addr:housenumber": "11-13"
+                    },
+                    "distance": 36380.32980695
+                }
+            ]
+        },
+        "3": {
+            "execution_time": 0.011365175247192383,
+            "results": [
+                {
+                    "id": 4636806498,
+                    "tags": {
+                        "name": "Relux",
+                        "amenity": "bar"
+                    },
+                    "distance": 699.60169244
+                }
+            ]
+        },
+        "4": {
+            "execution_time": 0.010373353958129883,
+            "results": [
+                {
+                    "id": 5263269597,
+                    "tags": {
+                        "name": "Bailey Timms",
+                        "office": "lawyer",
+                        "addr:street": "Murrumbeena Road",
+                        "addr:housenumber": "50"
+                    },
+                    "distance": 8768.60668743
+                }
+            ]
+        },
+        "5": {
+            "execution_time": 0.049114227294921875,
+            "results": [
+                {
+                    "id": 9704384483,
+                    "tags": {
+                        "bench": "yes",
+                        "amenity": "bench"
+                    },
+                    "distance": 1343.51771441
+                }
+            ]
+        },
+        "6": {
+            "execution_time": 0.012710809707641602,
+            "results": [
+                {
+                    "id": 1876465844,
+                    "tags": {
+                        "fax": "+61 3 9439 0211",
+                        "name": "Hindson Hislop & Co",
+                        "phone": "+61 3 9439 0111",
+                        "office": "accountant",
+                        "source": "survey",
+                        "description": "accountants & advisers"
+                    },
+                    "distance": 20667.59808513
+                }
+            ]
+        },
+        "7": {
+            "execution_time": 0.04040694236755371,
+            "results": [
+                {
+                    "id": 9593013010,
+                    "tags": {
+                        "amenity": "bench",
+                        "backrest": "yes"
+                    },
+                    "distance": 367.60992107
+                }
+            ]
+        },
+        "8": {
+            "execution_time": 0.012453317642211914,
+            "results": [
+                {
+                    "id": 4307006984,
+                    "tags": {
+                        "ref": "26",
+                        "name": "Stop 26: Clarke Street",
+                        "tram": "yes",
+                        "bench": "yes",
+                        "network": "PTV - Metropolitan Trams",
+                        "shelter": "yes",
+                        "operator": "Yarra Trams",
+                        "route_ref": "11",
+                        "wheelchair": "no",
+                        "removed:public_transport": "platform"
+                    },
+                    "distance": 52931.65825238
+                }
+            ]
+        },
+        "9": {
+            "execution_time": 0.010858535766601562,
+            "results": [
+                {
+                    "id": 2927250421,
+                    "tags": {
+                        "name": "Elite Dance Studio",
+                        "source": "vicmap",
+                        "leisure": "dance",
+                        "addr:unit": "7",
+                        "addr:state": "VIC",
+                        "addr:street": "Susan Street",
+                        "addr:suburb": "Eltham",
+                        "addr:country": "AU",
+                        "addr:postcode": "3095",
+                        "dance:teaching": "yes",
+                        "addr:housenumber": "39"
+                    },
+                    "distance": 70866.99440552
+                }
+            ]
+        },
+        "10": {
+            "execution_time": 0.018843889236450195,
+            "results": [
+                {
+                    "id": 12527608424,
+                    "tags": {
+                        "amenity": "parking_space",
+                        "parking_space": "disabled"
+                    },
+                    "distance": 1962.64627702
+                }
+            ]
+        },
+        "11": {
+            "execution_time": 0.042041778564453125,
+            "results": [
+                {
+                    "id": 2707983898,
+                    "tags": {
+                        "amenity": "bench"
+                    },
+                    "distance": 665.07284116
+                }
+            ]
+        },
+        "12": {
+            "execution_time": 0.01049947738647461,
+            "results": [
+                {
+                    "id": 4408453147,
+                    "tags": {
+                        "name": "Stuchbury Farm Hut",
+                        "historic": "hut"
+                    },
+                    "distance": 27670.7226186
+                }
+            ]
+        },
+        "13": {
+            "execution_time": 0.009853839874267578,
+            "results": [
+                {
+                    "id": 11593629810,
+                    "tags": {
+                        "name": "Symmetree Osteopathy",
+                        "healthcare": "alternative",
+                        "healthcare:speciality": "osteopathy"
+                    },
+                    "distance": 10592.82682068
+                }
+            ]
+        },
+        "14": {
+            "execution_time": 0.01597118377685547,
+            "results": [
+                {
+                    "id": 137010639,
+                    "tags": {
+                        "fee": "no",
+                        "amenity": "toilets",
+                        "check_date": "2023-08-12",
+                        "wheelchair": "yes"
+                    },
+                    "distance": 870.91380806
+                }
+            ]
+        },
+        "15": {
+            "execution_time": 0.019244909286499023,
+            "results": [
+                {
+                    "id": 10951099690,
+                    "tags": {
+                        "amenity": "waste_basket"
+                    },
+                    "distance": 790.22615943
+                }
+            ]
+        },
+        "16": {
+            "execution_time": 0.010094404220581055,
+            "results": [
+                {
+                    "id": 5581550858,
+                    "tags": {
+                        "name": "Dandenong Superclinic",
+                        "healthcare": "yes",
+                        "addr:street": "Stud Road ",
+                        "addr:housenumber": "56 - 58"
+                    },
+                    "distance": 53045.15144737
+                }
+            ]
+        },
+        "17": {
+            "execution_time": 0.009601593017578125,
+            "results": [
+                {
+                    "id": 1952164958,
+                    "tags": {
+                        "name": "Bittern Sunday market",
+                        "amenity": "marketplace",
+                        "opening_hours": "Su 08:00-12:00"
+                    },
+                    "distance": 17250.74852936
+                }
+            ]
+        },
+        "18": {
+            "execution_time": 0.01905369758605957,
+            "results": [
+                {
+                    "id": 11922514713,
+                    "tags": {
+                        "waste": "trash",
+                        "amenity": "waste_basket"
+                    },
+                    "distance": 115.10783358
+                }
+            ]
+        },
+        "19": {
+            "execution_time": 0.011825799942016602,
+            "results": [
+                {
+                    "id": 5600088472,
+                    "tags": {
+                        "amenity": "shelter"
+                    },
+                    "distance": 2905.68526325
+                }
+            ]
+        },
+        "20": {
+            "execution_time": 0.01654839515686035,
+            "results": [
+                {
+                    "id": 609296148,
+                    "tags": {
+                        "name": "Guzel Istanbul",
+                        "source": "survey; nearmap",
+                        "amenity": "restaurant",
+                        "cuisine": "turkish",
+                        "website": "https://istanbulrestaurant.com.au/"
+                    },
+                    "distance": 1056.04155786
+                }
+            ]
+        },
+        "21": {
+            "execution_time": 0.01003122329711914,
+            "results": [
+                {
+                    "id": 10223024959,
+                    "tags": {
+                        "name": "Livingston",
+                        "tourism": "information",
+                        "board_type": "welcome_sign",
+                        "information": "board"
+                    },
+                    "distance": 52962.94031315
+                }
+            ]
+        },
+        "22": {
+            "execution_time": 0.013789176940917969,
+            "results": [
+                {
+                    "id": 10690119070,
+                    "tags": {
+                        "name": "Lito Manandic Hair & Make-Up Artist",
+                        "shop": "hairdresser"
+                    },
+                    "distance": 650.21217195
+                }
+            ]
+        },
+        "23": {
+            "execution_time": 0.01201009750366211,
+            "results": [
+                {
+                    "id": 10254966771,
+                    "tags": {
+                        "name": "Harris Scarfe",
+                        "shop": "department_store",
+                        "brand": "Harris Scarfe",
+                        "branch": "Chirnside Park",
+                        "brand:wikidata": "Q5665029"
+                    },
+                    "distance": 1423.76212407
+                }
+            ]
+        },
+        "24": {
+            "execution_time": 0.012726783752441406,
+            "results": [
+                {
+                    "id": 4142403281,
+                    "tags": {
+                        "bin": "no",
+                        "bus": "yes",
+                        "lit": "yes",
+                        "ref": "ID.18848",
+                        "name": "Moonee Ponds Interchange (Bay F)",
+                        "bench": "yes",
+                        "highway": "bus_stop",
+                        "network": "PTV - Metropolitan Buses",
+                        "shelter": "yes",
+                        "old_name": "Moonee Ponds Junction (Bay 6)",
+                        "operator": "Kastoria Bus Lines",
+                        "route_ref": "476",
+                        "tactile_paving": "no",
+                        "network:wikidata": "Q7257648",
+                        "public_transport": "platform",
+                        "network:wikipedia": "en:Public Transport Victoria"
+                    },
+                    "distance": 13312.06528405
+                }
+            ]
+        },
+        "25": {
+            "execution_time": 0.009850025177001953,
+            "results": [
+                {
+                    "id": 11804189620,
+                    "tags": {
+                        "door": "automatic",
+                        "name": "Research Entrance",
+                        "level": "0",
+                        "access": "permit",
+                        "entrance": "main",
+                        "check_date": "2024-04-09",
+                        "wheelchair": "limited",
+                        "description": "Entrance for researchers only"
+                    },
+                    "distance": 2620.67589454
+                }
+            ]
+        },
+        "26": {
+            "execution_time": 0.009767293930053711,
+            "results": [
+                {
+                    "id": 6052186451,
+                    "tags": {
+                        "name": "2/450 Kx Pilates",
+                        "entrance": "yes"
+                    },
+                    "distance": 19703.12743616
+                }
+            ]
+        },
+        "27": {
+            "execution_time": 0.012652158737182617,
+            "results": [
+                {
+                    "id": 6172428644,
+                    "tags": {
+                        "amenity": "shelter"
+                    },
+                    "distance": 3005.38006462
+                }
+            ]
+        },
+        "28": {
+            "execution_time": 0.018153905868530273,
+            "results": [
+                {
+                    "id": 9115649065,
+                    "tags": {
+                        "amenity": "parking_space",
+                        "capacity": "1",
+                        "parking_space": "disabled"
+                    },
+                    "distance": 5602.91259629
+                }
+            ]
+        },
+        "29": {
+            "execution_time": 0.04010605812072754,
+            "results": [
+                {
+                    "id": 12470784282,
+                    "tags": {
+                        "amenity": "bench"
+                    },
+                    "distance": 231.69548104
+                }
+            ]
+        },
+        "30": {
+            "execution_time": 0.012457609176635742,
+            "results": [
+                {
+                    "id": 8398729016,
+                    "tags": {
+                        "bus": "yes",
+                        "name": "Elmo Road",
+                        "network": "PTV \u2013 Metropolitan Buses",
+                        "ref:ptv": "10997",
+                        "website": "https://ptv.vic.gov.au/stop/10755",
+                        "operator": "Transdev;Dysons",
+                        "public_transport": "stop_position"
+                    },
+                    "distance": 27529.95024869
+                }
+            ]
+        },
+        "31": {
+            "execution_time": 0.019585609436035156,
+            "results": [
+                {
+                    "id": 11108989107,
+                    "tags": {
+                        "amenity": "waste_basket"
+                    },
+                    "distance": 2093.07587433
+                }
+            ]
+        },
+        "32": {
+            "execution_time": 0.011524438858032227,
+            "results": [
+                {
+                    "id": 1252180118,
+                    "tags": {
+                        "amenity": "parking_entrance"
+                    },
+                    "distance": 688.87519263
+                }
+            ]
+        },
+        "33": {
+            "execution_time": 0.011039018630981445,
+            "results": [
+                {
+                    "id": 10181829866,
+                    "tags": {
+                        "name": "Mosstek Computers",
+                        "shop": "computer"
+                    },
+                    "distance": 17008.38317261
+                }
+            ]
+        },
+        "34": {
+            "execution_time": 0.011863470077514648,
+            "results": [
+                {
+                    "id": 9411843594,
+                    "tags": {
+                        "bus": "yes",
+                        "name": "Clegg Ave/Mt. Dandenong Rd",
+                        "highway": "bus_stop",
+                        "network": "PTV - Metropolitan Buses",
+                        "shelter": "no",
+                        "network:wikidata": "Q7257648",
+                        "public_transport": "platform",
+                        "network:wikipedia": "en:Public Transport Victoria"
+                    },
+                    "distance": 11263.52269448
+                }
+            ]
+        },
+        "35": {
+            "execution_time": 0.009855985641479492,
+            "results": [
+                {
+                    "id": 312719417,
+                    "tags": {
+                        "bus": "yes",
+                        "name": "Melbourne University (Bay A)",
+                        "network": "PTV - Metropolitan Buses",
+                        "operator": "Dysons",
+                        "public_transport": "stop_position"
+                    },
+                    "distance": 47746.05240521
+                }
+            ]
+        },
+        "36": {
+            "execution_time": 0.04766440391540527,
+            "results": [
+                {
+                    "id": 9843498784,
+                    "tags": {
+                        "seats": "2",
+                        "amenity": "bench"
+                    },
+                    "distance": 809.47357503
+                }
+            ]
+        },
+        "37": {
+            "execution_time": 0.016309261322021484,
+            "results": [
+                {
+                    "id": 11929987980,
+                    "tags": {
+                        "amenity": "bicycle_parking"
+                    },
+                    "distance": 1971.21478965
+                }
+            ]
+        },
+        "38": {
+            "execution_time": 0.01911163330078125,
+            "results": [
+                {
+                    "id": 9952036151,
+                    "tags": {
+                        "amenity": "waste_basket"
+                    },
+                    "distance": 893.20241239
+                }
+            ]
+        },
+        "39": {
+            "execution_time": 0.01066899299621582,
+            "results": [
+                {
+                    "id": 9920788464,
+                    "tags": {
+                        "bus": "yes",
+                        "name": "Shimar St/St Germain Bvd",
+                        "highway": "bus_stop",
+                        "public_transport": "platform"
+                    },
+                    "distance": 59173.56797942
+                }
+            ]
+        },
+        "40": {
+            "execution_time": 0.011682271957397461,
+            "results": [
+                {
+                    "id": 5690492568,
+                    "tags": {
+                        "shop": "newsagent"
+                    },
+                    "distance": 3303.5967618
+                }
+            ]
+        },
+        "41": {
+            "execution_time": 0.015751361846923828,
+            "results": [
+                {
+                    "id": 1240915301,
+                    "tags": {
+                        "amenity": "restaurant",
+                        "cuisine": "italian",
+                        "addr:street": "Nepean Highway",
+                        "addr:country": "AU",
+                        "addr:housenumber": "343"
+                    },
+                    "distance": 865.23229479
+                }
+            ]
+        },
+        "42": {
+            "execution_time": 0.020603656768798828,
+            "results": [
+                {
+                    "id": 8011859092,
+                    "tags": {
+                        "amenity": "waste_basket"
+                    },
+                    "distance": 418.22423555
+                }
+            ]
+        },
+        "43": {
+            "execution_time": 0.011323928833007812,
+            "results": [
+                {
+                    "id": 12381377221,
+                    "tags": {
+                        "amenity": "recycling",
+                        "recycling_type": "container",
+                        "recycling:clothes": "yes"
+                    },
+                    "distance": 1630.75934429
+                }
+            ]
+        },
+        "44": {
+            "execution_time": 0.010370254516601562,
+            "results": [
+                {
+                    "id": 2365235859,
+                    "tags": {
+                        "name": "HeathCorp",
+                        "phone": "+61 3 9576 9422",
+                        "office": "estate_agent",
+                        "addr:street": "Koornang Road",
+                        "addr:housenumber": "323"
+                    },
+                    "distance": 24631.62398016
+                }
+            ]
+        },
+        "45": {
+            "execution_time": 0.015724897384643555,
+            "results": [
+                {
+                    "id": 5593448986,
+                    "tags": {
+                        "name": "Three Red Stripes",
+                        "amenity": "restaurant",
+                        "cuisine": "vietnamese",
+                        "takeaway": "yes"
+                    },
+                    "distance": 953.96702748
+                }
+            ]
+        },
+        "46": {
+            "execution_time": 0.012685298919677734,
+            "results": [
+                {
+                    "id": 5989328575,
+                    "tags": {
+                        "name": "TML Real Estate",
+                        "office": "estate_agent"
+                    },
+                    "distance": 7508.21757992
+                }
+            ]
+        },
+        "47": {
+            "execution_time": 0.015085697174072266,
+            "results": [
+                {
+                    "id": 12152753078,
+                    "tags": {
+                        "name": "Hush Clinical",
+                        "shop": "beauty",
+                        "beauty": "skin_care"
+                    },
+                    "distance": 422.3525543
+                }
+            ]
+        },
+        "48": {
+            "execution_time": 0.040151119232177734,
+            "results": [
+                {
+                    "id": 1074602189,
+                    "tags": {
+                        "amenity": "bench",
+                        "backrest": "no",
+                        "material": "wood"
+                    },
+                    "distance": 1714.04303318
+                }
+            ]
+        },
+        "49": {
+            "execution_time": 0.010114431381225586,
+            "results": [
+                {
+                    "id": 11436851999,
+                    "tags": {
+                        "bus": "yes",
+                        "ref": "44334",
+                        "name": "McGrath Road/Black Forest Road",
+                        "highway": "bus_stop",
+                        "public_transport": "platform"
+                    },
+                    "distance": 49334.33727394
+                }
+            ]
+        }
+    }
+}

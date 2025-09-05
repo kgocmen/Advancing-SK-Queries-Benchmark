@@ -1,0 +1,495 @@
+{
+    "insertion_time": 6.417922496795654,
+    "index_creation": {
+        "func": [
+            "CREATE INDEX IF NOT EXISTS idx_pois_geom ON PoIs USING GIST (geom);",
+            "CREATE INDEX IF NOT EXISTS idx_pois_tags ON PoIs USING GIN (tags);"
+        ],
+        "time": 0.4544694423675537
+    },
+    "query_results": {
+        "0": {
+            "execution_time": 0.019081592559814453,
+            "results": [
+                {
+                    "id": 585128132,
+                    "tags": {
+                        "name": "BP",
+                        "brand": "BP",
+                        "source": "bp.com.au",
+                        "amenity": "fuel",
+                        "website": "https://map.bp.com/en-AU/AU/gas-station/south-melbourne/bp-clarendon-vic/3759",
+                        "brand:wikidata": "Q152057",
+                        "brand:wikipedia": "en:BP"
+                    },
+                    "distance": 1074.2347278
+                }
+            ]
+        },
+        "1": {
+            "execution_time": 0.011164665222167969,
+            "results": [
+                {
+                    "id": 772401259,
+                    "tags": {
+                        "name": "J.G Dumpling Restaurant",
+                        "amenity": "restaurant"
+                    },
+                    "distance": 1257.01212468
+                },
+                {
+                    "id": 3898414843,
+                    "tags": {
+                        "name": "O Town",
+                        "amenity": "restaurant"
+                    },
+                    "distance": 1368.61920477
+                }
+            ]
+        },
+        "2": {
+            "execution_time": 0.005823373794555664,
+            "results": []
+        },
+        "3": {
+            "execution_time": 0.005597591400146484,
+            "results": []
+        },
+        "4": {
+            "execution_time": 0.012028932571411133,
+            "results": [
+                {
+                    "id": 2676351303,
+                    "tags": {
+                        "amenity": "bench"
+                    },
+                    "distance": 599.80526425
+                },
+                {
+                    "id": 2676312410,
+                    "tags": {
+                        "amenity": "bench"
+                    },
+                    "distance": 624.04634344
+                },
+                {
+                    "id": 2655250143,
+                    "tags": {
+                        "amenity": "bench"
+                    },
+                    "distance": 1149.64392429
+                },
+                {
+                    "id": 4696822420,
+                    "tags": {
+                        "amenity": "bench",
+                        "backrest": "yes",
+                        "check_date": "2021-04-01"
+                    },
+                    "distance": 1709.14495458
+                }
+            ]
+        },
+        "5": {
+            "execution_time": 0.006856679916381836,
+            "results": []
+        },
+        "6": {
+            "execution_time": 0.0057430267333984375,
+            "results": []
+        },
+        "7": {
+            "execution_time": 0.006930112838745117,
+            "results": []
+        },
+        "8": {
+            "execution_time": 0.005525350570678711,
+            "results": []
+        },
+        "9": {
+            "execution_time": 0.0057125091552734375,
+            "results": []
+        },
+        "10": {
+            "execution_time": 0.007802009582519531,
+            "results": []
+        },
+        "11": {
+            "execution_time": 0.010958671569824219,
+            "results": [
+                {
+                    "id": 10168174240,
+                    "tags": {
+                        "name": "St Ivy Cafe",
+                        "amenity": "cafe"
+                    },
+                    "distance": 1511.42451196
+                }
+            ]
+        },
+        "12": {
+            "execution_time": 0.005887508392333984,
+            "results": []
+        },
+        "13": {
+            "execution_time": 0.008476018905639648,
+            "results": []
+        },
+        "14": {
+            "execution_time": 0.011035919189453125,
+            "results": [
+                {
+                    "id": 10078546553,
+                    "tags": {
+                        "name": "Capital smart repairs",
+                        "shop": "car_repair",
+                        "addr:street": "Carey Street",
+                        "addr:housenumber": "4 - 8"
+                    },
+                    "distance": 811.99264613
+                }
+            ]
+        },
+        "15": {
+            "execution_time": 0.0074863433837890625,
+            "results": []
+        },
+        "16": {
+            "execution_time": 0.006002187728881836,
+            "results": []
+        },
+        "17": {
+            "execution_time": 0.005420684814453125,
+            "results": []
+        },
+        "18": {
+            "execution_time": 0.005660295486450195,
+            "results": []
+        },
+        "19": {
+            "execution_time": 0.005864381790161133,
+            "results": []
+        },
+        "20": {
+            "execution_time": 0.011773824691772461,
+            "results": [
+                {
+                    "id": 5915232922,
+                    "tags": {
+                        "amenity": "waste_basket"
+                    },
+                    "distance": 829.08817981
+                },
+                {
+                    "id": 8043416158,
+                    "tags": {
+                        "amenity": "waste_basket"
+                    },
+                    "distance": 926.09503377
+                },
+                {
+                    "id": 8043416139,
+                    "tags": {
+                        "amenity": "waste_basket"
+                    },
+                    "distance": 965.44814446
+                }
+            ]
+        },
+        "21": {
+            "execution_time": 0.006166934967041016,
+            "results": []
+        },
+        "22": {
+            "execution_time": 0.010680198669433594,
+            "results": [
+                {
+                    "id": 1012065077,
+                    "tags": {
+                        "name": "Subway",
+                        "brand": "Subway",
+                        "amenity": "fast_food",
+                        "cuisine": "sandwich",
+                        "takeaway": "yes",
+                        "addr:street": "Swanston Street",
+                        "addr:suburb": "Carlton",
+                        "addr:country": "AU",
+                        "addr:postcode": "3053",
+                        "brand:wikidata": "Q244457",
+                        "brand:wikipedia": "en:Subway (restaurant)",
+                        "addr:housenumber": "672"
+                    },
+                    "distance": 227.4583664
+                },
+                {
+                    "id": 11949330870,
+                    "tags": {
+                        "name": "Adonai",
+                        "amenity": "fast_food",
+                        "cuisine": "african",
+                        "website": "https://www.adonaifoods.com.au"
+                    },
+                    "distance": 776.67022549
+                },
+                {
+                    "id": 5982185661,
+                    "tags": {
+                        "name": "Sushi Hub",
+                        "amenity": "fast_food",
+                        "website": "https://www.sushihub.com.au/find-a-hub/victoria/city-475-elizabeth-street/",
+                        "wheelchair": "yes",
+                        "addr:street": "Elizabeth Street",
+                        "addr:postcode": "3000",
+                        "addr:housenumber": "475"
+                    },
+                    "distance": 961.12964011
+                },
+                {
+                    "id": 11411830350,
+                    "tags": {
+                        "name": "Sushi Hub",
+                        "level": "0",
+                        "amenity": "fast_food",
+                        "cuisine": "japanese;sushi",
+                        "wheelchair": "yes"
+                    },
+                    "distance": 1028.99623143
+                },
+                {
+                    "id": 1293175217,
+                    "tags": {
+                        "name": "McDonald's",
+                        "brand": "McDonald's",
+                        "level": "-1",
+                        "amenity": "fast_food",
+                        "cuisine": "burger",
+                        "website": "https://mcdonalds.com.au",
+                        "takeaway": "yes",
+                        "wheelchair": "yes",
+                        "brand:wikidata": "Q38076",
+                        "brand:wikipedia": "en:McDonald's",
+                        "air_conditioning": "yes"
+                    },
+                    "distance": 1068.05881798
+                },
+                {
+                    "id": 12437695845,
+                    "tags": {
+                        "name": "Pazzi",
+                        "level": "2",
+                        "amenity": "fast_food",
+                        "cuisine": "italian;pasta;pizza",
+                        "takeaway": "yes",
+                        "wheelchair": "yes",
+                        "indoor_seating": "yes"
+                    },
+                    "distance": 1099.20556515
+                },
+                {
+                    "id": 11261660457,
+                    "tags": {
+                        "ref": "RK29",
+                        "name": "El Rincon",
+                        "level": "0",
+                        "amenity": "fast_food",
+                        "cuisine": "spanish",
+                        "takeaway": "only",
+                        "wheelchair": "limited"
+                    },
+                    "distance": 1138.68377325
+                },
+                {
+                    "id": 11466832520,
+                    "tags": {
+                        "name": "Sushi Land",
+                        "level": "0",
+                        "amenity": "fast_food",
+                        "cuisine": "sushi",
+                        "takeaway": "yes",
+                        "wheelchair": "yes"
+                    },
+                    "distance": 1623.77680555
+                },
+                {
+                    "id": 6800693288,
+                    "tags": {
+                        "name": "Healthy Sushi",
+                        "amenity": "fast_food",
+                        "cuisine": "japanese;sushi"
+                    },
+                    "distance": 1637.59165978
+                }
+            ]
+        },
+        "23": {
+            "execution_time": 0.010167598724365234,
+            "results": [
+                {
+                    "id": 9360787406,
+                    "tags": {
+                        "amenity": "bench"
+                    },
+                    "distance": 751.67164384
+                },
+                {
+                    "id": 2356827670,
+                    "tags": {
+                        "amenity": "bench"
+                    },
+                    "distance": 970.82503393
+                },
+                {
+                    "id": 2356835495,
+                    "tags": {
+                        "amenity": "bench"
+                    },
+                    "distance": 1419.67573106
+                }
+            ]
+        },
+        "24": {
+            "execution_time": 0.007493734359741211,
+            "results": []
+        },
+        "25": {
+            "execution_time": 0.013400554656982422,
+            "results": [
+                {
+                    "id": 9242991246,
+                    "tags": {
+                        "amenity": "bench"
+                    },
+                    "distance": 1220.16675901
+                }
+            ]
+        },
+        "26": {
+            "execution_time": 0.0071735382080078125,
+            "results": []
+        },
+        "27": {
+            "execution_time": 0.00787496566772461,
+            "results": []
+        },
+        "28": {
+            "execution_time": 0.005829334259033203,
+            "results": []
+        },
+        "29": {
+            "execution_time": 0.006283998489379883,
+            "results": []
+        },
+        "30": {
+            "execution_time": 0.008838653564453125,
+            "results": []
+        },
+        "31": {
+            "execution_time": 0.007229328155517578,
+            "results": []
+        },
+        "32": {
+            "execution_time": 0.011392354965209961,
+            "results": [
+                {
+                    "id": 12399063001,
+                    "tags": {
+                        "amenity": "toilets"
+                    },
+                    "distance": 1037.78528702
+                }
+            ]
+        },
+        "33": {
+            "execution_time": 0.0055387020111083984,
+            "results": []
+        },
+        "34": {
+            "execution_time": 0.005319118499755859,
+            "results": []
+        },
+        "35": {
+            "execution_time": 0.006044864654541016,
+            "results": []
+        },
+        "36": {
+            "execution_time": 0.01196908950805664,
+            "results": [
+                {
+                    "id": 612940805,
+                    "tags": {
+                        "amenity": "toilets"
+                    },
+                    "distance": 1170.5285774
+                }
+            ]
+        },
+        "37": {
+            "execution_time": 0.005783796310424805,
+            "results": []
+        },
+        "38": {
+            "execution_time": 0.0055561065673828125,
+            "results": []
+        },
+        "39": {
+            "execution_time": 0.009944915771484375,
+            "results": [
+                {
+                    "id": 10133912158,
+                    "tags": {
+                        "amenity": "bicycle_parking"
+                    },
+                    "distance": 1227.81401307
+                }
+            ]
+        },
+        "40": {
+            "execution_time": 0.007544755935668945,
+            "results": []
+        },
+        "41": {
+            "execution_time": 0.0071258544921875,
+            "results": []
+        },
+        "42": {
+            "execution_time": 0.006196022033691406,
+            "results": []
+        },
+        "43": {
+            "execution_time": 0.006226778030395508,
+            "results": []
+        },
+        "44": {
+            "execution_time": 0.0058286190032958984,
+            "results": []
+        },
+        "45": {
+            "execution_time": 0.005733966827392578,
+            "results": []
+        },
+        "46": {
+            "execution_time": 0.007591724395751953,
+            "results": []
+        },
+        "47": {
+            "execution_time": 0.00590968132019043,
+            "results": []
+        },
+        "48": {
+            "execution_time": 0.008566617965698242,
+            "results": []
+        },
+        "49": {
+            "execution_time": 0.021384239196777344,
+            "results": [
+                {
+                    "id": 3840017767,
+                    "tags": {
+                        "amenity": "restaurant"
+                    },
+                    "distance": 1671.90194456
+                }
+            ]
+        }
+    }
+}

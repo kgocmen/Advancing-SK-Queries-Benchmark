@@ -1,0 +1,333 @@
+{
+    "insertion_time": 5.951978921890259,
+    "index_creation": {
+        "func": [
+            "CREATE INDEX IF NOT EXISTS idx_pois_geom ON PoIs USING GIST (geom);",
+            "CREATE INDEX IF NOT EXISTS idx_pois_tags ON PoIs USING GIN (tags);"
+        ],
+        "time": 0.42896270751953125
+    },
+    "query_results": {
+        "0": {
+            "execution_time": 0.008594512939453125,
+            "results": []
+        },
+        "1": {
+            "execution_time": 0.006008148193359375,
+            "results": []
+        },
+        "2": {
+            "execution_time": 0.011364459991455078,
+            "results": [
+                {
+                    "id": 1306530082,
+                    "tags": {
+                        "colour": "red",
+                        "amenity": "bench",
+                        "backrest": "yes",
+                        "material": "wood",
+                        "check_date": "2023-09-01"
+                    },
+                    "distance": 895.53023426
+                },
+                {
+                    "id": 10541727119,
+                    "tags": {
+                        "amenity": "bench",
+                        "backrest": "no"
+                    },
+                    "distance": 1314.75263326
+                },
+                {
+                    "id": 6017238586,
+                    "tags": {
+                        "amenity": "bench"
+                    },
+                    "distance": 1651.42789198
+                }
+            ]
+        },
+        "3": {
+            "execution_time": 0.006583690643310547,
+            "results": []
+        },
+        "4": {
+            "execution_time": 0.00568842887878418,
+            "results": []
+        },
+        "5": {
+            "execution_time": 0.005237102508544922,
+            "results": []
+        },
+        "6": {
+            "execution_time": 0.005400657653808594,
+            "results": []
+        },
+        "7": {
+            "execution_time": 0.008888721466064453,
+            "results": []
+        },
+        "8": {
+            "execution_time": 0.0055713653564453125,
+            "results": []
+        },
+        "9": {
+            "execution_time": 0.0052220821380615234,
+            "results": []
+        },
+        "10": {
+            "execution_time": 0.005203962326049805,
+            "results": []
+        },
+        "11": {
+            "execution_time": 0.0060672760009765625,
+            "results": []
+        },
+        "12": {
+            "execution_time": 0.005482912063598633,
+            "results": []
+        },
+        "13": {
+            "execution_time": 0.005273342132568359,
+            "results": []
+        },
+        "14": {
+            "execution_time": 0.005955219268798828,
+            "results": []
+        },
+        "15": {
+            "execution_time": 0.015715599060058594,
+            "results": [
+                {
+                    "id": 9724971908,
+                    "tags": {
+                        "amenity": "bench"
+                    },
+                    "distance": 908.08943484
+                },
+                {
+                    "id": 9063440990,
+                    "tags": {
+                        "amenity": "bench"
+                    },
+                    "distance": 1376.90967871
+                }
+            ]
+        },
+        "16": {
+            "execution_time": 0.009322404861450195,
+            "results": []
+        },
+        "17": {
+            "execution_time": 0.008795499801635742,
+            "results": []
+        },
+        "18": {
+            "execution_time": 0.009228229522705078,
+            "results": []
+        },
+        "19": {
+            "execution_time": 0.012806892395019531,
+            "results": []
+        },
+        "20": {
+            "execution_time": 0.005360841751098633,
+            "results": []
+        },
+        "21": {
+            "execution_time": 0.005308389663696289,
+            "results": []
+        },
+        "22": {
+            "execution_time": 0.009903192520141602,
+            "results": []
+        },
+        "23": {
+            "execution_time": 0.0064733028411865234,
+            "results": []
+        },
+        "24": {
+            "execution_time": 0.005698680877685547,
+            "results": []
+        },
+        "25": {
+            "execution_time": 0.008844137191772461,
+            "results": []
+        },
+        "26": {
+            "execution_time": 0.005946636199951172,
+            "results": []
+        },
+        "27": {
+            "execution_time": 0.010366439819335938,
+            "results": [
+                {
+                    "id": 9085598413,
+                    "tags": {
+                        "name": "Mitcham Social",
+                        "phone": "+61 3 9872 5907",
+                        "amenity": "restaurant",
+                        "website": "https://www.mitchamsocial.com.au/",
+                        "addr:state": "VIC",
+                        "addr:street": "Thornton Crescent",
+                        "addr:suburb": "Mitcham",
+                        "addr:postcode": "3132",
+                        "opening_hours": "Th-Sa 12:00-23:00; Su 12:00-22:00",
+                        "outdoor_seating": "yes",
+                        "addr:housenumber": "1"
+                    },
+                    "distance": 1103.89860331
+                }
+            ]
+        },
+        "28": {
+            "execution_time": 0.00563812255859375,
+            "results": []
+        },
+        "29": {
+            "execution_time": 0.008569717407226562,
+            "results": []
+        },
+        "30": {
+            "execution_time": 0.008280038833618164,
+            "results": []
+        },
+        "31": {
+            "execution_time": 0.013469696044921875,
+            "results": [
+                {
+                    "id": 6359672659,
+                    "tags": {
+                        "name": "Heatherhill Pizza Factory",
+                        "amenity": "fast_food",
+                        "cuisine": "pizza",
+                        "opening_hours": "Tu-Th,Su 17:00-20:30; Fr,Sa 17:00-21:00"
+                    },
+                    "distance": 618.59031533
+                },
+                {
+                    "id": 6359672940,
+                    "tags": {
+                        "name": "Sawadekaa",
+                        "amenity": "fast_food",
+                        "cuisine": "thai",
+                        "opening_hours": "We-Su 16:30-21:00"
+                    },
+                    "distance": 625.49215834
+                },
+                {
+                    "id": 8320158359,
+                    "tags": {
+                        "name": "Monster Kebab",
+                        "phone": "+61 422 684 051",
+                        "amenity": "fast_food",
+                        "cuisine": "kebab",
+                        "website": "https://monsterkebab.com/",
+                        "addr:state": "VIC",
+                        "addr:street": "Frankston-Flinders Road",
+                        "addr:suburb": "Frankston",
+                        "addr:postcode": "3199",
+                        "addr:housenumber": "38"
+                    },
+                    "distance": 1314.5153543
+                }
+            ]
+        },
+        "32": {
+            "execution_time": 0.010317087173461914,
+            "results": [
+                {
+                    "id": 8991632829,
+                    "tags": {
+                        "seats": "2",
+                        "amenity": "bench",
+                        "backrest": "yes",
+                        "material": "wood"
+                    },
+                    "distance": 565.29444728
+                }
+            ]
+        },
+        "33": {
+            "execution_time": 0.007448673248291016,
+            "results": []
+        },
+        "34": {
+            "execution_time": 0.010174751281738281,
+            "results": [
+                {
+                    "id": 4256809601,
+                    "tags": {
+                        "name": "Sandringham Medical Centre",
+                        "amenity": "doctors",
+                        "addr:street": "Bay Road",
+                        "addr:suburb": "Sandringham",
+                        "addr:postcode": "3191",
+                        "addr:housenumber": "39"
+                    },
+                    "distance": 524.58626237
+                }
+            ]
+        },
+        "35": {
+            "execution_time": 0.00557708740234375,
+            "results": []
+        },
+        "36": {
+            "execution_time": 0.007512331008911133,
+            "results": []
+        },
+        "37": {
+            "execution_time": 0.011073827743530273,
+            "results": []
+        },
+        "38": {
+            "execution_time": 0.008104085922241211,
+            "results": []
+        },
+        "39": {
+            "execution_time": 0.0067195892333984375,
+            "results": []
+        },
+        "40": {
+            "execution_time": 0.007652759552001953,
+            "results": []
+        },
+        "41": {
+            "execution_time": 0.008730411529541016,
+            "results": []
+        },
+        "42": {
+            "execution_time": 0.010305643081665039,
+            "results": []
+        },
+        "43": {
+            "execution_time": 0.010472774505615234,
+            "results": []
+        },
+        "44": {
+            "execution_time": 0.010130643844604492,
+            "results": []
+        },
+        "45": {
+            "execution_time": 0.008955717086791992,
+            "results": []
+        },
+        "46": {
+            "execution_time": 0.009097814559936523,
+            "results": []
+        },
+        "47": {
+            "execution_time": 0.007622957229614258,
+            "results": []
+        },
+        "48": {
+            "execution_time": 0.009538650512695312,
+            "results": []
+        },
+        "49": {
+            "execution_time": 0.009035587310791016,
+            "results": []
+        }
+    }
+}

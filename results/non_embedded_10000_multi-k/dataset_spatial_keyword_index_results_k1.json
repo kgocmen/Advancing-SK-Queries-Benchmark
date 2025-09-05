@@ -1,0 +1,470 @@
+{
+    "insertion_time": 5.843271970748901,
+    "index_creation": {
+        "func": [
+            "CREATE INDEX IF NOT EXISTS idx_pois_geom ON PoIs USING GIST (geom);",
+            "CREATE INDEX IF NOT EXISTS idx_pois_tags ON PoIs USING GIN (tags);"
+        ],
+        "time": 0.42582249641418457
+    },
+    "query_results": {
+        "0": {
+            "execution_time": 0.017029285430908203,
+            "results": [
+                {
+                    "id": 9411746364,
+                    "tags": {
+                        "amenity": "bench",
+                        "backrest": "yes"
+                    },
+                    "distance": 975.51768656
+                }
+            ]
+        },
+        "1": {
+            "execution_time": 0.006761312484741211,
+            "results": []
+        },
+        "2": {
+            "execution_time": 0.0069277286529541016,
+            "results": []
+        },
+        "3": {
+            "execution_time": 0.015233278274536133,
+            "results": [
+                {
+                    "id": 12435710854,
+                    "tags": {
+                        "amenity": "bench"
+                    },
+                    "distance": 1094.09036156
+                }
+            ]
+        },
+        "4": {
+            "execution_time": 0.01371455192565918,
+            "results": [
+                {
+                    "id": 598434277,
+                    "tags": {
+                        "name": "Shell",
+                        "brand": "Shell",
+                        "amenity": "fuel",
+                        "website": "https://www.shell.com.au",
+                        "addr:street": "Barkers Road",
+                        "brand:wikidata": "Q110716465",
+                        "compressed_air": "yes",
+                        "brand:wikipedia": "en:Royal Dutch Shell",
+                        "addr:housenumber": "82"
+                    },
+                    "distance": 7059.55900218
+                }
+            ]
+        },
+        "5": {
+            "execution_time": 0.010979175567626953,
+            "results": [
+                {
+                    "id": 10815888356,
+                    "tags": {
+                        "name": "Strudels Cafe",
+                        "phone": "+61 3 9379 3452",
+                        "amenity": "cafe",
+                        "website": "https://strudelscafe.com.au/",
+                        "addr:street": "Keilor Road",
+                        "opening_hours": "Mo-Sa 06:00-15:00; Su closed",
+                        "addr:housenumber": "427"
+                    },
+                    "distance": 4602.2227832
+                }
+            ]
+        },
+        "6": {
+            "execution_time": 0.011744260787963867,
+            "results": [
+                {
+                    "id": 9256129185,
+                    "tags": {
+                        "amenity": "bench"
+                    },
+                    "distance": 1728.51372271
+                }
+            ]
+        },
+        "7": {
+            "execution_time": 0.011315345764160156,
+            "results": [
+                {
+                    "id": 1363204585,
+                    "tags": {
+                        "amenity": "drinking_water"
+                    },
+                    "distance": 4147.68552187
+                }
+            ]
+        },
+        "8": {
+            "execution_time": 0.012658119201660156,
+            "results": [
+                {
+                    "id": 6089226542,
+                    "tags": {
+                        "amenity": "toilets"
+                    },
+                    "distance": 4098.61789912
+                }
+            ]
+        },
+        "9": {
+            "execution_time": 0.009499788284301758,
+            "results": []
+        },
+        "10": {
+            "execution_time": 0.010380029678344727,
+            "results": [
+                {
+                    "id": 11282285612,
+                    "tags": {
+                        "amenity": "drinking_water"
+                    },
+                    "distance": 6641.84449686
+                }
+            ]
+        },
+        "11": {
+            "execution_time": 0.005816459655761719,
+            "results": []
+        },
+        "12": {
+            "execution_time": 0.006377696990966797,
+            "results": []
+        },
+        "13": {
+            "execution_time": 0.007410287857055664,
+            "results": []
+        },
+        "14": {
+            "execution_time": 0.017954349517822266,
+            "results": [
+                {
+                    "id": 6165387375,
+                    "tags": {
+                        "amenity": "bench",
+                        "backrest": "yes"
+                    },
+                    "distance": 587.74521983
+                }
+            ]
+        },
+        "15": {
+            "execution_time": 0.008583784103393555,
+            "results": []
+        },
+        "16": {
+            "execution_time": 0.011287450790405273,
+            "results": [
+                {
+                    "id": 4186725543,
+                    "tags": {
+                        "layer": "-1",
+                        "amenity": "parking",
+                        "parking": "underground"
+                    },
+                    "distance": 5658.14829639
+                }
+            ]
+        },
+        "17": {
+            "execution_time": 0.0057010650634765625,
+            "results": []
+        },
+        "18": {
+            "execution_time": 0.009840965270996094,
+            "results": [
+                {
+                    "id": 3716720525,
+                    "tags": {
+                        "name": "Ruckers Hill View of City Skyline",
+                        "tourism": "viewpoint"
+                    },
+                    "distance": 4306.52028839
+                }
+            ]
+        },
+        "19": {
+            "execution_time": 0.009969472885131836,
+            "results": [
+                {
+                    "id": 10138871834,
+                    "tags": {
+                        "name": "Lola Lovely",
+                        "shop": "clothes",
+                        "phone": "+61 3 9480 2423",
+                        "clothes": "women",
+                        "website": "https://www.lolalovelygifts.com.au/",
+                        "addr:state": "VIC",
+                        "addr:street": "High Street",
+                        "addr:suburb": "Thornbury",
+                        "addr:postcode": "3071",
+                        "addr:housenumber": "692"
+                    },
+                    "distance": 2534.48667997
+                }
+            ]
+        },
+        "20": {
+            "execution_time": 0.010370016098022461,
+            "results": [
+                {
+                    "id": 616604127,
+                    "tags": {
+                        "name": "1st Choice Liquor Superstore",
+                        "shop": "alcohol",
+                        "phone": "+61 3 9644 3500",
+                        "website": "https://www.1stchoice.com.au/",
+                        "wheelchair": "yes",
+                        "addr:street": "Bay Street",
+                        "addr:suburb": "Port Melbourne",
+                        "addr:country": "AU",
+                        "addr:postcode": "3207",
+                        "addr:housenumber": "120",
+                        "toilets:wheelchair": "no"
+                    },
+                    "distance": 7207.12576641
+                }
+            ]
+        },
+        "21": {
+            "execution_time": 0.007277965545654297,
+            "results": []
+        },
+        "22": {
+            "execution_time": 0.006235361099243164,
+            "results": []
+        },
+        "23": {
+            "execution_time": 0.010055780410766602,
+            "results": [
+                {
+                    "id": 5024438582,
+                    "tags": {
+                        "name": "Paddy Pallin",
+                        "shop": "outdoor",
+                        "email": "melbourne@paddypallin.com.au",
+                        "phone": "+61 3 9670 4845",
+                        "website": "https://www.paddypallin.com.au/",
+                        "wheelchair": "yes",
+                        "addr:street": "Bourke Street",
+                        "opening_hours": "Mo-We 09:00-18:00; Th 09:00-19:00; Fr 09:00-21:00; Sa 09:00-17:30; Su 10:00-17:30",
+                        "addr:housenumber": "152"
+                    },
+                    "distance": 9489.02325616
+                }
+            ]
+        },
+        "24": {
+            "execution_time": 0.01368570327758789,
+            "results": [
+                {
+                    "id": 6403353733,
+                    "tags": {
+                        "shop": "hairdresser"
+                    },
+                    "distance": 1931.54394491
+                }
+            ]
+        },
+        "25": {
+            "execution_time": 0.005604267120361328,
+            "results": []
+        },
+        "26": {
+            "execution_time": 0.0069468021392822266,
+            "results": []
+        },
+        "27": {
+            "execution_time": 0.005808115005493164,
+            "results": []
+        },
+        "28": {
+            "execution_time": 0.006270647048950195,
+            "results": []
+        },
+        "29": {
+            "execution_time": 0.011161565780639648,
+            "results": [
+                {
+                    "id": 9140968965,
+                    "tags": {
+                        "amenity": "bench"
+                    },
+                    "distance": 2741.87042956
+                }
+            ]
+        },
+        "30": {
+            "execution_time": 0.006866931915283203,
+            "results": []
+        },
+        "31": {
+            "execution_time": 0.009877920150756836,
+            "results": [
+                {
+                    "id": 10078543827,
+                    "tags": {
+                        "name": "T and A Automotive",
+                        "shop": "car_repair",
+                        "addr:street": "Park Road",
+                        "addr:housenumber": "35"
+                    },
+                    "distance": 3920.46749229
+                }
+            ]
+        },
+        "32": {
+            "execution_time": 0.00687861442565918,
+            "results": []
+        },
+        "33": {
+            "execution_time": 0.014742851257324219,
+            "results": [
+                {
+                    "id": 6542308823,
+                    "tags": {
+                        "name": "Red Chillies",
+                        "source": "survey",
+                        "amenity": "restaurant",
+                        "cuisine": "indian"
+                    },
+                    "distance": 676.82748868
+                }
+            ]
+        },
+        "34": {
+            "execution_time": 0.005742073059082031,
+            "results": []
+        },
+        "35": {
+            "execution_time": 0.006144046783447266,
+            "results": []
+        },
+        "36": {
+            "execution_time": 0.0058176517486572266,
+            "results": []
+        },
+        "37": {
+            "execution_time": 0.015603303909301758,
+            "results": [
+                {
+                    "id": 4451211159,
+                    "tags": {
+                        "fee": "no",
+                        "access": "yes",
+                        "amenity": "toilets",
+                        "check_date": "2022-12-4",
+                        "wheelchair": "yes"
+                    },
+                    "distance": 1165.79824278
+                }
+            ]
+        },
+        "38": {
+            "execution_time": 0.006261587142944336,
+            "results": []
+        },
+        "39": {
+            "execution_time": 0.014331817626953125,
+            "results": [
+                {
+                    "id": 12646909915,
+                    "tags": {
+                        "amenity": "bench"
+                    },
+                    "distance": 1731.48929878
+                }
+            ]
+        },
+        "40": {
+            "execution_time": 0.012750864028930664,
+            "results": [
+                {
+                    "id": 3299929984,
+                    "tags": {
+                        "name": "Barry Street Lunch Bar",
+                        "amenity": "fast_food",
+                        "opening_hours": "Mo-Fr 06:30-17:00; Sa 06:30-14:00"
+                    },
+                    "distance": 3315.9462017
+                }
+            ]
+        },
+        "41": {
+            "execution_time": 0.006788730621337891,
+            "results": []
+        },
+        "42": {
+            "execution_time": 0.0059185028076171875,
+            "results": []
+        },
+        "43": {
+            "execution_time": 0.006348133087158203,
+            "results": []
+        },
+        "44": {
+            "execution_time": 0.010792255401611328,
+            "results": [
+                {
+                    "id": 6297092472,
+                    "tags": {
+                        "amenity": "bicycle_parking",
+                        "capacity": "6"
+                    },
+                    "distance": 2603.90533993
+                }
+            ]
+        },
+        "45": {
+            "execution_time": 0.011142969131469727,
+            "results": [
+                {
+                    "id": 10815888356,
+                    "tags": {
+                        "name": "Strudels Cafe",
+                        "phone": "+61 3 9379 3452",
+                        "amenity": "cafe",
+                        "website": "https://strudelscafe.com.au/",
+                        "addr:street": "Keilor Road",
+                        "opening_hours": "Mo-Sa 06:00-15:00; Su closed",
+                        "addr:housenumber": "427"
+                    },
+                    "distance": 2805.21970707
+                }
+            ]
+        },
+        "46": {
+            "execution_time": 0.005898952484130859,
+            "results": []
+        },
+        "47": {
+            "execution_time": 0.007248401641845703,
+            "results": []
+        },
+        "48": {
+            "execution_time": 0.011319398880004883,
+            "results": [
+                {
+                    "id": 9309874630,
+                    "tags": {
+                        "amenity": "bench",
+                        "backrest": "yes"
+                    },
+                    "distance": 1268.89784662
+                }
+            ]
+        },
+        "49": {
+            "execution_time": 0.006075620651245117,
+            "results": []
+        }
+    }
+}

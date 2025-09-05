@@ -1,0 +1,2388 @@
+{
+    "insertion_time": 5.837956428527832,
+    "index_creation": {
+        "func": [
+            "CREATE INDEX IF NOT EXISTS idx_pois_geom ON PoIs USING GIST (geom);",
+            "CREATE INDEX IF NOT EXISTS idx_pois_tags ON PoIs USING GIN (tags);"
+        ],
+        "time": 0.42177653312683105
+    },
+    "query_results": {
+        "0": {
+            "execution_time": 0.006283998489379883,
+            "results": []
+        },
+        "1": {
+            "execution_time": 0.006874799728393555,
+            "results": []
+        },
+        "2": {
+            "execution_time": 0.012805700302124023,
+            "results": [
+                {
+                    "id": 11815768179,
+                    "tags": {
+                        "colour": "gray",
+                        "amenity": "bench",
+                        "backrest": "yes",
+                        "material": "plastic"
+                    },
+                    "distance": 2473.70005596
+                },
+                {
+                    "id": 5980632269,
+                    "tags": {
+                        "amenity": "bench"
+                    },
+                    "distance": 5734.36710811
+                },
+                {
+                    "id": 5980632046,
+                    "tags": {
+                        "amenity": "bench"
+                    },
+                    "distance": 5847.00855523
+                },
+                {
+                    "id": 10571708261,
+                    "tags": {
+                        "seats": "4",
+                        "amenity": "bench",
+                        "backrest": "yes",
+                        "material": "wood"
+                    },
+                    "distance": 7042.64377753
+                },
+                {
+                    "id": 11922556095,
+                    "tags": {
+                        "amenity": "bench",
+                        "backrest": "yes"
+                    },
+                    "distance": 7120.00268236
+                },
+                {
+                    "id": 11922556094,
+                    "tags": {
+                        "amenity": "bench",
+                        "backrest": "yes"
+                    },
+                    "distance": 7128.77795304
+                },
+                {
+                    "id": 11924029312,
+                    "tags": {
+                        "amenity": "bench",
+                        "backrest": "yes"
+                    },
+                    "distance": 7372.0482027
+                },
+                {
+                    "id": 5824764005,
+                    "tags": {
+                        "amenity": "bench"
+                    },
+                    "distance": 7396.93912482
+                },
+                {
+                    "id": 11922555970,
+                    "tags": {
+                        "amenity": "bench",
+                        "backrest": "yes"
+                    },
+                    "distance": 7485.46336519
+                },
+                {
+                    "id": 7838610674,
+                    "tags": {
+                        "amenity": "bench"
+                    },
+                    "distance": 7661.64729157
+                }
+            ]
+        },
+        "3": {
+            "execution_time": 0.010709047317504883,
+            "results": [
+                {
+                    "id": 1955893247,
+                    "tags": {
+                        "name": "The Main Cafe Bar & Restaurant",
+                        "amenity": "restaurant"
+                    },
+                    "distance": 14206.12603527
+                },
+                {
+                    "id": 9203584815,
+                    "tags": {
+                        "name": "The Mexican House",
+                        "amenity": "restaurant",
+                        "cuisine": "mexican",
+                        "name:es": "La Casa Mexicana"
+                    },
+                    "distance": 14429.74566918
+                },
+                {
+                    "id": 12002541692,
+                    "tags": {
+                        "name": "Wok on Clyde",
+                        "amenity": "restaurant",
+                        "cuisine": "noodle"
+                    },
+                    "distance": 14883.0406259
+                }
+            ]
+        },
+        "4": {
+            "execution_time": 0.011053085327148438,
+            "results": [
+                {
+                    "id": 1968305333,
+                    "tags": {
+                        "amenity": "parking"
+                    },
+                    "distance": 9469.11596053
+                }
+            ]
+        },
+        "5": {
+            "execution_time": 0.009814739227294922,
+            "results": [
+                {
+                    "id": 5408638624,
+                    "tags": {
+                        "name": "Mecca Jewelry",
+                        "shop": "jewelry",
+                        "phone": "+61 3 9077 9168",
+                        "check_date": "2024-10-08",
+                        "wheelchair": "yes",
+                        "addr:street": "Sydney Road",
+                        "addr:housenumber": "505"
+                    },
+                    "distance": 10076.3914613
+                },
+                {
+                    "id": 8551663706,
+                    "tags": {
+                        "name": "Mimco",
+                        "shop": "jewelry",
+                        "brand": "Mimco",
+                        "brand:wikidata": "Q106014291"
+                    },
+                    "distance": 10561.97089207
+                },
+                {
+                    "id": 11224406447,
+                    "tags": {
+                        "ref": "L64",
+                        "name": "Akuna Pearls",
+                        "shop": "jewelry",
+                        "wheelchair": "yes"
+                    },
+                    "distance": 13824.74575554
+                },
+                {
+                    "id": 4269463946,
+                    "tags": {
+                        "name": "Janai",
+                        "shop": "jewelry",
+                        "addr:state": "VIC",
+                        "wheelchair": "limited",
+                        "addr:street": "Collins Street",
+                        "addr:suburb": "Melbourne",
+                        "addr:postcode": "3000",
+                        "addr:housenumber": "267"
+                    },
+                    "distance": 14111.93005162
+                },
+                {
+                    "id": 612725981,
+                    "tags": {
+                        "name": "Charles Rose",
+                        "shop": "jewelry",
+                        "email": "bourke@charlesrose.com.au",
+                        "phone": "+61 3 9642 8989",
+                        "website": "https://www.charlesrose.com.au/",
+                        "wheelchair": "no",
+                        "addr:street": "Bourke Street",
+                        "addr:suburb": "Melbourne",
+                        "addr:postcode": "3000",
+                        "opening_hours": "Mo-Th 10:00-17:00; Fr 10:00-18:30; Sa 10:00-16:30",
+                        "addr:housenumber": "415"
+                    },
+                    "distance": 14180.52723303
+                },
+                {
+                    "id": 8551801547,
+                    "tags": {
+                        "name": "Pandora",
+                        "shop": "jewelry",
+                        "brand": "Pandora",
+                        "brand:wikidata": "Q2241604",
+                        "brand:wikipedia": "en:Pandora (jewelry)"
+                    },
+                    "distance": 16014.71536963
+                },
+                {
+                    "id": 3477983091,
+                    "tags": {
+                        "name": "Fiorina Jewellery",
+                        "shop": "jewelry",
+                        "website": "https://fiorinajewellery.com.au/",
+                        "addr:street": "High Street",
+                        "addr:suburb": "Armadale",
+                        "addr:postcode": "3143",
+                        "addr:housenumber": "897"
+                    },
+                    "distance": 16470.12653177
+                },
+                {
+                    "id": 10198530863,
+                    "tags": {
+                        "name": "Simon Curwood Jewellers Chadstone",
+                        "shop": "jewelry",
+                        "email": "chadstone@simoncurwood.com.au",
+                        "phone": "+61 3 9563 3093",
+                        "website": "https://www.simoncurwood.com.au/pages/chadstone",
+                        "operator": "Simon Curwood Jewellers",
+                        "addr:unit": "Shop B193",
+                        "addr:street": "Dandenong Road",
+                        "addr:housenumber": "1341"
+                    },
+                    "distance": 19803.46079339
+                }
+            ]
+        },
+        "6": {
+            "execution_time": 0.010666131973266602,
+            "results": [
+                {
+                    "id": 9182813538,
+                    "tags": {
+                        "name": "Taco Bill",
+                        "amenity": "restaurant",
+                        "cuisine": "mexican"
+                    },
+                    "distance": 13763.25700663
+                },
+                {
+                    "id": 2131690283,
+                    "tags": {
+                        "name": "Nachos Mexican Cantina",
+                        "amenity": "restaurant",
+                        "cuisine": "mexican",
+                        "website": "https://www.nachoscantina.com.au/",
+                        "addr:street": "Nepean Highway",
+                        "addr:postcode": "3195",
+                        "addr:housenumber": "141"
+                    },
+                    "distance": 17809.48520923
+                }
+            ]
+        },
+        "7": {
+            "execution_time": 0.011605978012084961,
+            "results": [
+                {
+                    "id": 1422961923,
+                    "tags": {
+                        "fee": "no",
+                        "name": "Public Toilets",
+                        "amenity": "toilets",
+                        "wheelchair": "yes"
+                    },
+                    "distance": 680.43842378
+                },
+                {
+                    "id": 1893013576,
+                    "tags": {
+                        "access": "yes",
+                        "amenity": "toilets"
+                    },
+                    "distance": 3159.97732799
+                },
+                {
+                    "id": 5806427462,
+                    "tags": {
+                        "amenity": "toilets"
+                    },
+                    "distance": 4287.48126244
+                },
+                {
+                    "id": 5973616351,
+                    "tags": {
+                        "source": "vicmap",
+                        "amenity": "toilets"
+                    },
+                    "distance": 6204.37547241
+                },
+                {
+                    "id": 6487196134,
+                    "tags": {
+                        "fee": "no",
+                        "access": "yes",
+                        "unisex": "yes",
+                        "amenity": "toilets",
+                        "wheelchair": "yes",
+                        "changing_table": "yes",
+                        "toilets:disposal": "flush",
+                        "toilets:position": "seated"
+                    },
+                    "distance": 7728.19183431
+                },
+                {
+                    "id": 2355849934,
+                    "tags": {
+                        "fee": "no",
+                        "access": "yes",
+                        "unisex": "yes",
+                        "amenity": "toilets",
+                        "toilets:disposal": "flush"
+                    },
+                    "distance": 8479.75374538
+                },
+                {
+                    "id": 296846628,
+                    "tags": {
+                        "fee": "no",
+                        "amenity": "toilets",
+                        "check_date": "2022-11-11",
+                        "wheelchair": "yes"
+                    },
+                    "distance": 8662.90364807
+                },
+                {
+                    "id": 5417495955,
+                    "tags": {
+                        "amenity": "toilets"
+                    },
+                    "distance": 9218.17673332
+                },
+                {
+                    "id": 496447183,
+                    "tags": {
+                        "fee": "no",
+                        "amenity": "toilets",
+                        "check_date": "2022-04-20"
+                    },
+                    "distance": 9504.06400574
+                },
+                {
+                    "id": 12483926914,
+                    "tags": {
+                        "level": "1",
+                        "access": "customers",
+                        "amenity": "toilets"
+                    },
+                    "distance": 9900.81053963
+                }
+            ]
+        },
+        "8": {
+            "execution_time": 0.009240388870239258,
+            "results": []
+        },
+        "9": {
+            "execution_time": 0.014499902725219727,
+            "results": [
+                {
+                    "id": 925358274,
+                    "tags": {
+                        "bus": "yes",
+                        "name": "Utah Road",
+                        "highway": "bus_stop",
+                        "operator": "Ventura",
+                        "wheelchair": "yes",
+                        "public_transport": "platform"
+                    },
+                    "distance": 13500.55057296
+                }
+            ]
+        },
+        "10": {
+            "execution_time": 0.009974956512451172,
+            "results": []
+        },
+        "11": {
+            "execution_time": 0.0063588619232177734,
+            "results": []
+        },
+        "12": {
+            "execution_time": 0.007058858871459961,
+            "results": []
+        },
+        "13": {
+            "execution_time": 0.012162923812866211,
+            "results": [
+                {
+                    "id": 3967617241,
+                    "tags": {
+                        "bus": "yes",
+                        "name": "Blessington Way",
+                        "network": "PTV - Metropolitan Buses",
+                        "operator": "CDC Melbourne",
+                        "public_transport": "stop_position"
+                    },
+                    "distance": 11421.87818817
+                }
+            ]
+        },
+        "14": {
+            "execution_time": 0.01034402847290039,
+            "results": [
+                {
+                    "id": 10133912158,
+                    "tags": {
+                        "amenity": "bicycle_parking"
+                    },
+                    "distance": 15470.25324769
+                },
+                {
+                    "id": 5468473414,
+                    "tags": {
+                        "amenity": "bicycle_parking",
+                        "capacity": "6",
+                        "bicycle_parking": "stands"
+                    },
+                    "distance": 16009.75950925
+                },
+                {
+                    "id": 12121735084,
+                    "tags": {
+                        "fee": "no",
+                        "amenity": "bicycle_parking",
+                        "covered": "no",
+                        "capacity": "3",
+                        "bicycle_parking": "stands"
+                    },
+                    "distance": 16995.20977072
+                }
+            ]
+        },
+        "15": {
+            "execution_time": 0.010492563247680664,
+            "results": [
+                {
+                    "id": 10062624127,
+                    "tags": {
+                        "amenity": "drinking_water"
+                    },
+                    "distance": 2989.18895958
+                },
+                {
+                    "id": 12474252857,
+                    "tags": {
+                        "indoor": "no",
+                        "amenity": "drinking_water"
+                    },
+                    "distance": 4067.70767935
+                },
+                {
+                    "id": 5301570153,
+                    "tags": {
+                        "amenity": "drinking_water"
+                    },
+                    "distance": 4653.19547998
+                },
+                {
+                    "id": 3387041120,
+                    "tags": {
+                        "amenity": "drinking_water"
+                    },
+                    "distance": 5636.73099646
+                },
+                {
+                    "id": 4527055466,
+                    "tags": {
+                        "amenity": "drinking_water",
+                        "fountain": "bubbler",
+                        "check_date": "2023-02-12"
+                    },
+                    "distance": 6156.11279741
+                },
+                {
+                    "id": 10120019722,
+                    "tags": {
+                        "fee": "no",
+                        "access": "yes",
+                        "bottle": "yes",
+                        "amenity": "drinking_water",
+                        "operator": "Ivanhoe East Primary School",
+                        "wheelchair": "limited"
+                    },
+                    "distance": 6187.75152839
+                },
+                {
+                    "id": 310183309,
+                    "tags": {
+                        "source": "survey",
+                        "amenity": "drinking_water"
+                    },
+                    "distance": 6820.93135645
+                },
+                {
+                    "id": 1462208388,
+                    "tags": {
+                        "source": "survey",
+                        "amenity": "drinking_water",
+                        "check_date": "2024-05-28"
+                    },
+                    "distance": 6911.3905933
+                },
+                {
+                    "id": 3278132466,
+                    "tags": {
+                        "fee": "no",
+                        "bottle": "yes",
+                        "amenity": "drinking_water"
+                    },
+                    "distance": 7874.90058752
+                },
+                {
+                    "id": 3848690508,
+                    "tags": {
+                        "amenity": "drinking_water"
+                    },
+                    "distance": 7928.3398631
+                }
+            ]
+        },
+        "16": {
+            "execution_time": 0.012806177139282227,
+            "results": [
+                {
+                    "id": 11503434973,
+                    "tags": {
+                        "amenity": "bench"
+                    },
+                    "distance": 2913.78574471
+                },
+                {
+                    "id": 9833655806,
+                    "tags": {
+                        "amenity": "bench"
+                    },
+                    "distance": 3973.73362165
+                },
+                {
+                    "id": 9849425906,
+                    "tags": {
+                        "amenity": "bench"
+                    },
+                    "distance": 4283.7481869
+                },
+                {
+                    "id": 9798879964,
+                    "tags": {
+                        "amenity": "bench"
+                    },
+                    "distance": 4347.62803173
+                },
+                {
+                    "id": 9761691618,
+                    "tags": {
+                        "amenity": "bench"
+                    },
+                    "distance": 10306.09027639
+                },
+                {
+                    "id": 11652038334,
+                    "tags": {
+                        "amenity": "bench"
+                    },
+                    "distance": 12339.0455443
+                },
+                {
+                    "id": 9454849796,
+                    "tags": {
+                        "amenity": "bench"
+                    },
+                    "distance": 13310.99490772
+                },
+                {
+                    "id": 5222791644,
+                    "tags": {
+                        "amenity": "bench"
+                    },
+                    "distance": 13597.08694585
+                },
+                {
+                    "id": 9360787406,
+                    "tags": {
+                        "amenity": "bench"
+                    },
+                    "distance": 13700.92569754
+                },
+                {
+                    "id": 4698381144,
+                    "tags": {
+                        "amenity": "bench"
+                    },
+                    "distance": 13998.87430586
+                }
+            ]
+        },
+        "17": {
+            "execution_time": 0.014196157455444336,
+            "results": [
+                {
+                    "id": 10798840340,
+                    "tags": {
+                        "name": "G Days Cafe",
+                        "amenity": "cafe",
+                        "cuisine": "coffee_shop",
+                        "addr:unit": "5A",
+                        "addr:state": "VIC",
+                        "addr:street": "Chesterville Road",
+                        "addr:suburb": "Cheltenham",
+                        "addr:postcode": "3192",
+                        "addr:housenumber": "148"
+                    },
+                    "distance": 1684.13821108
+                },
+                {
+                    "id": 6332562985,
+                    "tags": {
+                        "amenity": "cafe"
+                    },
+                    "distance": 4465.80348099
+                },
+                {
+                    "id": 6164774529,
+                    "tags": {
+                        "bar": "no",
+                        "name": "Coffee Shop At Raw",
+                        "level": "0",
+                        "source": "survey",
+                        "amenity": "cafe",
+                        "cuisine": "coffee_shop",
+                        "smoking": "no",
+                        "delivery": "no",
+                        "takeaway": "only",
+                        "addr:state": "VIC",
+                        "addr:street": "Highett Road",
+                        "addr:suburb": "Hampton",
+                        "reservation": "no",
+                        "payment:cash": "yes",
+                        "payment:visa": "yes",
+                        "addr:postcode": "3188",
+                        "payment:coins": "yes",
+                        "payment:notes": "yes",
+                        "internet_access": "no",
+                        "outdoor_seating": "no",
+                        "addr:housenumber": "97",
+                        "air_conditioning": "yes",
+                        "payment:mastercard": "yes",
+                        "payment:debit_cards": "yes",
+                        "payment:credit_cards": "yes"
+                    },
+                    "distance": 4811.45101404
+                },
+                {
+                    "id": 6040867139,
+                    "tags": {
+                        "name": "Health Link Cafe",
+                        "amenity": "cafe",
+                        "check_date": "2024-12-30"
+                    },
+                    "distance": 5259.13949211
+                },
+                {
+                    "id": 5213608175,
+                    "tags": {
+                        "name": "Rainbow Coffee",
+                        "amenity": "cafe"
+                    },
+                    "distance": 6841.75148874
+                },
+                {
+                    "id": 752219143,
+                    "tags": {
+                        "name": "Sandy Beach HQ & Kiosk",
+                        "source": "nearmap",
+                        "amenity": "cafe",
+                        "addr:street": "Jetty Road",
+                        "addr:suburb": "Sandringham",
+                        "addr:postcode": "3191",
+                        "addr:housenumber": "36"
+                    },
+                    "distance": 6873.38441537
+                },
+                {
+                    "id": 5680708784,
+                    "tags": {
+                        "name": "Cafelito",
+                        "layer": "2",
+                        "source": "survey",
+                        "amenity": "cafe",
+                        "website": "https://www.monash.edu/food-and-retail/vendors/cafelito"
+                    },
+                    "distance": 7295.29552493
+                },
+                {
+                    "id": 592653412,
+                    "tags": {
+                        "name": "Caf\u00e9 Cinque Lire",
+                        "email": "cinqueliremonash@yahoo.com.au",
+                        "phone": "+61 3 9540 0778",
+                        "amenity": "cafe",
+                        "cuisine": "italian",
+                        "website": "https://www.monash.edu/food-and-retail/vendors/cinque-lire-cafe",
+                        "addr:street": "Innovation Walk",
+                        "opening_hours": "Mo-Th 06:30-17:00; Fr 06:30-18:30",
+                        "outdoor_seating": "yes",
+                        "addr:housenumber": "15",
+                        "opening_hours:url": "https://www.monash.edu/food-and-retail/vendors/cinque-lire-cafe"
+                    },
+                    "distance": 7363.59252506
+                },
+                {
+                    "id": 4463141814,
+                    "tags": {
+                        "source": "survey",
+                        "amenity": "cafe"
+                    },
+                    "distance": 7541.26752224
+                },
+                {
+                    "id": 12478150413,
+                    "tags": {
+                        "name": "Sharetea",
+                        "brand": "Sharetea",
+                        "amenity": "cafe",
+                        "cuisine": "bubble_tea",
+                        "name:en": "Sharetea",
+                        "name:zh": "\u6b47\u8173\u4ead",
+                        "website": "https://www.monash.edu/food-and-retail/vendors/sharetea",
+                        "takeaway": "yes",
+                        "diet:vegan": "yes",
+                        "opening_hours": "Mo-Fr 09:00-18:00",
+                        "brand:wikidata": "Q64827032",
+                        "diet:vegetarian": "yes",
+                        "internet_access": "no",
+                        "outdoor_seating": "no",
+                        "diet:gluten_free": "yes"
+                    },
+                    "distance": 7573.04188966
+                }
+            ]
+        },
+        "18": {
+            "execution_time": 0.012441158294677734,
+            "results": [
+                {
+                    "id": 8806025599,
+                    "tags": {
+                        "ref": "MEN",
+                        "name": "Mentone",
+                        "fixme": "Location is approximate - imagery has not been updated",
+                        "train": "yes",
+                        "network": "PTV \u2013 Metropolitan Trains",
+                        "railway": "stop",
+                        "ref:ptv": "19865",
+                        "website": "https://ptv.vic.gov.au/stop/1122",
+                        "operator": "Metro Trains Melbourne",
+                        "wikidata": "Q6817585",
+                        "wikipedia": "en:Mentone railway station",
+                        "public_transport": "stop_position"
+                    },
+                    "distance": 7474.98584657
+                }
+            ]
+        },
+        "19": {
+            "execution_time": 0.005415916442871094,
+            "results": []
+        },
+        "20": {
+            "execution_time": 0.009162425994873047,
+            "results": []
+        },
+        "21": {
+            "execution_time": 0.010303258895874023,
+            "results": [
+                {
+                    "id": 592838036,
+                    "tags": {
+                        "name": "Flinders Lane Dry Cleaners",
+                        "shop": "dry_cleaning",
+                        "addr:street": "Flinders Lane",
+                        "addr:suburb": "Melbourne",
+                        "addr:postcode": "3000",
+                        "addr:housenumber": "165"
+                    },
+                    "distance": 8362.55754854
+                }
+            ]
+        },
+        "22": {
+            "execution_time": 0.011434316635131836,
+            "results": [
+                {
+                    "id": 9761453233,
+                    "tags": {
+                        "amenity": "bench"
+                    },
+                    "distance": 853.16033456
+                },
+                {
+                    "id": 9921613443,
+                    "tags": {
+                        "amenity": "bench"
+                    },
+                    "distance": 2833.69285911
+                },
+                {
+                    "id": 5980632046,
+                    "tags": {
+                        "amenity": "bench"
+                    },
+                    "distance": 5354.98299868
+                },
+                {
+                    "id": 5980632269,
+                    "tags": {
+                        "amenity": "bench"
+                    },
+                    "distance": 5523.73465049
+                },
+                {
+                    "id": 10571708261,
+                    "tags": {
+                        "seats": "4",
+                        "amenity": "bench",
+                        "backrest": "yes",
+                        "material": "wood"
+                    },
+                    "distance": 6244.38336106
+                },
+                {
+                    "id": 7838610674,
+                    "tags": {
+                        "amenity": "bench"
+                    },
+                    "distance": 6322.78607103
+                },
+                {
+                    "id": 2655250143,
+                    "tags": {
+                        "amenity": "bench"
+                    },
+                    "distance": 7456.91254191
+                },
+                {
+                    "id": 12435710854,
+                    "tags": {
+                        "amenity": "bench"
+                    },
+                    "distance": 7458.17758875
+                },
+                {
+                    "id": 2674646700,
+                    "tags": {
+                        "amenity": "bench"
+                    },
+                    "distance": 7594.28364367
+                },
+                {
+                    "id": 2676312410,
+                    "tags": {
+                        "amenity": "bench"
+                    },
+                    "distance": 8186.04824885
+                }
+            ]
+        },
+        "23": {
+            "execution_time": 0.013930559158325195,
+            "results": [
+                {
+                    "id": 4224608822,
+                    "tags": {
+                        "name": "Carnival",
+                        "amenity": "restaurant"
+                    },
+                    "distance": 3765.39668281
+                },
+                {
+                    "id": 8221440823,
+                    "tags": {
+                        "name": "La Cucina",
+                        "amenity": "restaurant"
+                    },
+                    "distance": 5116.96579835
+                },
+                {
+                    "id": 10907603636,
+                    "tags": {
+                        "name": "Ten Greek Plates",
+                        "amenity": "restaurant",
+                        "addr:street": "Martin Street",
+                        "addr:housenumber": "136 - 138"
+                    },
+                    "distance": 5280.23651713
+                },
+                {
+                    "id": 10224654395,
+                    "tags": {
+                        "name": "Vegi and Coffee Lover",
+                        "amenity": "restaurant",
+                        "addr:street": "Hawthorn Road",
+                        "diet:vegetarian": "yes",
+                        "addr:housenumber": "326"
+                    },
+                    "distance": 6058.60605178
+                },
+                {
+                    "id": 10840959872,
+                    "tags": {
+                        "name": "OMI",
+                        "amenity": "restaurant",
+                        "cuisine": "japanese;noodle;ramen;udon",
+                        "website": "https://www.omiwagyu.com.au"
+                    },
+                    "distance": 7503.82902624
+                },
+                {
+                    "id": 5714724539,
+                    "tags": {
+                        "name": "D'Elephant",
+                        "amenity": "restaurant"
+                    },
+                    "distance": 7547.83422215
+                },
+                {
+                    "id": 10235141800,
+                    "tags": {
+                        "name": "Phuoc Thanh",
+                        "level": "0",
+                        "amenity": "restaurant",
+                        "cuisine": "vietnamese",
+                        "takeaway": "yes",
+                        "check_date": "2023-02-04"
+                    },
+                    "distance": 7672.64592915
+                },
+                {
+                    "id": 5242014104,
+                    "tags": {
+                        "name": "Delhi-Chennai Express",
+                        "amenity": "restaurant",
+                        "cuisine": "indian",
+                        "addr:street": "Clayton Road",
+                        "addr:housenumber": "284"
+                    },
+                    "distance": 8057.5004151
+                },
+                {
+                    "id": 5413453837,
+                    "tags": {
+                        "name": "Ma-Long Kitchen",
+                        "source": "survey",
+                        "amenity": "restaurant"
+                    },
+                    "distance": 9581.43383579
+                },
+                {
+                    "id": 577493240,
+                    "tags": {
+                        "name": "Republica",
+                        "email": "info@republica.net.au",
+                        "phone": "+61 3 8598 9055",
+                        "amenity": "restaurant",
+                        "website": "https://republica.net.au/"
+                    },
+                    "distance": 9727.93385072
+                }
+            ]
+        },
+        "24": {
+            "execution_time": 0.015001535415649414,
+            "results": [
+                {
+                    "id": 9575179132,
+                    "tags": {
+                        "amenity": "bench"
+                    },
+                    "distance": 1006.5725908
+                },
+                {
+                    "id": 9482964023,
+                    "tags": {
+                        "amenity": "bench"
+                    },
+                    "distance": 1144.47484331
+                },
+                {
+                    "id": 9504659952,
+                    "tags": {
+                        "amenity": "bench"
+                    },
+                    "distance": 1161.60732503
+                },
+                {
+                    "id": 6052186664,
+                    "tags": {
+                        "amenity": "bench",
+                        "backrest": "yes"
+                    },
+                    "distance": 2133.70374067
+                },
+                {
+                    "id": 6052186549,
+                    "tags": {
+                        "amenity": "bench",
+                        "backrest": "yes"
+                    },
+                    "distance": 2151.32246136
+                },
+                {
+                    "id": 6052186498,
+                    "tags": {
+                        "amenity": "bench",
+                        "backrest": "yes"
+                    },
+                    "distance": 2264.61051553
+                },
+                {
+                    "id": 6052242345,
+                    "tags": {
+                        "amenity": "bench",
+                        "backrest": "yes"
+                    },
+                    "distance": 3913.65961589
+                },
+                {
+                    "id": 9260723033,
+                    "tags": {
+                        "amenity": "bench"
+                    },
+                    "distance": 5525.28364981
+                },
+                {
+                    "id": 9204601425,
+                    "tags": {
+                        "amenity": "bench",
+                        "armrest": "yes",
+                        "backrest": "yes"
+                    },
+                    "distance": 7703.27212581
+                },
+                {
+                    "id": 12376031875,
+                    "tags": {
+                        "amenity": "bench"
+                    },
+                    "distance": 8115.57925326
+                }
+            ]
+        },
+        "25": {
+            "execution_time": 0.010662555694580078,
+            "results": [
+                {
+                    "id": 6786957906,
+                    "tags": {
+                        "name": "Fav Seafood Fish & Chips",
+                        "amenity": "fast_food",
+                        "cuisine": "fish_and_chips",
+                        "diet:vegan": "no",
+                        "opening_hours": "Tu-Su 11:30-15:00,16:00-20:30; Mo off",
+                        "diet:vegetarian": "yes"
+                    },
+                    "distance": 3883.94466663
+                },
+                {
+                    "id": 3838385155,
+                    "tags": {
+                        "name": "Domino's",
+                        "brand": "Domino's",
+                        "amenity": "fast_food",
+                        "cuisine": "pizza",
+                        "delivery": "yes",
+                        "takeaway": "yes",
+                        "addr:street": "High Street",
+                        "addr:suburb": "Malvern",
+                        "addr:postcode": "3144",
+                        "drive_through": "no",
+                        "brand:wikidata": "Q839466",
+                        "addr:housenumber": "1412"
+                    },
+                    "distance": 5560.02751633
+                },
+                {
+                    "id": 11466832520,
+                    "tags": {
+                        "name": "Sushi Land",
+                        "level": "0",
+                        "amenity": "fast_food",
+                        "cuisine": "sushi",
+                        "takeaway": "yes",
+                        "wheelchair": "yes"
+                    },
+                    "distance": 7752.15524726
+                },
+                {
+                    "id": 11949330870,
+                    "tags": {
+                        "name": "Adonai",
+                        "amenity": "fast_food",
+                        "cuisine": "african",
+                        "website": "https://www.adonaifoods.com.au"
+                    },
+                    "distance": 8053.38441968
+                },
+                {
+                    "id": 3984925963,
+                    "tags": {
+                        "name": "Subway",
+                        "brand": "Subway",
+                        "amenity": "fast_food",
+                        "cuisine": "sandwich",
+                        "website": "https://www.subway.com/en-AU",
+                        "takeaway": "yes",
+                        "brand:wikidata": "Q244457"
+                    },
+                    "distance": 8173.22375398
+                },
+                {
+                    "id": 1540329947,
+                    "tags": {
+                        "name": "Jackson Court Charcoal Chicken",
+                        "phone": "+61 3 9855 9963",
+                        "amenity": "fast_food",
+                        "cuisine": "chicken",
+                        "check_date": "2023-09-13",
+                        "opening_hours": "Sa-Th 10:30-20:00; Fr 10:30-20:30"
+                    },
+                    "distance": 8246.16694652
+                },
+                {
+                    "id": 11411830350,
+                    "tags": {
+                        "name": "Sushi Hub",
+                        "level": "0",
+                        "amenity": "fast_food",
+                        "cuisine": "japanese;sushi",
+                        "wheelchair": "yes"
+                    },
+                    "distance": 8429.33859324
+                },
+                {
+                    "id": 1012065077,
+                    "tags": {
+                        "name": "Subway",
+                        "brand": "Subway",
+                        "amenity": "fast_food",
+                        "cuisine": "sandwich",
+                        "takeaway": "yes",
+                        "addr:street": "Swanston Street",
+                        "addr:suburb": "Carlton",
+                        "addr:country": "AU",
+                        "addr:postcode": "3053",
+                        "brand:wikidata": "Q244457",
+                        "brand:wikipedia": "en:Subway (restaurant)",
+                        "addr:housenumber": "672"
+                    },
+                    "distance": 8442.54884678
+                },
+                {
+                    "id": 6800693288,
+                    "tags": {
+                        "name": "Healthy Sushi",
+                        "amenity": "fast_food",
+                        "cuisine": "japanese;sushi"
+                    },
+                    "distance": 8477.10472898
+                },
+                {
+                    "id": 12437695845,
+                    "tags": {
+                        "name": "Pazzi",
+                        "level": "2",
+                        "amenity": "fast_food",
+                        "cuisine": "italian;pasta;pizza",
+                        "takeaway": "yes",
+                        "wheelchair": "yes",
+                        "indoor_seating": "yes"
+                    },
+                    "distance": 8483.35362175
+                }
+            ]
+        },
+        "26": {
+            "execution_time": 0.010324478149414062,
+            "results": [
+                {
+                    "id": 4312275123,
+                    "tags": {
+                        "ref": "57",
+                        "name": "Stop 57: Reservoir High School",
+                        "tram": "yes",
+                        "network": "PTV - Metropolitan Trams",
+                        "railway": "tram_stop",
+                        "operator": "Keolis Downer",
+                        "network:wikidata": "Q7257648",
+                        "public_transport": "stop_position",
+                        "operator:wikidata": "Q6328065"
+                    },
+                    "distance": 10476.35465855
+                },
+                {
+                    "id": 4312275124,
+                    "tags": {
+                        "ref": "57",
+                        "name": "Stop 57: Reservoir High School",
+                        "tram": "yes",
+                        "network": "PTV - Metropolitan Trams",
+                        "railway": "tram_stop",
+                        "operator": "Keolis Downer",
+                        "network:wikidata": "Q7257648",
+                        "public_transport": "stop_position",
+                        "operator:wikidata": "Q6328065"
+                    },
+                    "distance": 10488.94888329
+                }
+            ]
+        },
+        "27": {
+            "execution_time": 0.012382984161376953,
+            "results": [
+                {
+                    "id": 9867106238,
+                    "tags": {
+                        "amenity": "bench"
+                    },
+                    "distance": 2560.1097705
+                },
+                {
+                    "id": 6052242345,
+                    "tags": {
+                        "amenity": "bench",
+                        "backrest": "yes"
+                    },
+                    "distance": 5213.226735
+                },
+                {
+                    "id": 8778202759,
+                    "tags": {
+                        "lit": "no",
+                        "seats": "3",
+                        "access": "yes",
+                        "amenity": "bench",
+                        "backrest": "yes",
+                        "material": "wood",
+                        "operator": "Bayside City Council"
+                    },
+                    "distance": 6103.19035095
+                },
+                {
+                    "id": 12376031878,
+                    "tags": {
+                        "amenity": "bench"
+                    },
+                    "distance": 6337.78667681
+                },
+                {
+                    "id": 6239120353,
+                    "tags": {
+                        "source": "survey",
+                        "amenity": "bench"
+                    },
+                    "distance": 6408.03048177
+                },
+                {
+                    "id": 12376031875,
+                    "tags": {
+                        "amenity": "bench"
+                    },
+                    "distance": 6410.6841226
+                },
+                {
+                    "id": 6199963956,
+                    "tags": {
+                        "source": "survey",
+                        "amenity": "bench"
+                    },
+                    "distance": 6599.15111524
+                },
+                {
+                    "id": 6222367551,
+                    "tags": {
+                        "amenity": "bench"
+                    },
+                    "distance": 6763.22411676
+                },
+                {
+                    "id": 6052186498,
+                    "tags": {
+                        "amenity": "bench",
+                        "backrest": "yes"
+                    },
+                    "distance": 6869.88856182
+                },
+                {
+                    "id": 6052186549,
+                    "tags": {
+                        "amenity": "bench",
+                        "backrest": "yes"
+                    },
+                    "distance": 6992.67881406
+                }
+            ]
+        },
+        "28": {
+            "execution_time": 0.006445407867431641,
+            "results": []
+        },
+        "29": {
+            "execution_time": 0.008263349533081055,
+            "results": []
+        },
+        "30": {
+            "execution_time": 0.007128477096557617,
+            "results": []
+        },
+        "31": {
+            "execution_time": 0.014559268951416016,
+            "results": [
+                {
+                    "id": 610682395,
+                    "tags": {
+                        "amenity": "bench"
+                    },
+                    "distance": 652.49526056
+                },
+                {
+                    "id": 9368728235,
+                    "tags": {
+                        "amenity": "bench"
+                    },
+                    "distance": 1997.99504362
+                },
+                {
+                    "id": 9931170847,
+                    "tags": {
+                        "amenity": "bench"
+                    },
+                    "distance": 2091.83250792
+                },
+                {
+                    "id": 7965248125,
+                    "tags": {
+                        "amenity": "bench",
+                        "backrest": "no"
+                    },
+                    "distance": 2809.71571092
+                },
+                {
+                    "id": 12045138724,
+                    "tags": {
+                        "amenity": "bench",
+                        "backrest": "yes",
+                        "material": "wood"
+                    },
+                    "distance": 2921.74623552
+                },
+                {
+                    "id": 9339257543,
+                    "tags": {
+                        "amenity": "bench",
+                        "backrest": "yes"
+                    },
+                    "distance": 4116.25562203
+                },
+                {
+                    "id": 9803333902,
+                    "tags": {
+                        "amenity": "bench"
+                    },
+                    "distance": 4162.97269635
+                },
+                {
+                    "id": 9952036150,
+                    "tags": {
+                        "amenity": "bench",
+                        "backrest": "yes"
+                    },
+                    "distance": 4184.87766122
+                },
+                {
+                    "id": 1715967020,
+                    "tags": {
+                        "source": "survey",
+                        "amenity": "bench"
+                    },
+                    "distance": 5039.92509842
+                },
+                {
+                    "id": 1715967017,
+                    "tags": {
+                        "source": "survey",
+                        "amenity": "bench",
+                        "backrest": "yes"
+                    },
+                    "distance": 5061.3286316
+                }
+            ]
+        },
+        "32": {
+            "execution_time": 0.01446080207824707,
+            "results": [
+                {
+                    "id": 6237887803,
+                    "tags": {
+                        "name": "Readings",
+                        "shop": "books"
+                    },
+                    "distance": 759.13385211
+                },
+                {
+                    "id": 2105173577,
+                    "tags": {
+                        "name": "Book Grocer",
+                        "shop": "books",
+                        "phone": "+61 3 9670 4304",
+                        "website": "http://bookgrocer.libro.com.au/",
+                        "addr:street": "Bourke Street",
+                        "opening_hours": "Mo-Fr 10:00-18:00; Sa 10:00-17:00; Su off",
+                        "addr:housenumber": "455"
+                    },
+                    "distance": 853.63441145
+                },
+                {
+                    "id": 4907302783,
+                    "tags": {
+                        "name": "Sun Bookshop",
+                        "shop": "books",
+                        "addr:street": "Ballarat Street",
+                        "addr:suburb": "Yarraville",
+                        "addr:postcode": "3013",
+                        "opening_hours": "Mo-Sa 09:00-21:30; Su10:00-19:30",
+                        "addr:housenumber": "10"
+                    },
+                    "distance": 5977.87936415
+                },
+                {
+                    "id": 4308263747,
+                    "tags": {
+                        "name": "Mavern",
+                        "shop": "books"
+                    },
+                    "distance": 7962.76066153
+                },
+                {
+                    "id": 7255148757,
+                    "tags": {
+                        "name": "I Love Books",
+                        "shop": "books",
+                        "level": "0",
+                        "wheelchair": "no",
+                        "second_hand": "yes",
+                        "opening_hours": "Mo-Fr 10:00-16:00; Sa 10:00-13:00; PH closed; Su closed"
+                    },
+                    "distance": 13221.48665403
+                }
+            ]
+        },
+        "33": {
+            "execution_time": 0.010968923568725586,
+            "results": [
+                {
+                    "id": 8063999187,
+                    "tags": {
+                        "amenity": "waste_basket"
+                    },
+                    "distance": 5297.52962048
+                },
+                {
+                    "id": 8063999185,
+                    "tags": {
+                        "waste": "trash;recycling",
+                        "amenity": "waste_basket"
+                    },
+                    "distance": 5327.91160326
+                }
+            ]
+        },
+        "34": {
+            "execution_time": 0.010367631912231445,
+            "results": [
+                {
+                    "id": 12316728276,
+                    "tags": {
+                        "name": "Liberty Petrol Station",
+                        "brand": "Liberty",
+                        "amenity": "fuel",
+                        "brand:wikidata": "Q106687078"
+                    },
+                    "distance": 4669.49365195
+                },
+                {
+                    "id": 634963257,
+                    "tags": {
+                        "name": "Caltex",
+                        "brand": "Caltex",
+                        "amenity": "fuel",
+                        "website": "https://www.caltex.com.au/",
+                        "brand:wikidata": "Q277470",
+                        "brand:wikipedia": "en:Caltex"
+                    },
+                    "distance": 4762.41733095
+                },
+                {
+                    "id": 305589521,
+                    "tags": {
+                        "name": "United",
+                        "brand": "United",
+                        "amenity": "fuel",
+                        "website": "https://www.unitedpetroleum.com.au/",
+                        "brand:wikidata": "Q28224393",
+                        "brand:wikipedia": "en:United Petroleum"
+                    },
+                    "distance": 6760.24944129
+                },
+                {
+                    "id": 4708952309,
+                    "tags": {
+                        "name": "EG Australia",
+                        "brand": "Ampol",
+                        "amenity": "fuel",
+                        "operator": "EG Australia",
+                        "fuel:discount": "Woolworths",
+                        "brand:wikidata": "Q4748528",
+                        "operator:wikidata": "Q5023980"
+                    },
+                    "distance": 12870.1715579
+                },
+                {
+                    "id": 3347687938,
+                    "tags": {
+                        "name": "EG Australia",
+                        "brand": "Ampol",
+                        "amenity": "fuel",
+                        "website": "https://www.woolworthspetrol.com.au/",
+                        "operator": "EG Australia",
+                        "fuel:discount": "Woolworths",
+                        "brand:wikidata": "Q4748528",
+                        "operator:wikidata": "Q5023980"
+                    },
+                    "distance": 15478.30714701
+                }
+            ]
+        },
+        "35": {
+            "execution_time": 0.005439281463623047,
+            "results": []
+        },
+        "36": {
+            "execution_time": 0.01317739486694336,
+            "results": [
+                {
+                    "id": 5973616351,
+                    "tags": {
+                        "source": "vicmap",
+                        "amenity": "toilets"
+                    },
+                    "distance": 4126.51888508
+                },
+                {
+                    "id": 5806427462,
+                    "tags": {
+                        "amenity": "toilets"
+                    },
+                    "distance": 5911.29985137
+                },
+                {
+                    "id": 11676527135,
+                    "tags": {
+                        "access": "private",
+                        "amenity": "toilets"
+                    },
+                    "distance": 8482.51625378
+                },
+                {
+                    "id": 6487196134,
+                    "tags": {
+                        "fee": "no",
+                        "access": "yes",
+                        "unisex": "yes",
+                        "amenity": "toilets",
+                        "wheelchair": "yes",
+                        "changing_table": "yes",
+                        "toilets:disposal": "flush",
+                        "toilets:position": "seated"
+                    },
+                    "distance": 9106.94196394
+                },
+                {
+                    "id": 1422961923,
+                    "tags": {
+                        "fee": "no",
+                        "name": "Public Toilets",
+                        "amenity": "toilets",
+                        "wheelchair": "yes"
+                    },
+                    "distance": 9979.04023577
+                },
+                {
+                    "id": 1893013576,
+                    "tags": {
+                        "access": "yes",
+                        "amenity": "toilets"
+                    },
+                    "distance": 11300.00296058
+                },
+                {
+                    "id": 296846628,
+                    "tags": {
+                        "fee": "no",
+                        "amenity": "toilets",
+                        "check_date": "2022-11-11",
+                        "wheelchair": "yes"
+                    },
+                    "distance": 14684.41078802
+                },
+                {
+                    "id": 496447183,
+                    "tags": {
+                        "fee": "no",
+                        "amenity": "toilets",
+                        "check_date": "2022-04-20"
+                    },
+                    "distance": 15513.98626298
+                },
+                {
+                    "id": 5417495955,
+                    "tags": {
+                        "amenity": "toilets"
+                    },
+                    "distance": 16308.78860878
+                },
+                {
+                    "id": 9092950118,
+                    "tags": {
+                        "fee": "no",
+                        "access": "yes",
+                        "amenity": "toilets",
+                        "wheelchair": "yes",
+                        "toilets:disposal": "flush"
+                    },
+                    "distance": 16789.27518673
+                }
+            ]
+        },
+        "37": {
+            "execution_time": 0.010385513305664062,
+            "results": [
+                {
+                    "id": 8778889166,
+                    "tags": {
+                        "name": "The Red Carpet",
+                        "shop": "carpet",
+                        "addr:street": "Victoria Street",
+                        "opening_hours": "Th-Su 10:00-17:00",
+                        "addr:housenumber": "579",
+                        "check_date:opening_hours": "2025-02-08"
+                    },
+                    "distance": 8206.84511861
+                },
+                {
+                    "id": 11756731934,
+                    "tags": {
+                        "ref": "J10-J12",
+                        "shop": "carpet",
+                        "level": "0"
+                    },
+                    "distance": 12429.23943965
+                }
+            ]
+        },
+        "38": {
+            "execution_time": 0.015716552734375,
+            "results": [
+                {
+                    "id": 1889074995,
+                    "tags": {
+                        "fee": "no",
+                        "access": "yes",
+                        "unisex": "yes",
+                        "amenity": "toilets",
+                        "portable": "no",
+                        "wheelchair": "limited",
+                        "changing_table": "no",
+                        "toilets:disposal": "flush",
+                        "toilets:position": "seated",
+                        "toilets:handwashing": "yes"
+                    },
+                    "distance": 4136.00239849
+                },
+                {
+                    "id": 6083837720,
+                    "tags": {
+                        "amenity": "toilets"
+                    },
+                    "distance": 4587.28758688
+                },
+                {
+                    "id": 354163710,
+                    "tags": {
+                        "amenity": "toilets",
+                        "created_by": "Potlatch 0.10f"
+                    },
+                    "distance": 5246.46554434
+                },
+                {
+                    "id": 11921189794,
+                    "tags": {
+                        "amenity": "toilets"
+                    },
+                    "distance": 7561.50866421
+                },
+                {
+                    "id": 710383136,
+                    "tags": {
+                        "amenity": "toilets"
+                    },
+                    "distance": 8756.98832489
+                },
+                {
+                    "id": 710382297,
+                    "tags": {
+                        "amenity": "toilets"
+                    },
+                    "distance": 8757.08334658
+                },
+                {
+                    "id": 3164334096,
+                    "tags": {
+                        "fee": "no",
+                        "access": "yes",
+                        "unisex": "yes",
+                        "amenity": "toilets",
+                        "wheelchair": "yes",
+                        "toilets:disposal": "flush"
+                    },
+                    "distance": 10334.06002523
+                },
+                {
+                    "id": 12399063001,
+                    "tags": {
+                        "amenity": "toilets"
+                    },
+                    "distance": 11359.60021196
+                },
+                {
+                    "id": 823926678,
+                    "tags": {
+                        "fee": "no",
+                        "amenity": "toilets",
+                        "wheelchair": "no"
+                    },
+                    "distance": 12076.78205183
+                },
+                {
+                    "id": 1067157379,
+                    "tags": {
+                        "amenity": "toilets"
+                    },
+                    "distance": 12167.39770396
+                }
+            ]
+        },
+        "39": {
+            "execution_time": 0.012581825256347656,
+            "results": [
+                {
+                    "id": 4267858549,
+                    "tags": {
+                        "bus": "yes",
+                        "ref": "8241",
+                        "name": "Keats Street/Burwood Highway",
+                        "bench": "yes",
+                        "highway": "bus_stop",
+                        "network": "PTV - Metropolitan Buses",
+                        "shelter": "yes",
+                        "operator": "Ventura",
+                        "route_ref": "732;735",
+                        "departures_board": "timetable",
+                        "public_transport": "platform"
+                    },
+                    "distance": 6293.61328853
+                }
+            ]
+        },
+        "40": {
+            "execution_time": 0.00901341438293457,
+            "results": []
+        },
+        "41": {
+            "execution_time": 0.013669490814208984,
+            "results": [
+                {
+                    "id": 10110288001,
+                    "tags": {
+                        "name": "Carlos Cantina",
+                        "phone": "+61 3 9725 0397",
+                        "amenity": "restaurant",
+                        "cuisine": "mexican",
+                        "website": "https://carloscantina.com.au/",
+                        "addr:state": "VIC",
+                        "addr:street": "Maroondah Highway",
+                        "addr:suburb": "Croydon",
+                        "addr:postcode": "3136",
+                        "addr:housenumber": "72B"
+                    },
+                    "distance": 2995.03629041
+                },
+                {
+                    "id": 6542308823,
+                    "tags": {
+                        "name": "Red Chillies",
+                        "source": "survey",
+                        "amenity": "restaurant",
+                        "cuisine": "indian"
+                    },
+                    "distance": 5203.51272268
+                },
+                {
+                    "id": 6629908775,
+                    "tags": {
+                        "name": "Yang Yang Noodle & Dumpling",
+                        "phone": "+61 3 8838 8969",
+                        "amenity": "restaurant",
+                        "cuisine": "asian",
+                        "takeaway": "yes",
+                        "addr:state": "VIC",
+                        "addr:street": "Canterbury Road",
+                        "addr:suburb": "Heathmont",
+                        "reservation": "yes",
+                        "addr:postcode": "3135",
+                        "opening_hours": "Tu-Su 11:30-21:30",
+                        "addr:housenumber": "131"
+                    },
+                    "distance": 5620.47540114
+                },
+                {
+                    "id": 529776532,
+                    "tags": {
+                        "name": "Nudle",
+                        "amenity": "restaurant",
+                        "cuisine": "asian"
+                    },
+                    "distance": 8853.64259128
+                },
+                {
+                    "id": 395212113,
+                    "tags": {
+                        "name": "Switch",
+                        "amenity": "restaurant",
+                        "cuisine": "fusion"
+                    },
+                    "distance": 8902.43515048
+                },
+                {
+                    "id": 9085598413,
+                    "tags": {
+                        "name": "Mitcham Social",
+                        "phone": "+61 3 9872 5907",
+                        "amenity": "restaurant",
+                        "website": "https://www.mitchamsocial.com.au/",
+                        "addr:state": "VIC",
+                        "addr:street": "Thornton Crescent",
+                        "addr:suburb": "Mitcham",
+                        "addr:postcode": "3132",
+                        "opening_hours": "Th-Sa 12:00-23:00; Su 12:00-22:00",
+                        "outdoor_seating": "yes",
+                        "addr:housenumber": "1"
+                    },
+                    "distance": 9911.06508898
+                },
+                {
+                    "id": 9618873527,
+                    "tags": {
+                        "name": "Wandin Pizza Bar",
+                        "phone": "+61 3 5964 3381",
+                        "amenity": "restaurant",
+                        "cuisine": "pizza",
+                        "website": "https://www.wandinpizza.com.au/",
+                        "addr:state": "VIC",
+                        "addr:street": "Warburton Highway",
+                        "addr:suburb": "Wandin North",
+                        "addr:postcode": "3139",
+                        "opening_hours": "Tu-Su 17:00-22:00",
+                        "addr:housenumber": "372"
+                    },
+                    "distance": 11691.71527417
+                },
+                {
+                    "id": 2405992883,
+                    "tags": {
+                        "name": "Miku Japanese Dining",
+                        "amenity": "restaurant",
+                        "cuisine": "japanese"
+                    },
+                    "distance": 12043.45454759
+                },
+                {
+                    "id": 261346373,
+                    "tags": {
+                        "name": "Sofia",
+                        "amenity": "restaurant",
+                        "website": "https://sofiaburwood.com.au/"
+                    },
+                    "distance": 13359.21692282
+                },
+                {
+                    "id": 10237466589,
+                    "tags": {
+                        "name": "Dragon Hot Pot",
+                        "level": "0",
+                        "phone": "+61 3 8839 3085",
+                        "source": "survey",
+                        "amenity": "restaurant",
+                        "cuisine": "chinese;hot_pot",
+                        "smoking": "no",
+                        "toilets": "no",
+                        "website": "https://www.dragonhotpot.com.au/",
+                        "takeaway": "yes",
+                        "addr:unit": "Shop G15",
+                        "kids_area": "no",
+                        "check_date": "2023-10-28",
+                        "wheelchair": "yes",
+                        "addr:street": "Burwood Highway",
+                        "microbrewery": "no",
+                        "self_service": "yes",
+                        "opening_hours": "Mo-We 12:00-23:00; Th-Su 12:00-24:00",
+                        "addr:housename": "Burwood One Shopping Centre",
+                        "changing_table": "no",
+                        "internet_access": "no",
+                        "outdoor_seating": "no",
+                        "addr:housenumber": "172-210",
+                        "operator:ref:abn": "32198556581"
+                    },
+                    "distance": 14211.12135075
+                }
+            ]
+        },
+        "42": {
+            "execution_time": 0.012299776077270508,
+            "results": [
+                {
+                    "id": 9513144194,
+                    "tags": {
+                        "amenity": "toilets"
+                    },
+                    "distance": 11952.64914433
+                },
+                {
+                    "id": 6089226542,
+                    "tags": {
+                        "amenity": "toilets"
+                    },
+                    "distance": 14993.2943972
+                }
+            ]
+        },
+        "43": {
+            "execution_time": 0.012763261795043945,
+            "results": [
+                {
+                    "id": 1505820155,
+                    "tags": {
+                        "name": "Mycar",
+                        "shop": "car_repair",
+                        "brand": "mycar Tyre & Auto",
+                        "website": "www.mycar.com.au",
+                        "brand:wikidata": "Q106224674"
+                    },
+                    "distance": 6442.29932653
+                },
+                {
+                    "id": 12200780759,
+                    "tags": {
+                        "name": "Allcare Automotive",
+                        "shop": "car_repair",
+                        "phone": "+61 3 9384 0401",
+                        "website": "https://www.allcareautomotive.com.au",
+                        "addr:state": "VIC",
+                        "addr:street": "Albion Street",
+                        "addr:suburb": "Brunswick",
+                        "addr:postcode": "3056",
+                        "addr:housenumber": "191"
+                    },
+                    "distance": 7905.30966389
+                },
+                {
+                    "id": 5999385855,
+                    "tags": {
+                        "name": "Cirfe",
+                        "shop": "car_repair"
+                    },
+                    "distance": 7990.93951526
+                },
+                {
+                    "id": 5999385864,
+                    "tags": {
+                        "name": "Sunny Auto",
+                        "shop": "car_repair"
+                    },
+                    "distance": 8484.50980966
+                },
+                {
+                    "id": 6017236248,
+                    "tags": {
+                        "name": "G&B Motors",
+                        "shop": "car_repair"
+                    },
+                    "distance": 10856.79158965
+                },
+                {
+                    "id": 3696262706,
+                    "tags": {
+                        "name": "01 Automotive",
+                        "shop": "car_repair",
+                        "source": "survey",
+                        "addr:street": "Fennell Street",
+                        "addr:suburb": "Port Melbourne",
+                        "addr:postcode": "3207",
+                        "addr:housenumber": "3",
+                        "contact:facebook": "https://www.facebook.com/pages/01-Automotive-Port-Melbourne/170856273115586"
+                    },
+                    "distance": 11946.45037168
+                },
+                {
+                    "id": 8741053940,
+                    "tags": {
+                        "name": "Universe Motors",
+                        "shop": "car_repair",
+                        "addr:street": "Church Street",
+                        "addr:housenumber": "53"
+                    },
+                    "distance": 15529.34254431
+                }
+            ]
+        },
+        "44": {
+            "execution_time": 0.015816926956176758,
+            "results": [
+                {
+                    "id": 5824764005,
+                    "tags": {
+                        "amenity": "bench"
+                    },
+                    "distance": 1766.20470453
+                },
+                {
+                    "id": 11924029312,
+                    "tags": {
+                        "amenity": "bench",
+                        "backrest": "yes"
+                    },
+                    "distance": 1771.80178219
+                },
+                {
+                    "id": 11922555970,
+                    "tags": {
+                        "amenity": "bench",
+                        "backrest": "yes"
+                    },
+                    "distance": 2139.71300105
+                },
+                {
+                    "id": 11922556094,
+                    "tags": {
+                        "amenity": "bench",
+                        "backrest": "yes"
+                    },
+                    "distance": 2343.22311666
+                },
+                {
+                    "id": 11922556095,
+                    "tags": {
+                        "amenity": "bench",
+                        "backrest": "yes"
+                    },
+                    "distance": 2364.0148605
+                },
+                {
+                    "id": 9724971908,
+                    "tags": {
+                        "amenity": "bench"
+                    },
+                    "distance": 2421.332334
+                },
+                {
+                    "id": 11393944264,
+                    "tags": {
+                        "amenity": "bench",
+                        "backrest": "yes"
+                    },
+                    "distance": 2569.44752925
+                },
+                {
+                    "id": 11474492256,
+                    "tags": {
+                        "amenity": "bench",
+                        "backrest": "yes"
+                    },
+                    "distance": 2618.01235931
+                },
+                {
+                    "id": 9063440990,
+                    "tags": {
+                        "amenity": "bench"
+                    },
+                    "distance": 3168.11955043
+                },
+                {
+                    "id": 11930472054,
+                    "tags": {
+                        "amenity": "bench",
+                        "backrest": "yes"
+                    },
+                    "distance": 3184.03126222
+                }
+            ]
+        },
+        "45": {
+            "execution_time": 0.016017675399780273,
+            "results": [
+                {
+                    "id": 12479911734,
+                    "tags": {
+                        "amenity": "bench"
+                    },
+                    "distance": 2345.53719548
+                },
+                {
+                    "id": 12479911729,
+                    "tags": {
+                        "amenity": "bench"
+                    },
+                    "distance": 2383.6227207
+                },
+                {
+                    "id": 12479911731,
+                    "tags": {
+                        "amenity": "bench"
+                    },
+                    "distance": 2398.51761367
+                },
+                {
+                    "id": 9242991246,
+                    "tags": {
+                        "amenity": "bench"
+                    },
+                    "distance": 4091.52017938
+                },
+                {
+                    "id": 9237369183,
+                    "tags": {
+                        "amenity": "bench"
+                    },
+                    "distance": 4596.09524753
+                },
+                {
+                    "id": 9326536583,
+                    "tags": {
+                        "amenity": "bench"
+                    },
+                    "distance": 4990.41161221
+                },
+                {
+                    "id": 9243492475,
+                    "tags": {
+                        "amenity": "bench"
+                    },
+                    "distance": 5407.77040428
+                },
+                {
+                    "id": 9223110379,
+                    "tags": {
+                        "amenity": "bench"
+                    },
+                    "distance": 5698.88643026
+                },
+                {
+                    "id": 9182113462,
+                    "tags": {
+                        "amenity": "bench"
+                    },
+                    "distance": 5922.34089714
+                },
+                {
+                    "id": 10729269054,
+                    "tags": {
+                        "amenity": "bench"
+                    },
+                    "distance": 6010.33774225
+                }
+            ]
+        },
+        "46": {
+            "execution_time": 0.015252828598022461,
+            "results": [
+                {
+                    "id": 10026346571,
+                    "tags": {
+                        "name": "Fantasy Hair Studio",
+                        "shop": "hairdresser"
+                    },
+                    "distance": 14519.00215648
+                },
+                {
+                    "id": 5824764078,
+                    "tags": {
+                        "name": "The Beauty Of Hair",
+                        "shop": "hairdresser"
+                    },
+                    "distance": 16294.97759031
+                },
+                {
+                    "id": 5824763971,
+                    "tags": {
+                        "name": "National Hair Design",
+                        "shop": "hairdresser"
+                    },
+                    "distance": 16324.08453146
+                },
+                {
+                    "id": 5824764050,
+                    "tags": {
+                        "name": "Hanan Hairdress",
+                        "shop": "hairdresser",
+                        "addr:unit": "G3",
+                        "addr:street": "Hampshire Road",
+                        "addr:housenumber": "254"
+                    },
+                    "distance": 16346.32250357
+                },
+                {
+                    "id": 5824763977,
+                    "tags": {
+                        "name": "Lindy Hair Beauty",
+                        "shop": "hairdresser"
+                    },
+                    "distance": 16500.7977388
+                },
+                {
+                    "id": 12477026808,
+                    "tags": {
+                        "name": "Lux Barber",
+                        "shop": "hairdresser"
+                    },
+                    "distance": 16600.3298981
+                }
+            ]
+        },
+        "47": {
+            "execution_time": 0.005509853363037109,
+            "results": []
+        },
+        "48": {
+            "execution_time": 0.005165815353393555,
+            "results": []
+        },
+        "49": {
+            "execution_time": 0.013365983963012695,
+            "results": [
+                {
+                    "id": 7176810598,
+                    "tags": {
+                        "name": "Essa Hairdressing",
+                        "shop": "hairdresser"
+                    },
+                    "distance": 3435.86085462
+                },
+                {
+                    "id": 12320134149,
+                    "tags": {
+                        "name": "M Salon",
+                        "shop": "hairdresser",
+                        "phone": "+61 3 9876 6864",
+                        "addr:state": "VIC",
+                        "addr:street": "Florence Avenue",
+                        "addr:suburb": "Ringwood North",
+                        "addr:postcode": "3134",
+                        "addr:housenumber": "8"
+                    },
+                    "distance": 3955.73351815
+                },
+                {
+                    "id": 700524524,
+                    "tags": {
+                        "name": "CAVIX",
+                        "shop": "hairdresser",
+                        "source": "survey"
+                    },
+                    "distance": 7828.30300649
+                },
+                {
+                    "id": 577461668,
+                    "tags": {
+                        "name": "BOSS Hair Design",
+                        "shop": "hairdresser",
+                        "phone": "+61 3 9807 4455",
+                        "website": "http://bosshair.com.au/",
+                        "addr:street": "Hamilton Place",
+                        "opening_hours": "Tu,Fr 09:45-18:00; We-Th 09:45-21:00; Sa 09:45-17:00",
+                        "addr:housenumber": "10"
+                    },
+                    "distance": 8995.28244582
+                },
+                {
+                    "id": 3062311553,
+                    "tags": {
+                        "name": "Bel Air Hairdressing",
+                        "shop": "hairdresser"
+                    },
+                    "distance": 9287.48923125
+                },
+                {
+                    "id": 11502345961,
+                    "tags": {
+                        "name": "Amanda Patterson Hair",
+                        "shop": "hairdresser",
+                        "level": "1",
+                        "wheelchair": "no"
+                    },
+                    "distance": 9386.8857027
+                },
+                {
+                    "id": 610570627,
+                    "tags": {
+                        "name": "Rejuvenation On Location",
+                        "shop": "hairdresser",
+                        "website": "http://www.rejuvenationonlocation.com.au/"
+                    },
+                    "distance": 9639.0990309
+                },
+                {
+                    "id": 9903079327,
+                    "tags": {
+                        "name": "Lellu",
+                        "shop": "hairdresser"
+                    },
+                    "distance": 10122.63143516
+                },
+                {
+                    "id": 6246287135,
+                    "tags": {
+                        "name": "Billie\u2019s Salon",
+                        "shop": "hairdresser"
+                    },
+                    "distance": 13125.55005286
+                },
+                {
+                    "id": 10160870685,
+                    "tags": {
+                        "name": "JC Xiang Hair",
+                        "shop": "hairdresser"
+                    },
+                    "distance": 14788.1306065
+                }
+            ]
+        }
+    }
+}

@@ -185,17 +185,6 @@ class QueryResultsParser:
                 return f"{v:.2f}s"
             return f"{v*1000:.0f}ms"
 
-        def _annotate_points(ax, xs, ys, yoffset=0.02, fontsize=8):
-            # place labels just above each marker (relative offset based on data span)
-            if len(ys) == 0:
-                return
-            y_span = (max(ys) - min(ys)) or 1.0
-            for x, y in zip(xs, ys):
-                ax.annotate(_fmt_s(y), (x, y),
-                            textcoords="offset points",
-                            xytext=(0, max(6, int(yoffset * 100))), ha="center",
-                            fontsize=fontsize, rotation=0, va="bottom")
-
         def _annotate_bars(ax, rects, fontsize=9):
             for r in rects:
                 h = r.get_height()
@@ -349,6 +338,73 @@ class QueryResultsParser:
             print(f"Saved semantic coherence line chart: {coh_path}")
         else:
             print("⚠️  No coherence series to plot.")
+        
+        # --- 4) Spatial Range per query (line chart), + dotted mean per method ---
+        plt.figure(figsize=(10, 6))
+        ax4 = plt.gca()
+        any_spatial = False
+        _last_keys_sorted = None
+
+        for path, method in zip(test_files, methods):
+            if not os.path.exists(path):
+                continue
+            try:
+                with open(path, "r", encoding="utf-8") as f:
+                    data = json.load(f)
+            except Exception:
+                continue
+
+            qres = data.get("query_results", {})
+            if not isinstance(qres, dict) or not qres:
+                continue
+
+            def _safe_int(x):
+                try: return int(x)
+                except: return x
+            keys_sorted = sorted(qres.keys(), key=_safe_int)
+            _last_keys_sorted = keys_sorted
+
+            # compute spatial range = max distance among top-k
+            series = []
+            for qid in keys_sorted:
+                items = qres[qid].get("results", []) or []
+                dists = [float(it["distance"]) for it in items[:k] if "distance" in it]
+                series.append(max(dists) if dists else np.nan)
+
+            if all(np.isnan(series)):
+                continue
+
+            off = offsets.get(method, 0.0)
+            xs = np.arange(1, len(series) + 1, dtype=float) + off
+            arr = np.array(series, dtype=float)
+            valid = ~np.isnan(arr)
+            if not np.any(valid):
+                continue
+
+            line, = plt.plot(xs[valid], arr[valid], marker="o", linewidth=1.5, label=method)
+            any_spatial = True
+
+            mean_val = float(np.nanmean(arr))
+            plt.hlines(mean_val, 1 + off, len(series) + off, linestyles=":", linewidth=1.5, colors=line.get_color())
+            ax4.annotate(f"mean={mean_val:.2f}", (len(series) + off, mean_val),
+                         xytext=(6, 0), textcoords="offset points",
+                         fontsize=8, color=line.get_color(), va="center")
+
+        if any_spatial:
+            plt.title(f"Per-Query Spatial Range — source={source}, k={k}")
+            plt.xlabel("Query #")
+            plt.ylabel(f"Spatial range@{k} (distance units)")
+            if _last_keys_sorted:
+                plt.xticks(np.arange(1, len(_last_keys_sorted) + 1))
+            plt.grid(True, linestyle="--", alpha=0.4)
+            plt.legend()
+            rng_path = os.path.join(out_dir, f"{source}_k{k}_spatial_range_{scenario}.png")
+            plt.tight_layout()
+            plt.savefig(rng_path, dpi=150)
+            plt.close()
+            print(f"Saved spatial range line chart: {rng_path}")
+        else:
+            print("⚠️  No spatial range series to plot.")
 
 
 

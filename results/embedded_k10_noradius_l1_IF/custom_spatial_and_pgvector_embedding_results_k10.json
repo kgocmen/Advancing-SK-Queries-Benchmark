@@ -1,0 +1,2115 @@
+{
+    "insertion_time": 87.14300084114075,
+    "index_creation": {
+        "func": [
+            "CREATE INDEX IF NOT EXISTS idx_pois_geom ON PoIs USING GIST (geom);",
+            "CREATE INDEX IF NOT EXISTS idx_pois_embedding ON PoIs USING hnsw (embedding vector_cosine_ops) WITH (m = 16, ef_construction = 64);"
+        ],
+        "time": 38.491283655166626
+    },
+    "query_results": {
+        "0": {
+            "execution_time": 0.1971724033355713,
+            "results": [
+                {
+                    "id": 10181976928,
+                    "tags": {
+                        "name": "Balance Hormones",
+                        "healthcare": "alternative"
+                    },
+                    "distance": 61940.52450021,
+                    "sims": 0.4092367305214317
+                },
+                {
+                    "id": 1357413436,
+                    "tags": {
+                        "source": "local_knowledge",
+                        "amenity": "pharmacy",
+                        "healthcare": "pharmacy"
+                    },
+                    "distance": 8807.3378546,
+                    "sims": 0.40468713142901436
+                },
+                {
+                    "id": 6041031008,
+                    "tags": {
+                        "name": "Federation of Chinese Medicine Centre",
+                        "healthcare": "alternative"
+                    },
+                    "distance": 22807.80595256,
+                    "sims": 0.39907478083071757
+                },
+                {
+                    "id": 11404214153,
+                    "tags": {
+                        "name": "Acupuncture Herbal Medicine",
+                        "healthcare": "alternative",
+                        "addr:street": "High Street",
+                        "addr:housenumber": "297"
+                    },
+                    "distance": 3634.64627457,
+                    "sims": 0.37826105226642803
+                },
+                {
+                    "id": 2501324981,
+                    "tags": {
+                        "name": "Hume City Pharmacy",
+                        "shop": "chemist"
+                    },
+                    "distance": 15647.42908551,
+                    "sims": 0.376722715897728
+                },
+                {
+                    "id": 6164774527,
+                    "tags": {
+                        "fax": "+61 3 9598 3165",
+                        "name": "Bluff Pharmacy",
+                        "email": "info@bluffpharmacy.com.au",
+                        "phone": "+61 3 9598 7069",
+                        "source": "survey;local knowledge;website",
+                        "website": "https://www.bluffpharmacy.com.au/",
+                        "addr:state": "VIC",
+                        "check_date": "2025-01-17",
+                        "dispensing": "yes",
+                        "healthcare": "pharmacy",
+                        "addr:street": "Bluff Road",
+                        "addr:suburb": "Hampton",
+                        "addr:postcode": "3188",
+                        "drive_through": "no",
+                        "opening_hours": "Mo-Fr 09:00-18:00; Sa 09:00-15:00; PH off",
+                        "disused:amenity": "pharmacy",
+                        "addr:housenumber": "355A"
+                    },
+                    "distance": 16593.47761089,
+                    "sims": 0.3495946853628198
+                },
+                {
+                    "id": 7185766733,
+                    "tags": {
+                        "name": "ME Health",
+                        "amenity": "doctors",
+                        "description": "after hours GP clinic"
+                    },
+                    "distance": 8756.80556338,
+                    "sims": 0.34739951460355933
+                },
+                {
+                    "id": 5352025211,
+                    "tags": {
+                        "name": "Your Pharmacy",
+                        "branch": "Alma Village",
+                        "amenity": "pharmacy",
+                        "healthcare": "pharmacy"
+                    },
+                    "distance": 7496.02400509,
+                    "sims": 0.3439339008291955
+                },
+                {
+                    "id": 1948157042,
+                    "tags": {
+                        "name": "Beovich's Guardian Pharmacy",
+                        "amenity": "pharmacy",
+                        "healthcare": "pharmacy",
+                        "attribution": "Survey"
+                    },
+                    "distance": 15610.34675653,
+                    "sims": 0.3389100341364806
+                },
+                {
+                    "id": 4010457762,
+                    "tags": {
+                        "name": "Max Therapy",
+                        "shop": "massage"
+                    },
+                    "distance": 16891.30726607,
+                    "sims": 0.3348845046620994
+                }
+            ]
+        },
+        "1": {
+            "execution_time": 0.1902148723602295,
+            "results": [
+                {
+                    "id": 6237887803,
+                    "tags": {
+                        "name": "Readings",
+                        "shop": "books"
+                    },
+                    "distance": 4712.10607486,
+                    "sims": 0.5616715436195057
+                },
+                {
+                    "id": 3909127668,
+                    "tags": {
+                        "name": "Book Barn",
+                        "shop": "books"
+                    },
+                    "distance": 65343.58273047,
+                    "sims": 0.5325952846039171
+                },
+                {
+                    "id": 1742583319,
+                    "tags": {
+                        "name": "Hurstbridge Books, CDs and Videos",
+                        "shop": "books",
+                        "second_hand": "only"
+                    },
+                    "distance": 25319.25936579,
+                    "sims": 0.5013028386361357
+                },
+                {
+                    "id": 4308263747,
+                    "tags": {
+                        "name": "Mavern",
+                        "shop": "books"
+                    },
+                    "distance": 11140.77759633,
+                    "sims": 0.4954648603117273
+                },
+                {
+                    "id": 2763624430,
+                    "tags": {
+                        "name": "Campion Education",
+                        "shop": "books"
+                    },
+                    "distance": 44883.81873352,
+                    "sims": 0.42765633527192737
+                },
+                {
+                    "id": 2105173577,
+                    "tags": {
+                        "name": "Book Grocer",
+                        "shop": "books",
+                        "phone": "+61 3 9670 4304",
+                        "website": "http://bookgrocer.libro.com.au/",
+                        "addr:street": "Bourke Street",
+                        "opening_hours": "Mo-Fr 10:00-18:00; Sa 10:00-17:00; Su off",
+                        "addr:housenumber": "455"
+                    },
+                    "distance": 5330.64452186,
+                    "sims": 0.3906383253665857
+                },
+                {
+                    "id": 2395180465,
+                    "tags": {
+                        "amenity": "library"
+                    },
+                    "distance": 5996.12816291,
+                    "sims": 0.3585489161890896
+                },
+                {
+                    "id": 9454432566,
+                    "tags": {
+                        "name": "TAB",
+                        "shop": "bookmaker",
+                        "brand": "TAB",
+                        "brand:wikidata": "Q110288149"
+                    },
+                    "distance": 28325.86448862,
+                    "sims": 0.31844772540277555
+                },
+                {
+                    "id": 5824763959,
+                    "tags": {
+                        "shop": "houseware"
+                    },
+                    "distance": 11535.24998643,
+                    "sims": 0.30173496645331443
+                },
+                {
+                    "id": 10224669731,
+                    "tags": {
+                        "name": "TAB",
+                        "shop": "bookmaker",
+                        "brand": "TAB",
+                        "check_date": "2022-11-29",
+                        "addr:street": "Hawthorn Road",
+                        "brand:wikidata": "Q110288149",
+                        "addr:housenumber": "326"
+                    },
+                    "distance": 14237.5196344,
+                    "sims": 0.29812504008414165
+                }
+            ]
+        },
+        "2": {
+            "execution_time": 0.18853330612182617,
+            "results": [
+                {
+                    "id": 3840017767,
+                    "tags": {
+                        "amenity": "restaurant"
+                    },
+                    "distance": 8588.38303553,
+                    "sims": 0.591613557953792
+                },
+                {
+                    "id": 6403296362,
+                    "tags": {
+                        "amenity": "restaurant"
+                    },
+                    "distance": 12088.30997019,
+                    "sims": 0.591613557953792
+                },
+                {
+                    "id": 7645068817,
+                    "tags": {
+                        "amenity": "restaurant"
+                    },
+                    "distance": 57453.70387537,
+                    "sims": 0.591613557953792
+                },
+                {
+                    "id": 1948991020,
+                    "tags": {
+                        "amenity": "restaurant"
+                    },
+                    "distance": 57497.32922457,
+                    "sims": 0.591613557953792
+                },
+                {
+                    "id": 12221800066,
+                    "tags": {
+                        "amenity": "restaurant"
+                    },
+                    "distance": 59461.52079025,
+                    "sims": 0.591613557953792
+                },
+                {
+                    "id": 5413453837,
+                    "tags": {
+                        "name": "Ma-Long Kitchen",
+                        "source": "survey",
+                        "amenity": "restaurant"
+                    },
+                    "distance": 14111.03859622,
+                    "sims": 0.5517620259182713
+                },
+                {
+                    "id": 3898414843,
+                    "tags": {
+                        "name": "O Town",
+                        "amenity": "restaurant"
+                    },
+                    "distance": 16030.14344361,
+                    "sims": 0.5428947329364582
+                },
+                {
+                    "id": 10720437206,
+                    "tags": {
+                        "name": "Tasteport",
+                        "amenity": "restaurant"
+                    },
+                    "distance": 4387.98018879,
+                    "sims": 0.5353306128589939
+                },
+                {
+                    "id": 1955893247,
+                    "tags": {
+                        "name": "The Main Cafe Bar & Restaurant",
+                        "amenity": "restaurant"
+                    },
+                    "distance": 36996.62549424,
+                    "sims": 0.5294307365069478
+                },
+                {
+                    "id": 2251431732,
+                    "tags": {
+                        "name": "Coast Caf\u00e9",
+                        "amenity": "restaurant",
+                        "cuisine": "thai"
+                    },
+                    "distance": 18504.70694374,
+                    "sims": 0.4962777804500951
+                }
+            ]
+        },
+        "3": {
+            "execution_time": 0.19144582748413086,
+            "results": [
+                {
+                    "id": 6741639490,
+                    "tags": {
+                        "tourism": "artwork"
+                    },
+                    "distance": 1869.1109788,
+                    "sims": 0.6052131001841816
+                },
+                {
+                    "id": 5776644658,
+                    "tags": {
+                        "tourism": "artwork"
+                    },
+                    "distance": 3632.53768369,
+                    "sims": 0.6052131001841816
+                },
+                {
+                    "id": 2987188735,
+                    "tags": {
+                        "tourism": "artwork"
+                    },
+                    "distance": 35234.00522151,
+                    "sims": 0.6052131001841816
+                },
+                {
+                    "id": 9260723187,
+                    "tags": {
+                        "tourism": "artwork"
+                    },
+                    "distance": 36702.75591197,
+                    "sims": 0.6052131001841816
+                },
+                {
+                    "id": 11974364525,
+                    "tags": {
+                        "tourism": "viewpoint"
+                    },
+                    "distance": 10859.89389097,
+                    "sims": 0.5941042900085491
+                },
+                {
+                    "id": 1940758992,
+                    "tags": {
+                        "tourism": "viewpoint"
+                    },
+                    "distance": 20803.18869614,
+                    "sims": 0.5941042900085491
+                },
+                {
+                    "id": 11936008385,
+                    "tags": {
+                        "tourism": "viewpoint"
+                    },
+                    "distance": 20943.34647231,
+                    "sims": 0.5941042900085491
+                },
+                {
+                    "id": 10831716418,
+                    "tags": {
+                        "tourism": "viewpoint"
+                    },
+                    "distance": 24990.39500298,
+                    "sims": 0.5941042900085491
+                },
+                {
+                    "id": 9317703937,
+                    "tags": {
+                        "tourism": "viewpoint"
+                    },
+                    "distance": 39635.94483046,
+                    "sims": 0.5941042900085491
+                },
+                {
+                    "id": 11876605631,
+                    "tags": {
+                        "tourism": "viewpoint"
+                    },
+                    "distance": 45021.1474344,
+                    "sims": 0.5941042900085491
+                }
+            ]
+        },
+        "4": {
+            "execution_time": 0.19457077980041504,
+            "results": [
+                {
+                    "id": 2596278947,
+                    "tags": {
+                        "name": "Dandenong North",
+                        "place": "suburb"
+                    },
+                    "distance": 3055.98993639,
+                    "sims": 0.6848863567378034
+                },
+                {
+                    "id": 12419861199,
+                    "tags": {
+                        "addr:street": "Mt Dandenong Tourist Road",
+                        "addr:housenumber": "1194-1196A"
+                    },
+                    "distance": 23425.70746789,
+                    "sims": 0.48960036039352417
+                },
+                {
+                    "id": 12419894933,
+                    "tags": {
+                        "addr:street": "Mt Dandenong Tourist Road",
+                        "addr:housenumber": "1194-1196B"
+                    },
+                    "distance": 23348.04884029,
+                    "sims": 0.48592910254424293
+                },
+                {
+                    "id": 12419905723,
+                    "tags": {
+                        "addr:street": "Mt Dandenong Tourist Road",
+                        "addr:housenumber": "1548-1552"
+                    },
+                    "distance": 19628.47773815,
+                    "sims": 0.47592320894737383
+                },
+                {
+                    "id": 12419871102,
+                    "tags": {
+                        "addr:street": "Mt Dandenong Tourist Road",
+                        "addr:housenumber": "1478"
+                    },
+                    "distance": 19945.14028098,
+                    "sims": 0.4694623649120331
+                },
+                {
+                    "id": 12419894841,
+                    "tags": {
+                        "addr:street": "Mt Dandenong Tourist Road",
+                        "addr:housenumber": "1130-1132"
+                    },
+                    "distance": 24026.95851856,
+                    "sims": 0.4545879689104584
+                },
+                {
+                    "id": 12419810196,
+                    "tags": {
+                        "addr:street": "Mt Dandenong Tourist Road",
+                        "addr:housenumber": "1439-1441"
+                    },
+                    "distance": 19830.72479384,
+                    "sims": 0.44566020693420216
+                },
+                {
+                    "id": 12419810195,
+                    "tags": {
+                        "addr:street": "Mt Dandenong Tourist Road",
+                        "addr:housenumber": "1449-1449A"
+                    },
+                    "distance": 19712.76944468,
+                    "sims": 0.44359979033470154
+                },
+                {
+                    "id": 12412502331,
+                    "tags": {
+                        "addr:street": "Mt Dandenong Tourist Road",
+                        "addr:housenumber": "1036"
+                    },
+                    "distance": 22470.59494777,
+                    "sims": 0.4422755241394043
+                },
+                {
+                    "id": 12419862287,
+                    "tags": {
+                        "addr:street": "Mt Dandenong Tourist Road",
+                        "addr:housenumber": "178"
+                    },
+                    "distance": 15334.25408504,
+                    "sims": 0.44104844331741333
+                }
+            ]
+        },
+        "5": {
+            "execution_time": 0.19604849815368652,
+            "results": [
+                {
+                    "id": 5213608175,
+                    "tags": {
+                        "name": "Rainbow Coffee",
+                        "amenity": "cafe"
+                    },
+                    "distance": 21795.6575235,
+                    "sims": 0.45306406775307884
+                },
+                {
+                    "id": 9270913385,
+                    "tags": {
+                        "name": "The Mare Coffee Co",
+                        "amenity": "cafe"
+                    },
+                    "distance": 52064.6572588,
+                    "sims": 0.42430380437947557
+                },
+                {
+                    "id": 9135519890,
+                    "tags": {
+                        "name": "Brew Tower Museum",
+                        "tourism": "museum"
+                    },
+                    "distance": 2182.6886083,
+                    "sims": 0.4125381410121918
+                },
+                {
+                    "id": 2594892499,
+                    "tags": {
+                        "source": "survey",
+                        "amenity": "drinking_water"
+                    },
+                    "distance": 13341.7179908,
+                    "sims": 0.4027146100997925
+                },
+                {
+                    "id": 6405291495,
+                    "tags": {
+                        "source": "survey",
+                        "amenity": "drinking_water"
+                    },
+                    "distance": 14641.47677014,
+                    "sims": 0.4027146100997925
+                },
+                {
+                    "id": 6285223385,
+                    "tags": {
+                        "source": "survey",
+                        "amenity": "drinking_water"
+                    },
+                    "distance": 16718.32815541,
+                    "sims": 0.4027146100997925
+                },
+                {
+                    "id": 2527513730,
+                    "tags": {
+                        "source": "survey",
+                        "amenity": "drinking_water"
+                    },
+                    "distance": 17503.67432541,
+                    "sims": 0.4027146100997925
+                },
+                {
+                    "id": 310183309,
+                    "tags": {
+                        "source": "survey",
+                        "amenity": "drinking_water"
+                    },
+                    "distance": 18186.48673741,
+                    "sims": 0.4027146100997925
+                },
+                {
+                    "id": 6487196132,
+                    "tags": {
+                        "source": "survey",
+                        "amenity": "drinking_water"
+                    },
+                    "distance": 18271.91720768,
+                    "sims": 0.4027146100997925
+                },
+                {
+                    "id": 8972382968,
+                    "tags": {
+                        "name": "Riverslide Skate Shop and Caf\u00e9",
+                        "amenity": "cafe"
+                    },
+                    "distance": 725.74014194,
+                    "sims": 0.394774854183197
+                }
+            ]
+        },
+        "6": {
+            "execution_time": 0.18933916091918945,
+            "results": [
+                {
+                    "id": 6138135274,
+                    "tags": {
+                        "name": "Treasury Pharmacy",
+                        "amenity": "pharmacy",
+                        "healthcare": "pharmacy",
+                        "wheelchair": "yes",
+                        "opening_hours": "Mo-Fr 08:00-18:00"
+                    },
+                    "distance": 2406.7298085,
+                    "sims": 0.5680918090535128
+                },
+                {
+                    "id": 1955890105,
+                    "tags": {
+                        "fax": "+61 3 9707 4728",
+                        "name": "PharmaSave",
+                        "brand": "PharmaSave",
+                        "phone": "+61 3 9707 1555",
+                        "amenity": "pharmacy",
+                        "website": "https://www.berwickpharmacy.com.au/",
+                        "operator": "Pharmasave",
+                        "addr:state": "VIC",
+                        "dispensing": "yes",
+                        "healthcare": "pharmacy",
+                        "addr:street": "High Street",
+                        "addr:suburb": "Berwick",
+                        "payment:cash": "yes",
+                        "payment:visa": "yes",
+                        "addr:postcode": "3806",
+                        "drive_through": "no",
+                        "opening_hours": "Mo-Fr 08:00-21:00, Sa 08:00-18:00, Su 09:00-18:00",
+                        "brand:wikidata": "Q63367906",
+                        "addr:housenumber": "51",
+                        "payment:mastercard": "yes",
+                        "payment:debit_cards": "yes",
+                        "payment:american_express": "yes"
+                    },
+                    "distance": 42544.21745645,
+                    "sims": 0.4863562422713519
+                },
+                {
+                    "id": 12411528581,
+                    "tags": {
+                        "fax": "+61 3 9509 7705",
+                        "name": "Heathershaw's Compounding Pharmacy",
+                        "email": "dispensary@heathershawscompounding.com.au",
+                        "phone": "+61 3 9509 7912",
+                        "amenity": "pharmacy",
+                        "addr:state": "VIC",
+                        "dispensing": "yes",
+                        "healthcare": "pharmacy",
+                        "addr:street": "Burke Road",
+                        "addr:suburb": "Glen Iris",
+                        "payment:cash": "yes",
+                        "payment:visa": "yes",
+                        "addr:postcode": "3146",
+                        "drive_through": "no",
+                        "opening_hours": "Mo-Fr 08:30-18:30, Sa 09:00-17:00, Su 09:00-13:00",
+                        "addr:housenumber": "153",
+                        "payment:mastercard": "yes"
+                    },
+                    "distance": 10631.19699707,
+                    "sims": 0.4669232448477463
+                },
+                {
+                    "id": 2501324981,
+                    "tags": {
+                        "name": "Hume City Pharmacy",
+                        "shop": "chemist"
+                    },
+                    "distance": 16841.53280051,
+                    "sims": 0.45905215428058277
+                },
+                {
+                    "id": 5352025211,
+                    "tags": {
+                        "name": "Your Pharmacy",
+                        "branch": "Alma Village",
+                        "amenity": "pharmacy",
+                        "healthcare": "pharmacy"
+                    },
+                    "distance": 7714.12291862,
+                    "sims": 0.4441237813418937
+                },
+                {
+                    "id": 1948157042,
+                    "tags": {
+                        "name": "Beovich's Guardian Pharmacy",
+                        "amenity": "pharmacy",
+                        "healthcare": "pharmacy",
+                        "attribution": "Survey"
+                    },
+                    "distance": 17356.25193922,
+                    "sims": 0.4438440665827027
+                },
+                {
+                    "id": 1909805532,
+                    "tags": {
+                        "name": "Priceline Pharmacy",
+                        "brand": "Priceline Pharmacy",
+                        "amenity": "pharmacy",
+                        "dispensing": "yes",
+                        "healthcare": "pharmacy",
+                        "brand:wikidata": "Q7242652"
+                    },
+                    "distance": 36697.73999929,
+                    "sims": 0.44148331801146345
+                },
+                {
+                    "id": 9018355044,
+                    "tags": {
+                        "name": "Pharmasave Monbulk Pharmacy",
+                        "amenity": "pharmacy",
+                        "addr:street": "Main Street",
+                        "addr:housenumber": "98"
+                    },
+                    "distance": 41059.10854214,
+                    "sims": 0.43483713399947455
+                },
+                {
+                    "id": 1357413436,
+                    "tags": {
+                        "source": "local_knowledge",
+                        "amenity": "pharmacy",
+                        "healthcare": "pharmacy"
+                    },
+                    "distance": 10270.6173748,
+                    "sims": 0.4250091984895493
+                },
+                {
+                    "id": 2711791101,
+                    "tags": {
+                        "name": "North Melbourne Pharmacy",
+                        "phone": "+61 3 9326 5318",
+                        "amenity": "pharmacy",
+                        "healthcare": "pharmacy"
+                    },
+                    "distance": 1916.54917609,
+                    "sims": 0.4249397806697719
+                }
+            ]
+        },
+        "7": {
+            "execution_time": 0.189528226852417,
+            "results": [
+                {
+                    "id": 10566587781,
+                    "tags": {
+                        "name": "The Cheesecake Shop",
+                        "shop": "bakery"
+                    },
+                    "distance": 24534.59439166,
+                    "sims": 0.5192754996470718
+                },
+                {
+                    "id": 1736190155,
+                    "tags": {
+                        "name": "Stoneground Bakehouse",
+                        "shop": "bakery"
+                    },
+                    "distance": 25829.79613099,
+                    "sims": 0.5148496763542642
+                },
+                {
+                    "id": 6366220781,
+                    "tags": {
+                        "name": "Euro Cafe & Bakehouse",
+                        "shop": "bakery"
+                    },
+                    "distance": 33658.39142962,
+                    "sims": 0.4929542549903123
+                },
+                {
+                    "id": 9748242993,
+                    "tags": {
+                        "name": "Woodfrog Bakery",
+                        "shop": "bakery"
+                    },
+                    "distance": 2361.43064881,
+                    "sims": 0.4803605103063009
+                },
+                {
+                    "id": 6714508141,
+                    "tags": {
+                        "name": "Pie Face",
+                        "shop": "bakery",
+                        "website": "https://pieface.com.au/"
+                    },
+                    "distance": 44268.04522916,
+                    "sims": 0.4651240193548156
+                },
+                {
+                    "id": 12074853374,
+                    "tags": {
+                        "name": "Little Mylk Bar - Tasty Vegan Streetfood",
+                        "phone": "+61 0431107105",
+                        "mobile": "+61 0431 107 105",
+                        "source": "Real Estate Team University of Melbourne;Jon Peacock;local knowledge",
+                        "amenity": "cafe",
+                        "cuisine": "coffee_shop;burger;sandwich",
+                        "smoking": "no",
+                        "website": "https://littlemylkbar.com.au/",
+                        "capacity": "50",
+                        "delivery": "no",
+                        "takeaway": "yes",
+                        "check_date": "2024-08-06",
+                        "diet:local": "yes",
+                        "diet:vegan": "yes",
+                        "wheelchair": "yes",
+                        "addr:street": "University Plaza",
+                        "description": "Amazing pop-up cafe in a caravan selling awesome vegan food with gluten-free options",
+                        "diet:healthy": "yes",
+                        "website:menu": "https://littlemylkbar.com.au/menu/",
+                        "opening_hours": "Mo-Th 09:00-15:00",
+                        "diet:vegetarian": "yes",
+                        "internet_access": "wlan",
+                        "outdoor_seating": "yes",
+                        "air_conditioning": "no",
+                        "diet:gluten_free": "yes",
+                        "diet:lactose_free": "yes",
+                        "internet_access:fee": "no",
+                        "payment:debit_cards": "yes",
+                        "internet_access:ssid": "Uniwireless, Eduroam",
+                        "payment:credit_cards": "yes"
+                    },
+                    "distance": 2273.57110357,
+                    "sims": 0.4578113606201013
+                },
+                {
+                    "id": 6846240869,
+                    "tags": {
+                        "name": "Double Dutch Bakery",
+                        "amenity": "cafe",
+                        "check_date": "2023-09-12"
+                    },
+                    "distance": 4635.09319549,
+                    "sims": 0.4486643137139932
+                },
+                {
+                    "id": 6138840893,
+                    "tags": {
+                        "name": "Vacation",
+                        "amenity": "cafe",
+                        "cuisine": "coffee_shop",
+                        "takeaway": "yes",
+                        "check_date": "2025-02-12",
+                        "diet:vegan": "yes",
+                        "wheelchair": "yes",
+                        "opening_hours": "Mo-Fr 06:30-14:00; Sa,Su 07:00-14:00",
+                        "indoor_seating": "yes",
+                        "diet:vegetarian": "yes",
+                        "payment:debit_cards": "yes",
+                        "payment:credit_cards": "yes"
+                    },
+                    "distance": 1800.34474743,
+                    "sims": 0.44296481225209616
+                },
+                {
+                    "id": 2664381194,
+                    "tags": {
+                        "name": "Lord of the Fries",
+                        "brand": "Lord of the Fries",
+                        "phone": "+61 3 9600 3990",
+                        "amenity": "fast_food",
+                        "cuisine": "burger",
+                        "website": "http://www.burgeredge.com/",
+                        "takeaway": "yes",
+                        "diet:vegan": "only",
+                        "addr:street": "King Street",
+                        "brand:wikidata": "Q104088629",
+                        "addr:housenumber": "182"
+                    },
+                    "distance": 2973.634499,
+                    "sims": 0.4335019369719134
+                },
+                {
+                    "id": 5213706349,
+                    "tags": {
+                        "name": "Tabac Bakery",
+                        "shop": "bakery",
+                        "addr:street": "Springvale Road",
+                        "addr:housenumber": "296"
+                    },
+                    "distance": 22033.5221979,
+                    "sims": 0.4213477168860803
+                }
+            ]
+        },
+        "8": {
+            "execution_time": 0.18304228782653809,
+            "results": [
+                {
+                    "id": 6297092810,
+                    "tags": {
+                        "name": "Foodmax",
+                        "shop": "convenience",
+                        "source": "survey"
+                    },
+                    "distance": 24878.47252118,
+                    "sims": 0.523437951225869
+                },
+                {
+                    "id": 2911249230,
+                    "tags": {
+                        "amenity": "fast_food",
+                        "cuisine": "fish_and_chips"
+                    },
+                    "distance": 8987.54595923,
+                    "sims": 0.43411734307512395
+                },
+                {
+                    "id": 3928348519,
+                    "tags": {
+                        "name": "Joe's Eatery",
+                        "amenity": "cafe"
+                    },
+                    "distance": 1707.69345902,
+                    "sims": 0.42360559105874307
+                },
+                {
+                    "id": 6017199866,
+                    "tags": {
+                        "name": "Sylvester\u2019s Pizza",
+                        "amenity": "fast_food"
+                    },
+                    "distance": 8617.51507924,
+                    "sims": 0.42275272879037307
+                },
+                {
+                    "id": 3898414843,
+                    "tags": {
+                        "name": "O Town",
+                        "amenity": "restaurant"
+                    },
+                    "distance": 18945.21928613,
+                    "sims": 0.4184070180897195
+                },
+                {
+                    "id": 2520714885,
+                    "tags": {
+                        "phone": "+61 3 9563 8427",
+                        "source": "survey",
+                        "amenity": "fast_food",
+                        "cuisine": "pizza"
+                    },
+                    "distance": 16850.27104945,
+                    "sims": 0.41693459951098255
+                },
+                {
+                    "id": 4463141814,
+                    "tags": {
+                        "source": "survey",
+                        "amenity": "cafe"
+                    },
+                    "distance": 19814.85298116,
+                    "sims": 0.4148967164631774
+                },
+                {
+                    "id": 6403296362,
+                    "tags": {
+                        "amenity": "restaurant"
+                    },
+                    "distance": 7128.76334801,
+                    "sims": 0.4139265911491652
+                },
+                {
+                    "id": 3840017767,
+                    "tags": {
+                        "amenity": "restaurant"
+                    },
+                    "distance": 10535.45694883,
+                    "sims": 0.4139265911491652
+                },
+                {
+                    "id": 7645068817,
+                    "tags": {
+                        "amenity": "restaurant"
+                    },
+                    "distance": 63692.61935641,
+                    "sims": 0.4139265911491652
+                }
+            ]
+        },
+        "9": {
+            "execution_time": 0.1888127326965332,
+            "results": [
+                {
+                    "id": 2676302917,
+                    "tags": {
+                        "name": "Fun-key Music",
+                        "shop": "music",
+                        "phone": "+61 3 9786 3104",
+                        "alt_name": "Hey Dee Ho Music"
+                    },
+                    "distance": 40676.8755252,
+                    "sims": 0.36322999000549316
+                },
+                {
+                    "id": 2020573929,
+                    "tags": {
+                        "name": "Coles Night Entrance",
+                        "entrance": "yes"
+                    },
+                    "distance": 43292.80331889,
+                    "sims": 0.32930655232746264
+                },
+                {
+                    "id": 6989600887,
+                    "tags": {
+                        "name": "Roundabout Pizza",
+                        "amenity": "fast_food",
+                        "cuisine": "pizza",
+                        "opening_hours": "Mo-Su 17:00-23:00"
+                    },
+                    "distance": 2364.83691786,
+                    "sims": 0.31358909606933594
+                },
+                {
+                    "id": 676624957,
+                    "tags": {
+                        "name": "Carlton Audio Visual",
+                        "shop": "hifi",
+                        "phone": "+61 3 9639 2737",
+                        "website": "https://carltonaudiovisual.com.au/",
+                        "addr:street": "Lygon Street",
+                        "opening_hours": "Mo-Sa 10:00-18:00; Su 13:00-18:00",
+                        "addr:housenumber": "164"
+                    },
+                    "distance": 5925.77370866,
+                    "sims": 0.3071743845939636
+                },
+                {
+                    "id": 12419837623,
+                    "tags": {
+                        "addr:street": "Bass Court",
+                        "addr:housenumber": "20"
+                    },
+                    "distance": 34660.34318664,
+                    "sims": 0.2970833303282665
+                },
+                {
+                    "id": 12412498479,
+                    "tags": {
+                        "addr:street": "Bass Court",
+                        "addr:housenumber": "6"
+                    },
+                    "distance": 14904.57302255,
+                    "sims": 0.29088523983955383
+                },
+                {
+                    "id": 12419918855,
+                    "tags": {
+                        "addr:street": "Banjo Circuit",
+                        "addr:housenumber": "30"
+                    },
+                    "distance": 35450.14396506,
+                    "sims": 0.2863040141048445
+                },
+                {
+                    "id": 12420527309,
+                    "tags": {
+                        "addr:street": "Bass Close",
+                        "addr:housenumber": "12"
+                    },
+                    "distance": 69117.38244534,
+                    "sims": 0.28524230630650016
+                },
+                {
+                    "id": 12410834533,
+                    "tags": {
+                        "addr:street": "Nirvana Crescent",
+                        "addr:housenumber": "3A"
+                    },
+                    "distance": 17473.98800623,
+                    "sims": 0.2845992106677062
+                },
+                {
+                    "id": 6359672940,
+                    "tags": {
+                        "name": "Sawadekaa",
+                        "amenity": "fast_food",
+                        "cuisine": "thai",
+                        "opening_hours": "We-Su 16:30-21:00"
+                    },
+                    "distance": 45208.91415834,
+                    "sims": 0.284033851863972
+                }
+            ]
+        },
+        "10": {
+            "execution_time": 0.18625807762145996,
+            "results": [
+                {
+                    "id": 6741639490,
+                    "tags": {
+                        "tourism": "artwork"
+                    },
+                    "distance": 2140.60727065,
+                    "sims": 0.6078790420657981
+                },
+                {
+                    "id": 5776644658,
+                    "tags": {
+                        "tourism": "artwork"
+                    },
+                    "distance": 3686.28395937,
+                    "sims": 0.6078790420657981
+                },
+                {
+                    "id": 2987188735,
+                    "tags": {
+                        "tourism": "artwork"
+                    },
+                    "distance": 34307.9946543,
+                    "sims": 0.6078790420657981
+                },
+                {
+                    "id": 9260723187,
+                    "tags": {
+                        "tourism": "artwork"
+                    },
+                    "distance": 35773.5823122,
+                    "sims": 0.6078790420657981
+                },
+                {
+                    "id": 9141341453,
+                    "tags": {
+                        "tourism": "artwork",
+                        "artwork_type": "sculpture"
+                    },
+                    "distance": 1522.50822664,
+                    "sims": 0.5622083393634407
+                },
+                {
+                    "id": 9202059097,
+                    "tags": {
+                        "tourism": "artwork",
+                        "artwork_type": "sculpture"
+                    },
+                    "distance": 17779.98119179,
+                    "sims": 0.5622083393634407
+                },
+                {
+                    "id": 9175656618,
+                    "tags": {
+                        "tourism": "artwork",
+                        "artwork_type": "sculpture"
+                    },
+                    "distance": 37934.20891089,
+                    "sims": 0.5622083393634407
+                },
+                {
+                    "id": 9175656619,
+                    "tags": {
+                        "tourism": "artwork",
+                        "artwork_type": "sculpture"
+                    },
+                    "distance": 37939.90349083,
+                    "sims": 0.5622083393634407
+                },
+                {
+                    "id": 613995125,
+                    "tags": {
+                        "tourism": "artwork",
+                        "artwork_type": "sculpture"
+                    },
+                    "distance": 40499.7461422,
+                    "sims": 0.5622083393634407
+                },
+                {
+                    "id": 9250342461,
+                    "tags": {
+                        "tourism": "artwork",
+                        "artwork_type": "sculpture"
+                    },
+                    "distance": 45562.78082739,
+                    "sims": 0.5622083393634407
+                }
+            ]
+        },
+        "11": {
+            "execution_time": 0.1960592269897461,
+            "results": [
+                {
+                    "id": 1453185997,
+                    "tags": {
+                        "shop": "supermarket"
+                    },
+                    "distance": 27468.87514492,
+                    "sims": 0.7245845837648597
+                },
+                {
+                    "id": 3841977822,
+                    "tags": {
+                        "name": "Crown Asian Supermarket",
+                        "shop": "supermarket"
+                    },
+                    "distance": 3862.68246527,
+                    "sims": 0.6484840430993521
+                },
+                {
+                    "id": 11687951069,
+                    "tags": {
+                        "name": "Big Watermelon",
+                        "shop": "supermarket"
+                    },
+                    "distance": 19371.32637307,
+                    "sims": 0.5656158303804182
+                },
+                {
+                    "id": 1361163827,
+                    "tags": {
+                        "name": "Victoria Fruit Place",
+                        "shop": "convenience"
+                    },
+                    "distance": 4640.98892769,
+                    "sims": 0.550098545893418
+                },
+                {
+                    "id": 6110271682,
+                    "tags": {
+                        "name": "Real Spice Indian Grocery Store",
+                        "shop": "convenience"
+                    },
+                    "distance": 20586.21270051,
+                    "sims": 0.5250212326709884
+                },
+                {
+                    "id": 781006884,
+                    "tags": {
+                        "name": "Foodworks",
+                        "shop": "supermarket",
+                        "brand": "Foodworks",
+                        "source": "nearmap",
+                        "check_date": "2024-03-26",
+                        "opening_hours": "Mo-Sa 07:30-21:00; Su 09:00-21:00",
+                        "brand:wikidata": "Q5465579",
+                        "brand:wikipedia": "en:FoodWorks"
+                    },
+                    "distance": 5120.61069624,
+                    "sims": 0.5233204760100899
+                },
+                {
+                    "id": 5187993676,
+                    "tags": {
+                        "name": "Pride Of Punjab",
+                        "shop": "supermarket"
+                    },
+                    "distance": 19441.57204579,
+                    "sims": 0.5218344434902732
+                },
+                {
+                    "id": 6297092810,
+                    "tags": {
+                        "name": "Foodmax",
+                        "shop": "convenience",
+                        "source": "survey"
+                    },
+                    "distance": 22110.89705602,
+                    "sims": 0.5154948904490279
+                },
+                {
+                    "id": 1583422493,
+                    "tags": {
+                        "ref": "536",
+                        "name": "Coles",
+                        "note": "yes, there are two here, this is the former bilo",
+                        "shop": "supermarket",
+                        "brand": "Coles",
+                        "phone": "+61 3 9544 9530",
+                        "website": "https://www.coles.com.au/",
+                        "alt_name": "Coles Centre Road; Centre Road Coles; Coles Clayton; Coles Clayton Centre Road; Clayton Coles Centre Road",
+                        "operator": "Coles Group",
+                        "addr:state": "VIC",
+                        "addr:street": "Centre Road",
+                        "addr:suburb": "Clayton",
+                        "addr:postcode": "3168",
+                        "official_name": "Coles Supermarkets Pty Ltd",
+                        "brand:wikidata": "Q1108172",
+                        "brand:wikipedia": "en:Coles Supermarkets",
+                        "addr:housenumber": "1389-1391",
+                        "operator:ref:abn": "45004189708",
+                        "operator:wikidata": "Q1339055"
+                    },
+                    "distance": 15219.94132115,
+                    "sims": 0.49754267813813446
+                },
+                {
+                    "id": 5402564822,
+                    "tags": {
+                        "name": "Frozen Mart",
+                        "shop": "supermarket",
+                        "layer": "2"
+                    },
+                    "distance": 19012.90002652,
+                    "sims": 0.4960629625583566
+                }
+            ]
+        },
+        "12": {
+            "execution_time": 0.1954641342163086,
+            "results": [
+                {
+                    "id": 2332735915,
+                    "tags": {
+                        "mtb": "yes",
+                        "hiking": "yes",
+                        "tourism": "information",
+                        "information": "guidepost"
+                    },
+                    "distance": 35682.46103843,
+                    "sims": 0.5270415516383715
+                },
+                {
+                    "id": 5222610068,
+                    "tags": {
+                        "mtb": "yes",
+                        "hiking": "yes",
+                        "tourism": "information",
+                        "information": "guidepost"
+                    },
+                    "distance": 35955.35782718,
+                    "sims": 0.5270415516383715
+                },
+                {
+                    "id": 2491089770,
+                    "tags": {
+                        "name": "Lookout",
+                        "tourism": "viewpoint"
+                    },
+                    "distance": 53647.88130134,
+                    "sims": 0.33433338039124916
+                },
+                {
+                    "id": 832432259,
+                    "tags": {
+                        "name": "Lookout",
+                        "tourism": "viewpoint"
+                    },
+                    "distance": 68601.68230877,
+                    "sims": 0.33433338039124916
+                },
+                {
+                    "id": 7914361662,
+                    "tags": {
+                        "name": "Walsdorf Creek Nature Reserve",
+                        "tourism": "information",
+                        "information": "guidepost"
+                    },
+                    "distance": 42481.67187047,
+                    "sims": 0.33073479829887176
+                },
+                {
+                    "id": 616544369,
+                    "tags": {
+                        "name": "Sandy Point Nature Reserve, Williamstown"
+                    },
+                    "distance": 1981.69322394,
+                    "sims": 0.3276643234383174
+                },
+                {
+                    "id": 11222117968,
+                    "tags": {
+                        "name": "Western Hill",
+                        "natural": "peak"
+                    },
+                    "distance": 63139.59870862,
+                    "sims": 0.3247745997330729
+                },
+                {
+                    "id": 7844240440,
+                    "tags": {
+                        "leisure": "park"
+                    },
+                    "distance": 16897.32744941,
+                    "sims": 0.3222014556235795
+                },
+                {
+                    "id": 9078248417,
+                    "tags": {
+                        "name": "Pound Bend Reserve",
+                        "leisure": "nature_reserve"
+                    },
+                    "distance": 29594.21927264,
+                    "sims": 0.3210181645523592
+                },
+                {
+                    "id": 11222152612,
+                    "tags": {
+                        "name": "Sugarloaf Hill",
+                        "natural": "peak"
+                    },
+                    "distance": 38483.68032079,
+                    "sims": 0.3029245896300492
+                }
+            ]
+        },
+        "13": {
+            "execution_time": 0.19288253784179688,
+            "results": [
+                {
+                    "id": 687164065,
+                    "tags": {
+                        "shop": "car_repair"
+                    },
+                    "distance": 15192.43119358,
+                    "sims": 0.592572198970116
+                },
+                {
+                    "id": 5341866327,
+                    "tags": {
+                        "name": "Repairs",
+                        "shop": "tailor"
+                    },
+                    "distance": 10387.54450177,
+                    "sims": 0.529644878485502
+                },
+                {
+                    "id": 5960549360,
+                    "tags": {
+                        "name": "Auto Repairs",
+                        "shop": "car_repair"
+                    },
+                    "distance": 32937.96512626,
+                    "sims": 0.5187044916606702
+                },
+                {
+                    "id": 12076418809,
+                    "tags": {
+                        "name": "The Landy Place",
+                        "shop": "car_repair"
+                    },
+                    "distance": 18819.24580034,
+                    "sims": 0.5114283131701242
+                },
+                {
+                    "id": 5179416385,
+                    "tags": {
+                        "name": "Computer Service & Repair",
+                        "shop": "computer"
+                    },
+                    "distance": 19421.47489026,
+                    "sims": 0.5075457701141596
+                },
+                {
+                    "id": 6017236248,
+                    "tags": {
+                        "name": "G&B Motors",
+                        "shop": "car_repair"
+                    },
+                    "distance": 7586.33603255,
+                    "sims": 0.5066447861963291
+                },
+                {
+                    "id": 5999385864,
+                    "tags": {
+                        "name": "Sunny Auto",
+                        "shop": "car_repair"
+                    },
+                    "distance": 15687.49350128,
+                    "sims": 0.500225156585901
+                },
+                {
+                    "id": 5999385855,
+                    "tags": {
+                        "name": "Cirfe",
+                        "shop": "car_repair"
+                    },
+                    "distance": 13847.14627935,
+                    "sims": 0.4823768405396065
+                },
+                {
+                    "id": 3775913359,
+                    "tags": {
+                        "name": "Fixspot Repair Centre",
+                        "shop": "mobile_phone"
+                    },
+                    "distance": 3639.2957267,
+                    "sims": 0.46874001249552255
+                },
+                {
+                    "id": 5203746932,
+                    "tags": {
+                        "name": "Phones Repair",
+                        "shop": "mobile_phone"
+                    },
+                    "distance": 19493.26651518,
+                    "sims": 0.46337609828283244
+                }
+            ]
+        },
+        "14": {
+            "execution_time": 0.19463801383972168,
+            "results": [
+                {
+                    "id": 1636014201,
+                    "tags": {
+                        "lit": "yes",
+                        "sport": "swimming",
+                        "access": "customers",
+                        "leisure": "swimming_pool",
+                        "location": "indoor",
+                        "check_date": "2024-03-13",
+                        "swimming_pool": "inground"
+                    },
+                    "distance": 6553.44817989,
+                    "sims": 0.4529591129021622
+                },
+                {
+                    "id": 8558723117,
+                    "tags": {
+                        "name": "Pascoe Vale Swimming Pool",
+                        "sport": "swimming",
+                        "leisure": "sports_centre",
+                        "website": "https://www.activemoreland.com.au/aquatic-and-leisure-centres/pascoe-vale-outdoor-pool/",
+                        "addr:state": "VIC",
+                        "addr:street": "Prospect Street",
+                        "addr:suburb": "Pascoe Vale",
+                        "addr:postcode": "3044",
+                        "addr:housenumber": "7"
+                    },
+                    "distance": 14240.58682452,
+                    "sims": 0.4145918125249326
+                },
+                {
+                    "id": 7844240440,
+                    "tags": {
+                        "leisure": "park"
+                    },
+                    "distance": 9001.18583525,
+                    "sims": 0.3855067075165497
+                },
+                {
+                    "id": 2672755753,
+                    "tags": {
+                        "access": "private",
+                        "amenity": "parking_space",
+                        "parking": "surface",
+                        "capacity": "1",
+                        "survey:date": "2014-02-15"
+                    },
+                    "distance": 3964.0713054,
+                    "sims": 0.3807357451230706
+                },
+                {
+                    "id": 2594892499,
+                    "tags": {
+                        "source": "survey",
+                        "amenity": "drinking_water"
+                    },
+                    "distance": 9332.87775791,
+                    "sims": 0.37001401423743907
+                },
+                {
+                    "id": 6405291495,
+                    "tags": {
+                        "source": "survey",
+                        "amenity": "drinking_water"
+                    },
+                    "distance": 11135.68537299,
+                    "sims": 0.37001401423743907
+                },
+                {
+                    "id": 6285223385,
+                    "tags": {
+                        "source": "survey",
+                        "amenity": "drinking_water"
+                    },
+                    "distance": 13059.02777045,
+                    "sims": 0.37001401423743907
+                },
+                {
+                    "id": 2527513730,
+                    "tags": {
+                        "source": "survey",
+                        "amenity": "drinking_water"
+                    },
+                    "distance": 18164.82170104,
+                    "sims": 0.37001401423743907
+                },
+                {
+                    "id": 310183309,
+                    "tags": {
+                        "source": "survey",
+                        "amenity": "drinking_water"
+                    },
+                    "distance": 18190.45275353,
+                    "sims": 0.37001401423743907
+                },
+                {
+                    "id": 6487196132,
+                    "tags": {
+                        "source": "survey",
+                        "amenity": "drinking_water"
+                    },
+                    "distance": 18776.37320553,
+                    "sims": 0.37001401423743907
+                }
+            ]
+        },
+        "15": {
+            "execution_time": 0.19165968894958496,
+            "results": [
+                {
+                    "id": 7844240440,
+                    "tags": {
+                        "leisure": "park"
+                    },
+                    "distance": 10680.26580332,
+                    "sims": 0.6532125497080586
+                },
+                {
+                    "id": 677402533,
+                    "tags": {
+                        "name": "Four  Brothers Rocks Car Park",
+                        "amenity": "parking"
+                    },
+                    "distance": 61053.82585701,
+                    "sims": 0.5987576249964258
+                },
+                {
+                    "id": 415276108,
+                    "tags": {
+                        "amenity": "parking"
+                    },
+                    "distance": 2577.18312775,
+                    "sims": 0.5803455095762651
+                },
+                {
+                    "id": 1211725097,
+                    "tags": {
+                        "amenity": "parking"
+                    },
+                    "distance": 9045.27570217,
+                    "sims": 0.5803455095762651
+                },
+                {
+                    "id": 1968305333,
+                    "tags": {
+                        "amenity": "parking"
+                    },
+                    "distance": 10829.63948462,
+                    "sims": 0.5803455095762651
+                },
+                {
+                    "id": 1901510142,
+                    "tags": {
+                        "amenity": "parking"
+                    },
+                    "distance": 11203.99358719,
+                    "sims": 0.5803455095762651
+                },
+                {
+                    "id": 1851043115,
+                    "tags": {
+                        "amenity": "parking"
+                    },
+                    "distance": 16896.47421552,
+                    "sims": 0.5803455095762651
+                },
+                {
+                    "id": 394030201,
+                    "tags": {
+                        "amenity": "parking"
+                    },
+                    "distance": 21760.62708948,
+                    "sims": 0.5803455095762651
+                },
+                {
+                    "id": 469770575,
+                    "tags": {
+                        "amenity": "parking"
+                    },
+                    "distance": 25214.02283682,
+                    "sims": 0.5803455095762651
+                },
+                {
+                    "id": 4770893154,
+                    "tags": {
+                        "amenity": "parking"
+                    },
+                    "distance": 28645.27325272,
+                    "sims": 0.5803455095762651
+                }
+            ]
+        },
+        "16": {
+            "execution_time": 0.19152569770812988,
+            "results": [
+                {
+                    "id": 6648580139,
+                    "tags": {
+                        "name": "La Porchetta",
+                        "amenity": "restaurant",
+                        "cuisine": "pizza;italian"
+                    },
+                    "distance": 9875.9425479,
+                    "sims": 0.5437106096801867
+                },
+                {
+                    "id": 11607743497,
+                    "tags": {
+                        "name": "Sassone Cucina Italiana",
+                        "amenity": "restaurant",
+                        "cuisine": "italian"
+                    },
+                    "distance": 3284.08675362,
+                    "sims": 0.5403933701105971
+                },
+                {
+                    "id": 493891516,
+                    "tags": {
+                        "name": "Dolce Mio Pasticceria & Gelateria",
+                        "amenity": "cafe",
+                        "cuisine": "italian"
+                    },
+                    "distance": 17899.55606188,
+                    "sims": 0.5341342494893948
+                },
+                {
+                    "id": 6180386412,
+                    "tags": {
+                        "name": "Domenico\u2019s Pizza",
+                        "amenity": "restaurant",
+                        "cuisine": "pizza"
+                    },
+                    "distance": 6416.15411129,
+                    "sims": 0.49370996147913704
+                },
+                {
+                    "id": 10164115785,
+                    "tags": {
+                        "name": "Amalfi Pizza & Pasta",
+                        "amenity": "restaurant",
+                        "cuisine": "pizza;pasta"
+                    },
+                    "distance": 16938.9431646,
+                    "sims": 0.46994841571332135
+                },
+                {
+                    "id": 10185137437,
+                    "tags": {
+                        "name": "Baro Mediterranean",
+                        "amenity": "restaurant",
+                        "cuisine": "turkish"
+                    },
+                    "distance": 61690.7353969,
+                    "sims": 0.4485000465961544
+                },
+                {
+                    "id": 1055793075,
+                    "tags": {
+                        "name": "Ecco da Nicolini",
+                        "amenity": "restaurant",
+                        "cuisine": "italian"
+                    },
+                    "distance": 4726.6284248,
+                    "sims": 0.4296159114981005
+                },
+                {
+                    "id": 5140239022,
+                    "tags": {
+                        "name": "Pizzaly",
+                        "amenity": "restaurant",
+                        "cuisine": "pizza"
+                    },
+                    "distance": 8435.34812481,
+                    "sims": 0.3845589985744904
+                },
+                {
+                    "id": 6041031011,
+                    "tags": {
+                        "name": "Ph\u1edf Gia H\u1ed9i",
+                        "amenity": "fast_food"
+                    },
+                    "distance": 23425.30539032,
+                    "sims": 0.38110984235912215
+                },
+                {
+                    "id": 6642485705,
+                    "tags": {
+                        "name": "Pieno Di Grazia",
+                        "level": "0",
+                        "phone": "+61 419 003 398",
+                        "amenity": "fast_food",
+                        "cuisine": "italian",
+                        "description": "Stall number S6"
+                    },
+                    "distance": 3752.31565112,
+                    "sims": 0.3674215948697046
+                }
+            ]
+        },
+        "17": {
+            "execution_time": 0.19947481155395508,
+            "results": [
+                {
+                    "id": 6033469818,
+                    "tags": {
+                        "name": "D&K",
+                        "shop": "seafood"
+                    },
+                    "distance": 7957.26695708,
+                    "sims": 0.6779963606585448
+                },
+                {
+                    "id": 2251431732,
+                    "tags": {
+                        "name": "Coast Caf\u00e9",
+                        "amenity": "restaurant",
+                        "cuisine": "thai"
+                    },
+                    "distance": 14846.80450452,
+                    "sims": 0.5979414932518747
+                },
+                {
+                    "id": 6786957906,
+                    "tags": {
+                        "name": "Fav Seafood Fish & Chips",
+                        "amenity": "fast_food",
+                        "cuisine": "fish_and_chips",
+                        "diet:vegan": "no",
+                        "opening_hours": "Tu-Su 11:30-15:00,16:00-20:30; Mo off",
+                        "diet:vegetarian": "yes"
+                    },
+                    "distance": 16292.86372702,
+                    "sims": 0.5566004385353689
+                },
+                {
+                    "id": 2911249230,
+                    "tags": {
+                        "amenity": "fast_food",
+                        "cuisine": "fish_and_chips"
+                    },
+                    "distance": 15217.84572157,
+                    "sims": 0.543265591446337
+                },
+                {
+                    "id": 5388536532,
+                    "tags": {
+                        "name": "Jimmy's Fish Bar",
+                        "amenity": "fast_food"
+                    },
+                    "distance": 17293.30165925,
+                    "sims": 0.5392108057048203
+                },
+                {
+                    "id": 6403296362,
+                    "tags": {
+                        "amenity": "restaurant"
+                    },
+                    "distance": 9683.82275355,
+                    "sims": 0.5382003600002647
+                },
+                {
+                    "id": 3840017767,
+                    "tags": {
+                        "amenity": "restaurant"
+                    },
+                    "distance": 12401.47376283,
+                    "sims": 0.5382003600002647
+                },
+                {
+                    "id": 7645068817,
+                    "tags": {
+                        "amenity": "restaurant"
+                    },
+                    "distance": 58729.41816687,
+                    "sims": 0.5382003600002647
+                },
+                {
+                    "id": 1948991020,
+                    "tags": {
+                        "amenity": "restaurant"
+                    },
+                    "distance": 58770.37335249,
+                    "sims": 0.5382003600002647
+                },
+                {
+                    "id": 12221800066,
+                    "tags": {
+                        "amenity": "restaurant"
+                    },
+                    "distance": 59096.6143228,
+                    "sims": 0.5382003600002647
+                }
+            ]
+        },
+        "18": {
+            "execution_time": 0.19501376152038574,
+            "results": [
+                {
+                    "id": 9141577934,
+                    "tags": {
+                        "name": "Coon Cheese",
+                        "office": "yes"
+                    },
+                    "distance": 3490.32894115,
+                    "sims": 0.39452166622618834
+                },
+                {
+                    "id": 9497224834,
+                    "tags": {
+                        "building": "house"
+                    },
+                    "distance": 33415.73735103,
+                    "sims": 0.357311436098133
+                },
+                {
+                    "id": 9497224835,
+                    "tags": {
+                        "building": "house"
+                    },
+                    "distance": 33439.38130668,
+                    "sims": 0.357311436098133
+                },
+                {
+                    "id": 3508186406,
+                    "tags": {
+                        "building": "house"
+                    },
+                    "distance": 39386.57830954,
+                    "sims": 0.357311436098133
+                },
+                {
+                    "id": 3612570671,
+                    "tags": {
+                        "building": "house"
+                    },
+                    "distance": 39755.59918744,
+                    "sims": 0.357311436098133
+                },
+                {
+                    "id": 3612571211,
+                    "tags": {
+                        "building": "house"
+                    },
+                    "distance": 39758.87300814,
+                    "sims": 0.357311436098133
+                },
+                {
+                    "id": 3612571224,
+                    "tags": {
+                        "building": "house"
+                    },
+                    "distance": 39768.52263713,
+                    "sims": 0.357311436098133
+                },
+                {
+                    "id": 3508195536,
+                    "tags": {
+                        "building": "house"
+                    },
+                    "distance": 39785.77648744,
+                    "sims": 0.357311436098133
+                },
+                {
+                    "id": 3612602816,
+                    "tags": {
+                        "building": "house"
+                    },
+                    "distance": 39835.13517181,
+                    "sims": 0.357311436098133
+                },
+                {
+                    "id": 3642521556,
+                    "tags": {
+                        "building": "house"
+                    },
+                    "distance": 39994.22075977,
+                    "sims": 0.357311436098133
+                }
+            ]
+        },
+        "19": {
+            "execution_time": 0.19602727890014648,
+            "results": [
+                {
+                    "id": 10241604777,
+                    "tags": {
+                        "bus": "yes",
+                        "name": "Sheoak Street/Kidds Road",
+                        "highway": "bus_stop",
+                        "public_transport": "platform"
+                    },
+                    "distance": 32160.41513714,
+                    "sims": 0.5674494504928589
+                },
+                {
+                    "id": 5288512523,
+                    "tags": {
+                        "bus": "yes",
+                        "name": "Southern Cross Coach Terminal (Bay 75)",
+                        "level": "0",
+                        "highway": "bus_stop",
+                        "network": "Skybus",
+                        "shelter": "yes",
+                        "operator": "SkyBus",
+                        "description": "This bay is for SkyBus departures (https://www.skybus.com.au/).",
+                        "network:wikidata": "Q7537617",
+                        "public_transport": "platform",
+                        "network:wikipedia": "en:SkyBus (airport bus)"
+                    },
+                    "distance": 674.48487627,
+                    "sims": 0.5611844397297178
+                },
+                {
+                    "id": 11445879313,
+                    "tags": {
+                        "bus": "yes",
+                        "ref": "21650",
+                        "name": "Abbotswood Drive/Tarneit Road",
+                        "highway": "bus_stop",
+                        "public_transport": "platform"
+                    },
+                    "distance": 25846.2568105,
+                    "sims": 0.5530145168304443
+                },
+                {
+                    "id": 5519550262,
+                    "tags": {
+                        "bus": "yes",
+                        "name": "Estella Street",
+                        "highway": "bus_stop",
+                        "public_transport": "platform"
+                    },
+                    "distance": 10702.2376084,
+                    "sims": 0.5522199273109436
+                },
+                {
+                    "id": 9780854905,
+                    "tags": {
+                        "bus": "yes",
+                        "name": "G",
+                        "highway": "bus_stop",
+                        "public_transport": "platform"
+                    },
+                    "distance": 17041.39800543,
+                    "sims": 0.5514553785324097
+                },
+                {
+                    "id": 4751853128,
+                    "tags": {
+                        "bus": "yes",
+                        "name": "Land Sales Office",
+                        "highway": "bus_stop",
+                        "public_transport": "platform"
+                    },
+                    "distance": 19370.06761064,
+                    "sims": 0.5444067716598511
+                },
+                {
+                    "id": 7252282410,
+                    "tags": {
+                        "bus": "yes",
+                        "ref": "ID.21174",
+                        "name": "Footscray (Bay 4)",
+                        "highway": "bus_stop",
+                        "route_ref": "220",
+                        "public_transport": "platform"
+                    },
+                    "distance": 5499.79047638,
+                    "sims": 0.5423343181610107
+                },
+                {
+                    "id": 6703344691,
+                    "tags": {
+                        "bus": "yes",
+                        "ref": "2",
+                        "name": "SkyBus Airport Express",
+                        "highway": "bus_stop",
+                        "network": "Skybus",
+                        "shelter": "no",
+                        "operator": "Skybus",
+                        "description": "SkyBus Airport to St Kilda stop 2",
+                        "destination": "Melbourne Airport",
+                        "departures_board": "no",
+                        "network:wikidata": "Q7537617",
+                        "public_transport": "platform"
+                    },
+                    "distance": 6136.92020157,
+                    "sims": 0.5420612258333336
+                },
+                {
+                    "id": 11445879351,
+                    "tags": {
+                        "bus": "yes",
+                        "ref": "50120",
+                        "name": "Sayers Road/Babele Road",
+                        "highway": "bus_stop",
+                        "public_transport": "platform"
+                    },
+                    "distance": 26536.05526062,
+                    "sims": 0.5385035276412964
+                },
+                {
+                    "id": 9650949821,
+                    "tags": {
+                        "bus": "yes",
+                        "name": "Lesay Drive",
+                        "highway": "bus_stop",
+                        "public_transport": "platform"
+                    },
+                    "distance": 21562.59477839,
+                    "sims": 0.5381570779178795
+                }
+            ]
+        }
+    }
+}
