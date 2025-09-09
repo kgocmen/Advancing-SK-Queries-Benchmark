@@ -414,7 +414,7 @@ def parse_args():
         description="Run result reader."
     )
 
-    p.add_argument("--sce", choices=["all", "existing", "non_embedded", "embedded", "fused"], default="embedded")
+    p.add_argument("--sce", choices=["all", "existing", "non_embedded", "embedded", "fused", "concat", "contrast"], default="embedded")
     p.add_argument("--exp", type=str, default=str(EXPERIMENT))
     p.add_argument("--so", nargs="+", default=SOURCE)
     p.add_argument("--k", nargs="+", type=int, default=K_VALUES)
@@ -450,4 +450,4 @@ if __name__ == "__main__":
                     continue
                 query_parser = QueryResultsParser(test_file)
                 #query_parser.print_report(k=k)
-            query_parser.produce_plots_for_group(test_files, source, k, EXPERIMENT, SCENARIO)
+            QueryResultsParser.produce_plots_for_group(test_files, source, k, EXPERIMENT, SCENARIO)

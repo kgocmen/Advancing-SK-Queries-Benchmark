@@ -9,6 +9,15 @@ DB_PARAMS = {
     "password": "secret",
 }
 
+CONTRASTIVE = {
+    "ckpt": "./contrastive/contrastive_model.pt",
+    "text_encoder": "sentence-transformers/all-MiniLM-L6-v2",
+    "spatial_encoder": "mlp",     # or: sin, mercator
+    "freeze_text": True,
+    "proj_dim": 128,
+}
+
+CONTRASTIVE_DIM = CONTRASTIVE["proj_dim"]
 
 
 EXPERIMENT = "melbourne_sampled"

@@ -4,6 +4,7 @@ import json
 from typing import List, Union
 from constants import *
 from tqdm import tqdm
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
 
 def connect_db():
@@ -90,7 +91,6 @@ def run_queries(queries: Union[str, List[str]]):
             rows = cur.fetchall()
             execution_time = time.time() - start_time
 
-            # ... same result packaging as before ...
             has_sims = (len(rows) > 0 and len(rows[0]) >= 4)
             results[i] = {"execution_time": execution_time, "results": []}
             for row in rows:

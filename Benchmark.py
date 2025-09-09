@@ -13,8 +13,15 @@ import argparse
 import os
 
 SCENARIOS = {
-    "fused": {
+    "concat":{
         "concat_embedding": create_concat_pgvector_index
+    },
+    "contrast":{
+        "contrastive_embedding": create_contrastive_pgvector_index
+    },
+    "fused": {
+        "concat_embedding": create_concat_pgvector_index,
+        "contrastive_embedding": create_contrastive_pgvector_index
     },
     "all": {
         "no_index": lambda: None,
@@ -40,7 +47,8 @@ SCENARIOS = {
     "embedded": {
         "pgvector_embedding": create_pgvector_index,
         "spatial_and_pgvector_embedding": create_embedding_spatial_index,
-        "concat_embedding": create_concat_pgvector_index
+        "concat_embedding": create_concat_pgvector_index,
+        "contrastive_embedding": create_contrastive_pgvector_index
     }
 }
 INPUT_LEN = 0
@@ -68,36 +76,47 @@ def load_queries_for_k(query_dir: str, k: int, logical_prefix: str, source: str)
     return []
 
 
-def finish_embedding_and_setup_database(func,file, length):
+def finish_embedding_and_setup_database(func, file, length):
     embeddings = []
-    if func == create_pgvector_index or func == create_embedding_spatial_index: 
+    # --- semantic-only / spatial+semantic (existing) ---
+    if func == create_pgvector_index or func == create_embedding_spatial_index:
         setup_database()
-        print("Table 'PoIs' constructed.")
-        semantic_path = "./semantic/semantic_embeddings_" + file.split("/")[-1].replace(".csv", ".npy")
-        sem = SemanticEmbedder.SemanticEmbedder(file, semantic_path)
-        sem.run()
-
+        semantic_path = "./semantic/semantic_embeddings_" + os.path.basename(file).replace(".csv", ".npy")
+        sem = SemanticEmbedder.SemanticEmbedder(file, semantic_path); sem.run()
         embeddings = open_embedding(semantic_path)
+
+    # --- concatenation (SE-KE) ---
     elif func == create_concat_pgvector_index:
         total_dim = VECTOR_DIM + 4 * λ
         setup_database(total_dim)
-        print("Table 'PoIs' constructed.")
-        semantic_path = "./semantic/semantic_embeddings_" + file.split("/")[-1].replace(".csv", ".npy")
-        sem = SemanticEmbedder.SemanticEmbedder(file, semantic_path)
-        sem.run()
+        semantic_path = "./semantic/semantic_embeddings_" + os.path.basename(file).replace(".csv", ".npy")
+        sem = SemanticEmbedder.SemanticEmbedder(file, semantic_path); sem.run()
+        spatial_path = "./spatial/spatial_embeddings_" + os.path.basename(file).replace(".csv", ".npy")
+        spa = SpatialEmbedder.SpatialEmbedder(file); spa.run(spatial_path)
+        embeddings = generate_concat_embedding(semantic_path=semantic_path, spatial_path=spatial_path, dim=total_dim)
 
-        spatial_path = "./spatial/spatial_embeddings_" + file.split("/")[-1].replace(".csv", ".npy")
-        spa = SpatialEmbedder.SpatialEmbedder(file)
-        spa.run(spatial_path)
+    # --- contrastive fused (text+coord) ---
+    elif func == create_contrastive_pgvector_index:
+        proj_dim = CONTRASTIVE_DIM
+        setup_database(proj_dim)
+        print("Building contrastive embeddings…")
+        embeddings = generate_contrastive_embedding(
+            input_csv=file,
+            ckpt=CONTRASTIVE["ckpt"],
+            text_encoder=CONTRASTIVE["text_encoder"],
+            spatial_encoder=CONTRASTIVE["spatial_encoder"],
+            proj_dim=proj_dim,
+            freeze_text=CONTRASTIVE["freeze_text"],
+        )
 
-        embeddings = generate_concat_embedding(semantic_path=semantic_path, spatial_path=spatial_path, dim=VECTOR_DIM + 4 * λ)
+    # --- non-embedded baselines ---
     else:
         setup_database()
-        print("Table 'PoIs' constructed.")
         embeddings = [None] * length
-    
-    
+
+    print("Table 'PoIs' constructed.")
     return embeddings
+
 
 def run_scenario(records: List[Tuple], queries: List[str], index_creation_func, csv_file: str):
     embeddings = finish_embedding_and_setup_database(index_creation_func, csv_file, len(records))
@@ -108,7 +127,7 @@ def run_scenario(records: List[Tuple], queries: List[str], index_creation_func, 
         with connect_db() as conn, conn.cursor() as cur:
             for q in index_sql:
                 cur.execute(q)
-                cur.execute("ANALYZE PoIs;")
+            cur.execute("ANALYZE PoIs;")
             conn.commit()
     indexing_time = (time.time() - start_time)
     print("All indexes created in:", indexing_time)
@@ -118,77 +137,77 @@ def run_scenario(records: List[Tuple], queries: List[str], index_creation_func, 
 
     return {
         "insertion_time": insertion_time,
-        "index_creation": 
-        {
-            "func": index_sql, 
-            "time": indexing_time
-        },
+        "index_creation": {"func": index_sql, "time": indexing_time},
         "query_results": results
     }
 
-
-def benchmark(csv_file: str, k_values: List[int], index_functions: Dict[str, callable], output_dir: str = "./results/" + str(EXPERIMENT)):
+def benchmark(csv_file: str, k_values: List[int], index_functions: Dict[str, callable], output_dir: str):
     records = load_csv_data(csv_file)
     INPUT_LEN = len(records)
     print(f"{INPUT_CSV} has {INPUT_LEN} rows.")
     os.makedirs(output_dir, exist_ok=True)
 
     for index_name, index_func in index_functions.items():
-        # Decide which logical query family to use
-        prefix = "embedded_" if "embedding" in index_name else ""
-        prefix = "concat_" + prefix if "concat" in index_name else prefix
+        # choose the right workload family
+        if "concat" in index_name:
+            prefix = "concat_embedded_"
+        elif "contrastive" in index_name:
+            prefix = "contrastive_embedded_"
+        elif "embedding" in index_name:
+            prefix = "embedded_"
+        else:
+            prefix = ""
 
-        
         for source in SOURCE:
             for k in k_values:
-                queries  = load_queries_for_k(
-                    "./data/workloads/" + str(EXPERIMENT), k, prefix, source
-                )
+                queries = load_queries_for_k("./data/workloads/" + str(EXPERIMENT), k, prefix, source)
                 if not queries:
                     print(f"  ⚠️  No {source} SQL found for k={k} (prefix='{prefix}').")
                     continue
 
-                print(f"Running scenario: {index_name} on {source}, k={k})")
+                print(f"Running scenario: {index_name} on {source}, k={k}")
                 results = run_scenario(records, queries, index_func, csv_file)
 
-                result_file = os.path.join(
-                    output_dir, f"{source}_{index_name}_results_k{k}.json"
-                )
-                with open(result_file, "w") as f:
-                    json.dump(results, f, indent=4)
+                result_file = os.path.join(output_dir, f"{source}_{index_name}_results_k{k}.json")
+                with open(result_file, "w") as f: json.dump(results, f, indent=4)
                 print(f"Results saved to {result_file}\n")
 
 def parse_args():
-    p = argparse.ArgumentParser(
-        description="Run benchmark scenarios over spatial/semantic/keyword indices."
-    )
-    p.add_argument("--sce", choices=["all", "existing", "non_embedded", "embedded", "fused"], default="embedded")
+    p = argparse.ArgumentParser(description="Run benchmark scenarios.")
+    p.add_argument("--sce", choices=["all","existing","non_embedded","embedded","fused","concat","contrast"], default="embedded")
     p.add_argument("--exp", type=str, default=EXPERIMENT)
     p.add_argument("--so", nargs="+", default=SOURCE)
     p.add_argument("--k", nargs="+", type=int, default=K_VALUES)
     p.add_argument("--l", type=int, default=λ)
-    p.add_argument("--idx", choices=["hnsw", "ivfflat"], type=str, default=INDEX_TYPE)
+    p.add_argument("--idx", choices=["hnsw","ivfflat"], type=str, default=INDEX_TYPE)
     p.add_argument("--input", type=str, default=INPUT_CSV)
-
+    # contrastive overrides
+    p.add_argument("--c-ckpt", type=str, default=CONTRASTIVE["ckpt"])
+    p.add_argument("--c-proj-dim", type=int, default=CONTRASTIVE["proj_dim"])
+    p.add_argument("--c-text-encoder", type=str, default=CONTRASTIVE["text_encoder"])
+    p.add_argument("--c-spatial-encoder", type=str, default=CONTRASTIVE["spatial_encoder"])
+    p.add_argument("--c-freeze", action="store_true", default=CONTRASTIVE["freeze_text"])
     return p.parse_args()
 
 
 if __name__ == "__main__":
     args = parse_args()
-
-    # overwrite globals if you want the rest of the code to see them
-    EXPERIMENT = args.exp
-    SOURCE = args.so
-    K_VALUES = args.k
-    import Indexing as IDX
-    import DataEmbedding as DE
-    λ = args.l
-    DE.λ = args.l 
-    INDEX_TYPE = args.idx
-    IDX.INDEX_TYPE = args.idx
+    # override globals for downstream modules
+    import Indexing as IDX, DataEmbedding as DE
+    λ = args.l; DE.λ = args.l
+    INDEX_TYPE = args.idx; IDX.INDEX_TYPE = args.idx
     INPUT_CSV = args.input
+    EXPERIMENT = args.exp; SOURCE = args.so; K_VALUES = args.k
 
-    scenario_funcs = SCENARIOS[args.sce]
+    # push contrastive config
+    CONTRASTIVE.update({
+        "ckpt": args.c_ckpt,
+        "proj_dim": args.c_proj_dim,
+        "text_encoder": args.c_text_encoder,
+        "spatial_encoder": args.c_spatial_encoder,
+        "freeze_text": args.c_freeze,
+    })
+    CONTRASTIVE_DIM = CONTRASTIVE["proj_dim"]
 
     print("=== Benchmark Config ===")
     print(f"Scenario     : {args.sce}")
@@ -198,6 +217,8 @@ if __name__ == "__main__":
     print(f"Index Type   : {args.idx}")
     print(f"Experiment   : {args.exp}")
     print(f"Source       : {args.so}")
+    print(f"Contrastive  : {CONTRASTIVE}")
     print("========================")
 
+    scenario_funcs = SCENARIOS[args.sce]
     benchmark(args.input, args.k, scenario_funcs, output_dir="./results/" + args.exp)

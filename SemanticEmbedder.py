@@ -83,12 +83,16 @@ class SemanticEmbedder:
         return
     
     def _embed_chunk(self, tags_series, chunk_idx):
-        """Convert a pandas Series of tag dictionaries into vectors."""
-        vectors = []
-        for tags in tqdm(tags_series, desc=f"Embedding chunk {chunk_idx}", leave=False):
-            tag_text = "; ".join(f"{k}: {v}" for k, v in tags.items())
-            vectors.append(self.model.encode(tag_text))
-        return np.asarray(vectors)
+        texts = []
+        for tags in tags_series:
+            if isinstance(tags, dict) and tags:
+                tag_text = "; ".join(f"{k}: {v}" for k, v in tags.items())
+            else:
+                tag_text = "poi"
+            texts.append(tag_text)
+        vecs = self.model.encode(texts, batch_size=1024, show_progress_bar=False, convert_to_numpy=True)
+        return np.asarray(vecs, dtype=np.float32)
+
 
     def _append_embeddings(self, new_vecs: np.ndarray):
         """Append or create the .npy file in an idempotent way."""

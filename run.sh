@@ -10,6 +10,8 @@ NE="non_embedded"
 EX="existing"
 E="embedded"
 F="fused"
+CONC="concat"
+CONTR="contrast"
 
 DS="dataset"
 CUS="custom"
@@ -38,7 +40,6 @@ python3 ResultReader.py --exp "$EXP" --so "$DS" --k $K --sce "$NE"
 EXP-2
 
 : <<'EXP-3'
-R=10000
 K="1 5 10 20 50"
 EXP="${NE}_noradius_multi-k"
 echo "=== 3. Running EXP=${EXP} ==="
@@ -105,10 +106,10 @@ EXP-7
 
 
 : <<'EXP-8'
-LAMBDAS="2 3 4"
+LAMBDAS="1 2 3 4"
 for L in $LAMBDAS
 do
-  EXP="${F}_k${K}_l${L}"
+  EXP="${CONC}_k${K}_l${L}"
   echo "=== 8. Queries Generating for EXP=${EXP} ==="
   python3 QueryGenerator.py --exp "$EXP" --so $DS $CUS --k $K --input "$INPUT" --cnt "$CNT" --l "$L"
   EXPH="${EXP}_H"
@@ -125,3 +126,20 @@ do
   python3 ResultReader.py --exp "$EXPIF" --so $DS $CUS --k $K --sce "$F"
 done
 EXP-8
+
+#: <<'EXP-9'
+EXP="${CONTR}_k${K}"
+echo "=== 9. Queries Generating for EXP=${EXP} (contrastive, HNSW) ==="
+python3 QueryGenerator.py --exp "$EXP" --so $DS $CUS --k $K --input "$INPUT" --cnt "$CNT"
+
+echo "=== Running EXP=${EXP} (HNSW) ==="
+python3 Benchmark.py --exp "$EXP" --so $DS $CUS --k $K --input "$INPUT" --sce "$CONTR" --idx $H \
+  --c-ckpt "./contrastive/contrastive_model.pt" \
+  --c-proj-dim 128 \
+  --c-text-encoder "sentence-transformers/all-MiniLM-L6-v2" \
+  --c-spatial-encoder "mlp" \
+  --c-freeze
+  
+
+python3 ResultReader.py --exp "$EXP" --so $DS $CUS --k $K --sce "$CONTR"
+#EXP-9

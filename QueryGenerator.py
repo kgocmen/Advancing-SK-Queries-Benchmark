@@ -9,6 +9,11 @@ import json
 import numpy as np
 from sklearn.metrics.pairwise import cosine_similarity
 import argparse
+import torch
+import torch.nn.functional as F
+from transformers import AutoTokenizer
+from Contrastive import ContrastiveModel
+
 
 from DataEmbedding import (
     generate_semantic_embedding_query,
@@ -86,7 +91,7 @@ class QueryGenerator:
             predicate = f"tags ? '{key}'"
 
         wcl= ""
-        if RADIUS:
+        if self.radius:
             wcl = f"AND ST_DWithin(geom, {pt}, {deg_radius}) "
 
         return (
@@ -122,7 +127,7 @@ class QueryGenerator:
         deg_radius = self._m2deg(self.radius)
 
         wcl = ""
-        if RADIUS:
+        if self.radius:
             wcl = f"WHERE ST_DWithin(geom, {pt}, {deg_radius}) "
 
         return (
@@ -148,25 +153,26 @@ class QueryGenerator:
         non_by_k: Dict[int, List[str]] = {k: [] for k in self.k_values}
         emb_by_k: Dict[int, List[str]] = {k: [] for k in self.k_values}
         conc_by_k: Dict[int, List[str]] = {k: [] for k in self.k_values}
+        cont_by_k: Dict[int, List[str]] = {k: [] for k in self.k_values}   # NEW
 
         for keyword, lat, lon in triples:
             qvec = generate_semantic_embedding_query(keyword)
             qvec_str = _as_pgvector(qvec)
-
             cvec = generate_concat_embedding_query(qvec, λ, lat, lon)
             cvec_str = _as_pgvector(cvec)
+            zvec = self._contrastive_vec(keyword, lat, lon) # NEW
+            z_str = _as_pgvector(zvec) # NEW
 
             for k in self.k_values:
                 non_by_k[k].append(self._sql(lon=lon,lat=lat,key_or_pair=keyword,k=k))
                 emb_by_k[k].append(self._e_sql(lon=lon,lat=lat,vec=qvec_str,k=k))
                 conc_by_k[k].append(self._c_sql(lon=lon,lat=lat,vec=cvec_str,k=k))
+                cont_by_k[k].append(self._c_sql(lon=lon,lat=lat,vec=z_str,k=k)) # NEW
 
-        for k, queries in non_by_k.items():
-            self._write_sql(f"custom_queries_k{k}.sql", queries)
-        for k, queries in emb_by_k.items():
-            self._write_sql(f"custom_embedded_queries_k{k}.sql", queries)
-        for k, queries in conc_by_k.items():
-            self._write_sql(f"custom_concat_embedded_queries_k{k}.sql", queries)
+        for k, queries in non_by_k.items():  self._write_sql(f"custom_queries_k{k}.sql", queries)
+        for k, queries in emb_by_k.items():  self._write_sql(f"custom_embedded_queries_k{k}.sql", queries)
+        for k, queries in conc_by_k.items(): self._write_sql(f"custom_concat_embedded_queries_k{k}.sql", queries)
+        for k, queries in cont_by_k.items(): self._write_sql(f"custom_contrastive_embedded_queries_k{k}.sql", queries) # NEW
 
         print(f"Custom queries written to {self.output_dir}")
 
@@ -179,6 +185,7 @@ class QueryGenerator:
         non_by_k: Dict[int, List[str]] = {k: [] for k in self.k_values}
         emb_by_k: Dict[int, List[str]] = {k: [] for k in self.k_values}
         conc_by_k: Dict[int, List[str]] = {k: [] for k in self.k_values}
+        cont_by_k: Dict[int, List[str]] = {k: [] for k in self.k_values}   # NEW
 
         idxs = df.index.to_list()
         n = min(point_count, len(df))
@@ -206,24 +213,20 @@ class QueryGenerator:
 
             # semantic text: prefer "value" (or "key:value" if you like)
             text = kv[1]
-            qvec = generate_semantic_embedding_query(text)
-            qvec_str = _as_pgvector(qvec)
-            cvec = generate_concat_embedding_query(qvec, λ, ref_lat, ref_lon)
-            cvec_str = _as_pgvector(cvec)
+            qvec = generate_semantic_embedding_query(text);   qvec_str = _as_pgvector(qvec)
+            cvec = generate_concat_embedding_query(qvec, λ, ref_lat, ref_lon); cvec_str = _as_pgvector(cvec)
+            zvec = self._contrastive_vec(text, ref_lat, ref_lon); zvec_str = _as_pgvector(zvec) # NEW
 
             for k in self.k_values:
-                # 🔹 exact key=value using JSONB containment (GIN-friendly)
                 non_by_k[k].append(self._sql(lon=ref_lon, lat=ref_lat, key_or_pair=kv, k=k))
-                # 🔹 embedding workloads unchanged
                 emb_by_k[k].append(self._e_sql(lon=ref_lon, lat=ref_lat, vec=qvec_str, k=k))
                 conc_by_k[k].append(self._c_sql(lon=ref_lon, lat=ref_lat, vec=cvec_str, k=k))
+                cont_by_k[k].append(self._c_sql(lon=ref_lon, lat=ref_lat, vec=zvec_str, k=k))
 
-        for k, queries in non_by_k.items():
-            self._write_sql(f"dataset_queries_k{k}.sql", queries)
-        for k, queries in emb_by_k.items():
-            self._write_sql(f"dataset_embedded_queries_k{k}.sql", queries)
-        for k, queries in conc_by_k.items():
-            self._write_sql(f"dataset_concat_embedded_queries_k{k}.sql", queries)
+        for k, queries in non_by_k.items():  self._write_sql(f"dataset_queries_k{k}.sql", queries)
+        for k, queries in emb_by_k.items():  self._write_sql(f"dataset_embedded_queries_k{k}.sql", queries)
+        for k, queries in conc_by_k.items(): self._write_sql(f"dataset_concat_embedded_queries_k{k}.sql", queries)
+        for k, queries in cont_by_k.items(): self._write_sql(f"dataset_contrastive_embedded_queries_k{k}.sql", queries)
 
         print(f"Dataset generated queries written to {self.output_dir}")
 
@@ -315,6 +318,35 @@ class QueryGenerator:
             f.write("\n".join(queries) + ("\n" if queries else ""))
         print(f"Wrote {len(queries)} {filename} queries")
 
+    def _contrastive_encoder_init(self, ckpt: str, text_encoder: str, proj_dim: int,
+                                    spatial_encoder: str, freeze_text: bool):
+            device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+            self._c_device = device
+            self._c_tok = AutoTokenizer.from_pretrained(text_encoder)
+            self._c_model = ContrastiveModel(
+                text_encoder_name=text_encoder,
+                proj_dim=proj_dim,
+                spatial_encoder=spatial_encoder,
+                spatial_hidden=128,
+                freeze_text=freeze_text,
+            ).to(device)
+            state = torch.load(ckpt, map_location=device)
+            self._c_model.load_state_dict(state, strict=True)
+            self._c_model.eval()
+
+    def _contrastive_vec(self, text: str, lat: float, lon: float):
+        enc = self._c_tok(text if text else "", return_tensors="pt",
+                        padding="max_length", truncation=True, max_length=64)
+        lonlat = torch.tensor([[lon, lat]], dtype=torch.float32)
+        with torch.no_grad():
+            z = F.normalize(
+                self._c_model.encode_text(enc["input_ids"].to(self._c_device),
+                                        enc["attention_mask"].to(self._c_device))
+                + self._c_model.encode_coords(lonlat.to(self._c_device)),
+                p=2, dim=-1
+            )
+        return z.cpu().numpy().reshape(-1)
+
 def parse_args():
     p = argparse.ArgumentParser(description="Generate SQL workloads for PoI retrieval.")
     p.add_argument("--exp", default=EXPERIMENT)
@@ -363,6 +395,15 @@ if __name__ == "__main__":
         k_values=args.k,
         radius=args.r
     )
+
+    gen._contrastive_encoder_init(
+        ckpt=CONTRASTIVE["ckpt"],
+        text_encoder=CONTRASTIVE["text_encoder"],
+        proj_dim=CONTRASTIVE["proj_dim"],
+        spatial_encoder=CONTRASTIVE["spatial_encoder"],
+        freeze_text=CONTRASTIVE["freeze_text"],
+    )
+
 
     # embedded and concat queries
     
