@@ -133,7 +133,7 @@ EXP-8
 set -euo pipefail
 
 T=./data/melbourne_cleaned_sampled_100k.csv
-ENCODERS=("mlp")          # or: ("mlp" "sin" "mercator")
+ENCODERS=("sin")          # or: ("mlp" "sin" "mercator")
 DIMS=(128)                     # or: (128 256 384)
 WEIGHTS=("1.0 1.0")
 

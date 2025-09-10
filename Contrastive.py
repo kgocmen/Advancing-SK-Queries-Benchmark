@@ -56,10 +56,85 @@ class MLPSpatial(nn.Module):
         return self.net(lonlat.float())
 
 
+class SinusoidalSpatial(nn.Module):
+    """
+    Encode lon/lat with periodic features to respect wrap-around.
+    Uses multiple frequency bands for richer locality signals.
+    """
+    def __init__(self, output_dim=128, hidden_dim=128, bands=(1.0, 2.0, 4.0)):
+        super().__init__()
+        self.register_buffer("_bands", torch.tensor(bands, dtype=torch.float32))
+        in_dim = 4 * len(bands)  # sin(lon*b), cos(lon*b), sin(lat*b), cos(lat*b) for each band
+        self.net = nn.Sequential(
+            nn.Linear(in_dim, hidden_dim), nn.ReLU(),
+            nn.Linear(hidden_dim, output_dim)
+        )
+
+    def forward(self, lonlat):
+        # lonlat in degrees -> radians
+        lonlat = lonlat.float()
+        lon_rad = torch.deg2rad(lonlat[..., 0])
+        lat_rad = torch.deg2rad(lonlat[..., 1])
+
+        # shape handling: (B,) -> (B, 1)
+        lon_rad = lon_rad.unsqueeze(-1)  # (B,1)
+        lat_rad = lat_rad.unsqueeze(-1)  # (B,1)
+
+        # (B, nbands)
+        lon_b = lon_rad * self._bands
+        lat_b = lat_rad * self._bands
+
+        # periodic features
+        feats = torch.cat([
+            torch.sin(lon_b), torch.cos(lon_b),
+            torch.sin(lat_b), torch.cos(lat_b)
+        ], dim=-1)  # (B, 4*nbands)
+
+        return self.net(feats)
+
+
+class MercatorSpatial(nn.Module):
+    """
+    Map (lon,lat) to a Mercator-like (x,y) then MLP.
+    x = lon_rad
+    y = ln(tan(pi/4 + lat_rad/2))   with latitude clamped to avoid poles
+    """
+    def __init__(self, output_dim=128, hidden_dim=128):
+        super().__init__()
+        self.net = nn.Sequential(
+            nn.Linear(2, hidden_dim), nn.ReLU(),
+            nn.Linear(hidden_dim, output_dim)
+        )
+
+    def forward(self, lonlat):
+        lonlat = lonlat.float()
+        lon_deg = lonlat[..., 0]
+        lat_deg = lonlat[..., 1]
+
+        # clamp latitude to avoid infinities near the poles
+        # Web Mercator typically clamps around ~85.05113°
+        lat_deg = torch.clamp(lat_deg, -85.05112878, 85.05112878)
+
+        lon_rad = torch.deg2rad(lon_deg)
+        lat_rad = torch.deg2rad(lat_deg)
+
+        # y = ln(tan(pi/4 + lat/2))
+        y = torch.log(torch.tan(math.pi / 4.0 + lat_rad / 2.0))
+        x = lon_rad
+        xy = torch.stack([x, y], dim=-1)  # (B,2)
+
+        return self.net(xy)
+
+
 def build_spatial_encoder(kind: str, output_dim: int, hidden: int) -> nn.Module:
     kind = kind.lower()
     if kind == "mlp":
         return MLPSpatial(output_dim=output_dim, hidden_dim=hidden)
+    if kind == "sin":
+        # You can tweak bands for your dataset scale
+        return SinusoidalSpatial(output_dim=output_dim, hidden_dim=hidden, bands=(1.0, 2.0, 4.0, 8.0))
+    if kind == "mercator":
+        return MercatorSpatial(output_dim=output_dim, hidden_dim=hidden)
     raise ValueError(f"Unknown spatial-encoder: {kind}")
 
 
