@@ -329,6 +329,8 @@ class QueryGenerator:
                 spatial_encoder=spatial_encoder,
                 spatial_hidden=128,
                 freeze_text=freeze_text,
+                w_text=CONTRASTIVE.get("w_text", 1.0),        # NEW
+                w_spatial=CONTRASTIVE.get("w_spatial", 1.0),  # NEW
             ).to(device)
             state = torch.load(ckpt, map_location=device)
             self._c_model.load_state_dict(state, strict=True)
@@ -339,12 +341,11 @@ class QueryGenerator:
                         padding="max_length", truncation=True, max_length=64)
         lonlat = torch.tensor([[lon, lat]], dtype=torch.float32)
         with torch.no_grad():
-            z = F.normalize(
-                self._c_model.encode_text(enc["input_ids"].to(self._c_device),
-                                        enc["attention_mask"].to(self._c_device))
-                + self._c_model.encode_coords(lonlat.to(self._c_device)),
-                p=2, dim=-1
-            )
+            z = self._c_model._fuse(
+                    self._c_model.encode_text(enc["input_ids"].to(self._c_device),
+                                            enc["attention_mask"].to(self._c_device)),
+                    self._c_model.encode_coords(lonlat.to(self._c_device))
+                )
         return z.cpu().numpy().reshape(-1)
 
 def parse_args():
@@ -358,7 +359,15 @@ def parse_args():
     p.add_argument("--q", type=str, default=None,
                    help="Path to .txt or .csv with rows: <keyword>,<lat>,<lon> for embedded workloads")
     p.add_argument("--input", type=str, default=INPUT_CSV,
-                   help="PoIs CSV for exact keyword workloads (samples popular tag KEYS and random points)")
+                   help="PoIs CSV for exact keyword workloads")
+    # NEW: contrastive overrides
+    p.add_argument("--c-ckpt", type=str, default=CONTRASTIVE["ckpt"])
+    p.add_argument("--c-proj-dim", type=int, default=CONTRASTIVE["proj_dim"])
+    p.add_argument("--c-text-encoder", type=str, default=CONTRASTIVE["text_encoder"])
+    p.add_argument("--c-spatial-encoder", type=str, default=CONTRASTIVE["spatial_encoder"])
+    p.add_argument("--c-freeze", action="store_true", default=CONTRASTIVE["freeze_text"])
+    p.add_argument("--c-wtext", type=float, default=CONTRASTIVE["w_text"])
+    p.add_argument("--c-wspatial", type=float, default=CONTRASTIVE["w_spatial"])
     return p.parse_args()
 
 
@@ -374,6 +383,7 @@ if __name__ == "__main__":
     RADIUS = args.r
     POINT_COUNT = args.cnt
     INPUT_CSV = args.input
+    
 
     print("=== Query Generator Config ===")
     print(f"Input CSV    : {args.input}")
@@ -395,9 +405,24 @@ if __name__ == "__main__":
         k_values=args.k,
         radius=args.r
     )
+    CONTRASTIVE.update({
+        "ckpt": args.c_ckpt,
+        "proj_dim": args.c_proj_dim,
+        "text_encoder": args.c_text_encoder,
+        "spatial_encoder": args.c_spatial_encoder,
+        "freeze_text": args.c_freeze,
+        "w_text": args.c_wtext,
+        "w_spatial": args.c_wspatial
+    })
+
+    ckpt_path = CONTRASTIVE["ckpt"]
+
+    # If the default path is still in place, rebuild it from encoder + dim
+    if ckpt_path == "./contrastive/contrastive_model.pt":
+        ckpt_path = f"./contrastive/model_{CONTRASTIVE['spatial_encoder']}_d{CONTRASTIVE['proj_dim']}.pt"
 
     gen._contrastive_encoder_init(
-        ckpt=CONTRASTIVE["ckpt"],
+        ckpt=ckpt_path,
         text_encoder=CONTRASTIVE["text_encoder"],
         proj_dim=CONTRASTIVE["proj_dim"],
         spatial_encoder=CONTRASTIVE["spatial_encoder"],

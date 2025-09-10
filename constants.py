@@ -10,11 +10,13 @@ DB_PARAMS = {
 }
 
 CONTRASTIVE = {
-    "ckpt": "./contrastive/contrastive_model.pt",
+    "ckpt": "./contrastive/model_mlp_d384.pt",
     "text_encoder": "sentence-transformers/all-MiniLM-L6-v2",
     "spatial_encoder": "mlp",     # or: sin, mercator
     "freeze_text": True,
-    "proj_dim": 128,
+    "proj_dim": 384,
+    "w_text": 1.0,
+    "w_spatial": 1.0
 }
 
 CONTRASTIVE_DIM = CONTRASTIVE["proj_dim"]

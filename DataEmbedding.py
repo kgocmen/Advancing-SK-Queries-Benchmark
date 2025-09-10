@@ -97,7 +97,7 @@ def generate_contrastive_embedding(
     coords = df[["lon", "lat"]].values.astype("float32")  # (lon, lat)
 
     # --- caching path per your spec
-    out_path = f"./contrastive/{EXPERIMENT}_{proj_dim}.npy"
+    out_path = f"./contrastive/{EXPERIMENT}_{proj_dim}_wt{CONTRASTIVE['w_text']}_ws{CONTRASTIVE['w_spatial']}.npy"
     os.makedirs(os.path.dirname(out_path), exist_ok=True)
 
     # If exists and shape matches → reuse
@@ -120,6 +120,8 @@ def generate_contrastive_embedding(
         spatial_encoder=spatial_encoder,
         spatial_hidden=128,
         freeze_text=freeze_text,
+        w_text=CONTRASTIVE.get("w_text", 1.0),        # NEW
+        w_spatial=CONTRASTIVE.get("w_spatial", 1.0),  # NEW
     ).to(device)
     state = torch.load(ckpt, map_location=device)
     model.load_state_dict(state, strict=True)
@@ -131,7 +133,6 @@ def generate_contrastive_embedding(
     write_ptr = 0
 
     # --- efficient, OOM-resilient batching
-    import contextlib
     torch.set_grad_enabled(False)
 
     use_cuda = (device.type == "cuda")
@@ -154,12 +155,11 @@ def generate_contrastive_embedding(
                 with torch.autocast(device_type="cuda", dtype=torch.float16):
                     zt = model.encode_text(input_ids, attention_mask)
                     zl = model.encode_coords(lonlat)
-                    z  = F.normalize(zt + zl, p=2, dim=-1).float().cpu().numpy()
-                    print(z)
+                    z = model._fuse(zt, zl).float().cpu().numpy() 
             else:
                 zt = model.encode_text(input_ids, attention_mask)
                 zl = model.encode_coords(lonlat)
-                z  = F.normalize(zt + zl, p=2, dim=-1).cpu().numpy()
+                z = model._fuse(zt, zl).cpu().numpy()   
 
             fused_out[write_ptr:write_ptr + (end - start)] = z
             write_ptr += (end - start)

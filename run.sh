@@ -127,19 +127,67 @@ do
 done
 EXP-8
 
+
+
 #: <<'EXP-9'
-EXP="${CONTR}_k${K}"
-echo "=== 9. Queries Generating for EXP=${EXP} (contrastive, HNSW) ==="
-python3 QueryGenerator.py --exp "$EXP" --so $DS $CUS --k $K --input "$INPUT" --cnt "$CNT"
+set -euo pipefail
 
-echo "=== Running EXP=${EXP} (HNSW) ==="
-python3 Benchmark.py --exp "$EXP" --so $DS $CUS --k $K --input "$INPUT" --sce "$CONTR" --idx $H \
-  --c-ckpt "./contrastive/contrastive_model.pt" \
-  --c-proj-dim 128 \
-  --c-text-encoder "sentence-transformers/all-MiniLM-L6-v2" \
-  --c-spatial-encoder "mlp" \
-  --c-freeze
-  
+T=./data/melbourne_cleaned_sampled_100k.csv
+ENCODERS=("mlp")          # or: ("mlp" "sin" "mercator")
+DIMS=(128)                     # or: (128 256 384)
+WEIGHTS=("1.0 1.0")
 
-python3 ResultReader.py --exp "$EXP" --so $DS $CUS --k $K --sce "$CONTR"
+
+#: <<'tr'
+# 1) Train once per (encoder, dim)
+#    - Contrastive.py should auto-fit spatial center/scales from $T
+#      and store them as buffers in the checkpoint.
+for ENC in "${ENCODERS[@]}"; do
+  for DIM in "${DIMS[@]}"; do
+    CKPT="./contrastive/model_${ENC}_d${DIM}.pt"
+    echo "=== Training ENC=${ENC}, DIM=${DIM} ==="
+    python Contrastive.py train "$T" --text-cols tags name \
+      --lon-col lon --lat-col lat \
+      --epochs 5 --batch-size 128 \
+      --text-encoder sentence-transformers/all-MiniLM-L6-v2 \
+      --spatial-encoder "$ENC" --proj-dim "$DIM" --freeze-text \
+      --lr 1e-4 --wd 0.01 --checkpoint "$CKPT"
+  done
+done
+#tr
+
+# 2) Run experiments (no extra flags). QueryGenerator/Benchmark just load the ckpt
+#    and thereby get the same spatial buffers (anchor/scales) baked into the model.
+for ENC in "${ENCODERS[@]}"; do
+  for DIM in "${DIMS[@]}"; do
+    CKPT="./contrastive/model_${ENC}_d${DIM}.pt"
+    for W in "${WEIGHTS[@]}"; do
+      WT=$(echo "$W" | cut -d' ' -f1)
+      WS=$(echo "$W" | cut -d' ' -f2)
+      EXP="${CONTR}_${ENC}_k${K}_d${DIM}_wt${WT}_ws${WS}"
+
+      echo "=== Running EXP=${EXP} ==="
+      python QueryGenerator.py --exp "$EXP" --so $DS $CUS --k $K --input "$INPUT" \
+        --c-ckpt "$CKPT" \
+        --c-proj-dim "$DIM" \
+        --c-text-encoder "sentence-transformers/all-MiniLM-L6-v2" \
+        --c-spatial-encoder "$ENC" \
+        --c-freeze \
+        --c-wtext "$WT" \
+        --c-wspatial "$WS"
+
+      python3 Benchmark.py --exp "$EXP" --so $DS $CUS --k $K --input "$INPUT" \
+        --sce $CONTR --idx $H \
+        --c-ckpt "$CKPT" \
+        --c-proj-dim "$DIM" \
+        --c-text-encoder "sentence-transformers/all-MiniLM-L6-v2" \
+        --c-spatial-encoder "$ENC" \
+        --c-freeze \
+        --c-wtext "$WT" \
+        --c-wspatial "$WS"
+
+      python3 ResultReader.py --exp "$EXP" --so $DS $CUS --k $K --sce "contrast"
+    done
+  done
+done
 #EXP-9

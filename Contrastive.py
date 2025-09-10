@@ -53,14 +53,15 @@ class MLPSpatial(nn.Module):
             nn.Linear(hidden_dim, output_dim)
         )
     def forward(self, lonlat):
-        return self.net(lonlat)
+        return self.net(lonlat.float())
+
 
 def build_spatial_encoder(kind: str, output_dim: int, hidden: int) -> nn.Module:
     kind = kind.lower()
-    if kind in ("mlp", "mercator", "sin"):
-        # keep it simple: all treat lon/lat directly for now
+    if kind == "mlp":
         return MLPSpatial(output_dim=output_dim, hidden_dim=hidden)
     raise ValueError(f"Unknown spatial-encoder: {kind}")
+
 
 # -------------------------
 # Contrastive Model
@@ -74,6 +75,8 @@ class ContrastiveModel(nn.Module):
         spatial_encoder: str = "mlp",
         spatial_hidden: int = 128,
         freeze_text: bool = True,
+        w_text: float = 1.0,
+        w_spatial: float = 1.0,
     ):
         super().__init__()
         self.text_encoder = AutoModel.from_pretrained(text_encoder_name)
@@ -86,12 +89,18 @@ class ContrastiveModel(nn.Module):
 
         # CLIP-style temperature; will learn, but clamp its range during use
         self.logit_scale = nn.Parameter(torch.tensor(math.log(1/0.07), dtype=torch.float32))
-
+        self.w_text = float(w_text)
+        self.w_spatial = float(w_spatial)
     @staticmethod
     def mean_pool(last_hidden, attention_mask):
         mask = attention_mask.unsqueeze(-1).float()
         denom = torch.clamp(mask.sum(dim=1), min=1e-6)
         return (last_hidden * mask).sum(dim=1) / denom
+    
+    def _fuse(self, zt, zl):
+        # zt, zl are already unit vectors; weight then renormalize
+        z = self.w_text * zt + self.w_spatial * zl
+        return F.normalize(z, p=2, dim=-1)
 
     def encode_text(self, input_ids, attention_mask):
         out = self.text_encoder(input_ids=input_ids, attention_mask=attention_mask)
@@ -106,10 +115,10 @@ class ContrastiveModel(nn.Module):
     def forward(self, lonlat, input_ids, attention_mask):
         z_t = self.encode_text(input_ids, attention_mask)   # (B,D)
         z_l = self.encode_coords(lonlat)                    # (B,D)
-        # clamp temperature to a sane range to avoid blow-ups / dead grads
         scale = self.logit_scale.exp().clamp(1e-3, 100.0)
-        logits = scale * (z_t @ z_l.T)                      # (B,B)
+        logits = scale * (z_t @ z_l.T)
         return logits, logits.T
+
 
 # -------------------------
 # Dataset
@@ -184,6 +193,8 @@ def train(args):
         spatial_encoder=args.spatial_encoder,
         spatial_hidden=args.spatial_hidden,
         freeze_text=args.freeze_text,
+        w_text=args.w_text,            # NEW
+        w_spatial=args.w_spatial,      # NEW
     ).to(device)
 
     optim = torch.optim.AdamW([p for p in model.parameters() if p.requires_grad], lr=args.lr, weight_decay=args.wd)
@@ -261,7 +272,8 @@ def bench(args):
             input_ids, attention_mask = enc["input_ids"].to(device), enc["attention_mask"].to(device)
             lonlat = torch.tensor([[lon, lat]], dtype=torch.float32, device=device)
 
-            z = model.encode_text(input_ids, attention_mask) + model.encode_coords(lonlat)
+            z = model._fuse(model.encode_text(input_ids, attention_mask), model.encode_coords(lonlat))
+
             sims = cosine_similarity(z.cpu().numpy(), fused)[0]
             top_k = np.argsort(sims)[-args.topk:][::-1]
 
@@ -288,6 +300,8 @@ def build_parser():
         sp.add_argument("--lon-col", default="lon")
         sp.add_argument("--lat-col", default="lat")
         sp.add_argument("--text-cols", nargs="+", required=True)
+        sp.add_argument("--w-text", type=float, default=1.0)
+        sp.add_argument("--w-spatial", type=float, default=1.0)
 
     sp_tr = sub.add_parser("train")
     sp_tr.add_argument("csv"); add_shared(sp_tr)
@@ -296,7 +310,7 @@ def build_parser():
     sp_tr.add_argument("--lr", type=float, default=1e-4)
     sp_tr.add_argument("--wd", type=float, default=0.01)
     sp_tr.add_argument("--workers", type=int, default=4)
-    sp_tr.add_argument("--checkpoint", default="contrastive_model.pt")
+    sp_tr.add_argument("--checkpoint", default="contrastive/contrastive_model.pt")
     sp_tr.add_argument("--cpu", action="store_true")
     sp_tr.set_defaults(func=train)
 

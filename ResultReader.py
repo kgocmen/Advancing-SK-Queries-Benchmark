@@ -393,7 +393,7 @@ class QueryResultsParser:
         if any_spatial:
             plt.title(f"Per-Query Spatial Range — source={source}, k={k}")
             plt.xlabel("Query #")
-            plt.ylabel(f"Spatial range@{k} (distance units)")
+            plt.ylabel(f"Spatial range (metres)")
             if _last_keys_sorted:
                 plt.xticks(np.arange(1, len(_last_keys_sorted) + 1))
             plt.grid(True, linestyle="--", alpha=0.4)

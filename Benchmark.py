@@ -187,6 +187,8 @@ def parse_args():
     p.add_argument("--c-text-encoder", type=str, default=CONTRASTIVE["text_encoder"])
     p.add_argument("--c-spatial-encoder", type=str, default=CONTRASTIVE["spatial_encoder"])
     p.add_argument("--c-freeze", action="store_true", default=CONTRASTIVE["freeze_text"])
+    p.add_argument("--c-wtext", type=float, default=1.0)
+    p.add_argument("--c-wspatial", type=float, default=1.0)
     return p.parse_args()
 
 
@@ -199,15 +201,22 @@ if __name__ == "__main__":
     INPUT_CSV = args.input
     EXPERIMENT = args.exp; SOURCE = args.so; K_VALUES = args.k
 
-    # push contrastive config
+    # build a unique checkpoint path based on encoder + dim
+    ckpt_path = args.c_ckpt
+    if ckpt_path == "./contrastive/contrastive_model.pt":
+        ckpt_path = f"./contrastive/model_{args.c_spatial_encoder}_d{args.c_proj_dim}.pt"
+
     CONTRASTIVE.update({
-        "ckpt": args.c_ckpt,
+        "ckpt": ckpt_path,
         "proj_dim": args.c_proj_dim,
         "text_encoder": args.c_text_encoder,
         "spatial_encoder": args.c_spatial_encoder,
         "freeze_text": args.c_freeze,
+        "w_text": args.c_wtext,
+        "w_spatial": args.c_wspatial
     })
     CONTRASTIVE_DIM = CONTRASTIVE["proj_dim"]
+
 
     print("=== Benchmark Config ===")
     print(f"Scenario     : {args.sce}")
