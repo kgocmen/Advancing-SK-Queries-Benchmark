@@ -1,0 +1,5014 @@
+{
+    "insertion_time": 75.28417682647705,
+    "index_creation": {
+        "func": [
+            "CREATE INDEX IF NOT EXISTS idx_pois_embedding ON PoIs USING hnsw (embedding vector_cosine_ops) WITH (m = 16, ef_construction = 64);"
+        ],
+        "time": 34.5978786945343
+    },
+    "query_results": {
+        "0": {
+            "execution_time": 0.1931602954864502,
+            "results": [
+                {
+                    "id": 1453185997,
+                    "tags": {
+                        "shop": "supermarket"
+                    },
+                    "distance": 27354.44441651,
+                    "sims": 0.9192553388406676
+                },
+                {
+                    "id": 3841977822,
+                    "tags": {
+                        "name": "Crown Asian Supermarket",
+                        "shop": "supermarket"
+                    },
+                    "distance": 4365.62755117,
+                    "sims": 0.8612901999104277
+                },
+                {
+                    "id": 5187993676,
+                    "tags": {
+                        "name": "Pride Of Punjab",
+                        "shop": "supermarket"
+                    },
+                    "distance": 19731.85072823,
+                    "sims": 0.8212616475316361
+                },
+                {
+                    "id": 5402564822,
+                    "tags": {
+                        "name": "Frozen Mart",
+                        "shop": "supermarket",
+                        "layer": "2"
+                    },
+                    "distance": 19137.64571578,
+                    "sims": 0.8050736908680552
+                },
+                {
+                    "id": 10712164086,
+                    "tags": {
+                        "name": "Upper Beaconsfield General Store",
+                        "amenity": "cafe"
+                    },
+                    "distance": 40775.70009622,
+                    "sims": 0.7881114717755248
+                },
+                {
+                    "id": 5227802631,
+                    "tags": {
+                        "name": "Bargain Centre",
+                        "shop": "variety_store"
+                    },
+                    "distance": 26044.67472753,
+                    "sims": 0.7865607122422329
+                },
+                {
+                    "id": 9574992174,
+                    "tags": {
+                        "name": "The Market Southland",
+                        "shop": "grocery",
+                        "level": "0"
+                    },
+                    "distance": 15961.84006338,
+                    "sims": 0.7847638469652961
+                },
+                {
+                    "id": 6699795804,
+                    "tags": {
+                        "building": "retail"
+                    },
+                    "distance": 5678.24351987,
+                    "sims": 0.7813961478167996
+                },
+                {
+                    "id": 6678532312,
+                    "tags": {
+                        "building": "retail"
+                    },
+                    "distance": 5719.30662199,
+                    "sims": 0.7813677294285086
+                },
+                {
+                    "id": 4752598040,
+                    "tags": {
+                        "name": "Industry Cafe",
+                        "amenity": "cafe"
+                    },
+                    "distance": 33261.50683377,
+                    "sims": 0.7715712879512896
+                }
+            ]
+        },
+        "1": {
+            "execution_time": 0.18910455703735352,
+            "results": [
+                {
+                    "id": 9210211167,
+                    "tags": {
+                        "name": "Eyelash",
+                        "shop": "beauty"
+                    },
+                    "distance": 33756.17881545,
+                    "sims": 0.596232223959913
+                },
+                {
+                    "id": 9260723187,
+                    "tags": {
+                        "tourism": "artwork"
+                    },
+                    "distance": 34786.57050429,
+                    "sims": 0.5732503787726193
+                },
+                {
+                    "id": 2987188735,
+                    "tags": {
+                        "tourism": "artwork"
+                    },
+                    "distance": 34968.11663877,
+                    "sims": 0.5720925074678028
+                },
+                {
+                    "id": 5776644658,
+                    "tags": {
+                        "tourism": "artwork"
+                    },
+                    "distance": 21895.72896784,
+                    "sims": 0.5495583028391146
+                },
+                {
+                    "id": 6741639490,
+                    "tags": {
+                        "tourism": "artwork"
+                    },
+                    "distance": 26933.05487131,
+                    "sims": 0.5470865582669062
+                },
+                {
+                    "id": 4224608824,
+                    "tags": {
+                        "name": "Rouge",
+                        "shop": "jewelry"
+                    },
+                    "distance": 26133.38899659,
+                    "sims": 0.5335298378676668
+                },
+                {
+                    "id": 9250342461,
+                    "tags": {
+                        "tourism": "artwork",
+                        "artwork_type": "sculpture"
+                    },
+                    "distance": 37063.37313224,
+                    "sims": 0.5250599794000532
+                },
+                {
+                    "id": 9250342458,
+                    "tags": {
+                        "tourism": "artwork",
+                        "artwork_type": "sculpture"
+                    },
+                    "distance": 37067.99180488,
+                    "sims": 0.5250599794000532
+                },
+                {
+                    "id": 9175656618,
+                    "tags": {
+                        "tourism": "artwork",
+                        "artwork_type": "sculpture"
+                    },
+                    "distance": 32389.46122435,
+                    "sims": 0.5228237482519599
+                },
+                {
+                    "id": 9175656619,
+                    "tags": {
+                        "tourism": "artwork",
+                        "artwork_type": "sculpture"
+                    },
+                    "distance": 32393.41774105,
+                    "sims": 0.5228237482519599
+                }
+            ]
+        },
+        "2": {
+            "execution_time": 0.18359851837158203,
+            "results": [
+                {
+                    "id": 6699795758,
+                    "tags": {
+                        "name": "Flexicar",
+                        "amenity": "car_rental"
+                    },
+                    "distance": 12730.68297888,
+                    "sims": 0.7210055853135091
+                },
+                {
+                    "id": 6699781926,
+                    "tags": {
+                        "name": "Flexicar",
+                        "amenity": "car_rental"
+                    },
+                    "distance": 12791.52610814,
+                    "sims": 0.720982313156133
+                },
+                {
+                    "id": 10078543827,
+                    "tags": {
+                        "name": "T and A Automotive",
+                        "shop": "car_repair",
+                        "addr:street": "Park Road",
+                        "addr:housenumber": "35"
+                    },
+                    "distance": 25333.58482829,
+                    "sims": 0.6526632101931112
+                },
+                {
+                    "id": 4463132082,
+                    "tags": {
+                        "name": "SIXT",
+                        "brand": "SIXT",
+                        "branch": "Car & Truck Rental",
+                        "amenity": "car_rental",
+                        "addr:state": "VIC",
+                        "addr:street": "Dandenong Road",
+                        "brand:wikidata": "Q705664"
+                    },
+                    "distance": 22643.94749224,
+                    "sims": 0.6462874797753989
+                },
+                {
+                    "id": 7834654030,
+                    "tags": {
+                        "fee": "no",
+                        "access": "permissive",
+                        "amenity": "parking",
+                        "parking": "carports",
+                        "surface": "asphalt",
+                        "operator": "Coates Hire Mulgrave"
+                    },
+                    "distance": 22490.30100728,
+                    "sims": 0.6335976501463454
+                },
+                {
+                    "id": 687164065,
+                    "tags": {
+                        "shop": "car_repair"
+                    },
+                    "distance": 19562.68200571,
+                    "sims": 0.6235053910914308
+                },
+                {
+                    "id": 364876290,
+                    "tags": {
+                        "name": "2 Kestrel",
+                        "amenity": "parking",
+                        "created_by": "Merkaartor 0.13"
+                    },
+                    "distance": 29179.64800695,
+                    "sims": 0.6232292652130171
+                },
+                {
+                    "id": 4110938490,
+                    "tags": {
+                        "name": "CAT-16",
+                        "amenity": "vending_machine",
+                        "vending": "parking_tickets"
+                    },
+                    "distance": 8984.71027394,
+                    "sims": 0.6226906180381819
+                },
+                {
+                    "id": 11827444802,
+                    "tags": {
+                        "access": "private",
+                        "amenity": "parking"
+                    },
+                    "distance": 6617.50892921,
+                    "sims": 0.621682800154854
+                },
+                {
+                    "id": 6017200213,
+                    "tags": {
+                        "amenity": "bicycle_parking"
+                    },
+                    "distance": 3529.67795436,
+                    "sims": 0.619007881195058
+                }
+            ]
+        },
+        "3": {
+            "execution_time": 0.18388652801513672,
+            "results": [
+                {
+                    "id": 9574992178,
+                    "tags": {
+                        "name": "Sweet Time",
+                        "shop": "confectionery",
+                        "level": "0",
+                        "phone": "+61 433 298 526",
+                        "payment:visa": "yes",
+                        "payment:gift_card": "yes",
+                        "payment:mastercard": "yes"
+                    },
+                    "distance": 22170.89036949,
+                    "sims": 0.381820448962531
+                },
+                {
+                    "id": 9574713566,
+                    "tags": {
+                        "name": "Sugar Me",
+                        "shop": "beauty",
+                        "level": "1",
+                        "phone": "+61 3 8510 2386",
+                        "payment:visa": "yes",
+                        "opening_hours": "Su-Mo 10:00-17:00, Tu-We 9:00-17:30, Th-Fr 9:00-21:00, Sa 9:00-17:00",
+                        "payment:gift_card": "yes",
+                        "payment:mastercard": "yes",
+                        "payment:american_express": "yes"
+                    },
+                    "distance": 22082.94993143,
+                    "sims": 0.375329904277921
+                },
+                {
+                    "id": 8940301696,
+                    "tags": {
+                        "building": "yes"
+                    },
+                    "distance": 48281.88207756,
+                    "sims": 0.3740533738199945
+                },
+                {
+                    "id": 919254737,
+                    "tags": {
+                        "name": "053",
+                        "note_1": "18-SEP-10 3:15:55PM",
+                        "_waypoint_": "yes",
+                        "_description_": "18-SEP-10 3:15:55PM"
+                    },
+                    "distance": 74923.12876265,
+                    "sims": 0.3722822922888849
+                },
+                {
+                    "id": 6057027966,
+                    "tags": {
+                        "building": "yes"
+                    },
+                    "distance": 31863.22040369,
+                    "sims": 0.3704642907476874
+                },
+                {
+                    "id": 6057027964,
+                    "tags": {
+                        "building": "yes"
+                    },
+                    "distance": 31984.05373456,
+                    "sims": 0.3703390955925093
+                },
+                {
+                    "id": 6057027950,
+                    "tags": {
+                        "building": "yes"
+                    },
+                    "distance": 31908.94407047,
+                    "sims": 0.3703361595077731
+                },
+                {
+                    "id": 7903498955,
+                    "tags": {
+                        "building": "yes"
+                    },
+                    "distance": 33040.2221831,
+                    "sims": 0.3702970886584652
+                },
+                {
+                    "id": 12483915172,
+                    "tags": {
+                        "name": "Unnie111",
+                        "shop": "clothes",
+                        "level": "1",
+                        "wheelchair": "yes"
+                    },
+                    "distance": 39923.286956,
+                    "sims": 0.3651309150613471
+                },
+                {
+                    "id": 9219905693,
+                    "tags": {
+                        "name": "Seaford Screens",
+                        "shop": "yes"
+                    },
+                    "distance": 5016.99909327,
+                    "sims": 0.3635466044465623
+                }
+            ]
+        },
+        "4": {
+            "execution_time": 0.1896991729736328,
+            "results": [
+                {
+                    "id": 9204956682,
+                    "tags": {
+                        "amenity": "shelter"
+                    },
+                    "distance": 36088.40326672,
+                    "sims": 0.7749238223110761
+                },
+                {
+                    "id": 1634785575,
+                    "tags": {
+                        "amenity": "shelter"
+                    },
+                    "distance": 43054.58840501,
+                    "sims": 0.7746756882636159
+                },
+                {
+                    "id": 1665467233,
+                    "tags": {
+                        "amenity": "shelter"
+                    },
+                    "distance": 45030.40534873,
+                    "sims": 0.7739031662153582
+                },
+                {
+                    "id": 1665511217,
+                    "tags": {
+                        "amenity": "shelter"
+                    },
+                    "distance": 45093.15122664,
+                    "sims": 0.7737798577405195
+                },
+                {
+                    "id": 2354674478,
+                    "tags": {
+                        "amenity": "shelter"
+                    },
+                    "distance": 62686.37919691,
+                    "sims": 0.773173440373737
+                },
+                {
+                    "id": 8918639632,
+                    "tags": {
+                        "amenity": "shelter"
+                    },
+                    "distance": 50362.71271345,
+                    "sims": 0.7731500022382207
+                },
+                {
+                    "id": 3801660338,
+                    "tags": {
+                        "amenity": "shelter"
+                    },
+                    "distance": 55971.02402175,
+                    "sims": 0.77262190530585
+                },
+                {
+                    "id": 7513185096,
+                    "tags": {
+                        "amenity": "shelter"
+                    },
+                    "distance": 53958.86184293,
+                    "sims": 0.7696438200768461
+                },
+                {
+                    "id": 514497633,
+                    "tags": {
+                        "amenity": "shelter"
+                    },
+                    "distance": 53746.26784727,
+                    "sims": 0.7686479598770825
+                },
+                {
+                    "id": 9157809794,
+                    "tags": {
+                        "amenity": "shelter"
+                    },
+                    "distance": 56850.37200021,
+                    "sims": 0.7668953914483416
+                }
+            ]
+        },
+        "5": {
+            "execution_time": 0.19218039512634277,
+            "results": [
+                {
+                    "id": 1952164967,
+                    "tags": {
+                        "brand": "Australia Post",
+                        "amenity": "post_office"
+                    },
+                    "distance": 32159.53939898,
+                    "sims": 0.7110284646204462
+                },
+                {
+                    "id": 5302929953,
+                    "tags": {
+                        "name": "Mt Eliza Post Office",
+                        "brand": "Australia Post",
+                        "amenity": "post_office",
+                        "operator": "Australia Post",
+                        "wikidata": "Q28929403",
+                        "wheelchair": "yes",
+                        "opening_hours": "Mo-Fr 09:00-17:00",
+                        "brand:wikidata": "Q1142936",
+                        "brand:wikipedia": "en:Australia Post",
+                        "operator:wikidata": "Q1142936",
+                        "operator:wikipedia": "en:Australia Post"
+                    },
+                    "distance": 23466.48583016,
+                    "sims": 0.6741341566723391
+                },
+                {
+                    "id": 10813862467,
+                    "tags": {
+                        "amenity": "post_office",
+                        "operator": "Australia Post",
+                        "operator:wikidata": "Q1142936"
+                    },
+                    "distance": 37301.57814765,
+                    "sims": 0.6668773889918533
+                },
+                {
+                    "id": 7802111304,
+                    "tags": {
+                        "name": "Camberwell",
+                        "amenity": "post_office",
+                        "operator": "Australia Post",
+                        "operator:wikidata": "Q1142936",
+                        "operator:wikipedia": "en:Australia Post"
+                    },
+                    "distance": 30869.21470382,
+                    "sims": 0.6624496769055124
+                },
+                {
+                    "id": 8522804498,
+                    "tags": {
+                        "name": "Essendon West LPO",
+                        "amenity": "post_office"
+                    },
+                    "distance": 50069.03620453,
+                    "sims": 0.6600098598021124
+                },
+                {
+                    "id": 329962121,
+                    "tags": {
+                        "name": "Australia Post",
+                        "brand": "Australia Post",
+                        "amenity": "post_office",
+                        "brand:wikidata": "Q1142936",
+                        "brand:wikipedia": "en:Australia Post"
+                    },
+                    "distance": 28766.30632127,
+                    "sims": 0.649199819374046
+                },
+                {
+                    "id": 6359672661,
+                    "tags": {
+                        "name": "Australia Post",
+                        "brand": "Australia Post",
+                        "amenity": "post_office",
+                        "brand:wikidata": "Q1142936",
+                        "brand:wikipedia": "en:Australia Post"
+                    },
+                    "distance": 18270.13875777,
+                    "sims": 0.6478389467905172
+                },
+                {
+                    "id": 1270779469,
+                    "tags": {
+                        "brand": "Australia Post",
+                        "fixme": "no longer exists?",
+                        "amenity": "post_office"
+                    },
+                    "distance": 28441.28561765,
+                    "sims": 0.6454268059897775
+                },
+                {
+                    "id": 5421523811,
+                    "tags": {
+                        "name": "Cheltenham Post Office",
+                        "brand": "Australia Post",
+                        "source": "survey",
+                        "amenity": "post_office",
+                        "operator": "Australia Post",
+                        "wikidata": "Q28929017",
+                        "opening_hours": "Mo-Fr 09:00-17:00; Sa 09:00-12:00",
+                        "operator:wikidata": "Q1142936",
+                        "operator:wikipedia": "en:Australia Post"
+                    },
+                    "distance": 25298.56296322,
+                    "sims": 0.6384413382139684
+                },
+                {
+                    "id": 598434506,
+                    "tags": {
+                        "brand": "Australia Post",
+                        "amenity": "post_office",
+                        "operator": "Australia Post",
+                        "operator:wikidata": "Q1142936",
+                        "operator:wikipedia": "en:Australia Post"
+                    },
+                    "distance": 38042.91853783,
+                    "sims": 0.6310689229410525
+                }
+            ]
+        },
+        "6": {
+            "execution_time": 0.1856093406677246,
+            "results": [
+                {
+                    "id": 412761492,
+                    "tags": {
+                        "amenity": "toilets"
+                    },
+                    "distance": 28258.78259492,
+                    "sims": 0.8509144947750419
+                },
+                {
+                    "id": 9513144194,
+                    "tags": {
+                        "amenity": "toilets"
+                    },
+                    "distance": 12114.34758129,
+                    "sims": 0.850323455064606
+                },
+                {
+                    "id": 348189212,
+                    "tags": {
+                        "amenity": "toilets"
+                    },
+                    "distance": 16919.42816587,
+                    "sims": 0.8503154933828704
+                },
+                {
+                    "id": 6089226542,
+                    "tags": {
+                        "amenity": "toilets"
+                    },
+                    "distance": 9728.11420516,
+                    "sims": 0.8498277231896872
+                },
+                {
+                    "id": 1749638437,
+                    "tags": {
+                        "amenity": "toilets"
+                    },
+                    "distance": 70939.53379373,
+                    "sims": 0.8491278110894932
+                },
+                {
+                    "id": 357080124,
+                    "tags": {
+                        "amenity": "toilets"
+                    },
+                    "distance": 72702.35682387,
+                    "sims": 0.8487028389395991
+                },
+                {
+                    "id": 5417495955,
+                    "tags": {
+                        "amenity": "toilets"
+                    },
+                    "distance": 11414.58885534,
+                    "sims": 0.8480138092049262
+                },
+                {
+                    "id": 12399063001,
+                    "tags": {
+                        "amenity": "toilets"
+                    },
+                    "distance": 20644.41719088,
+                    "sims": 0.8477108983821228
+                },
+                {
+                    "id": 10213665475,
+                    "tags": {
+                        "amenity": "toilets"
+                    },
+                    "distance": 74125.08790906,
+                    "sims": 0.8463839292526305
+                },
+                {
+                    "id": 5806427462,
+                    "tags": {
+                        "amenity": "toilets"
+                    },
+                    "distance": 13740.01743571,
+                    "sims": 0.8456559089217147
+                }
+            ]
+        },
+        "7": {
+            "execution_time": 0.1840202808380127,
+            "results": [
+                {
+                    "id": 9454849796,
+                    "tags": {
+                        "amenity": "bench"
+                    },
+                    "distance": 6146.89422433,
+                    "sims": 0.829141952582431
+                },
+                {
+                    "id": 11497393044,
+                    "tags": {
+                        "amenity": "bench"
+                    },
+                    "distance": 13744.28000549,
+                    "sims": 0.8291051168943951
+                },
+                {
+                    "id": 6017238586,
+                    "tags": {
+                        "amenity": "bench"
+                    },
+                    "distance": 11632.88257469,
+                    "sims": 0.8290486363717794
+                },
+                {
+                    "id": 2651176375,
+                    "tags": {
+                        "amenity": "bench"
+                    },
+                    "distance": 12904.26601901,
+                    "sims": 0.8290345943756438
+                },
+                {
+                    "id": 2120443412,
+                    "tags": {
+                        "amenity": "bench"
+                    },
+                    "distance": 14950.07995992,
+                    "sims": 0.8290150440416698
+                },
+                {
+                    "id": 4698381144,
+                    "tags": {
+                        "amenity": "bench"
+                    },
+                    "distance": 10727.40944618,
+                    "sims": 0.8290104152604882
+                },
+                {
+                    "id": 6726666635,
+                    "tags": {
+                        "amenity": "bench"
+                    },
+                    "distance": 16671.90134533,
+                    "sims": 0.8289892556027645
+                },
+                {
+                    "id": 9653844871,
+                    "tags": {
+                        "amenity": "bench"
+                    },
+                    "distance": 13242.88380638,
+                    "sims": 0.8289842982218246
+                },
+                {
+                    "id": 11652038334,
+                    "tags": {
+                        "amenity": "bench"
+                    },
+                    "distance": 2821.30556759,
+                    "sims": 0.8289775032890802
+                },
+                {
+                    "id": 5646976877,
+                    "tags": {
+                        "amenity": "bench"
+                    },
+                    "distance": 16496.09730895,
+                    "sims": 0.8289607543759118
+                }
+            ]
+        },
+        "8": {
+            "execution_time": 0.18574190139770508,
+            "results": [
+                {
+                    "id": 8940301696,
+                    "tags": {
+                        "building": "yes"
+                    },
+                    "distance": 14618.09987917,
+                    "sims": 0.3899735873953356
+                },
+                {
+                    "id": 9574992178,
+                    "tags": {
+                        "name": "Sweet Time",
+                        "shop": "confectionery",
+                        "level": "0",
+                        "phone": "+61 433 298 526",
+                        "payment:visa": "yes",
+                        "payment:gift_card": "yes",
+                        "payment:mastercard": "yes"
+                    },
+                    "distance": 20510.79937385,
+                    "sims": 0.38662481307983665
+                },
+                {
+                    "id": 7903498955,
+                    "tags": {
+                        "building": "yes"
+                    },
+                    "distance": 10414.79168154,
+                    "sims": 0.383708930986588
+                },
+                {
+                    "id": 6057027966,
+                    "tags": {
+                        "building": "yes"
+                    },
+                    "distance": 10103.13897189,
+                    "sims": 0.3836426024543479
+                },
+                {
+                    "id": 6057027950,
+                    "tags": {
+                        "building": "yes"
+                    },
+                    "distance": 9998.43503536,
+                    "sims": 0.3836024770973643
+                },
+                {
+                    "id": 6057027964,
+                    "tags": {
+                        "building": "yes"
+                    },
+                    "distance": 10135.85206157,
+                    "sims": 0.38359128530181374
+                },
+                {
+                    "id": 9574713566,
+                    "tags": {
+                        "name": "Sugar Me",
+                        "shop": "beauty",
+                        "level": "1",
+                        "phone": "+61 3 8510 2386",
+                        "payment:visa": "yes",
+                        "opening_hours": "Su-Mo 10:00-17:00, Tu-We 9:00-17:30, Th-Fr 9:00-21:00, Sa 9:00-17:00",
+                        "payment:gift_card": "yes",
+                        "payment:mastercard": "yes",
+                        "payment:american_express": "yes"
+                    },
+                    "distance": 20460.65508427,
+                    "sims": 0.38220526192125537
+                },
+                {
+                    "id": 9574992195,
+                    "tags": {
+                        "shop": "yes",
+                        "level": "0"
+                    },
+                    "distance": 20448.13238866,
+                    "sims": 0.37061036404309555
+                },
+                {
+                    "id": 12483915172,
+                    "tags": {
+                        "name": "Unnie111",
+                        "shop": "clothes",
+                        "level": "1",
+                        "wheelchair": "yes"
+                    },
+                    "distance": 25676.02182918,
+                    "sims": 0.3685950715187156
+                },
+                {
+                    "id": 919254737,
+                    "tags": {
+                        "name": "053",
+                        "note_1": "18-SEP-10 3:15:55PM",
+                        "_waypoint_": "yes",
+                        "_description_": "18-SEP-10 3:15:55PM"
+                    },
+                    "distance": 47723.89091537,
+                    "sims": 0.3682924995335206
+                }
+            ]
+        },
+        "9": {
+            "execution_time": 0.1935582160949707,
+            "results": [
+                {
+                    "id": 6957068088,
+                    "tags": {
+                        "amenity": "bank"
+                    },
+                    "distance": 20567.07828113,
+                    "sims": 0.8312392931437929
+                },
+                {
+                    "id": 11490276010,
+                    "tags": {
+                        "name": "Bendigo Bank",
+                        "brand": "Bendigo Bank",
+                        "amenity": "bank",
+                        "brand:wikidata": "Q4887077"
+                    },
+                    "distance": 8378.67716994,
+                    "sims": 0.7514378576613763
+                },
+                {
+                    "id": 5243876838,
+                    "tags": {
+                        "name": "Commonwealth Bank",
+                        "amenity": "atm"
+                    },
+                    "distance": 37696.31100127,
+                    "sims": 0.7481758298664296
+                },
+                {
+                    "id": 4448949559,
+                    "tags": {
+                        "name": "Bankwest",
+                        "brand": "Bankwest",
+                        "amenity": "atm",
+                        "operator": "Bankwest",
+                        "currency:AUD": "yes",
+                        "drive_through": "no",
+                        "brand:wikidata": "Q4856817",
+                        "brand:wikipedia": "en:Bankwest",
+                        "operator:wikidata": "Q4856817",
+                        "operator:wikipedia": "en:Bankwest"
+                    },
+                    "distance": 791.60314963,
+                    "sims": 0.7394411123132055
+                },
+                {
+                    "id": 1312618025,
+                    "tags": {
+                        "brand": "Bendigo Bank",
+                        "amenity": "atm",
+                        "operator": "Bendigo Bank",
+                        "brand:wikidata": "Q4887077",
+                        "operator:wikidata": "Q4887077"
+                    },
+                    "distance": 10341.03951807,
+                    "sims": 0.7392222440706359
+                },
+                {
+                    "id": 2365308409,
+                    "tags": {
+                        "name": "Bendigo Bank",
+                        "brand": "Bendigo Bank",
+                        "amenity": "atm",
+                        "website": "https://www.bendigobank.com.au/",
+                        "operator": "Bendigo Bank",
+                        "brand:wikidata": "Q4887077",
+                        "operator:wikidata": "Q4887077"
+                    },
+                    "distance": 23576.21957561,
+                    "sims": 0.7323476831705772
+                },
+                {
+                    "id": 8649164360,
+                    "tags": {
+                        "name": "Bendigo Bank",
+                        "brand": "Bendigo Bank",
+                        "amenity": "bank",
+                        "brand:wikidata": "Q4887077",
+                        "brand:wikipedia": "en:Bendigo and Adelaide Bank"
+                    },
+                    "distance": 24260.33491906,
+                    "sims": 0.7290701431590246
+                },
+                {
+                    "id": 1277979892,
+                    "tags": {
+                        "amenity": "atm"
+                    },
+                    "distance": 8612.70083426,
+                    "sims": 0.7289906522932483
+                },
+                {
+                    "id": 6359523427,
+                    "tags": {
+                        "amenity": "atm"
+                    },
+                    "distance": 19710.92056966,
+                    "sims": 0.7261303230446398
+                },
+                {
+                    "id": 3881388110,
+                    "tags": {
+                        "atm": "yes",
+                        "name": "ANZ",
+                        "brand": "ANZ",
+                        "amenity": "bank",
+                        "website": "https://www.anz.com.au/",
+                        "drive_through": "no",
+                        "official_name": "Australia and New Zealand Banking Group Limited",
+                        "brand:wikidata": "Q714641",
+                        "brand:wikipedia": "en:Australia and New Zealand Banking Group"
+                    },
+                    "distance": 11199.20452683,
+                    "sims": 0.7248604029583451
+                }
+            ]
+        },
+        "10": {
+            "execution_time": 0.19134736061096191,
+            "results": [
+                {
+                    "id": 4686295397,
+                    "tags": {
+                        "name": "Tree House Early Learning",
+                        "source": "survey",
+                        "amenity": "kindergarten"
+                    },
+                    "distance": 21803.62810772,
+                    "sims": 0.6629916014632032
+                },
+                {
+                    "id": 9908663526,
+                    "tags": {
+                        "name": "Maranatha Christian School Early Learning Centre",
+                        "amenity": "kindergarten"
+                    },
+                    "distance": 54874.78134329,
+                    "sims": 0.6066712053639174
+                },
+                {
+                    "id": 2343257345,
+                    "tags": {
+                        "amenity": "kindergarten"
+                    },
+                    "distance": 41078.42199804,
+                    "sims": 0.5948382053450193
+                },
+                {
+                    "id": 10656638217,
+                    "tags": {
+                        "amenity": "kindergarten"
+                    },
+                    "distance": 28899.54823325,
+                    "sims": 0.5908074215925038
+                },
+                {
+                    "id": 595898871,
+                    "tags": {
+                        "name": "Legend Park Preschool",
+                        "amenity": "kindergarten"
+                    },
+                    "distance": 41603.21288489,
+                    "sims": 0.5882846537994356
+                },
+                {
+                    "id": 10224654396,
+                    "tags": {
+                        "name": "Caulfield Earily Learning Centre",
+                        "amenity": "kindergarten"
+                    },
+                    "distance": 35574.14959485,
+                    "sims": 0.5686652052794582
+                },
+                {
+                    "id": 2986976865,
+                    "tags": {
+                        "name": "D8",
+                        "room": "classroom"
+                    },
+                    "distance": 65324.21831761,
+                    "sims": 0.5519764733174637
+                },
+                {
+                    "id": 9582806606,
+                    "tags": {
+                        "name": "Junior School Playground",
+                        "access": "private",
+                        "leisure": "playground"
+                    },
+                    "distance": 40309.1917477,
+                    "sims": 0.5321766887554243
+                },
+                {
+                    "id": 2986976863,
+                    "tags": {
+                        "name": "D9",
+                        "room": "classroom"
+                    },
+                    "distance": 65319.41964789,
+                    "sims": 0.5268300021571392
+                },
+                {
+                    "id": 12088584334,
+                    "tags": {
+                        "name": "First Early Learning",
+                        "amenity": "childcare",
+                        "addr:street": "Frankston - Flinders Highway",
+                        "addr:housenumber": "124"
+                    },
+                    "distance": 68529.5514196,
+                    "sims": 0.5166732748381605
+                }
+            ]
+        },
+        "11": {
+            "execution_time": 0.1933441162109375,
+            "results": [
+                {
+                    "id": 10931032796,
+                    "tags": {
+                        "amenity": "charging_station",
+                        "operator": "Chargefox",
+                        "operator:wikidata": "Q105775824"
+                    },
+                    "distance": 35896.75183164,
+                    "sims": 0.6924135227038488
+                },
+                {
+                    "id": 12099989743,
+                    "tags": {
+                        "amenity": "charging_station",
+                        "operator": "Chargefox",
+                        "socket:type2": "8",
+                        "operator:wikidata": "Q105775824"
+                    },
+                    "distance": 34641.25016167,
+                    "sims": 0.6094633033973695
+                },
+                {
+                    "id": 4332286415,
+                    "tags": {
+                        "name": "Tesla Destination Charger",
+                        "brand": "Tesla, Inc.",
+                        "amenity": "charging_station",
+                        "capacity": "4",
+                        "short_name": "Tesla",
+                        "addr:street": "Dandenong Road",
+                        "description": "Tesla Chadstone",
+                        "brand:wikidata": "Q478214",
+                        "addr:housenumber": "1341",
+                        "socket:tesla_supercharger": "4"
+                    },
+                    "distance": 32074.9247309,
+                    "sims": 0.5950599524701243
+                },
+                {
+                    "id": 11599375156,
+                    "tags": {
+                        "name": "Engie",
+                        "amenity": "charging_station",
+                        "operator": "Chargefox",
+                        "socket:chademo": "1",
+                        "operator:wikidata": "Q105775824",
+                        "socket:type2_combo": "1"
+                    },
+                    "distance": 61293.20650596,
+                    "sims": 0.5947088390430958
+                },
+                {
+                    "id": 6573455732,
+                    "tags": {
+                        "fee": "no",
+                        "access": "customers",
+                        "amenity": "charging_station",
+                        "capacity": "1",
+                        "operator": "Alto Hotel"
+                    },
+                    "distance": 28061.65323711,
+                    "sims": 0.5684163639395623
+                },
+                {
+                    "id": 6573455742,
+                    "tags": {
+                        "fee": "yes",
+                        "access": "customers",
+                        "amenity": "charging_station"
+                    },
+                    "distance": 27079.87253341,
+                    "sims": 0.559524359447991
+                },
+                {
+                    "id": 4111633183,
+                    "tags": {
+                        "name": "Fielder",
+                        "railway": "halt",
+                        "wikidata": "Q5447152",
+                        "wikipedia": "en:Fielder railway station"
+                    },
+                    "distance": 51430.79015837,
+                    "sims": 0.5471548556072895
+                },
+                {
+                    "id": 11219920873,
+                    "tags": {
+                        "name": "Tesla Supercharger",
+                        "brand": "Tesla Supercharger",
+                        "amenity": "charging_station",
+                        "operator": "Tesla, Inc.",
+                        "short_name": "Tesla",
+                        "brand:wikidata": "Q17089620",
+                        "operator:wikidata": "Q478214",
+                        "socket:tesla_supercharger": "4"
+                    },
+                    "distance": 32198.36766592,
+                    "sims": 0.5268578846459789
+                },
+                {
+                    "id": 890040684,
+                    "tags": {
+                        "ref": "57",
+                        "name": "Stop 57: Caulfield Station",
+                        "tram": "yes",
+                        "network": "PTV - Metropolitan Trams",
+                        "railway": "tram_stop",
+                        "ref:ptv": "18457",
+                        "website": "https://ptv.vic.gov.au/stop/2299",
+                        "operator": "Keolis Downer",
+                        "network:wikidata": "Q7257648",
+                        "public_transport": "stop_position",
+                        "operator:wikidata": "Q6328065"
+                    },
+                    "distance": 31449.98214279,
+                    "sims": 0.5259573583400509
+                },
+                {
+                    "id": 11413950126,
+                    "tags": {
+                        "amenity": "charging_station",
+                        "capacity": "6",
+                        "operator": "Chargefox",
+                        "socket:type2": "6",
+                        "operator:wikidata": "Q105775824"
+                    },
+                    "distance": 40225.58980104,
+                    "sims": 0.5178727768459931
+                }
+            ]
+        },
+        "12": {
+            "execution_time": 0.1922144889831543,
+            "results": [
+                {
+                    "id": 2596278837,
+                    "tags": {
+                        "name": "Springvale",
+                        "place": "suburb"
+                    },
+                    "distance": 19427.29990665,
+                    "sims": 0.8055599447751093
+                },
+                {
+                    "id": 634139490,
+                    "tags": {
+                        "bus": "yes",
+                        "name": "Springvale Rd/Wellington Rd",
+                        "highway": "bus_stop",
+                        "network": "PTV \u2013 Metropolitan Buses",
+                        "ref:ptv": "2838",
+                        "website": "https://ptv.vic.gov.au/stop/10022",
+                        "operator": "Ventura;CDC Melbourne",
+                        "route_ref": "802;804;862;900",
+                        "public_transport": "platform"
+                    },
+                    "distance": 22447.37680279,
+                    "sims": 0.6122701168060346
+                },
+                {
+                    "id": 5187993686,
+                    "tags": {
+                        "bus": "yes",
+                        "name": "Springvale Central",
+                        "highway": "bus_stop",
+                        "public_transport": "platform"
+                    },
+                    "distance": 18673.11498459,
+                    "sims": 0.5995309352874798
+                },
+                {
+                    "id": 8441875728,
+                    "tags": {
+                        "bus": "yes",
+                        "name": "Springvale Road",
+                        "network": "PTV \u2013 Metropolitan Buses",
+                        "ref:ptv": "15067",
+                        "website": "https://ptv.vic.gov.au/stop/12968",
+                        "operator": "Ventura",
+                        "public_transport": "stop_position"
+                    },
+                    "distance": 25747.88817135,
+                    "sims": 0.5802535068837709
+                },
+                {
+                    "id": 8441875729,
+                    "tags": {
+                        "bus": "yes",
+                        "name": "Springvale Road",
+                        "highway": "bus_stop",
+                        "network": "PTV \u2013 Metropolitan Buses",
+                        "ref:ptv": "15067",
+                        "website": "https://ptv.vic.gov.au/stop/12968",
+                        "operator": "Ventura",
+                        "route_ref": "736;753",
+                        "public_transport": "platform"
+                    },
+                    "distance": 25758.10083044,
+                    "sims": 0.5750451430705367
+                },
+                {
+                    "id": 8414865801,
+                    "tags": {
+                        "bus": "yes",
+                        "name": "Stuart Cres/Springvale Rd",
+                        "network": "PTV \u2013 Metropolitan Buses",
+                        "ref:ptv": "42268",
+                        "website": "https://ptv.vic.gov.au/stop/29682",
+                        "operator": "Transdev",
+                        "public_transport": "stop_position"
+                    },
+                    "distance": 34428.02755112,
+                    "sims": 0.5571954514267782
+                },
+                {
+                    "id": 8414865796,
+                    "tags": {
+                        "bus": "yes",
+                        "name": "Springvale Rd/Springfield Rd",
+                        "network": "PTV \u2013 Metropolitan Buses",
+                        "website": "https://ptv.vic.gov.au/stop/18620",
+                        "operator": "Transdev",
+                        "public_transport": "stop_position"
+                    },
+                    "distance": 34219.3204427,
+                    "sims": 0.5469014914690569
+                },
+                {
+                    "id": 1103012307,
+                    "tags": {
+                        "name": "Narre Warren South",
+                        "place": "suburb"
+                    },
+                    "distance": 16611.12498227,
+                    "sims": 0.5231127427153154
+                },
+                {
+                    "id": 1507873707,
+                    "tags": {
+                        "source": "survey",
+                        "addr:street": "Springvale Road",
+                        "addr:suburb": "Mulgrave",
+                        "addr:postcode": "3170",
+                        "addr:housenumber": "662"
+                    },
+                    "distance": 22776.21684922,
+                    "sims": 0.5079908654706131
+                },
+                {
+                    "id": 1507873861,
+                    "tags": {
+                        "source": "survey",
+                        "addr:street": "Springvale Road",
+                        "addr:suburb": "Mulgrave",
+                        "addr:postcode": "3170",
+                        "addr:housenumber": "616"
+                    },
+                    "distance": 23171.57947583,
+                    "sims": 0.5047309393011404
+                }
+            ]
+        },
+        "13": {
+            "execution_time": 0.18831276893615723,
+            "results": [
+                {
+                    "id": 1736190155,
+                    "tags": {
+                        "name": "Stoneground Bakehouse",
+                        "shop": "bakery"
+                    },
+                    "distance": 42490.61543064,
+                    "sims": 0.8649376405534597
+                },
+                {
+                    "id": 9748242993,
+                    "tags": {
+                        "name": "Woodfrog Bakery",
+                        "shop": "bakery"
+                    },
+                    "distance": 35953.94664753,
+                    "sims": 0.853354835519912
+                },
+                {
+                    "id": 6366220781,
+                    "tags": {
+                        "name": "Euro Cafe & Bakehouse",
+                        "shop": "bakery"
+                    },
+                    "distance": 1718.65078569,
+                    "sims": 0.8277263765304429
+                },
+                {
+                    "id": 9858427589,
+                    "tags": {
+                        "name": "Basic Buns",
+                        "amenity": "restaurant"
+                    },
+                    "distance": 37407.26102653,
+                    "sims": 0.806805827059028
+                },
+                {
+                    "id": 6846240869,
+                    "tags": {
+                        "name": "Double Dutch Bakery",
+                        "amenity": "cafe",
+                        "check_date": "2023-09-12"
+                    },
+                    "distance": 39635.07911515,
+                    "sims": 0.7877232973531151
+                },
+                {
+                    "id": 3928348519,
+                    "tags": {
+                        "name": "Joe's Eatery",
+                        "amenity": "cafe"
+                    },
+                    "distance": 37808.68812306,
+                    "sims": 0.7861244616469247
+                },
+                {
+                    "id": 7824640912,
+                    "tags": {
+                        "amenity": "cafe"
+                    },
+                    "distance": 28923.64883564,
+                    "sims": 0.7847451627757874
+                },
+                {
+                    "id": 6332562985,
+                    "tags": {
+                        "amenity": "cafe"
+                    },
+                    "distance": 22434.53411488,
+                    "sims": 0.7839795408170225
+                },
+                {
+                    "id": 10566587781,
+                    "tags": {
+                        "name": "The Cheesecake Shop",
+                        "shop": "bakery"
+                    },
+                    "distance": 48716.00063074,
+                    "sims": 0.7836205419024532
+                },
+                {
+                    "id": 9396035012,
+                    "tags": {
+                        "name": "Poacher & Hound Cafe & Catering",
+                        "amenity": "cafe"
+                    },
+                    "distance": 18986.27008666,
+                    "sims": 0.7827074242940602
+                }
+            ]
+        },
+        "14": {
+            "execution_time": 0.1877291202545166,
+            "results": [
+                {
+                    "id": 4194557558,
+                    "tags": {
+                        "amenity": "cafe"
+                    },
+                    "distance": 53050.29122067,
+                    "sims": 0.9148371181961243
+                },
+                {
+                    "id": 6332562985,
+                    "tags": {
+                        "amenity": "cafe"
+                    },
+                    "distance": 48231.17231593,
+                    "sims": 0.9109020168174831
+                },
+                {
+                    "id": 711750998,
+                    "tags": {
+                        "amenity": "cafe"
+                    },
+                    "distance": 63484.35782382,
+                    "sims": 0.910035365799013
+                },
+                {
+                    "id": 7824640912,
+                    "tags": {
+                        "amenity": "cafe"
+                    },
+                    "distance": 64772.8430001,
+                    "sims": 0.9068286974260645
+                },
+                {
+                    "id": 3840434935,
+                    "tags": {
+                        "name": "Cafe Alfretti",
+                        "amenity": "cafe"
+                    },
+                    "distance": 60523.00310685,
+                    "sims": 0.8947633661533184
+                },
+                {
+                    "id": 3079502040,
+                    "tags": {
+                        "name": "Cafe Piccolina",
+                        "amenity": "cafe"
+                    },
+                    "distance": 65149.57875243,
+                    "sims": 0.8900834977130696
+                },
+                {
+                    "id": 4643411556,
+                    "tags": {
+                        "name": "Alour Cafe",
+                        "amenity": "cafe"
+                    },
+                    "distance": 74834.06224467,
+                    "sims": 0.8893548909696186
+                },
+                {
+                    "id": 3928348519,
+                    "tags": {
+                        "name": "Joe's Eatery",
+                        "amenity": "cafe"
+                    },
+                    "distance": 64671.47132933,
+                    "sims": 0.8872065553155065
+                },
+                {
+                    "id": 4752598040,
+                    "tags": {
+                        "name": "Industry Cafe",
+                        "amenity": "cafe"
+                    },
+                    "distance": 46771.12251234,
+                    "sims": 0.884610602491892
+                },
+                {
+                    "id": 1955893247,
+                    "tags": {
+                        "name": "The Main Cafe Bar & Restaurant",
+                        "amenity": "restaurant"
+                    },
+                    "distance": 63438.72139751,
+                    "sims": 0.8825397858545145
+                }
+            ]
+        },
+        "15": {
+            "execution_time": 0.18705964088439941,
+            "results": [
+                {
+                    "id": 12420106993,
+                    "tags": {
+                        "addr:street": "Dandenong Hastings Road",
+                        "addr:housenumber": "665"
+                    },
+                    "distance": 53197.03868922,
+                    "sims": 0.5047893217582804
+                },
+                {
+                    "id": 12420065899,
+                    "tags": {
+                        "addr:street": "Hogans Road",
+                        "addr:housenumber": "177"
+                    },
+                    "distance": 2560.40220358,
+                    "sims": 0.500586658611307
+                },
+                {
+                    "id": 12417855488,
+                    "tags": {
+                        "addr:street": "Gayness Court",
+                        "addr:housenumber": "3"
+                    },
+                    "distance": 8915.20629198,
+                    "sims": 0.49697229356399464
+                },
+                {
+                    "id": 12412005557,
+                    "tags": {
+                        "addr:street": "Edi Court",
+                        "addr:housenumber": "6"
+                    },
+                    "distance": 29171.45029266,
+                    "sims": 0.49511616004763725
+                },
+                {
+                    "id": 12414949295,
+                    "tags": {
+                        "addr:street": "Richard Road",
+                        "addr:housenumber": "66"
+                    },
+                    "distance": 21949.61883445,
+                    "sims": 0.49477791848447317
+                },
+                {
+                    "id": 12420359219,
+                    "tags": {
+                        "addr:street": "Fyans Walk",
+                        "addr:housenumber": "3"
+                    },
+                    "distance": 16559.24382014,
+                    "sims": 0.4928725819479659
+                },
+                {
+                    "id": 12414319408,
+                    "tags": {
+                        "addr:street": "Ryan Court",
+                        "addr:housenumber": "3"
+                    },
+                    "distance": 21858.75263247,
+                    "sims": 0.49154260956225515
+                },
+                {
+                    "id": 12411742493,
+                    "tags": {
+                        "addr:street": "Dallas Drive",
+                        "addr:housenumber": "177"
+                    },
+                    "distance": 29212.47666966,
+                    "sims": 0.4914595201982004
+                },
+                {
+                    "id": 12420066903,
+                    "tags": {
+                        "addr:street": "Hogans Road",
+                        "addr:housenumber": "193"
+                    },
+                    "distance": 2696.07804441,
+                    "sims": 0.49143514190284643
+                },
+                {
+                    "id": 12417733121,
+                    "tags": {
+                        "addr:street": "Hogans Road",
+                        "addr:housenumber": "640"
+                    },
+                    "distance": 5972.71636045,
+                    "sims": 0.4912139789079544
+                }
+            ]
+        },
+        "16": {
+            "execution_time": 0.18748950958251953,
+            "results": [
+                {
+                    "id": 1034789404,
+                    "tags": {
+                        "name": "The Peacock Hotel",
+                        "amenity": "pub",
+                        "website": "https://www.peacockinnhotel.com/",
+                        "wheelchair": "limited",
+                        "addr:street": "High Street",
+                        "addr:housenumber": "210"
+                    },
+                    "distance": 2526.48882723,
+                    "sims": 0.6549342264176357
+                },
+                {
+                    "id": 4064857397,
+                    "tags": {
+                        "name": "Wine Bar",
+                        "amenity": "pub"
+                    },
+                    "distance": 678.88018132,
+                    "sims": 0.6543999899387493
+                },
+                {
+                    "id": 2290004294,
+                    "tags": {
+                        "name": "Saint Helen Cafe",
+                        "amenity": "cafe",
+                        "addr:street": "Riversdale Road",
+                        "addr:housenumber": "173"
+                    },
+                    "distance": 5652.39669174,
+                    "sims": 0.6494774981243185
+                },
+                {
+                    "id": 945554121,
+                    "tags": {
+                        "name": "Launder It",
+                        "amenity": "cafe"
+                    },
+                    "distance": 2558.91775743,
+                    "sims": 0.6457806980748466
+                },
+                {
+                    "id": 3945796048,
+                    "tags": {
+                        "ref": "1",
+                        "name": "Stop 1: Southern Cross Station, Spencer Street",
+                        "tram": "yes",
+                        "network": "PTV - Metropolitan Trams",
+                        "railway": "tram_stop",
+                        "ref:ptv": "17848",
+                        "website": "https://ptv.vic.gov.au/stop/2091",
+                        "operator": "Keolis Downer",
+                        "network:wikidata": "Q7257648",
+                        "public_transport": "stop_position",
+                        "operator:wikidata": "Q6328065"
+                    },
+                    "distance": 7578.56835379,
+                    "sims": 0.644183612493226
+                },
+                {
+                    "id": 12411733764,
+                    "tags": {
+                        "addr:street": "Regent Street",
+                        "addr:housenumber": "179"
+                    },
+                    "distance": 19746.3191531,
+                    "sims": 0.6436637598867033
+                },
+                {
+                    "id": 302977766,
+                    "tags": {
+                        "name": "Dick Whittington Tavern",
+                        "amenity": "pub"
+                    },
+                    "distance": 9881.71467535,
+                    "sims": 0.6434025914614864
+                },
+                {
+                    "id": 3885415464,
+                    "tags": {
+                        "name": "Galleria",
+                        "amenity": "cafe"
+                    },
+                    "distance": 8607.87636503,
+                    "sims": 0.6433809378785873
+                },
+                {
+                    "id": 2231794475,
+                    "tags": {
+                        "ref": "22",
+                        "name": "Stop 22: Flemington Bridge Station",
+                        "tram": "yes",
+                        "network": "PTV - Metropolitan Trams",
+                        "railway": "tram_stop",
+                        "operator": "Keolis Downer",
+                        "wheelchair": "yes",
+                        "network:wikidata": "Q7257648",
+                        "public_transport": "stop_position",
+                        "operator:wikidata": "Q6328065"
+                    },
+                    "distance": 7563.89296774,
+                    "sims": 0.6430730969164301
+                },
+                {
+                    "id": 11201422746,
+                    "tags": {
+                        "name": "prelude.",
+                        "amenity": "cafe"
+                    },
+                    "distance": 11066.20686345,
+                    "sims": 0.6429583409093467
+                }
+            ]
+        },
+        "17": {
+            "execution_time": 0.18561673164367676,
+            "results": [
+                {
+                    "id": 8940301696,
+                    "tags": {
+                        "building": "yes"
+                    },
+                    "distance": 32779.74007756,
+                    "sims": 0.3831434795688202
+                },
+                {
+                    "id": 9574992178,
+                    "tags": {
+                        "name": "Sweet Time",
+                        "shop": "confectionery",
+                        "level": "0",
+                        "phone": "+61 433 298 526",
+                        "payment:visa": "yes",
+                        "payment:gift_card": "yes",
+                        "payment:mastercard": "yes"
+                    },
+                    "distance": 25063.63076377,
+                    "sims": 0.37983359569321606
+                },
+                {
+                    "id": 6057027966,
+                    "tags": {
+                        "building": "yes"
+                    },
+                    "distance": 26362.91168502,
+                    "sims": 0.3766622586037307
+                },
+                {
+                    "id": 6057027950,
+                    "tags": {
+                        "building": "yes"
+                    },
+                    "distance": 26336.57218466,
+                    "sims": 0.3765966524471964
+                },
+                {
+                    "id": 6057027964,
+                    "tags": {
+                        "building": "yes"
+                    },
+                    "distance": 26488.55372299,
+                    "sims": 0.37656951723749055
+                },
+                {
+                    "id": 7903498955,
+                    "tags": {
+                        "building": "yes"
+                    },
+                    "distance": 27542.47150948,
+                    "sims": 0.37656419770844396
+                },
+                {
+                    "id": 9574713566,
+                    "tags": {
+                        "name": "Sugar Me",
+                        "shop": "beauty",
+                        "level": "1",
+                        "phone": "+61 3 8510 2386",
+                        "payment:visa": "yes",
+                        "opening_hours": "Su-Mo 10:00-17:00, Tu-We 9:00-17:30, Th-Fr 9:00-21:00, Sa 9:00-17:00",
+                        "payment:gift_card": "yes",
+                        "payment:mastercard": "yes",
+                        "payment:american_express": "yes"
+                    },
+                    "distance": 24942.44735314,
+                    "sims": 0.3755992950438012
+                },
+                {
+                    "id": 919254737,
+                    "tags": {
+                        "name": "053",
+                        "note_1": "18-SEP-10 3:15:55PM",
+                        "_waypoint_": "yes",
+                        "_description_": "18-SEP-10 3:15:55PM"
+                    },
+                    "distance": 55290.41931227,
+                    "sims": 0.374481502750426
+                },
+                {
+                    "id": 9574992195,
+                    "tags": {
+                        "shop": "yes",
+                        "level": "0"
+                    },
+                    "distance": 25042.77426009,
+                    "sims": 0.36116762792100965
+                },
+                {
+                    "id": 12483915172,
+                    "tags": {
+                        "name": "Unnie111",
+                        "shop": "clothes",
+                        "level": "1",
+                        "wheelchair": "yes"
+                    },
+                    "distance": 40886.24187207,
+                    "sims": 0.3606089236167005
+                }
+            ]
+        },
+        "18": {
+            "execution_time": 0.18563079833984375,
+            "results": [
+                {
+                    "id": 8871341185,
+                    "tags": {
+                        "amenity": "parking"
+                    },
+                    "distance": 48349.01467962,
+                    "sims": 0.8796283530967587
+                },
+                {
+                    "id": 1968305333,
+                    "tags": {
+                        "amenity": "parking"
+                    },
+                    "distance": 18043.7317009,
+                    "sims": 0.8779759407043707
+                },
+                {
+                    "id": 415276108,
+                    "tags": {
+                        "amenity": "parking"
+                    },
+                    "distance": 19140.4032192,
+                    "sims": 0.8768812793877044
+                },
+                {
+                    "id": 10150915444,
+                    "tags": {
+                        "amenity": "parking"
+                    },
+                    "distance": 58306.98022568,
+                    "sims": 0.8747427835600601
+                },
+                {
+                    "id": 1901510142,
+                    "tags": {
+                        "amenity": "parking"
+                    },
+                    "distance": 26953.3530871,
+                    "sims": 0.8737099020135348
+                },
+                {
+                    "id": 1211725097,
+                    "tags": {
+                        "amenity": "parking"
+                    },
+                    "distance": 30371.46798516,
+                    "sims": 0.873665146450125
+                },
+                {
+                    "id": 1851043115,
+                    "tags": {
+                        "amenity": "parking"
+                    },
+                    "distance": 28253.70362076,
+                    "sims": 0.8735980836866064
+                },
+                {
+                    "id": 469770575,
+                    "tags": {
+                        "amenity": "parking"
+                    },
+                    "distance": 33842.3937213,
+                    "sims": 0.8723876996271571
+                },
+                {
+                    "id": 434298827,
+                    "tags": {
+                        "amenity": "parking"
+                    },
+                    "distance": 42477.04698804,
+                    "sims": 0.8692495667039893
+                },
+                {
+                    "id": 394030201,
+                    "tags": {
+                        "amenity": "parking"
+                    },
+                    "distance": 42989.41175227,
+                    "sims": 0.868633620061508
+                }
+            ]
+        },
+        "19": {
+            "execution_time": 0.19042205810546875,
+            "results": [
+                {
+                    "id": 1294934863,
+                    "tags": {
+                        "amenity": "parking_space",
+                        "capacity": "1"
+                    },
+                    "distance": 28776.79126877,
+                    "sims": 0.8266941722168512
+                },
+                {
+                    "id": 5947133709,
+                    "tags": {
+                        "amenity": "parking_space",
+                        "wheelchair": "designated"
+                    },
+                    "distance": 42301.88748371,
+                    "sims": 0.816214475116527
+                },
+                {
+                    "id": 9884496162,
+                    "tags": {
+                        "amenity": "parking_space",
+                        "parking_space": "disabled"
+                    },
+                    "distance": 23870.11393676,
+                    "sims": 0.8118711934243268
+                },
+                {
+                    "id": 1688058643,
+                    "tags": {
+                        "amenity": "parking_entrance"
+                    },
+                    "distance": 4884.00015546,
+                    "sims": 0.8071727982553542
+                },
+                {
+                    "id": 7365678869,
+                    "tags": {
+                        "amenity": "parking_entrance"
+                    },
+                    "distance": 18572.63992754,
+                    "sims": 0.8069843524410499
+                },
+                {
+                    "id": 364874638,
+                    "tags": {
+                        "amenity": "parking_entrance"
+                    },
+                    "distance": 18642.76736235,
+                    "sims": 0.8069027181325852
+                },
+                {
+                    "id": 11561522112,
+                    "tags": {
+                        "amenity": "parking_space",
+                        "parking_space": "disabled"
+                    },
+                    "distance": 30243.23715901,
+                    "sims": 0.806603824895524
+                },
+                {
+                    "id": 12119479635,
+                    "tags": {
+                        "amenity": "parking_space",
+                        "parking_space": "disabled"
+                    },
+                    "distance": 30806.51386223,
+                    "sims": 0.8065735562864408
+                },
+                {
+                    "id": 12119479607,
+                    "tags": {
+                        "amenity": "parking_space",
+                        "parking_space": "disabled"
+                    },
+                    "distance": 30806.90024659,
+                    "sims": 0.8065735562864408
+                },
+                {
+                    "id": 11561543863,
+                    "tags": {
+                        "amenity": "parking_space",
+                        "parking_space": "disabled"
+                    },
+                    "distance": 32879.79706309,
+                    "sims": 0.8065245382160556
+                }
+            ]
+        },
+        "20": {
+            "execution_time": 0.18624567985534668,
+            "results": [
+                {
+                    "id": 687164065,
+                    "tags": {
+                        "shop": "car_repair"
+                    },
+                    "distance": 39634.35674147,
+                    "sims": 0.7484393565916645
+                },
+                {
+                    "id": 5960549360,
+                    "tags": {
+                        "name": "Auto Repairs",
+                        "shop": "car_repair"
+                    },
+                    "distance": 58634.08309534,
+                    "sims": 0.7238665819168142
+                },
+                {
+                    "id": 5999385855,
+                    "tags": {
+                        "name": "Cirfe",
+                        "shop": "car_repair"
+                    },
+                    "distance": 24889.56007288,
+                    "sims": 0.6760271594540583
+                },
+                {
+                    "id": 12076418809,
+                    "tags": {
+                        "name": "The Landy Place",
+                        "shop": "car_repair"
+                    },
+                    "distance": 46155.26770935,
+                    "sims": 0.6468046097042935
+                },
+                {
+                    "id": 8961950387,
+                    "tags": {
+                        "name": "Repco",
+                        "shop": "car_parts",
+                        "brand": "Repco",
+                        "brand:wikidata": "Q173425",
+                        "brand:wikipedia": "en:Repco"
+                    },
+                    "distance": 15347.89318344,
+                    "sims": 0.6354782581329391
+                },
+                {
+                    "id": 5259213726,
+                    "tags": {
+                        "name": "Car House Car Sales",
+                        "shop": "car"
+                    },
+                    "distance": 25112.265789,
+                    "sims": 0.6324354410171553
+                },
+                {
+                    "id": 6017236248,
+                    "tags": {
+                        "name": "G&B Motors",
+                        "shop": "car_repair"
+                    },
+                    "distance": 20039.78636777,
+                    "sims": 0.632017687799655
+                },
+                {
+                    "id": 3864837666,
+                    "tags": {
+                        "name": "Burson Auto Parts",
+                        "shop": "car_parts",
+                        "brand": "Burson Auto Parts",
+                        "website": "https://www.burson.com.au/",
+                        "brand:wikidata": "Q117075930"
+                    },
+                    "distance": 63808.41543504,
+                    "sims": 0.6184083960543151
+                },
+                {
+                    "id": 5999385864,
+                    "tags": {
+                        "name": "Sunny Auto",
+                        "shop": "car_repair"
+                    },
+                    "distance": 25105.4996275,
+                    "sims": 0.6174544464024583
+                },
+                {
+                    "id": 10078543827,
+                    "tags": {
+                        "name": "T and A Automotive",
+                        "shop": "car_repair",
+                        "addr:street": "Park Road",
+                        "addr:housenumber": "35"
+                    },
+                    "distance": 43674.84938357,
+                    "sims": 0.6165946493503254
+                }
+            ]
+        },
+        "21": {
+            "execution_time": 0.18844270706176758,
+            "results": [
+                {
+                    "id": 9574992178,
+                    "tags": {
+                        "name": "Sweet Time",
+                        "shop": "confectionery",
+                        "level": "0",
+                        "phone": "+61 433 298 526",
+                        "payment:visa": "yes",
+                        "payment:gift_card": "yes",
+                        "payment:mastercard": "yes"
+                    },
+                    "distance": 19687.47074589,
+                    "sims": 0.3923500501066639
+                },
+                {
+                    "id": 9574713566,
+                    "tags": {
+                        "name": "Sugar Me",
+                        "shop": "beauty",
+                        "level": "1",
+                        "phone": "+61 3 8510 2386",
+                        "payment:visa": "yes",
+                        "opening_hours": "Su-Mo 10:00-17:00, Tu-We 9:00-17:30, Th-Fr 9:00-21:00, Sa 9:00-17:00",
+                        "payment:gift_card": "yes",
+                        "payment:mastercard": "yes",
+                        "payment:american_express": "yes"
+                    },
+                    "distance": 19766.37130269,
+                    "sims": 0.3852858723997581
+                },
+                {
+                    "id": 12483915172,
+                    "tags": {
+                        "name": "Unnie111",
+                        "shop": "clothes",
+                        "level": "1",
+                        "wheelchair": "yes"
+                    },
+                    "distance": 6344.98973887,
+                    "sims": 0.3822205487893293
+                },
+                {
+                    "id": 9574992195,
+                    "tags": {
+                        "shop": "yes",
+                        "level": "0"
+                    },
+                    "distance": 19649.39496193,
+                    "sims": 0.3757237640415323
+                },
+                {
+                    "id": 8940301696,
+                    "tags": {
+                        "building": "yes"
+                    },
+                    "distance": 30598.7468111,
+                    "sims": 0.3715323669198869
+                },
+                {
+                    "id": 7903498955,
+                    "tags": {
+                        "building": "yes"
+                    },
+                    "distance": 12385.57930949,
+                    "sims": 0.369093315925628
+                },
+                {
+                    "id": 6057027966,
+                    "tags": {
+                        "building": "yes"
+                    },
+                    "distance": 13444.01339142,
+                    "sims": 0.36882275172921
+                },
+                {
+                    "id": 6057027964,
+                    "tags": {
+                        "building": "yes"
+                    },
+                    "distance": 13327.99752176,
+                    "sims": 0.36879751381993686
+                },
+                {
+                    "id": 6057027950,
+                    "tags": {
+                        "building": "yes"
+                    },
+                    "distance": 13490.94733082,
+                    "sims": 0.36873047278032056
+                },
+                {
+                    "id": 9219905693,
+                    "tags": {
+                        "name": "Seaford Screens",
+                        "shop": "yes"
+                    },
+                    "distance": 38213.58583807,
+                    "sims": 0.3570043764398324
+                }
+            ]
+        },
+        "22": {
+            "execution_time": 0.18560385704040527,
+            "results": [
+                {
+                    "id": 7824640912,
+                    "tags": {
+                        "amenity": "cafe"
+                    },
+                    "distance": 24526.82603446,
+                    "sims": 0.9114745417580974
+                },
+                {
+                    "id": 711750998,
+                    "tags": {
+                        "amenity": "cafe"
+                    },
+                    "distance": 32439.73677638,
+                    "sims": 0.9091404838906999
+                },
+                {
+                    "id": 6332562985,
+                    "tags": {
+                        "amenity": "cafe"
+                    },
+                    "distance": 36005.85538887,
+                    "sims": 0.9083013698515972
+                },
+                {
+                    "id": 4194557558,
+                    "tags": {
+                        "amenity": "cafe"
+                    },
+                    "distance": 53408.95169837,
+                    "sims": 0.9052138554540089
+                },
+                {
+                    "id": 4643411556,
+                    "tags": {
+                        "name": "Alour Cafe",
+                        "amenity": "cafe"
+                    },
+                    "distance": 27626.41754971,
+                    "sims": 0.8926027609224294
+                },
+                {
+                    "id": 3840434935,
+                    "tags": {
+                        "name": "Cafe Alfretti",
+                        "amenity": "cafe"
+                    },
+                    "distance": 31325.32985233,
+                    "sims": 0.8916179860776721
+                },
+                {
+                    "id": 3079502040,
+                    "tags": {
+                        "name": "Cafe Piccolina",
+                        "amenity": "cafe"
+                    },
+                    "distance": 32460.97403969,
+                    "sims": 0.8912481860074807
+                },
+                {
+                    "id": 9270913385,
+                    "tags": {
+                        "name": "The Mare Coffee Co",
+                        "amenity": "cafe"
+                    },
+                    "distance": 20514.67276136,
+                    "sims": 0.8888198402357546
+                },
+                {
+                    "id": 9396035012,
+                    "tags": {
+                        "name": "Poacher & Hound Cafe & Catering",
+                        "amenity": "cafe"
+                    },
+                    "distance": 22663.48793595,
+                    "sims": 0.8865922431372887
+                },
+                {
+                    "id": 1955893247,
+                    "tags": {
+                        "name": "The Main Cafe Bar & Restaurant",
+                        "amenity": "restaurant"
+                    },
+                    "distance": 30859.74921098,
+                    "sims": 0.8863810172109473
+                }
+            ]
+        },
+        "23": {
+            "execution_time": 0.18581628799438477,
+            "results": [
+                {
+                    "id": 7057414373,
+                    "tags": {
+                        "shop": "clothes"
+                    },
+                    "distance": 11800.61482599,
+                    "sims": 0.8514739782496693
+                },
+                {
+                    "id": 7068095523,
+                    "tags": {
+                        "name": "Daniela\u2019s",
+                        "shop": "clothes",
+                        "clothes": "women"
+                    },
+                    "distance": 14298.66128523,
+                    "sims": 0.7550506445795695
+                },
+                {
+                    "id": 10236775588,
+                    "tags": {
+                        "name": "Blazer",
+                        "shop": "clothes",
+                        "clothes": "men"
+                    },
+                    "distance": 32952.81210683,
+                    "sims": 0.7492846846580559
+                },
+                {
+                    "id": 5286938159,
+                    "tags": {
+                        "name": "Nonib",
+                        "shop": "clothes"
+                    },
+                    "distance": 29180.47136309,
+                    "sims": 0.7372963428497367
+                },
+                {
+                    "id": 9903079315,
+                    "tags": {
+                        "name": "Sunspun",
+                        "shop": "clothes"
+                    },
+                    "distance": 18051.71787636,
+                    "sims": 0.7205734086378474
+                },
+                {
+                    "id": 11162131778,
+                    "tags": {
+                        "name": "Vintage Replayground",
+                        "shop": "clothes",
+                        "clothes": "women;men",
+                        "wheelchair": "designated",
+                        "second_hand": "only"
+                    },
+                    "distance": 12965.72198332,
+                    "sims": 0.7007576257667806
+                },
+                {
+                    "id": 9398063724,
+                    "tags": {
+                        "name": "MaisonMAI",
+                        "shop": "clothes"
+                    },
+                    "distance": 55746.67412149,
+                    "sims": 0.6925555903547395
+                },
+                {
+                    "id": 10236775596,
+                    "tags": {
+                        "name": "Forcast",
+                        "shop": "clothes",
+                        "level": "0",
+                        "clothes": "women",
+                        "toilets": "no",
+                        "wheelchair": "yes",
+                        "second_hand": "no"
+                    },
+                    "distance": 33030.41654885,
+                    "sims": 0.6722067193861878
+                },
+                {
+                    "id": 6059973154,
+                    "tags": {
+                        "name": "Jac n Jean",
+                        "shop": "clothes"
+                    },
+                    "distance": 52216.52552155,
+                    "sims": 0.6643415689468432
+                },
+                {
+                    "id": 12300426572,
+                    "tags": {
+                        "name": "Pollen",
+                        "shop": "clothes"
+                    },
+                    "distance": 55917.78209411,
+                    "sims": 0.652331093092627
+                }
+            ]
+        },
+        "24": {
+            "execution_time": 0.19503116607666016,
+            "results": [
+                {
+                    "id": 613995125,
+                    "tags": {
+                        "tourism": "artwork",
+                        "artwork_type": "sculpture"
+                    },
+                    "distance": 24233.67068462,
+                    "sims": 0.78577821593809
+                },
+                {
+                    "id": 9175656618,
+                    "tags": {
+                        "tourism": "artwork",
+                        "artwork_type": "sculpture"
+                    },
+                    "distance": 22857.50834724,
+                    "sims": 0.7843344725765556
+                },
+                {
+                    "id": 9175656619,
+                    "tags": {
+                        "tourism": "artwork",
+                        "artwork_type": "sculpture"
+                    },
+                    "distance": 22863.20102139,
+                    "sims": 0.7843344725765556
+                },
+                {
+                    "id": 9250342461,
+                    "tags": {
+                        "tourism": "artwork",
+                        "artwork_type": "sculpture"
+                    },
+                    "distance": 30818.45224471,
+                    "sims": 0.7834360882364696
+                },
+                {
+                    "id": 9250342458,
+                    "tags": {
+                        "tourism": "artwork",
+                        "artwork_type": "sculpture"
+                    },
+                    "distance": 30836.73348767,
+                    "sims": 0.7834360882364696
+                },
+                {
+                    "id": 9202059097,
+                    "tags": {
+                        "tourism": "artwork",
+                        "artwork_type": "sculpture"
+                    },
+                    "distance": 9525.25592173,
+                    "sims": 0.7833862587668027
+                },
+                {
+                    "id": 2987188735,
+                    "tags": {
+                        "tourism": "artwork"
+                    },
+                    "distance": 18094.44566779,
+                    "sims": 0.7831766888919834
+                },
+                {
+                    "id": 9260723187,
+                    "tags": {
+                        "tourism": "artwork"
+                    },
+                    "distance": 19725.17147141,
+                    "sims": 0.7821228893776222
+                },
+                {
+                    "id": 6741639490,
+                    "tags": {
+                        "tourism": "artwork"
+                    },
+                    "distance": 17147.0434833,
+                    "sims": 0.7817286307428735
+                },
+                {
+                    "id": 5776644658,
+                    "tags": {
+                        "tourism": "artwork"
+                    },
+                    "distance": 17908.46438921,
+                    "sims": 0.7815434987713747
+                }
+            ]
+        },
+        "25": {
+            "execution_time": 0.1883554458618164,
+            "results": [
+                {
+                    "id": 5222791698,
+                    "tags": {
+                        "amenity": "waste_basket"
+                    },
+                    "distance": 19281.63583894,
+                    "sims": 0.9116937956262866
+                },
+                {
+                    "id": 3664425055,
+                    "tags": {
+                        "amenity": "waste_basket"
+                    },
+                    "distance": 16182.89599758,
+                    "sims": 0.9115001023859258
+                },
+                {
+                    "id": 3888466745,
+                    "tags": {
+                        "amenity": "waste_basket"
+                    },
+                    "distance": 15476.91025991,
+                    "sims": 0.911463477960488
+                },
+                {
+                    "id": 3661118356,
+                    "tags": {
+                        "amenity": "waste_basket"
+                    },
+                    "distance": 16130.58489123,
+                    "sims": 0.9114571598666354
+                },
+                {
+                    "id": 11684191431,
+                    "tags": {
+                        "amenity": "waste_basket"
+                    },
+                    "distance": 21083.94217706,
+                    "sims": 0.9113935616954971
+                },
+                {
+                    "id": 4571487833,
+                    "tags": {
+                        "amenity": "waste_basket"
+                    },
+                    "distance": 15449.30448069,
+                    "sims": 0.9113773763894156
+                },
+                {
+                    "id": 6017200023,
+                    "tags": {
+                        "amenity": "waste_basket"
+                    },
+                    "distance": 12157.36698335,
+                    "sims": 0.911271339697919
+                },
+                {
+                    "id": 11684507184,
+                    "tags": {
+                        "amenity": "waste_basket"
+                    },
+                    "distance": 20971.51567354,
+                    "sims": 0.9112289985232159
+                },
+                {
+                    "id": 5917441884,
+                    "tags": {
+                        "amenity": "waste_basket"
+                    },
+                    "distance": 10956.04079829,
+                    "sims": 0.9111433684912617
+                },
+                {
+                    "id": 6017394236,
+                    "tags": {
+                        "amenity": "waste_basket"
+                    },
+                    "distance": 11152.5532544,
+                    "sims": 0.9111342761320844
+                }
+            ]
+        },
+        "26": {
+            "execution_time": 0.18804693222045898,
+            "results": [
+                {
+                    "id": 6017200213,
+                    "tags": {
+                        "amenity": "bicycle_parking"
+                    },
+                    "distance": 7514.65163876,
+                    "sims": 0.9116211918881543
+                },
+                {
+                    "id": 600674103,
+                    "tags": {
+                        "amenity": "bicycle_parking"
+                    },
+                    "distance": 11814.50029922,
+                    "sims": 0.9113846534399164
+                },
+                {
+                    "id": 11345589322,
+                    "tags": {
+                        "amenity": "bicycle_parking"
+                    },
+                    "distance": 12517.07383364,
+                    "sims": 0.9110948012910814
+                },
+                {
+                    "id": 940960187,
+                    "tags": {
+                        "amenity": "bicycle_parking"
+                    },
+                    "distance": 15786.59553829,
+                    "sims": 0.910249623730673
+                },
+                {
+                    "id": 11206955084,
+                    "tags": {
+                        "amenity": "bicycle_parking"
+                    },
+                    "distance": 17914.18707757,
+                    "sims": 0.9102051586524189
+                },
+                {
+                    "id": 3494855069,
+                    "tags": {
+                        "amenity": "bicycle_parking"
+                    },
+                    "distance": 18044.0190141,
+                    "sims": 0.9094008912386568
+                },
+                {
+                    "id": 10836221699,
+                    "tags": {
+                        "amenity": "bicycle_parking"
+                    },
+                    "distance": 22953.23430074,
+                    "sims": 0.9072300951526037
+                },
+                {
+                    "id": 9203802330,
+                    "tags": {
+                        "amenity": "bicycle_parking"
+                    },
+                    "distance": 36202.93970077,
+                    "sims": 0.9026870226505345
+                },
+                {
+                    "id": 10133912158,
+                    "tags": {
+                        "amenity": "bicycle_parking"
+                    },
+                    "distance": 40636.98925355,
+                    "sims": 0.9008928838053063
+                },
+                {
+                    "id": 2017402077,
+                    "tags": {
+                        "amenity": "bicycle_parking",
+                        "capacity": "10"
+                    },
+                    "distance": 8140.44032608,
+                    "sims": 0.8427968685026574
+                }
+            ]
+        },
+        "27": {
+            "execution_time": 0.191802978515625,
+            "results": [
+                {
+                    "id": 7903755403,
+                    "tags": {
+                        "amenity": "shelter"
+                    },
+                    "distance": 24870.48597818,
+                    "sims": 0.7762691912009481
+                },
+                {
+                    "id": 7903755465,
+                    "tags": {
+                        "amenity": "shelter"
+                    },
+                    "distance": 24899.25721343,
+                    "sims": 0.7762568067739114
+                },
+                {
+                    "id": 1617261022,
+                    "tags": {
+                        "amenity": "shelter"
+                    },
+                    "distance": 19811.86309841,
+                    "sims": 0.7754166661699835
+                },
+                {
+                    "id": 3529926398,
+                    "tags": {
+                        "amenity": "shelter"
+                    },
+                    "distance": 6684.53921335,
+                    "sims": 0.7753416835447332
+                },
+                {
+                    "id": 7462993163,
+                    "tags": {
+                        "amenity": "shelter"
+                    },
+                    "distance": 15073.90330664,
+                    "sims": 0.7749350607550219
+                },
+                {
+                    "id": 9157809794,
+                    "tags": {
+                        "amenity": "shelter"
+                    },
+                    "distance": 18144.88833461,
+                    "sims": 0.7748526871555818
+                },
+                {
+                    "id": 7868727988,
+                    "tags": {
+                        "amenity": "shelter"
+                    },
+                    "distance": 17618.13300322,
+                    "sims": 0.7747192458155142
+                },
+                {
+                    "id": 514497633,
+                    "tags": {
+                        "amenity": "shelter"
+                    },
+                    "distance": 21729.77911657,
+                    "sims": 0.7742523627721306
+                },
+                {
+                    "id": 7513185096,
+                    "tags": {
+                        "amenity": "shelter"
+                    },
+                    "distance": 23960.67390078,
+                    "sims": 0.7740915956279032
+                },
+                {
+                    "id": 3801660338,
+                    "tags": {
+                        "amenity": "shelter"
+                    },
+                    "distance": 37137.39295015,
+                    "sims": 0.7717837639370747
+                }
+            ]
+        },
+        "28": {
+            "execution_time": 0.19237112998962402,
+            "results": [
+                {
+                    "id": 1453185997,
+                    "tags": {
+                        "shop": "supermarket"
+                    },
+                    "distance": 16302.57493006,
+                    "sims": 0.9233831075886682
+                },
+                {
+                    "id": 3841977822,
+                    "tags": {
+                        "name": "Crown Asian Supermarket",
+                        "shop": "supermarket"
+                    },
+                    "distance": 15048.03828078,
+                    "sims": 0.857776888873713
+                },
+                {
+                    "id": 5187993676,
+                    "tags": {
+                        "name": "Pride Of Punjab",
+                        "shop": "supermarket"
+                    },
+                    "distance": 9099.56182753,
+                    "sims": 0.8192664061665084
+                },
+                {
+                    "id": 5402564822,
+                    "tags": {
+                        "name": "Frozen Mart",
+                        "shop": "supermarket",
+                        "layer": "2"
+                    },
+                    "distance": 8258.30179097,
+                    "sims": 0.8087135325328804
+                },
+                {
+                    "id": 5227802631,
+                    "tags": {
+                        "name": "Bargain Centre",
+                        "shop": "variety_store"
+                    },
+                    "distance": 15020.03212772,
+                    "sims": 0.7889966587418318
+                },
+                {
+                    "id": 10712164086,
+                    "tags": {
+                        "name": "Upper Beaconsfield General Store",
+                        "amenity": "cafe"
+                    },
+                    "distance": 30073.00318691,
+                    "sims": 0.7876872293762828
+                },
+                {
+                    "id": 9574992174,
+                    "tags": {
+                        "name": "The Market Southland",
+                        "shop": "grocery",
+                        "level": "0"
+                    },
+                    "distance": 8952.65531217,
+                    "sims": 0.7865579108235139
+                },
+                {
+                    "id": 6699795804,
+                    "tags": {
+                        "building": "retail"
+                    },
+                    "distance": 15647.09021977,
+                    "sims": 0.7802163565545733
+                },
+                {
+                    "id": 6678532312,
+                    "tags": {
+                        "building": "retail"
+                    },
+                    "distance": 15670.95267429,
+                    "sims": 0.7801856732589865
+                },
+                {
+                    "id": 4752598040,
+                    "tags": {
+                        "name": "Industry Cafe",
+                        "amenity": "cafe"
+                    },
+                    "distance": 23438.64254788,
+                    "sims": 0.7719412174154834
+                }
+            ]
+        },
+        "29": {
+            "execution_time": 0.18949651718139648,
+            "results": [
+                {
+                    "id": 2049197481,
+                    "tags": {
+                        "name": "ANZ",
+                        "brand": "ANZ",
+                        "amenity": "atm",
+                        "website": "https://www.anz.com.au/",
+                        "operator": "ANZ",
+                        "official_name": "Australia and New Zealand Banking Group Limited",
+                        "brand:wikidata": "Q714641",
+                        "operator:wikidata": "Q714641"
+                    },
+                    "distance": 15066.19090517,
+                    "sims": 0.6660383541629926
+                },
+                {
+                    "id": 5243876838,
+                    "tags": {
+                        "name": "Commonwealth Bank",
+                        "amenity": "atm"
+                    },
+                    "distance": 22989.54301043,
+                    "sims": 0.6648323732414879
+                },
+                {
+                    "id": 3077755699,
+                    "tags": {
+                        "atm": "yes",
+                        "name": "ANZ",
+                        "brand": "ANZ",
+                        "amenity": "bank",
+                        "website": "https://www.anz.com.au/",
+                        "official_name": "Australia and New Zealand Banking Group Limited",
+                        "brand:wikidata": "Q714641",
+                        "brand:wikipedia": "en:Australia and New Zealand Banking Group"
+                    },
+                    "distance": 9481.3562189,
+                    "sims": 0.6637822384445008
+                },
+                {
+                    "id": 1282403459,
+                    "tags": {
+                        "name": "Commonwealth Bank",
+                        "brand": "Commonwealth Bank",
+                        "indoor": "no",
+                        "amenity": "atm",
+                        "cash_in": "no",
+                        "website": "https://www.commbank.com.au/",
+                        "operator": "Commonwealth Bank",
+                        "wheelchair": "yes",
+                        "brand:wikidata": "Q285328",
+                        "brand:wikipedia": "en:Commonwealth Bank",
+                        "operator:wikidata": "Q285328",
+                        "operator:wikipedia": "en:Commonwealth Bank"
+                    },
+                    "distance": 8491.80689977,
+                    "sims": 0.6421200802469532
+                },
+                {
+                    "id": 246581745,
+                    "tags": {
+                        "name": "Carlton North Post Office",
+                        "brand": "Australia Post",
+                        "amenity": "post_office",
+                        "operator": "Australia Post",
+                        "wikidata": "Q28929004",
+                        "wheelchair": "yes",
+                        "operator:wikidata": "Q1142936"
+                    },
+                    "distance": 11439.8234745,
+                    "sims": 0.6337175092023678
+                },
+                {
+                    "id": 6359523427,
+                    "tags": {
+                        "amenity": "atm"
+                    },
+                    "distance": 6543.42964838,
+                    "sims": 0.6324416337803048
+                },
+                {
+                    "id": 1277979892,
+                    "tags": {
+                        "amenity": "atm"
+                    },
+                    "distance": 17015.5000914,
+                    "sims": 0.6301698807236373
+                },
+                {
+                    "id": 3979090377,
+                    "tags": {
+                        "name": "Cricketers Arms Hotel",
+                        "amenity": "pub",
+                        "wheelchair": "no",
+                        "opening_hours": "We,Th 16:00-23:00+; Fr,Sa 13:00-23:00+; Su 14:00-23:00+",
+                        "payment:debit_cards": "yes",
+                        "payment:credit_cards": "yes"
+                    },
+                    "distance": 7166.15489799,
+                    "sims": 0.6297849317808292
+                },
+                {
+                    "id": 2133023841,
+                    "tags": {
+                        "atm": "yes",
+                        "name": "C-Store",
+                        "shop": "convenience",
+                        "internet_access": "wired"
+                    },
+                    "distance": 8011.8913376,
+                    "sims": 0.6277865101909458
+                },
+                {
+                    "id": 7676964910,
+                    "tags": {
+                        "name": "RBT South Melbourne",
+                        "brand": "RBT",
+                        "sport": "fitness;weightlifting",
+                        "leisure": "fitness_centre",
+                        "website": "https://rbtgyms.com",
+                        "addr:state": "VIC",
+                        "addr:street": "Thistlethwaite Street",
+                        "addr:suburb": "South Melbourne",
+                        "addr:postcode": "3205",
+                        "opening_hours": "Mo-Fr 06:00-19:00; Sa 08:00-12:00",
+                        "addr:housenumber": "146"
+                    },
+                    "distance": 6789.62211098,
+                    "sims": 0.6265591275403569
+                }
+            ]
+        },
+        "30": {
+            "execution_time": 0.19588303565979004,
+            "results": [
+                {
+                    "id": 8940301696,
+                    "tags": {
+                        "building": "yes"
+                    },
+                    "distance": 47983.21090337,
+                    "sims": 0.38110092990988975
+                },
+                {
+                    "id": 919254737,
+                    "tags": {
+                        "name": "053",
+                        "note_1": "18-SEP-10 3:15:55PM",
+                        "_waypoint_": "yes",
+                        "_description_": "18-SEP-10 3:15:55PM"
+                    },
+                    "distance": 58014.62058518,
+                    "sims": 0.37561802936738786
+                },
+                {
+                    "id": 9574992178,
+                    "tags": {
+                        "name": "Sweet Time",
+                        "shop": "confectionery",
+                        "level": "0",
+                        "phone": "+61 433 298 526",
+                        "payment:visa": "yes",
+                        "payment:gift_card": "yes",
+                        "payment:mastercard": "yes"
+                    },
+                    "distance": 46262.85941797,
+                    "sims": 0.37390261888504295
+                },
+                {
+                    "id": 6057027966,
+                    "tags": {
+                        "building": "yes"
+                    },
+                    "distance": 47706.86426187,
+                    "sims": 0.3735487349763904
+                },
+                {
+                    "id": 6057027950,
+                    "tags": {
+                        "building": "yes"
+                    },
+                    "distance": 47670.18656529,
+                    "sims": 0.3734928146903036
+                },
+                {
+                    "id": 6057027964,
+                    "tags": {
+                        "building": "yes"
+                    },
+                    "distance": 47828.3272109,
+                    "sims": 0.3734540271543223
+                },
+                {
+                    "id": 7903498955,
+                    "tags": {
+                        "building": "yes"
+                    },
+                    "distance": 48840.30436575,
+                    "sims": 0.3734281138522564
+                },
+                {
+                    "id": 9574713566,
+                    "tags": {
+                        "name": "Sugar Me",
+                        "shop": "beauty",
+                        "level": "1",
+                        "phone": "+61 3 8510 2386",
+                        "payment:visa": "yes",
+                        "opening_hours": "Su-Mo 10:00-17:00, Tu-We 9:00-17:30, Th-Fr 9:00-21:00, Sa 9:00-17:00",
+                        "payment:gift_card": "yes",
+                        "payment:mastercard": "yes",
+                        "payment:american_express": "yes"
+                    },
+                    "distance": 46141.03827262,
+                    "sims": 0.3703720128092751
+                },
+                {
+                    "id": 12483915172,
+                    "tags": {
+                        "name": "Unnie111",
+                        "shop": "clothes",
+                        "level": "1",
+                        "wheelchair": "yes"
+                    },
+                    "distance": 62511.54677464,
+                    "sims": 0.3553892460233429
+                },
+                {
+                    "id": 9574992195,
+                    "tags": {
+                        "shop": "yes",
+                        "level": "0"
+                    },
+                    "distance": 46249.69821198,
+                    "sims": 0.3550438669297781
+                }
+            ]
+        },
+        "31": {
+            "execution_time": 0.1883547306060791,
+            "results": [
+                {
+                    "id": 9574992178,
+                    "tags": {
+                        "name": "Sweet Time",
+                        "shop": "confectionery",
+                        "level": "0",
+                        "phone": "+61 433 298 526",
+                        "payment:visa": "yes",
+                        "payment:gift_card": "yes",
+                        "payment:mastercard": "yes"
+                    },
+                    "distance": 22922.9080612,
+                    "sims": 0.3811745758605751
+                },
+                {
+                    "id": 8940301696,
+                    "tags": {
+                        "building": "yes"
+                    },
+                    "distance": 47095.85812572,
+                    "sims": 0.3752297015367826
+                },
+                {
+                    "id": 9574713566,
+                    "tags": {
+                        "name": "Sugar Me",
+                        "shop": "beauty",
+                        "level": "1",
+                        "phone": "+61 3 8510 2386",
+                        "payment:visa": "yes",
+                        "opening_hours": "Su-Mo 10:00-17:00, Tu-We 9:00-17:30, Th-Fr 9:00-21:00, Sa 9:00-17:00",
+                        "payment:gift_card": "yes",
+                        "payment:mastercard": "yes",
+                        "payment:american_express": "yes"
+                    },
+                    "distance": 22826.1105928,
+                    "sims": 0.3750572428415142
+                },
+                {
+                    "id": 919254737,
+                    "tags": {
+                        "name": "053",
+                        "note_1": "18-SEP-10 3:15:55PM",
+                        "_waypoint_": "yes",
+                        "_description_": "18-SEP-10 3:15:55PM"
+                    },
+                    "distance": 72944.02682339,
+                    "sims": 0.3732287537397694
+                },
+                {
+                    "id": 6057027966,
+                    "tags": {
+                        "building": "yes"
+                    },
+                    "distance": 31803.36612577,
+                    "sims": 0.37115060669674693
+                },
+                {
+                    "id": 6057027950,
+                    "tags": {
+                        "building": "yes"
+                    },
+                    "distance": 31840.79149463,
+                    "sims": 0.37103132667031125
+                },
+                {
+                    "id": 6057027964,
+                    "tags": {
+                        "building": "yes"
+                    },
+                    "distance": 31927.90608271,
+                    "sims": 0.37102812339225877
+                },
+                {
+                    "id": 7903498955,
+                    "tags": {
+                        "building": "yes"
+                    },
+                    "distance": 33009.57273837,
+                    "sims": 0.3709837025307494
+                },
+                {
+                    "id": 12483915172,
+                    "tags": {
+                        "name": "Unnie111",
+                        "shop": "clothes",
+                        "level": "1",
+                        "wheelchair": "yes"
+                    },
+                    "distance": 40856.18075588,
+                    "sims": 0.3638234518906833
+                },
+                {
+                    "id": 9219905693,
+                    "tags": {
+                        "name": "Seaford Screens",
+                        "shop": "yes"
+                    },
+                    "distance": 4285.53730233,
+                    "sims": 0.36210333121335214
+                }
+            ]
+        },
+        "32": {
+            "execution_time": 0.19256854057312012,
+            "results": [
+                {
+                    "id": 6403353733,
+                    "tags": {
+                        "shop": "hairdresser"
+                    },
+                    "distance": 8006.52818847,
+                    "sims": 0.8834240213442827
+                },
+                {
+                    "id": 5824764078,
+                    "tags": {
+                        "name": "The Beauty Of Hair",
+                        "shop": "hairdresser"
+                    },
+                    "distance": 12957.29653795,
+                    "sims": 0.8662935791732845
+                },
+                {
+                    "id": 6165387338,
+                    "tags": {
+                        "name": "New Sensation Hairstyling",
+                        "shop": "hairdresser"
+                    },
+                    "distance": 9129.42003121,
+                    "sims": 0.8352534928561804
+                },
+                {
+                    "id": 5824763971,
+                    "tags": {
+                        "name": "National Hair Design",
+                        "shop": "hairdresser"
+                    },
+                    "distance": 13018.98939397,
+                    "sims": 0.8312557579972873
+                },
+                {
+                    "id": 10026346571,
+                    "tags": {
+                        "name": "Fantasy Hair Studio",
+                        "shop": "hairdresser"
+                    },
+                    "distance": 13978.60594275,
+                    "sims": 0.8275263925776112
+                },
+                {
+                    "id": 5389620826,
+                    "tags": {
+                        "name": "Mops Hairdressing",
+                        "shop": "hairdresser"
+                    },
+                    "distance": 20328.64904653,
+                    "sims": 0.8259822738677483
+                },
+                {
+                    "id": 2296939870,
+                    "tags": {
+                        "name": "Innovation",
+                        "shop": "hairdresser"
+                    },
+                    "distance": 10391.33454071,
+                    "sims": 0.812727302421308
+                },
+                {
+                    "id": 3062311553,
+                    "tags": {
+                        "name": "Bel Air Hairdressing",
+                        "shop": "hairdresser"
+                    },
+                    "distance": 10849.20311238,
+                    "sims": 0.8117498211935175
+                },
+                {
+                    "id": 6246287135,
+                    "tags": {
+                        "name": "Billie\u2019s Salon",
+                        "shop": "hairdresser"
+                    },
+                    "distance": 10305.53397605,
+                    "sims": 0.7917361942700725
+                },
+                {
+                    "id": 7176810598,
+                    "tags": {
+                        "name": "Essa Hairdressing",
+                        "shop": "hairdresser"
+                    },
+                    "distance": 17469.70735807,
+                    "sims": 0.788243669626147
+                }
+            ]
+        },
+        "33": {
+            "execution_time": 0.1860666275024414,
+            "results": [
+                {
+                    "id": 6403296362,
+                    "tags": {
+                        "amenity": "restaurant"
+                    },
+                    "distance": 21058.15323301,
+                    "sims": 0.8936908904498301
+                },
+                {
+                    "id": 3840017767,
+                    "tags": {
+                        "amenity": "restaurant"
+                    },
+                    "distance": 26279.20204208,
+                    "sims": 0.8881506257146986
+                },
+                {
+                    "id": 12221800066,
+                    "tags": {
+                        "amenity": "restaurant"
+                    },
+                    "distance": 87075.46293223,
+                    "sims": 0.8859431743621826
+                },
+                {
+                    "id": 7645068817,
+                    "tags": {
+                        "amenity": "restaurant"
+                    },
+                    "distance": 84423.66259365,
+                    "sims": 0.8850666479825993
+                },
+                {
+                    "id": 1948991020,
+                    "tags": {
+                        "amenity": "restaurant"
+                    },
+                    "distance": 84470.87864638,
+                    "sims": 0.8850581049919128
+                },
+                {
+                    "id": 2421608381,
+                    "tags": {
+                        "name": "Fidels",
+                        "amenity": "restaurant"
+                    },
+                    "distance": 23183.44451533,
+                    "sims": 0.8683667182922363
+                },
+                {
+                    "id": 4224608822,
+                    "tags": {
+                        "name": "Carnival",
+                        "amenity": "restaurant"
+                    },
+                    "distance": 39021.02030231,
+                    "sims": 0.8670343419025646
+                },
+                {
+                    "id": 2971088133,
+                    "tags": {
+                        "name": "Rue de Cr\u00eaperie",
+                        "amenity": "restaurant",
+                        "cuisine": "crepe"
+                    },
+                    "distance": 19911.08249817,
+                    "sims": 0.8591471230475395
+                },
+                {
+                    "id": 3898414843,
+                    "tags": {
+                        "name": "O Town",
+                        "amenity": "restaurant"
+                    },
+                    "distance": 32159.95928559,
+                    "sims": 0.8578898822003548
+                },
+                {
+                    "id": 1955893247,
+                    "tags": {
+                        "name": "The Main Cafe Bar & Restaurant",
+                        "amenity": "restaurant"
+                    },
+                    "distance": 54900.79002233,
+                    "sims": 0.85623636413325
+                }
+            ]
+        },
+        "34": {
+            "execution_time": 0.19033145904541016,
+            "results": [
+                {
+                    "id": 6403296362,
+                    "tags": {
+                        "amenity": "restaurant"
+                    },
+                    "distance": 13428.66546902,
+                    "sims": 0.8928862937824376
+                },
+                {
+                    "id": 12221800066,
+                    "tags": {
+                        "amenity": "restaurant"
+                    },
+                    "distance": 73350.43714197,
+                    "sims": 0.8887800044548525
+                },
+                {
+                    "id": 7645068817,
+                    "tags": {
+                        "amenity": "restaurant"
+                    },
+                    "distance": 77885.44824966,
+                    "sims": 0.8844942118076844
+                },
+                {
+                    "id": 1948991020,
+                    "tags": {
+                        "amenity": "restaurant"
+                    },
+                    "distance": 77919.6089427,
+                    "sims": 0.8844874570079189
+                },
+                {
+                    "id": 3840017767,
+                    "tags": {
+                        "amenity": "restaurant"
+                    },
+                    "distance": 31082.03128659,
+                    "sims": 0.8830575942993227
+                },
+                {
+                    "id": 2421608381,
+                    "tags": {
+                        "name": "Fidels",
+                        "amenity": "restaurant"
+                    },
+                    "distance": 20502.41241865,
+                    "sims": 0.8682844121286639
+                },
+                {
+                    "id": 4224608822,
+                    "tags": {
+                        "name": "Carnival",
+                        "amenity": "restaurant"
+                    },
+                    "distance": 37095.00940814,
+                    "sims": 0.8646843175684154
+                },
+                {
+                    "id": 2971088133,
+                    "tags": {
+                        "name": "Rue de Cr\u00eaperie",
+                        "amenity": "restaurant",
+                        "cuisine": "crepe"
+                    },
+                    "distance": 21102.61143981,
+                    "sims": 0.8569358587265076
+                },
+                {
+                    "id": 6110271656,
+                    "tags": {
+                        "name": "Chef Lagenda",
+                        "amenity": "restaurant"
+                    },
+                    "distance": 4183.75708359,
+                    "sims": 0.8564129642947955
+                },
+                {
+                    "id": 3276141237,
+                    "tags": {
+                        "name": "Plates On bourke",
+                        "amenity": "restaurant"
+                    },
+                    "distance": 19709.32542463,
+                    "sims": 0.8533139912298938
+                }
+            ]
+        },
+        "35": {
+            "execution_time": 0.1885998249053955,
+            "results": [
+                {
+                    "id": 9574992178,
+                    "tags": {
+                        "name": "Sweet Time",
+                        "shop": "confectionery",
+                        "level": "0",
+                        "phone": "+61 433 298 526",
+                        "payment:visa": "yes",
+                        "payment:gift_card": "yes",
+                        "payment:mastercard": "yes"
+                    },
+                    "distance": 6735.43770639,
+                    "sims": 0.3938485672844303
+                },
+                {
+                    "id": 9574713566,
+                    "tags": {
+                        "name": "Sugar Me",
+                        "shop": "beauty",
+                        "level": "1",
+                        "phone": "+61 3 8510 2386",
+                        "payment:visa": "yes",
+                        "opening_hours": "Su-Mo 10:00-17:00, Tu-We 9:00-17:30, Th-Fr 9:00-21:00, Sa 9:00-17:00",
+                        "payment:gift_card": "yes",
+                        "payment:mastercard": "yes",
+                        "payment:american_express": "yes"
+                    },
+                    "distance": 6734.66690416,
+                    "sims": 0.3872696276685528
+                },
+                {
+                    "id": 8940301696,
+                    "tags": {
+                        "building": "yes"
+                    },
+                    "distance": 28743.03599689,
+                    "sims": 0.3817139907223589
+                },
+                {
+                    "id": 7903498955,
+                    "tags": {
+                        "building": "yes"
+                    },
+                    "distance": 6611.3471783,
+                    "sims": 0.3787277381474753
+                },
+                {
+                    "id": 6057027966,
+                    "tags": {
+                        "building": "yes"
+                    },
+                    "distance": 5779.4230727,
+                    "sims": 0.3786761318059131
+                },
+                {
+                    "id": 6057027964,
+                    "tags": {
+                        "building": "yes"
+                    },
+                    "distance": 5854.32185443,
+                    "sims": 0.37860407297003873
+                },
+                {
+                    "id": 6057027950,
+                    "tags": {
+                        "building": "yes"
+                    },
+                    "distance": 5871.95241855,
+                    "sims": 0.37857661055713543
+                },
+                {
+                    "id": 12483915172,
+                    "tags": {
+                        "name": "Unnie111",
+                        "shop": "clothes",
+                        "level": "1",
+                        "wheelchair": "yes"
+                    },
+                    "distance": 15721.87882171,
+                    "sims": 0.3775786200981114
+                },
+                {
+                    "id": 9574992195,
+                    "tags": {
+                        "shop": "yes",
+                        "level": "0"
+                    },
+                    "distance": 6672.99529511,
+                    "sims": 0.3767258265667417
+                },
+                {
+                    "id": 919254737,
+                    "tags": {
+                        "name": "053",
+                        "note_1": "18-SEP-10 3:15:55PM",
+                        "_waypoint_": "yes",
+                        "_description_": "18-SEP-10 3:15:55PM"
+                    },
+                    "distance": 62300.25669917,
+                    "sims": 0.3644409614134987
+                }
+            ]
+        },
+        "36": {
+            "execution_time": 0.19139409065246582,
+            "results": [
+                {
+                    "id": 4744161273,
+                    "tags": {
+                        "leisure": "slipway"
+                    },
+                    "distance": 60573.12939733,
+                    "sims": 0.3946786640488704
+                },
+                {
+                    "id": 301497518,
+                    "tags": {
+                        "leisure": "slipway"
+                    },
+                    "distance": 24023.24664802,
+                    "sims": 0.38920808498811277
+                },
+                {
+                    "id": 5797391410,
+                    "tags": {
+                        "tourism": "viewpoint",
+                        "direction": "90"
+                    },
+                    "distance": 25698.40154956,
+                    "sims": 0.3649323800165887
+                },
+                {
+                    "id": 2377860060,
+                    "tags": {
+                        "name": "Log Cabin Convenience Store",
+                        "shop": "convenience"
+                    },
+                    "distance": 40492.80558632,
+                    "sims": 0.34979623556137085
+                },
+                {
+                    "id": 700688508,
+                    "tags": {
+                        "atm": "yes",
+                        "name": "Ezy Convenience",
+                        "shop": "convenience"
+                    },
+                    "distance": 17060.6127194,
+                    "sims": 0.3471644611856668
+                },
+                {
+                    "id": 9317703937,
+                    "tags": {
+                        "tourism": "viewpoint"
+                    },
+                    "distance": 49017.44891299,
+                    "sims": 0.3446737322405742
+                },
+                {
+                    "id": 10831716418,
+                    "tags": {
+                        "tourism": "viewpoint"
+                    },
+                    "distance": 10840.37383303,
+                    "sims": 0.3440052270889282
+                },
+                {
+                    "id": 9409682884,
+                    "tags": {
+                        "tourism": "viewpoint",
+                        "direction": "W"
+                    },
+                    "distance": 19636.01899726,
+                    "sims": 0.342615405995113
+                },
+                {
+                    "id": 11876605631,
+                    "tags": {
+                        "tourism": "viewpoint"
+                    },
+                    "distance": 56753.71395394,
+                    "sims": 0.3409626578710885
+                },
+                {
+                    "id": 7612393485,
+                    "tags": {
+                        "tourism": "viewpoint"
+                    },
+                    "distance": 63902.00307302,
+                    "sims": 0.3403565287590027
+                }
+            ]
+        },
+        "37": {
+            "execution_time": 0.1881399154663086,
+            "results": [
+                {
+                    "id": 9204956682,
+                    "tags": {
+                        "amenity": "shelter"
+                    },
+                    "distance": 11526.58848926,
+                    "sims": 0.7800240647778597
+                },
+                {
+                    "id": 1665511217,
+                    "tags": {
+                        "amenity": "shelter"
+                    },
+                    "distance": 14163.1065874,
+                    "sims": 0.7799259221686278
+                },
+                {
+                    "id": 1665467233,
+                    "tags": {
+                        "amenity": "shelter"
+                    },
+                    "distance": 14759.29044495,
+                    "sims": 0.7798983121039551
+                },
+                {
+                    "id": 1634785575,
+                    "tags": {
+                        "amenity": "shelter"
+                    },
+                    "distance": 17187.76962256,
+                    "sims": 0.7796833050439896
+                },
+                {
+                    "id": 8918639632,
+                    "tags": {
+                        "amenity": "shelter"
+                    },
+                    "distance": 18170.53618125,
+                    "sims": 0.779655244391537
+                },
+                {
+                    "id": 3801660338,
+                    "tags": {
+                        "amenity": "shelter"
+                    },
+                    "distance": 23183.3807995,
+                    "sims": 0.7792883182420407
+                },
+                {
+                    "id": 7513185096,
+                    "tags": {
+                        "amenity": "shelter"
+                    },
+                    "distance": 13414.68771064,
+                    "sims": 0.7790913249145415
+                },
+                {
+                    "id": 514497633,
+                    "tags": {
+                        "amenity": "shelter"
+                    },
+                    "distance": 12351.60735369,
+                    "sims": 0.778485337766648
+                },
+                {
+                    "id": 2354674478,
+                    "tags": {
+                        "amenity": "shelter"
+                    },
+                    "distance": 34779.43533713,
+                    "sims": 0.7783239880220926
+                },
+                {
+                    "id": 9157809794,
+                    "tags": {
+                        "amenity": "shelter"
+                    },
+                    "distance": 15106.11526425,
+                    "sims": 0.7774449852174593
+                }
+            ]
+        },
+        "38": {
+            "execution_time": 0.19161510467529297,
+            "results": [
+                {
+                    "id": 5819367891,
+                    "tags": {
+                        "bus": "yes",
+                        "name": "Russell Street/Bastings Street",
+                        "network": "PTV - Metropolitan Buses",
+                        "operator": "Dysons",
+                        "public_transport": "stop_position"
+                    },
+                    "distance": 23841.918089,
+                    "sims": 0.8035314817299961
+                },
+                {
+                    "id": 12419583114,
+                    "tags": {
+                        "addr:street": "Victoria Street",
+                        "addr:housenumber": "41A"
+                    },
+                    "distance": 12030.78052901,
+                    "sims": 0.802834023481024
+                },
+                {
+                    "id": 12411532184,
+                    "tags": {
+                        "addr:street": "Victoria Street",
+                        "addr:housenumber": "496"
+                    },
+                    "distance": 28448.30585882,
+                    "sims": 0.8012778764716039
+                },
+                {
+                    "id": 12410864262,
+                    "tags": {
+                        "addr:street": "Victoria Street",
+                        "addr:housenumber": "167"
+                    },
+                    "distance": 26786.81806939,
+                    "sims": 0.8000579715052212
+                },
+                {
+                    "id": 12418147904,
+                    "tags": {
+                        "addr:street": "Victoria Street",
+                        "addr:housenumber": "253"
+                    },
+                    "distance": 27095.07890379,
+                    "sims": 0.7998646973878702
+                },
+                {
+                    "id": 12412464314,
+                    "tags": {
+                        "addr:street": "Victoria Street",
+                        "addr:housenumber": "178"
+                    },
+                    "distance": 33477.78866758,
+                    "sims": 0.7969637141055391
+                },
+                {
+                    "id": 12419581965,
+                    "tags": {
+                        "addr:street": "Victoria Street",
+                        "addr:housenumber": "46"
+                    },
+                    "distance": 12015.22941333,
+                    "sims": 0.7965137942942854
+                },
+                {
+                    "id": 12419351667,
+                    "tags": {
+                        "addr:street": "St Kilda Street",
+                        "addr:housenumber": "349"
+                    },
+                    "distance": 15816.80830135,
+                    "sims": 0.7949545238682302
+                },
+                {
+                    "id": 12419351685,
+                    "tags": {
+                        "addr:street": "St Kilda Street",
+                        "addr:housenumber": "350"
+                    },
+                    "distance": 15774.07255561,
+                    "sims": 0.7944452737772992
+                },
+                {
+                    "id": 3885415473,
+                    "tags": {
+                        "name": "Alex Theater St.K",
+                        "amenity": "theatre"
+                    },
+                    "distance": 18961.09138191,
+                    "sims": 0.7942485783616107
+                }
+            ]
+        },
+        "39": {
+            "execution_time": 0.1929612159729004,
+            "results": [
+                {
+                    "id": 9574992178,
+                    "tags": {
+                        "name": "Sweet Time",
+                        "shop": "confectionery",
+                        "level": "0",
+                        "phone": "+61 433 298 526",
+                        "payment:visa": "yes",
+                        "payment:gift_card": "yes",
+                        "payment:mastercard": "yes"
+                    },
+                    "distance": 28792.73742304,
+                    "sims": 0.38688149852775033
+                },
+                {
+                    "id": 9574713566,
+                    "tags": {
+                        "name": "Sugar Me",
+                        "shop": "beauty",
+                        "level": "1",
+                        "phone": "+61 3 8510 2386",
+                        "payment:visa": "yes",
+                        "opening_hours": "Su-Mo 10:00-17:00, Tu-We 9:00-17:30, Th-Fr 9:00-21:00, Sa 9:00-17:00",
+                        "payment:gift_card": "yes",
+                        "payment:mastercard": "yes",
+                        "payment:american_express": "yes"
+                    },
+                    "distance": 28841.40008782,
+                    "sims": 0.3810646051485761
+                },
+                {
+                    "id": 8940301696,
+                    "tags": {
+                        "building": "yes"
+                    },
+                    "distance": 24487.01943649,
+                    "sims": 0.3783596496307552
+                },
+                {
+                    "id": 12483915172,
+                    "tags": {
+                        "name": "Unnie111",
+                        "shop": "clothes",
+                        "level": "1",
+                        "wheelchair": "yes"
+                    },
+                    "distance": 17582.08099302,
+                    "sims": 0.37532779949854156
+                },
+                {
+                    "id": 7903498955,
+                    "tags": {
+                        "building": "yes"
+                    },
+                    "distance": 17104.04433125,
+                    "sims": 0.3734590149038164
+                },
+                {
+                    "id": 6057027966,
+                    "tags": {
+                        "building": "yes"
+                    },
+                    "distance": 18336.79999732,
+                    "sims": 0.3731445518904397
+                },
+                {
+                    "id": 6057027964,
+                    "tags": {
+                        "building": "yes"
+                    },
+                    "distance": 18208.46857444,
+                    "sims": 0.3731440790550766
+                },
+                {
+                    "id": 6057027950,
+                    "tags": {
+                        "building": "yes"
+                    },
+                    "distance": 18312.09127172,
+                    "sims": 0.37310180423574035
+                },
+                {
+                    "id": 9574992195,
+                    "tags": {
+                        "shop": "yes",
+                        "level": "0"
+                    },
+                    "distance": 28741.42984667,
+                    "sims": 0.37138045174304857
+                },
+                {
+                    "id": 919254737,
+                    "tags": {
+                        "name": "053",
+                        "note_1": "18-SEP-10 3:15:55PM",
+                        "_waypoint_": "yes",
+                        "_description_": "18-SEP-10 3:15:55PM"
+                    },
+                    "distance": 57583.14037795,
+                    "sims": 0.3558646268683233
+                }
+            ]
+        },
+        "40": {
+            "execution_time": 0.19810795783996582,
+            "results": [
+                {
+                    "id": 2506710980,
+                    "tags": {
+                        "amenity": "parking_entrance"
+                    },
+                    "distance": 4313.70087077,
+                    "sims": 0.9014672040939331
+                },
+                {
+                    "id": 10264362116,
+                    "tags": {
+                        "amenity": "parking_entrance"
+                    },
+                    "distance": 18126.85786292,
+                    "sims": 0.8998293816941624
+                },
+                {
+                    "id": 12240147862,
+                    "tags": {
+                        "amenity": "parking_entrance"
+                    },
+                    "distance": 15769.60277164,
+                    "sims": 0.8998091340292597
+                },
+                {
+                    "id": 11178068414,
+                    "tags": {
+                        "amenity": "parking_entrance"
+                    },
+                    "distance": 15709.78902778,
+                    "sims": 0.8997866451613111
+                },
+                {
+                    "id": 12209981203,
+                    "tags": {
+                        "amenity": "parking_entrance"
+                    },
+                    "distance": 15677.73670914,
+                    "sims": 0.8993104964289221
+                },
+                {
+                    "id": 9494123575,
+                    "tags": {
+                        "amenity": "parking_entrance"
+                    },
+                    "distance": 8551.81630819,
+                    "sims": 0.8991276561693956
+                },
+                {
+                    "id": 6696274750,
+                    "tags": {
+                        "amenity": "parking_entrance"
+                    },
+                    "distance": 9502.66013426,
+                    "sims": 0.8989608883857727
+                },
+                {
+                    "id": 11096664299,
+                    "tags": {
+                        "amenity": "parking_entrance"
+                    },
+                    "distance": 18296.57031906,
+                    "sims": 0.8989027142524719
+                },
+                {
+                    "id": 11955272205,
+                    "tags": {
+                        "amenity": "parking_entrance"
+                    },
+                    "distance": 12093.18046119,
+                    "sims": 0.8986972242205512
+                },
+                {
+                    "id": 12583279911,
+                    "tags": {
+                        "amenity": "parking_entrance"
+                    },
+                    "distance": 10919.83148032,
+                    "sims": 0.8986393809318542
+                }
+            ]
+        },
+        "41": {
+            "execution_time": 0.19291996955871582,
+            "results": [
+                {
+                    "id": 6403353733,
+                    "tags": {
+                        "shop": "hairdresser"
+                    },
+                    "distance": 6076.87449695,
+                    "sims": 0.8837384442971346
+                },
+                {
+                    "id": 5824764078,
+                    "tags": {
+                        "name": "The Beauty Of Hair",
+                        "shop": "hairdresser"
+                    },
+                    "distance": 11086.04611838,
+                    "sims": 0.8662626583889377
+                },
+                {
+                    "id": 6165387338,
+                    "tags": {
+                        "name": "New Sensation Hairstyling",
+                        "shop": "hairdresser"
+                    },
+                    "distance": 10795.98639792,
+                    "sims": 0.8351287049208587
+                },
+                {
+                    "id": 5824763971,
+                    "tags": {
+                        "name": "National Hair Design",
+                        "shop": "hairdresser"
+                    },
+                    "distance": 11142.57378601,
+                    "sims": 0.831301857906704
+                },
+                {
+                    "id": 10026346571,
+                    "tags": {
+                        "name": "Fantasy Hair Studio",
+                        "shop": "hairdresser"
+                    },
+                    "distance": 12191.32971543,
+                    "sims": 0.8275769640642952
+                },
+                {
+                    "id": 5389620826,
+                    "tags": {
+                        "name": "Mops Hairdressing",
+                        "shop": "hairdresser"
+                    },
+                    "distance": 21911.97594552,
+                    "sims": 0.8251573130769708
+                },
+                {
+                    "id": 2296939870,
+                    "tags": {
+                        "name": "Innovation",
+                        "shop": "hairdresser"
+                    },
+                    "distance": 12177.5143063,
+                    "sims": 0.8124161381149531
+                },
+                {
+                    "id": 3062311553,
+                    "tags": {
+                        "name": "Bel Air Hairdressing",
+                        "shop": "hairdresser"
+                    },
+                    "distance": 12369.11749939,
+                    "sims": 0.811246372609904
+                },
+                {
+                    "id": 6246287135,
+                    "tags": {
+                        "name": "Billie\u2019s Salon",
+                        "shop": "hairdresser"
+                    },
+                    "distance": 11214.08040908,
+                    "sims": 0.7913775319682207
+                },
+                {
+                    "id": 7176810598,
+                    "tags": {
+                        "name": "Essa Hairdressing",
+                        "shop": "hairdresser"
+                    },
+                    "distance": 19064.01639178,
+                    "sims": 0.7873465996007056
+                }
+            ]
+        },
+        "42": {
+            "execution_time": 0.19135451316833496,
+            "results": [
+                {
+                    "id": 7057414373,
+                    "tags": {
+                        "shop": "clothes"
+                    },
+                    "distance": 7652.48949892,
+                    "sims": 0.8513840436935425
+                },
+                {
+                    "id": 7068095523,
+                    "tags": {
+                        "name": "Daniela\u2019s",
+                        "shop": "clothes",
+                        "clothes": "women"
+                    },
+                    "distance": 13704.53191979,
+                    "sims": 0.7555974721908569
+                },
+                {
+                    "id": 10236775588,
+                    "tags": {
+                        "name": "Blazer",
+                        "shop": "clothes",
+                        "clothes": "men"
+                    },
+                    "distance": 31527.17824916,
+                    "sims": 0.748900249665962
+                },
+                {
+                    "id": 5286938159,
+                    "tags": {
+                        "name": "Nonib",
+                        "shop": "clothes"
+                    },
+                    "distance": 18355.92936227,
+                    "sims": 0.7403742825761879
+                },
+                {
+                    "id": 9903079315,
+                    "tags": {
+                        "name": "Sunspun",
+                        "shop": "clothes"
+                    },
+                    "distance": 20915.06981119,
+                    "sims": 0.7215559482574463
+                },
+                {
+                    "id": 11162131778,
+                    "tags": {
+                        "name": "Vintage Replayground",
+                        "shop": "clothes",
+                        "clothes": "women;men",
+                        "wheelchair": "designated",
+                        "second_hand": "only"
+                    },
+                    "distance": 10520.12721023,
+                    "sims": 0.7018010825455514
+                },
+                {
+                    "id": 9398063724,
+                    "tags": {
+                        "name": "MaisonMAI",
+                        "shop": "clothes"
+                    },
+                    "distance": 51988.02706615,
+                    "sims": 0.6939541721899095
+                },
+                {
+                    "id": 10236775596,
+                    "tags": {
+                        "name": "Forcast",
+                        "shop": "clothes",
+                        "level": "0",
+                        "clothes": "women",
+                        "toilets": "no",
+                        "wheelchair": "yes",
+                        "second_hand": "no"
+                    },
+                    "distance": 31603.58310467,
+                    "sims": 0.6731018217680714
+                },
+                {
+                    "id": 6059973154,
+                    "tags": {
+                        "name": "Jac n Jean",
+                        "shop": "clothes"
+                    },
+                    "distance": 49312.92606298,
+                    "sims": 0.6646826467107161
+                },
+                {
+                    "id": 12300426572,
+                    "tags": {
+                        "name": "Pollen",
+                        "shop": "clothes"
+                    },
+                    "distance": 52130.70102865,
+                    "sims": 0.6560477018356323
+                }
+            ]
+        },
+        "43": {
+            "execution_time": 0.19407296180725098,
+            "results": [
+                {
+                    "id": 932421536,
+                    "tags": {
+                        "name": "My Chemist",
+                        "amenity": "pharmacy",
+                        "healthcare": "pharmacy",
+                        "addr:street": "Brighton Road",
+                        "addr:housenumber": "61"
+                    },
+                    "distance": 1220.47809968,
+                    "sims": 0.7897766406927896
+                },
+                {
+                    "id": 5352025211,
+                    "tags": {
+                        "name": "Your Pharmacy",
+                        "branch": "Alma Village",
+                        "amenity": "pharmacy",
+                        "healthcare": "pharmacy"
+                    },
+                    "distance": 1015.47783915,
+                    "sims": 0.7888807823211436
+                },
+                {
+                    "id": 1948157042,
+                    "tags": {
+                        "name": "Beovich's Guardian Pharmacy",
+                        "amenity": "pharmacy",
+                        "healthcare": "pharmacy",
+                        "attribution": "Survey"
+                    },
+                    "distance": 11432.10509299,
+                    "sims": 0.7733507228007991
+                },
+                {
+                    "id": 1357413436,
+                    "tags": {
+                        "source": "local_knowledge",
+                        "amenity": "pharmacy",
+                        "healthcare": "pharmacy"
+                    },
+                    "distance": 4821.63539157,
+                    "sims": 0.7732913565374484
+                },
+                {
+                    "id": 9018355044,
+                    "tags": {
+                        "name": "Pharmasave Monbulk Pharmacy",
+                        "amenity": "pharmacy",
+                        "addr:street": "Main Street",
+                        "addr:housenumber": "98"
+                    },
+                    "distance": 35916.97939018,
+                    "sims": 0.7716577344082224
+                },
+                {
+                    "id": 1955890105,
+                    "tags": {
+                        "fax": "+61 3 9707 4728",
+                        "name": "PharmaSave",
+                        "brand": "PharmaSave",
+                        "phone": "+61 3 9707 1555",
+                        "amenity": "pharmacy",
+                        "website": "https://www.berwickpharmacy.com.au/",
+                        "operator": "Pharmasave",
+                        "addr:state": "VIC",
+                        "dispensing": "yes",
+                        "healthcare": "pharmacy",
+                        "addr:street": "High Street",
+                        "addr:suburb": "Berwick",
+                        "payment:cash": "yes",
+                        "payment:visa": "yes",
+                        "addr:postcode": "3806",
+                        "drive_through": "no",
+                        "opening_hours": "Mo-Fr 08:00-21:00, Sa 08:00-18:00, Su 09:00-18:00",
+                        "brand:wikidata": "Q63367906",
+                        "addr:housenumber": "51",
+                        "payment:mastercard": "yes",
+                        "payment:debit_cards": "yes",
+                        "payment:american_express": "yes"
+                    },
+                    "distance": 35753.99772973,
+                    "sims": 0.751910486636914
+                },
+                {
+                    "id": 767172011,
+                    "tags": {
+                        "name": "Chemist Warehouse",
+                        "brand": "Chemist Warehouse",
+                        "amenity": "pharmacy",
+                        "healthcare": "pharmacy",
+                        "brand:wikidata": "Q48782120"
+                    },
+                    "distance": 25698.1345009,
+                    "sims": 0.7499648257871351
+                },
+                {
+                    "id": 1909805532,
+                    "tags": {
+                        "name": "Priceline Pharmacy",
+                        "brand": "Priceline Pharmacy",
+                        "amenity": "pharmacy",
+                        "dispensing": "yes",
+                        "healthcare": "pharmacy",
+                        "brand:wikidata": "Q7242652"
+                    },
+                    "distance": 29682.91277883,
+                    "sims": 0.7473366392079149
+                },
+                {
+                    "id": 2501324981,
+                    "tags": {
+                        "name": "Hume City Pharmacy",
+                        "shop": "chemist"
+                    },
+                    "distance": 22912.42671649,
+                    "sims": 0.7318490279150096
+                },
+                {
+                    "id": 8701217703,
+                    "tags": {
+                        "name": "Chemist Warehouse",
+                        "brand": "Chemist Warehouse",
+                        "amenity": "pharmacy",
+                        "dispensing": "yes",
+                        "healthcare": "pharmacy",
+                        "brand:wikidata": "Q48782120",
+                        "brand:wikipedia": "en:Chemist Warehouse"
+                    },
+                    "distance": 19411.69721273,
+                    "sims": 0.7288934220240303
+                }
+            ]
+        },
+        "44": {
+            "execution_time": 0.1901700496673584,
+            "results": [
+                {
+                    "id": 12411737660,
+                    "tags": {
+                        "addr:street": "Cathedral Rise",
+                        "addr:housenumber": "58"
+                    },
+                    "distance": 22342.46207297,
+                    "sims": 0.6606329318089451
+                },
+                {
+                    "id": 12411734729,
+                    "tags": {
+                        "addr:street": "Cathedral Rise",
+                        "addr:housenumber": "69"
+                    },
+                    "distance": 22224.15209254,
+                    "sims": 0.6551369079377656
+                },
+                {
+                    "id": 12411736092,
+                    "tags": {
+                        "addr:street": "Cathedral Rise",
+                        "addr:housenumber": "72"
+                    },
+                    "distance": 22275.99978819,
+                    "sims": 0.6339222804818059
+                },
+                {
+                    "id": 12417868200,
+                    "tags": {
+                        "addr:street": "Mountford Rise",
+                        "addr:housenumber": "35"
+                    },
+                    "distance": 56960.1728194,
+                    "sims": 0.5535180579625854
+                },
+                {
+                    "id": 12414248073,
+                    "tags": {
+                        "addr:street": "Ashbury Rise",
+                        "addr:housenumber": "42"
+                    },
+                    "distance": 47665.18138226,
+                    "sims": 0.5482800209296522
+                },
+                {
+                    "id": 12411516990,
+                    "tags": {
+                        "addr:street": "Heathfield Rise",
+                        "addr:housenumber": "78"
+                    },
+                    "distance": 14031.10914187,
+                    "sims": 0.5476484937170075
+                },
+                {
+                    "id": 12414258923,
+                    "tags": {
+                        "addr:street": "Castlehill Rise",
+                        "addr:housenumber": "3"
+                    },
+                    "distance": 47450.67149685,
+                    "sims": 0.5467374101938216
+                },
+                {
+                    "id": 12414258922,
+                    "tags": {
+                        "addr:street": "Castlehill Rise",
+                        "addr:housenumber": "2"
+                    },
+                    "distance": 47444.64442869,
+                    "sims": 0.5448793230108862
+                },
+                {
+                    "id": 12420314274,
+                    "tags": {
+                        "addr:street": "Petworth Rise",
+                        "addr:housenumber": "35"
+                    },
+                    "distance": 48606.28560846,
+                    "sims": 0.5443313453607311
+                },
+                {
+                    "id": 12414248062,
+                    "tags": {
+                        "addr:street": "Ashbury Rise",
+                        "addr:housenumber": "35"
+                    },
+                    "distance": 47701.29305365,
+                    "sims": 0.5441537722763061
+                }
+            ]
+        },
+        "45": {
+            "execution_time": 0.19082403182983398,
+            "results": [
+                {
+                    "id": 12411612684,
+                    "tags": {
+                        "addr:street": "Wilgah Street",
+                        "addr:housenumber": "21"
+                    },
+                    "distance": 28959.29817887,
+                    "sims": 0.8005249977424753
+                },
+                {
+                    "id": 12411725665,
+                    "tags": {
+                        "addr:street": "Wilgah Street",
+                        "addr:housenumber": "40"
+                    },
+                    "distance": 21787.70006504,
+                    "sims": 0.7972438335418758
+                },
+                {
+                    "id": 12411725673,
+                    "tags": {
+                        "addr:street": "Wilgah Street",
+                        "addr:housenumber": "18"
+                    },
+                    "distance": 21806.48814468,
+                    "sims": 0.7958638187525113
+                },
+                {
+                    "id": 12411626684,
+                    "tags": {
+                        "addr:street": "Wilks Avenue",
+                        "addr:housenumber": "17"
+                    },
+                    "distance": 19297.64695164,
+                    "sims": 0.7958550331506167
+                },
+                {
+                    "id": 12419597964,
+                    "tags": {
+                        "addr:street": "Wilma Avenue",
+                        "addr:housenumber": "17"
+                    },
+                    "distance": 11502.25713231,
+                    "sims": 0.7941119548149096
+                },
+                {
+                    "id": 12420078617,
+                    "tags": {
+                        "addr:street": "Wilga Avenue",
+                        "addr:housenumber": "1"
+                    },
+                    "distance": 12538.23991622,
+                    "sims": 0.7933171268294543
+                },
+                {
+                    "id": 12420298234,
+                    "tags": {
+                        "addr:street": "Wilma Avenue",
+                        "addr:housenumber": "26"
+                    },
+                    "distance": 23941.25821179,
+                    "sims": 0.7929052587095071
+                },
+                {
+                    "id": 12418962536,
+                    "tags": {
+                        "addr:street": "Wilmot Street",
+                        "addr:housenumber": "21"
+                    },
+                    "distance": 17636.99940056,
+                    "sims": 0.7927938688984322
+                },
+                {
+                    "id": 12410775219,
+                    "tags": {
+                        "addr:street": "Centenary Boulevard",
+                        "addr:housenumber": "98"
+                    },
+                    "distance": 29015.59375991,
+                    "sims": 0.7896462553528714
+                },
+                {
+                    "id": 12410775907,
+                    "tags": {
+                        "addr:street": "Centenary Boulevard",
+                        "addr:housenumber": "35"
+                    },
+                    "distance": 29329.63235981,
+                    "sims": 0.7893122309036407
+                }
+            ]
+        },
+        "46": {
+            "execution_time": 0.19818353652954102,
+            "results": [
+                {
+                    "id": 9574992178,
+                    "tags": {
+                        "name": "Sweet Time",
+                        "shop": "confectionery",
+                        "level": "0",
+                        "phone": "+61 433 298 526",
+                        "payment:visa": "yes",
+                        "payment:gift_card": "yes",
+                        "payment:mastercard": "yes"
+                    },
+                    "distance": 30013.80206395,
+                    "sims": 0.3855098485946682
+                },
+                {
+                    "id": 9574713566,
+                    "tags": {
+                        "name": "Sugar Me",
+                        "shop": "beauty",
+                        "level": "1",
+                        "phone": "+61 3 8510 2386",
+                        "payment:visa": "yes",
+                        "opening_hours": "Su-Mo 10:00-17:00, Tu-We 9:00-17:30, Th-Fr 9:00-21:00, Sa 9:00-17:00",
+                        "payment:gift_card": "yes",
+                        "payment:mastercard": "yes",
+                        "payment:american_express": "yes"
+                    },
+                    "distance": 30088.46548207,
+                    "sims": 0.3789467955891137
+                },
+                {
+                    "id": 12483915172,
+                    "tags": {
+                        "name": "Unnie111",
+                        "shop": "clothes",
+                        "level": "1",
+                        "wheelchair": "yes"
+                    },
+                    "distance": 14755.93743483,
+                    "sims": 0.377521671204468
+                },
+                {
+                    "id": 9574992195,
+                    "tags": {
+                        "shop": "yes",
+                        "level": "0"
+                    },
+                    "distance": 29973.47936202,
+                    "sims": 0.36940280381424473
+                },
+                {
+                    "id": 8940301696,
+                    "tags": {
+                        "building": "yes"
+                    },
+                    "distance": 31859.51789411,
+                    "sims": 0.3690171021808928
+                },
+                {
+                    "id": 7903498955,
+                    "tags": {
+                        "building": "yes"
+                    },
+                    "distance": 20720.9906245,
+                    "sims": 0.3653170844723539
+                },
+                {
+                    "id": 6057027964,
+                    "tags": {
+                        "building": "yes"
+                    },
+                    "distance": 21815.49000207,
+                    "sims": 0.3649538996898122
+                },
+                {
+                    "id": 6057027966,
+                    "tags": {
+                        "building": "yes"
+                    },
+                    "distance": 21945.20429924,
+                    "sims": 0.3649505566075293
+                },
+                {
+                    "id": 6057027950,
+                    "tags": {
+                        "building": "yes"
+                    },
+                    "distance": 21955.53333217,
+                    "sims": 0.3648854872652605
+                },
+                {
+                    "id": 746912632,
+                    "tags": {
+                        "name": "Gate 4",
+                        "entrance": "yes"
+                    },
+                    "distance": 15681.34286728,
+                    "sims": 0.35229831933975464
+                }
+            ]
+        },
+        "47": {
+            "execution_time": 0.18695497512817383,
+            "results": [
+                {
+                    "id": 11047961296,
+                    "tags": {
+                        "leisure": "picnic_table"
+                    },
+                    "distance": 19065.11618123,
+                    "sims": 0.927171579262213
+                },
+                {
+                    "id": 11024197015,
+                    "tags": {
+                        "leisure": "picnic_table"
+                    },
+                    "distance": 20870.79167208,
+                    "sims": 0.9271496127768811
+                },
+                {
+                    "id": 9140968961,
+                    "tags": {
+                        "leisure": "picnic_table"
+                    },
+                    "distance": 16709.96959077,
+                    "sims": 0.9271443079627056
+                },
+                {
+                    "id": 5259788318,
+                    "tags": {
+                        "leisure": "picnic_table"
+                    },
+                    "distance": 18947.00236027,
+                    "sims": 0.9270721587028758
+                },
+                {
+                    "id": 5213728799,
+                    "tags": {
+                        "leisure": "picnic_table"
+                    },
+                    "distance": 19342.52918978,
+                    "sims": 0.9269919308414443
+                },
+                {
+                    "id": 12117689201,
+                    "tags": {
+                        "leisure": "picnic_table"
+                    },
+                    "distance": 23052.25206693,
+                    "sims": 0.9269903811204954
+                },
+                {
+                    "id": 12480202145,
+                    "tags": {
+                        "leisure": "picnic_table"
+                    },
+                    "distance": 17523.79222063,
+                    "sims": 0.9269733341900575
+                },
+                {
+                    "id": 11799564122,
+                    "tags": {
+                        "leisure": "picnic_table"
+                    },
+                    "distance": 15908.84892315,
+                    "sims": 0.9267704399550551
+                },
+                {
+                    "id": 10996557413,
+                    "tags": {
+                        "leisure": "picnic_table"
+                    },
+                    "distance": 15795.01420459,
+                    "sims": 0.9266919362590216
+                },
+                {
+                    "id": 6019203757,
+                    "tags": {
+                        "leisure": "picnic_table"
+                    },
+                    "distance": 23377.35145385,
+                    "sims": 0.9265864999993509
+                }
+            ]
+        },
+        "48": {
+            "execution_time": 0.18706727027893066,
+            "results": [
+                {
+                    "id": 2588965114,
+                    "tags": {
+                        "name": "Ultimate Vet Clinic",
+                        "amenity": "veterinary",
+                        "addr:street": "Cranbourne Road",
+                        "addr:housenumber": "242"
+                    },
+                    "distance": 28936.1468743,
+                    "sims": 0.6702596351891287
+                },
+                {
+                    "id": 3928348524,
+                    "tags": {
+                        "amenity": "veterinary",
+                        "addr:street": "Springvale Road",
+                        "addr:housenumber": "414"
+                    },
+                    "distance": 7600.07786922,
+                    "sims": 0.654008664788114
+                },
+                {
+                    "id": 11707612068,
+                    "tags": {
+                        "name": "The Grooming Barn",
+                        "shop": "pet_grooming"
+                    },
+                    "distance": 23183.285462,
+                    "sims": 0.6049501840725837
+                },
+                {
+                    "id": 7057441888,
+                    "tags": {
+                        "waste": "dog_excrement",
+                        "amenity": "waste_basket"
+                    },
+                    "distance": 8742.56242147,
+                    "sims": 0.590712950953181
+                },
+                {
+                    "id": 6033562188,
+                    "tags": {
+                        "name": "Bac Si Bui Dac Thong",
+                        "amenity": "doctors",
+                        "healthcare": "doctor"
+                    },
+                    "distance": 17510.4078458,
+                    "sims": 0.5774022009078031
+                },
+                {
+                    "id": 7918442656,
+                    "tags": {
+                        "name": "Spa Bark",
+                        "shop": "pet_grooming",
+                        "addr:state": "VIC",
+                        "addr:street": "Hall Street",
+                        "addr:suburb": "Moonee Ponds",
+                        "addr:postcode": "3039",
+                        "addr:housenumber": "42"
+                    },
+                    "distance": 17751.61739969,
+                    "sims": 0.5771297228308957
+                },
+                {
+                    "id": 5714724539,
+                    "tags": {
+                        "name": "D'Elephant",
+                        "amenity": "restaurant"
+                    },
+                    "distance": 3423.62331445,
+                    "sims": 0.5723044874111262
+                },
+                {
+                    "id": 2830734304,
+                    "tags": {
+                        "name": "Moon Dog Brewery",
+                        "craft": "brewery",
+                        "phone": "+61 3 9428 2307",
+                        "amenity": "pub",
+                        "website": "https://moondogbrewing.com.au/",
+                        "addr:street": "Duke Street",
+                        "microbrewery": "yes",
+                        "opening_hours": "Th-Fr 16:00-23:00; Sa 12:00-23:00",
+                        "addr:housenumber": "17"
+                    },
+                    "distance": 8792.29830439,
+                    "sims": 0.568267957751265
+                },
+                {
+                    "id": 2201144724,
+                    "tags": {
+                        "name": "Kanpai",
+                        "amenity": "restaurant",
+                        "cuisine": "japanese",
+                        "wheelchair": "no"
+                    },
+                    "distance": 8212.63707033,
+                    "sims": 0.5597535538600156
+                },
+                {
+                    "id": 6340834022,
+                    "tags": {
+                        "amenity": "cafe",
+                        "name:ja": "\u30ab\u30d5\u30a7 \u30b5\u30f3\u30b0\u30ea\u30e9"
+                    },
+                    "distance": 13425.78037576,
+                    "sims": 0.5588922474457564
+                }
+            ]
+        },
+        "49": {
+            "execution_time": 0.19395732879638672,
+            "results": [
+                {
+                    "id": 12417769883,
+                    "tags": {
+                        "addr:street": "Moorookyle Avenue",
+                        "addr:housenumber": "60"
+                    },
+                    "distance": 61207.94987577,
+                    "sims": 0.7948767176050392
+                },
+                {
+                    "id": 12417769988,
+                    "tags": {
+                        "addr:street": "Moorookyle Avenue",
+                        "addr:housenumber": "65"
+                    },
+                    "distance": 61290.52694972,
+                    "sims": 0.7842598767745623
+                },
+                {
+                    "id": 12419116578,
+                    "tags": {
+                        "addr:street": "Moorookyle Avenue",
+                        "addr:housenumber": "35"
+                    },
+                    "distance": 47252.56460939,
+                    "sims": 0.7837213591782094
+                },
+                {
+                    "id": 12415014837,
+                    "tags": {
+                        "addr:street": "Moorfield Avenue",
+                        "addr:housenumber": "39"
+                    },
+                    "distance": 9887.64242316,
+                    "sims": 0.7793847028751044
+                },
+                {
+                    "id": 12417740592,
+                    "tags": {
+                        "addr:street": "Moorookyle Avenue",
+                        "addr:housenumber": "35"
+                    },
+                    "distance": 61064.03761722,
+                    "sims": 0.77893311475115
+                },
+                {
+                    "id": 12415014838,
+                    "tags": {
+                        "addr:street": "Moorfield Avenue",
+                        "addr:housenumber": "40"
+                    },
+                    "distance": 9852.90957898,
+                    "sims": 0.7785427638394491
+                },
+                {
+                    "id": 12417740622,
+                    "tags": {
+                        "addr:street": "Moorookyle Avenue",
+                        "addr:housenumber": "33"
+                    },
+                    "distance": 61047.8643618,
+                    "sims": 0.775775484971859
+                },
+                {
+                    "id": 12419888762,
+                    "tags": {
+                        "addr:street": "Lochiel Avenue",
+                        "addr:housenumber": "59B"
+                    },
+                    "distance": 34396.5819088,
+                    "sims": 0.7746042667876146
+                },
+                {
+                    "id": 12414284504,
+                    "tags": {
+                        "addr:street": "Albatross Avenue",
+                        "addr:housenumber": "12"
+                    },
+                    "distance": 16634.77543033,
+                    "sims": 0.7732970770113872
+                },
+                {
+                    "id": 12414286021,
+                    "tags": {
+                        "addr:street": "Albatross Avenue",
+                        "addr:housenumber": "6"
+                    },
+                    "distance": 16559.53687514,
+                    "sims": 0.7715867213217767
+                }
+            ]
+        }
+    }
+}

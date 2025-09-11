@@ -15,7 +15,7 @@ class QueryResultsParser:
         self.insertion_time = self.data.get("insertion_time", 0)
         self.index_creation_time = self.data.get("index_creation", None)["time"]
         self.query_results = self.data.get("query_results", {})
-        self._st_model = SEMANTIC
+        self._st_model = SEMANTIC_MODEL
 
     def _load_json(self) -> Dict:
         if not os.path.exists(self.json_path):

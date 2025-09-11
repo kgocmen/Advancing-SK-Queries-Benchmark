@@ -11,8 +11,8 @@ class SemanticEmbedder:
         self,
         input_csv: str,
         output_npy: str,
-        model_name: str = SEMANTIC,
         chunk_size: int = 100_000,
+        model_name = SEMANTIC_MODEL,
     ):
         self.input_csv = input_csv
         self.output_npy = output_npy
