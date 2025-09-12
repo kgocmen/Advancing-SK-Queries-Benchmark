@@ -57,7 +57,6 @@ def generate_contrastive_embedding(
     input_csv: str,
     ckpt: str,
     proj_dim: int,
-    freeze_text: bool = True,
     w_text: float = 1.0,            # <-- NEW
     w_spatial: float = 1.0,         # <-- NEW
     batch_size: int = 4096,
@@ -117,7 +116,6 @@ def generate_contrastive_embedding(
     model = ContrastiveModel(
         proj_dim=proj_dim,
         spatial_hidden=128,
-        freeze_text=freeze_text,
         w_text=w_text,
         w_spatial=w_spatial,          
     ).to(device)

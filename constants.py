@@ -10,8 +10,7 @@ DB_PARAMS = {
 }
 
 CONTRASTIVE = {
-    "ckpt": "./contrastive/model_mlp_d384.pt",
-    "freeze_text": True,
+    "ckpt": "./contrastive/d128.pt",
     "proj_dim": 128,
     "w_text": 1.0,
     "w_spatial": 1.0

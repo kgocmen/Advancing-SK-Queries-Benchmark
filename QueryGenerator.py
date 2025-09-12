@@ -321,7 +321,7 @@ class QueryGenerator:
         print(f"Wrote {len(queries)} {filename} queries")
 
     # ---------- Contrastive embedding helpers ----------
-    def _contrastive_encoder_init(self, ckpt: str, proj_dim: int, freeze_text: bool):
+    def _contrastive_encoder_init(self, ckpt: str, proj_dim: int, w_text: float, w_spatial: float):
         if not ckpt or not os.path.exists(ckpt):
             raise FileNotFoundError(f"Contrastive checkpoint not found: {ckpt}")
         device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -330,9 +330,8 @@ class QueryGenerator:
         self._c_model = ContrastiveModel(
             proj_dim=proj_dim,
             spatial_hidden=128,
-            freeze_text=freeze_text,
-            w_text=CONTRASTIVE.get("w_text", 1.0),
-            w_spatial=CONTRASTIVE.get("w_spatial", 1.0),
+            w_text=w_text,
+            w_spatial=w_spatial
         ).to(device)
         state = torch.load(ckpt, map_location=device)
         self._c_model.load_state_dict(state, strict=True)
@@ -369,7 +368,6 @@ def parse_args():
     # Contrastive overrides
     p.add_argument("--c-ckpt", type=str, default=CONTRASTIVE["ckpt"])
     p.add_argument("--c-proj-dim", type=int, default=CONTRASTIVE["proj_dim"])
-    p.add_argument("--c-freeze", action="store_true", default=CONTRASTIVE["freeze_text"])
     p.add_argument("--c-wtext", type=float, default=CONTRASTIVE["w_text"])
     p.add_argument("--c-wspatial", type=float, default=CONTRASTIVE["w_spatial"])
     return p.parse_args()
@@ -387,6 +385,23 @@ if __name__ == "__main__":
     POINT_COUNT = args.cnt
     INPUT_CSV = args.input
 
+    gen = QueryGenerator(
+        input_csv=args.input,
+        output_dir="./data/workloads/" + args.exp,
+        k_values=args.k,
+        radius=args.r
+    )
+
+    # Update contrastive defaults from CLI
+    CONTRASTIVE.update({
+        "ckpt": args.c_ckpt,
+        "proj_dim": args.c_proj_dim,
+        "w_text": args.c_wtext,
+        "w_spatial": args.c_wspatial
+    })
+    CONTRASTIVE_DIM = CONTRASTIVE["proj_dim"]
+
+
     print("=== Query Generator Config ===")
     print(f"Input CSV    : {args.input}")
     print(f"K Values     : {args.k}")
@@ -399,23 +414,9 @@ if __name__ == "__main__":
         print(f"Query CSV/TXT: {args.q}")
     else:
         print(f"Query CSV/TXT: Not specified.")
+    print(f"Contrastive : {CONTRASTIVE}")
     print("==============================")
-
-    gen = QueryGenerator(
-        input_csv=args.input,
-        output_dir="./data/workloads/" + args.exp,
-        k_values=args.k,
-        radius=args.r
-    )
-
-    # Update contrastive defaults from CLI
-    CONTRASTIVE.update({
-        "ckpt": args.c_ckpt,
-        "proj_dim": args.c_proj_dim,
-        "freeze_text": args.c_freeze,
-        "w_text": args.c_wtext,
-        "w_spatial": args.c_wspatial
-    })
+    
 
     ckpt_path = CONTRASTIVE["ckpt"]
     # If default placeholder is present, derive a dimensioned name
@@ -426,7 +427,8 @@ if __name__ == "__main__":
     gen._contrastive_encoder_init(
         ckpt=ckpt_path,
         proj_dim=CONTRASTIVE["proj_dim"],
-        freeze_text=CONTRASTIVE["freeze_text"],
+        w_text=CONTRASTIVE["w_text"],
+        w_spatial=CONTRASTIVE["w_spatial"]
     )
 
     # embedded and concat/contrastive query sets

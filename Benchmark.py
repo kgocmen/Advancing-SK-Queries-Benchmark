@@ -123,7 +123,6 @@ def finish_embedding_and_setup_database(func, file, length):
             input_csv=file,
             ckpt=CONTRASTIVE["ckpt"],
             proj_dim=proj_dim,
-            freeze_text=CONTRASTIVE["freeze_text"],
             w_text=CONTRASTIVE.get("w_text", 1.0),
             w_spatial=CONTRASTIVE.get("w_spatial", 1.0),
         )
@@ -207,7 +206,6 @@ def parse_args():
     # contrastive
     p.add_argument("--c-ckpt", type=str, default=CONTRASTIVE["ckpt"])
     p.add_argument("--c-proj-dim", type=int, default=CONTRASTIVE["proj_dim"])
-    p.add_argument("--c-freeze", action="store_true", default=CONTRASTIVE["freeze_text"])
     p.add_argument("--c-wtext", type=float, default=CONTRASTIVE.get("w_text", 1.0))
     p.add_argument("--c-wspatial", type=float, default=CONTRASTIVE.get("w_spatial", 1.0))
     return p.parse_args()
@@ -235,7 +233,6 @@ if __name__ == "__main__":
     CONTRASTIVE.update({
         "ckpt": ckpt_path,
         "proj_dim": args.c_proj_dim,
-        "freeze_text": args.c_freeze,
         "w_text": args.c_wtext,
         "w_spatial": args.c_wspatial
     })

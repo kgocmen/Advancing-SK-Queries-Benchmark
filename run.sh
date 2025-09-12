@@ -131,29 +131,25 @@ T="./data/melbourne_cleaned_sampled_100k.csv"
 DIMS=(256 384)
 for DIM in "${DIMS[@]}"; do
   CKPT="./contrastive/d${DIM}.pt"
-  UCKPT="./contrastive/d${DIM}_unfrozen.pt"
   echo "=== Training Contrastive DIM=${DIM} ==="
-  #$PY Contrastive.py train "$T" --epochs 7 --batch-size 256 --proj-dim "$DIM" --freeze-text --lr 1e-4 --wd 0.01 --checkpoint "$CKPT"
-  $PY Contrastive.py train "$T" --epochs 10 --batch-size 256 --proj-dim "$DIM" --lr 5e-5 --wd 0.01 --checkpoint "$UCKPT"
+  $PY Contrastive.py train "$T" --epochs 7 --batch-size 256 --proj-dim "$DIM" --lr 1e-4 --wd 0.01 --checkpoint "$CKPT"
 done
 train
 
 #: <<'EXP-9'
 DIMS=(128 256 384)
-WEIGHTS=("1.0 0.75")
-#WEIGHTS=("1.0 1.0" "1.0 0.1" "0.1 1.0" "1.0 0.5" "0.5 1.0")
+WEIGHTS=("1.0 1.0" "1.0 0.75" "1.0 0.5" "1.0 0.25" "1.0 0.0")
 for DIM in "${DIMS[@]}"; do
   CKPT="./contrastive/d${DIM}.pt"
-  UCKPT="./contrastive/d${DIM}_unfrozen.pt"
   for W in "${WEIGHTS[@]}"; do
     WT=$(echo "$W" | cut -d' ' -f1)
     WS=$(echo "$W" | cut -d' ' -f2)
     EXP="${CONTR}_k${K}_d${DIM}_wt${WT}_ws${WS}"
     echo "=== Running EXP=${EXP} ==="
     $PY QueryGenerator.py --exp "$EXP" --so $DS $CUS --k $K --input "$INPUT" \
-      --c-ckpt "$CKPT" --c-proj-dim "$DIM" --c-freeze --c-wtext "$WT" --c-wspatial "$WS"
+      --c-ckpt "$CKPT" --c-proj-dim "$DIM" --c-wtext "$WT" --c-wspatial "$WS"
     $PY Benchmark.py     --exp "$EXP" --so $DS $CUS --k $K --input "$INPUT" --sce "$CONTR" --idx "$H" \
-      --c-ckpt "$CKPT" --c-proj-dim "$DIM" --c-freeze --c-wtext "$WT" --c-wspatial "$WS"
+      --c-ckpt "$CKPT" --c-proj-dim "$DIM" --c-wtext "$WT" --c-wspatial "$WS"
     $PY ResultReader.py  --exp "$EXP" --so $DS $CUS --k $K --sce "$CONTR"
   done
 done

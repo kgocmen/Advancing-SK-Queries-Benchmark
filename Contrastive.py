@@ -82,16 +82,14 @@ class ContrastiveModel(nn.Module):
         proj_dim: int = 128,
         spatial_hidden: int = 128,
         sin_bands: List[float] = (1.0, 2.0, 4.0, 8.0),
-        freeze_text: bool = True,
         w_text: float = 1.0,
         w_spatial: float = 1.0,
     ):
         super().__init__()
         self.text_encoder = AutoModel.from_pretrained(SEMANTIC)
         self.text_proj = nn.Linear(self.text_encoder.config.hidden_size, proj_dim)
-        if freeze_text:
-            for p in self.text_encoder.parameters():
-                p.requires_grad = False
+        for p in self.text_encoder.parameters():
+            p.requires_grad = False  
 
         self.loc_encoder = SinusoidalSpatial(output_dim=proj_dim, hidden_dim=spatial_hidden, bands=tuple(sin_bands))
         self.logit_scale = nn.Parameter(torch.tensor(math.log(1/0.07), dtype=torch.float32))
@@ -177,7 +175,6 @@ def train(args):
         proj_dim=args.proj_dim,
         spatial_hidden=args.spatial_hidden,
         sin_bands=args.sin_bands,
-        freeze_text=args.freeze_text,
         w_text=args.w_text,
         w_spatial=args.w_spatial,
     ).to(device)
@@ -210,8 +207,7 @@ def encode(args):
     model = ContrastiveModel(
         proj_dim=args.proj_dim,
         spatial_hidden=args.spatial_hidden,
-        sin_bands=args.sin_bands,
-        freeze_text=args.freeze_text,
+        sin_bands=args.sin_bands
     ).to(device)
     model.load_state_dict(torch.load(args.checkpoint, map_location=device))
     model.eval()
@@ -239,8 +235,7 @@ def bench(args):
     model = ContrastiveModel(
         proj_dim=args.proj_dim,
         spatial_hidden=args.spatial_hidden,
-        sin_bands=args.sin_bands,
-        freeze_text=args.freeze_text,
+        sin_bands=args.sin_bands
     ).to(device)
     model.load_state_dict(torch.load(args.checkpoint, map_location=device))
     model.eval()
@@ -279,7 +274,6 @@ def build_parser():
         sp.add_argument("--spatial-hidden", type=int, default=128)
         sp.add_argument("--sin-bands", type=float, nargs="+", default=[1.0, 2.0, 4.0, 8.0],
                         help="Frequency bands for sinusoidal encoding (e.g., 1 2 4 8)")
-        sp.add_argument("--freeze-text", action="store_true")
         sp.add_argument("--max-len", type=int, default=64)
         sp.add_argument("--w-text", type=float, default=1.0)
         sp.add_argument("--w-spatial", type=float, default=1.0)
