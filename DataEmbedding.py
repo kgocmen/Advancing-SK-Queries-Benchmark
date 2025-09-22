@@ -60,7 +60,6 @@ def generate_contrastive_embedding(
     w_text: float = 1.0,            # <-- NEW
     w_spatial: float = 1.0,         # <-- NEW
     batch_size: int = 4096,
-    workers: int = 4,
 ):
     # --- load only what we need
     df = pd.read_csv(input_csv, low_memory=False)
@@ -96,7 +95,7 @@ def generate_contrastive_embedding(
 
     # --- caching path: include ckpt tag + weights to avoid collisions
     ck_tag = os.path.splitext(os.path.basename(ckpt))[0]
-    out_path = f"./contrastive/{EXPERIMENT}_{ck_tag}_wt{w_text}_ws{w_spatial}.npy"
+    out_path = f"./contrastive/{ck_tag}_wt{w_text}_ws{w_spatial}.npy"
     os.makedirs(os.path.dirname(out_path), exist_ok=True)
 
     # reuse cache if shape matches

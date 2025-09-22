@@ -1,0 +1,177 @@
+=== Query Generator Config ===
+Input CSV    : ./data/istanbul_cleaned.csv
+K Values     : [1, 10]
+Lambda (λ)   : 2
+Experiment   : istanbul_final2
+Source       : ['custom']
+Radius       : 20000
+Point Count  : 50
+Query CSV/TXT: data/queries/istanbul.csv
+Contrastive : {'ckpt': './contrastive/istanbul_d384.pt', 'proj_dim': 384, 'w_text': 1.0, 'w_spatial': 0.1}
+==============================
+Wrote 50 custom_queries_k1.sql queries
+Wrote 50 custom_queries_k10.sql queries
+Wrote 50 custom_embedded_queries_k1.sql queries
+Wrote 50 custom_embedded_queries_k10.sql queries
+Wrote 50 custom_concat_embedded_queries_k1.sql queries
+Wrote 50 custom_concat_embedded_queries_k10.sql queries
+Wrote 50 custom_contrastive_embedded_queries_k1.sql queries
+Wrote 50 custom_contrastive_embedded_queries_k10.sql queries
+Custom queries written to ./data/workloads/istanbul_final2
+Nothing created from the input file!
+=== Benchmark Config ===
+Scenario     : embedded
+Input CSV    : ./data/istanbul_cleaned.csv
+K Values     : [1, 10]
+Lambda (λ)   : 2
+Index Type   : hnsw
+Experiment   : istanbul_final2
+Source       : ['custom']
+Contrastive  : {'ckpt': './contrastive/istanbul_d384.pt', 'proj_dim': 384, 'w_text': 1.0, 'w_spatial': 0.1}
+========================
+./data/istanbul_cleaned.csv has 85817 rows.
+Running scenario: spatial_and_pgvector_embedding on custom, k=1
+Semantic Embeddings: True
+0 seconds for semantic embedding.
+Table 'PoIs' constructed.
+Inserted 85817 records in 67.48 seconds (1271.73 records/s)
+All indexes created in: 14.018577098846436
+All queries executed.
+Results saved to ./results/istanbul_final2/custom_spatial_and_pgvector_embedding_results_k1.json
+
+Running scenario: spatial_and_pgvector_embedding on custom, k=10
+Semantic Embeddings: True
+0 seconds for semantic embedding.
+Table 'PoIs' constructed.
+Inserted 85817 records in 67.49 seconds (1271.61 records/s)
+All indexes created in: 13.891079187393188
+All queries executed.
+Results saved to ./results/istanbul_final2/custom_spatial_and_pgvector_embedding_results_k10.json
+
+Running scenario: concat_embedding on custom, k=1
+Semantic Embeddings: True
+0 seconds for semantic embedding.
+Generating spatial-only embeddings
+Processing rows 0 to 85817
+2.273534059524536 seconds for spatial embedding.
+Table 'PoIs' constructed.
+Inserted 85817 records in 69.66 seconds (1231.89 records/s)
+All indexes created in: 15.300214767456055
+All queries executed.
+Results saved to ./results/istanbul_final2/custom_concat_embedding_results_k1.json
+
+Running scenario: concat_embedding on custom, k=10
+Semantic Embeddings: True
+0 seconds for semantic embedding.
+Spatial Embeddings: True
+0 seconds for spatial embedding.
+Table 'PoIs' constructed.
+Inserted 85817 records in 70.92 seconds (1209.97 records/s)
+All indexes created in: 15.510868549346924
+All queries executed.
+Results saved to ./results/istanbul_final2/custom_concat_embedding_results_k10.json
+
+Running scenario: contrastive_embedding on custom, k=1
+Building contrastive embeddings…
+Created contrastive embeddings: ./contrastive/istanbul_d384_wt1.0_ws0.1.npy  (85817, 384)
+Table 'PoIs' constructed.
+Inserted 85817 records in 69.84 seconds (1228.78 records/s)
+All indexes created in: 15.132223844528198
+All queries executed.
+Results saved to ./results/istanbul_final2/custom_contrastive_embedding_results_k1.json
+
+Running scenario: contrastive_embedding on custom, k=10
+Building contrastive embeddings…
+Contrastive embeddings already exist: ./contrastive/istanbul_d384_wt1.0_ws0.1.npy  (85817, 384)
+Table 'PoIs' constructed.
+Inserted 85817 records in 68.94 seconds (1244.76 records/s)
+All indexes created in: 15.137972593307495
+All queries executed.
+Results saved to ./results/istanbul_final2/custom_contrastive_embedding_results_k10.json
+
+=== Result Reader Config ===
+Scenario     : embedded
+Experiment   : istanbul_final2
+Source(s)    : ['custom']
+K Values     : [1, 10]
+============================
+source: custom, k: 1 
+
+Saved line chart: ./results/istanbul_final2/plots/custom_k1_execution_embedded.png
+Saved bars chart: ./results/istanbul_final2/plots/custom_k1_insertion_indexing_embedded.png
+Saved semantic coherence line chart: ./results/istanbul_final2/plots/custom_k1_coherence_embedded.png
+Saved spatial range line chart: ./results/istanbul_final2/plots/custom_k1_spatial_range_embedded.png
+source: custom, k: 10 
+
+Saved line chart: ./results/istanbul_final2/plots/custom_k10_execution_embedded.png
+Saved bars chart: ./results/istanbul_final2/plots/custom_k10_insertion_indexing_embedded.png
+Saved semantic coherence line chart: ./results/istanbul_final2/plots/custom_k10_coherence_embedded.png
+Saved spatial range line chart: ./results/istanbul_final2/plots/custom_k10_spatial_range_embedded.png
+=== Query Generator Config ===
+Input CSV    : ./data/istanbul_cleaned.csv
+K Values     : [1, 10]
+Lambda (λ)   : 2
+Experiment   : istanbul_final_contrastive
+Source       : ['custom']
+Radius       : 20000
+Point Count  : 50
+Query CSV/TXT: data/queries/istanbul.csv
+Contrastive : {'ckpt': './contrastive/istanbul_d384.pt', 'proj_dim': 384, 'w_text': 1.0, 'w_spatial': 0.05}
+==============================
+Wrote 50 custom_queries_k1.sql queries
+Wrote 50 custom_queries_k10.sql queries
+Wrote 50 custom_embedded_queries_k1.sql queries
+Wrote 50 custom_embedded_queries_k10.sql queries
+Wrote 50 custom_concat_embedded_queries_k1.sql queries
+Wrote 50 custom_concat_embedded_queries_k10.sql queries
+Wrote 50 custom_contrastive_embedded_queries_k1.sql queries
+Wrote 50 custom_contrastive_embedded_queries_k10.sql queries
+Custom queries written to ./data/workloads/istanbul_final_contrastive
+Nothing created from the input file!
+=== Benchmark Config ===
+Scenario     : contrast
+Input CSV    : ./data/istanbul_cleaned.csv
+K Values     : [1, 10]
+Lambda (λ)   : 2
+Index Type   : hnsw
+Experiment   : istanbul_final_contrastive
+Source       : ['custom']
+Contrastive  : {'ckpt': './contrastive/istanbul_d384.pt', 'proj_dim': 384, 'w_text': 1.0, 'w_spatial': 0.05}
+========================
+./data/istanbul_cleaned.csv has 85817 rows.
+Running scenario: contrastive_embedding on custom, k=1
+Building contrastive embeddings…
+Created contrastive embeddings: ./contrastive/istanbul_d384_wt1.0_ws0.05.npy  (85817, 384)
+Table 'PoIs' constructed.
+Inserted 85817 records in 85.85 seconds (999.58 records/s)
+All indexes created in: 16.465285778045654
+All queries executed.
+Results saved to ./results/istanbul_final_contrastive/custom_contrastive_embedding_results_k1.json
+
+Running scenario: contrastive_embedding on custom, k=10
+Building contrastive embeddings…
+Contrastive embeddings already exist: ./contrastive/istanbul_d384_wt1.0_ws0.05.npy  (85817, 384)
+Table 'PoIs' constructed.
+Inserted 85817 records in 78.08 seconds (1099.12 records/s)
+All indexes created in: 16.921590566635132
+All queries executed.
+Results saved to ./results/istanbul_final_contrastive/custom_contrastive_embedding_results_k10.json
+
+=== Result Reader Config ===
+Scenario     : contrast
+Experiment   : istanbul_final_contrastive
+Source(s)    : ['custom']
+K Values     : [1, 10]
+============================
+source: custom, k: 1 
+
+Saved line chart: ./results/istanbul_final_contrastive/plots/custom_k1_execution_embedded.png
+Saved bars chart: ./results/istanbul_final_contrastive/plots/custom_k1_insertion_indexing_embedded.png
+Saved semantic coherence line chart: ./results/istanbul_final_contrastive/plots/custom_k1_coherence_embedded.png
+Saved spatial range line chart: ./results/istanbul_final_contrastive/plots/custom_k1_spatial_range_embedded.png
+source: custom, k: 10 
+
+Saved line chart: ./results/istanbul_final_contrastive/plots/custom_k10_execution_embedded.png
+Saved bars chart: ./results/istanbul_final_contrastive/plots/custom_k10_insertion_indexing_embedded.png
+Saved semantic coherence line chart: ./results/istanbul_final_contrastive/plots/custom_k10_coherence_embedded.png
+Saved spatial range line chart: ./results/istanbul_final_contrastive/plots/custom_k10_spatial_range_embedded.png

@@ -1,0 +1,752 @@
+{
+    "insertion_time": 76.96102547645569,
+    "index_creation": {
+        "func": [
+            "CREATE INDEX IF NOT EXISTS idx_pois_embedding ON PoIs USING hnsw (embedding vector_cosine_ops) WITH (m = 16, ef_construction = 64);"
+        ],
+        "time": 34.25555753707886
+    },
+    "query_results": {
+        "0": {
+            "execution_time": 0.1851186752319336,
+            "results": [
+                {
+                    "id": 11404214153,
+                    "tags": {
+                        "name": "Acupuncture Herbal Medicine",
+                        "healthcare": "alternative",
+                        "addr:street": "High Street",
+                        "addr:housenumber": "297"
+                    },
+                    "distance": 3634.64627457,
+                    "sims": 0.6137229434417022
+                }
+            ]
+        },
+        "1": {
+            "execution_time": 0.1845722198486328,
+            "results": [
+                {
+                    "id": 6237887803,
+                    "tags": {
+                        "name": "Readings",
+                        "shop": "books"
+                    },
+                    "distance": 4712.10607486,
+                    "sims": 0.6762237111589703
+                }
+            ]
+        },
+        "2": {
+            "execution_time": 0.18547749519348145,
+            "results": [
+                {
+                    "id": 6403296362,
+                    "tags": {
+                        "amenity": "restaurant"
+                    },
+                    "distance": 12088.30997019,
+                    "sims": 0.7939707741668194
+                }
+            ]
+        },
+        "3": {
+            "execution_time": 0.18638825416564941,
+            "results": [
+                {
+                    "id": 6741639490,
+                    "tags": {
+                        "tourism": "artwork"
+                    },
+                    "distance": 1869.1109788,
+                    "sims": 0.7497643380935917
+                }
+            ]
+        },
+        "4": {
+            "execution_time": 0.1887049674987793,
+            "results": [
+                {
+                    "id": 12419905723,
+                    "tags": {
+                        "addr:street": "Mt Dandenong Tourist Road",
+                        "addr:housenumber": "1548-1552"
+                    },
+                    "distance": 19628.47773815,
+                    "sims": 0.5072885725658601
+                }
+            ]
+        },
+        "5": {
+            "execution_time": 0.1862797737121582,
+            "results": [
+                {
+                    "id": 12420348557,
+                    "tags": {
+                        "addr:street": "Creek Circuit",
+                        "addr:housenumber": "39"
+                    },
+                    "distance": 52145.41340433,
+                    "sims": 0.5053758483419212
+                }
+            ]
+        },
+        "6": {
+            "execution_time": 0.18579697608947754,
+            "results": [
+                {
+                    "id": 9018355044,
+                    "tags": {
+                        "name": "Pharmasave Monbulk Pharmacy",
+                        "amenity": "pharmacy",
+                        "addr:street": "Main Street",
+                        "addr:housenumber": "98"
+                    },
+                    "distance": 41059.10854214,
+                    "sims": 0.7091931489350481
+                }
+            ]
+        },
+        "7": {
+            "execution_time": 0.18349361419677734,
+            "results": [
+                {
+                    "id": 6138840893,
+                    "tags": {
+                        "name": "Vacation",
+                        "amenity": "cafe",
+                        "cuisine": "coffee_shop",
+                        "takeaway": "yes",
+                        "check_date": "2025-02-12",
+                        "diet:vegan": "yes",
+                        "wheelchair": "yes",
+                        "opening_hours": "Mo-Fr 06:30-14:00; Sa,Su 07:00-14:00",
+                        "indoor_seating": "yes",
+                        "diet:vegetarian": "yes",
+                        "payment:debit_cards": "yes",
+                        "payment:credit_cards": "yes"
+                    },
+                    "distance": 1800.34474743,
+                    "sims": 0.6787812944595012
+                }
+            ]
+        },
+        "8": {
+            "execution_time": 0.18491816520690918,
+            "results": [
+                {
+                    "id": 2911249230,
+                    "tags": {
+                        "amenity": "fast_food",
+                        "cuisine": "fish_and_chips"
+                    },
+                    "distance": 8987.54595923,
+                    "sims": 0.6945434833655046
+                }
+            ]
+        },
+        "9": {
+            "execution_time": 0.18502306938171387,
+            "results": [
+                {
+                    "id": 12413695247,
+                    "tags": {
+                        "addr:street": "Copernicus Circuit",
+                        "addr:housenumber": "17"
+                    },
+                    "distance": 45446.32906004,
+                    "sims": 0.5175867964275683
+                }
+            ]
+        },
+        "10": {
+            "execution_time": 0.189927339553833,
+            "results": [
+                {
+                    "id": 9135519890,
+                    "tags": {
+                        "name": "Brew Tower Museum",
+                        "tourism": "museum"
+                    },
+                    "distance": 1851.83455608,
+                    "sims": 0.7572530832004137
+                }
+            ]
+        },
+        "11": {
+            "execution_time": 0.1862325668334961,
+            "results": [
+                {
+                    "id": 1453185997,
+                    "tags": {
+                        "shop": "supermarket"
+                    },
+                    "distance": 27468.87514492,
+                    "sims": 0.801647282334098
+                }
+            ]
+        },
+        "12": {
+            "execution_time": 0.18509531021118164,
+            "results": [
+                {
+                    "id": 5222610068,
+                    "tags": {
+                        "mtb": "yes",
+                        "hiking": "yes",
+                        "tourism": "information",
+                        "information": "guidepost"
+                    },
+                    "distance": 35955.35782718,
+                    "sims": 0.4178772764498795
+                }
+            ]
+        },
+        "13": {
+            "execution_time": 0.19116640090942383,
+            "results": [
+                {
+                    "id": 6017236248,
+                    "tags": {
+                        "name": "G&B Motors",
+                        "shop": "car_repair"
+                    },
+                    "distance": 7586.33603255,
+                    "sims": 0.6342639705100053
+                }
+            ]
+        },
+        "14": {
+            "execution_time": 0.18700838088989258,
+            "results": [
+                {
+                    "id": 2672755753,
+                    "tags": {
+                        "access": "private",
+                        "amenity": "parking_space",
+                        "parking": "surface",
+                        "capacity": "1",
+                        "survey:date": "2014-02-15"
+                    },
+                    "distance": 3964.0713054,
+                    "sims": 0.5832851106907463
+                }
+            ]
+        },
+        "15": {
+            "execution_time": 0.18515563011169434,
+            "results": [
+                {
+                    "id": 7844240440,
+                    "tags": {
+                        "leisure": "park"
+                    },
+                    "distance": 10680.26580332,
+                    "sims": 0.7856759875932994
+                }
+            ]
+        },
+        "16": {
+            "execution_time": 0.19298863410949707,
+            "results": [
+                {
+                    "id": 12414335551,
+                    "tags": {
+                        "addr:street": "Adriatic Circuit",
+                        "addr:housenumber": "54"
+                    },
+                    "distance": 49570.05453515,
+                    "sims": 0.7036758308024404
+                }
+            ]
+        },
+        "17": {
+            "execution_time": 0.19104242324829102,
+            "results": [
+                {
+                    "id": 6033469818,
+                    "tags": {
+                        "name": "D&K",
+                        "shop": "seafood"
+                    },
+                    "distance": 7957.26695708,
+                    "sims": 0.7790775500079267
+                }
+            ]
+        },
+        "18": {
+            "execution_time": 0.18551158905029297,
+            "results": [
+                {
+                    "id": 2166651124,
+                    "tags": {
+                        "building": "yes",
+                        "addr:unit": "5",
+                        "addr:street": "Albert Street",
+                        "addr:postcode": "3195",
+                        "addr:housenumber": "111"
+                    },
+                    "distance": 25152.01211512,
+                    "sims": 0.5997976541760422
+                }
+            ]
+        },
+        "19": {
+            "execution_time": 0.18427681922912598,
+            "results": [
+                {
+                    "id": 10690797497,
+                    "tags": {
+                        "bus": "yes",
+                        "name": "Merrifield Park/Balmain Road",
+                        "highway": "bus_stop",
+                        "public_transport": "platform"
+                    },
+                    "distance": 31892.19406205,
+                    "sims": 0.7540189340182641
+                }
+            ]
+        },
+        "20": {
+            "execution_time": 0.18395781517028809,
+            "results": [
+                {
+                    "id": 4064857397,
+                    "tags": {
+                        "name": "Wine Bar",
+                        "amenity": "pub"
+                    },
+                    "distance": 5174.53564499,
+                    "sims": 0.7735864542557622
+                }
+            ]
+        },
+        "21": {
+            "execution_time": 0.18282771110534668,
+            "results": [
+                {
+                    "id": 711750998,
+                    "tags": {
+                        "amenity": "cafe"
+                    },
+                    "distance": 3112.78933647,
+                    "sims": 0.7778011494157179
+                }
+            ]
+        },
+        "22": {
+            "execution_time": 0.1872544288635254,
+            "results": [
+                {
+                    "id": 6970781361,
+                    "tags": {
+                        "name": "Captain & Co.",
+                        "source": "survey",
+                        "amenity": "fast_food",
+                        "cuisine": "fish_and_chips",
+                        "website": "www.captainandcofishbar.com.au",
+                        "addr:street": "Bay Street",
+                        "addr:suburb": "Brighton",
+                        "addr:postcode": "3186",
+                        "addr:housenumber": "310",
+                        "diet:gluten_free": "yes"
+                    },
+                    "distance": 12532.41374761,
+                    "sims": 0.6565487794222089
+                }
+            ]
+        },
+        "23": {
+            "execution_time": 0.1893751621246338,
+            "results": [
+                {
+                    "id": 12414962923,
+                    "tags": {
+                        "addr:street": "Creamery Place",
+                        "addr:housenumber": "3"
+                    },
+                    "distance": 50138.73046305,
+                    "sims": 0.7240909122201558
+                }
+            ]
+        },
+        "24": {
+            "execution_time": 0.18525934219360352,
+            "results": [
+                {
+                    "id": 3909127668,
+                    "tags": {
+                        "name": "Book Barn",
+                        "shop": "books"
+                    },
+                    "distance": 60521.09140652,
+                    "sims": 0.7714305520057733
+                }
+            ]
+        },
+        "25": {
+            "execution_time": 0.1828310489654541,
+            "results": [
+                {
+                    "id": 2272227680,
+                    "tags": {
+                        "name": "St Kilda West",
+                        "place": "suburb"
+                    },
+                    "distance": 1306.2643095,
+                    "sims": 0.8296293965092515
+                }
+            ]
+        },
+        "26": {
+            "execution_time": 0.1847705841064453,
+            "results": [
+                {
+                    "id": 11813673372,
+                    "tags": {
+                        "name": "Whitehart Bar",
+                        "amenity": "bar"
+                    },
+                    "distance": 107.58284751,
+                    "sims": 0.6782893559258133
+                }
+            ]
+        },
+        "27": {
+            "execution_time": 0.18550586700439453,
+            "results": [
+                {
+                    "id": 2646549691,
+                    "tags": {
+                        "tourism": "picnic_site"
+                    },
+                    "distance": 11271.16492827,
+                    "sims": 0.48361291993051525
+                }
+            ]
+        },
+        "28": {
+            "execution_time": 0.18844366073608398,
+            "results": [
+                {
+                    "id": 5417495955,
+                    "tags": {
+                        "amenity": "toilets"
+                    },
+                    "distance": 2311.56033758,
+                    "sims": 0.8056702729660125
+                }
+            ]
+        },
+        "29": {
+            "execution_time": 0.1903386116027832,
+            "results": [
+                {
+                    "id": 11927507933,
+                    "tags": {
+                        "amenity": "bicycle_repair_station"
+                    },
+                    "distance": 7096.052097,
+                    "sims": 0.7487366352270473
+                }
+            ]
+        },
+        "30": {
+            "execution_time": 0.18440914154052734,
+            "results": [
+                {
+                    "id": 415276108,
+                    "tags": {
+                        "amenity": "parking"
+                    },
+                    "distance": 733.51763475,
+                    "sims": 0.6944530324778468
+                }
+            ]
+        },
+        "31": {
+            "execution_time": 0.185502290725708,
+            "results": [
+                {
+                    "id": 6678532310,
+                    "tags": {
+                        "name": "Shinsei Fish + Sushi",
+                        "amenity": "fast_food"
+                    },
+                    "distance": 3359.76133086,
+                    "sims": 0.5349429166453692
+                }
+            ]
+        },
+        "32": {
+            "execution_time": 0.1859292984008789,
+            "results": [
+                {
+                    "id": 10923065422,
+                    "tags": {
+                        "amenity": "childcare"
+                    },
+                    "distance": 4264.41462238,
+                    "sims": 0.7311605535554278
+                }
+            ]
+        },
+        "33": {
+            "execution_time": 0.18654227256774902,
+            "results": [
+                {
+                    "id": 5243876838,
+                    "tags": {
+                        "name": "Commonwealth Bank",
+                        "amenity": "atm"
+                    },
+                    "distance": 28911.47715652,
+                    "sims": 0.5673461573468043
+                }
+            ]
+        },
+        "34": {
+            "execution_time": 0.18717312812805176,
+            "results": [
+                {
+                    "id": 5074827121,
+                    "tags": {
+                        "name": "burgerlove",
+                        "amenity": "restaurant",
+                        "cuisine": "burger",
+                        "addr:street": "George Street",
+                        "addr:housenumber": "2"
+                    },
+                    "distance": 1215.11745368,
+                    "sims": 0.5889141592639723
+                }
+            ]
+        },
+        "35": {
+            "execution_time": 0.18411660194396973,
+            "results": [
+                {
+                    "id": 9679144752,
+                    "tags": {
+                        "name": "Fresh Flowers",
+                        "shop": "florist"
+                    },
+                    "distance": 6949.69460989,
+                    "sims": 0.7919986371994845
+                }
+            ]
+        },
+        "36": {
+            "execution_time": 0.18757319450378418,
+            "results": [
+                {
+                    "id": 6741639491,
+                    "tags": {
+                        "name": "Push Fitness",
+                        "leisure": "fitness_centre"
+                    },
+                    "distance": 3064.67735346,
+                    "sims": 0.460340862233536
+                }
+            ]
+        },
+        "37": {
+            "execution_time": 0.18489313125610352,
+            "results": [
+                {
+                    "id": 12417840899,
+                    "tags": {
+                        "addr:street": "Burge Drive",
+                        "addr:housenumber": "12"
+                    },
+                    "distance": 34049.6575415,
+                    "sims": 0.5787311132941244
+                }
+            ]
+        },
+        "38": {
+            "execution_time": 0.18654370307922363,
+            "results": [
+                {
+                    "id": 270925795,
+                    "tags": {
+                        "name": "Vermont South Library",
+                        "amenity": "library",
+                        "website": "https://www.wml.vic.gov.au/",
+                        "building": "yes"
+                    },
+                    "distance": 19856.86966828,
+                    "sims": 0.6341259290538589
+                }
+            ]
+        },
+        "39": {
+            "execution_time": 0.18900132179260254,
+            "results": [
+                {
+                    "id": 9898554816,
+                    "tags": {
+                        "name": "Tora Dumplings",
+                        "level": "0",
+                        "amenity": "restaurant",
+                        "cuisine": "japanese",
+                        "check_date": "2022-07-20"
+                    },
+                    "distance": 1101.6392712,
+                    "sims": 0.4178959633808147
+                }
+            ]
+        },
+        "40": {
+            "execution_time": 0.19121599197387695,
+            "results": [
+                {
+                    "id": 2272227680,
+                    "tags": {
+                        "name": "St Kilda West",
+                        "place": "suburb"
+                    },
+                    "distance": 1162.81123986,
+                    "sims": 0.73645128713511
+                }
+            ]
+        },
+        "41": {
+            "execution_time": 0.1914534568786621,
+            "results": [
+                {
+                    "id": 3945796048,
+                    "tags": {
+                        "ref": "1",
+                        "name": "Stop 1: Southern Cross Station, Spencer Street",
+                        "tram": "yes",
+                        "network": "PTV - Metropolitan Trams",
+                        "railway": "tram_stop",
+                        "ref:ptv": "17848",
+                        "website": "https://ptv.vic.gov.au/stop/2091",
+                        "operator": "Keolis Downer",
+                        "network:wikidata": "Q7257648",
+                        "public_transport": "stop_position",
+                        "operator:wikidata": "Q6328065"
+                    },
+                    "distance": 321.73950227,
+                    "sims": 0.5016281006779586
+                }
+            ]
+        },
+        "42": {
+            "execution_time": 0.1920156478881836,
+            "results": [
+                {
+                    "id": 4675693394,
+                    "tags": {
+                        "name": "Europa Melbourne",
+                        "name:en": "Europa Melbourne",
+                        "tourism": "hostel"
+                    },
+                    "distance": 1112.34921933,
+                    "sims": 0.4128978810019015
+                }
+            ]
+        },
+        "43": {
+            "execution_time": 0.1869199275970459,
+            "results": [
+                {
+                    "id": 7057414373,
+                    "tags": {
+                        "shop": "clothes"
+                    },
+                    "distance": 4379.43489475,
+                    "sims": 0.7942216747071411
+                }
+            ]
+        },
+        "44": {
+            "execution_time": 0.18808221817016602,
+            "results": [
+                {
+                    "id": 2425216801,
+                    "tags": {
+                        "name": "Eden Park",
+                        "place": "suburb"
+                    },
+                    "distance": 37496.71876956,
+                    "sims": 0.7039056243840245
+                }
+            ]
+        },
+        "45": {
+            "execution_time": 0.186265230178833,
+            "results": [
+                {
+                    "id": 5824763959,
+                    "tags": {
+                        "shop": "houseware"
+                    },
+                    "distance": 12397.39343934,
+                    "sims": 0.45058636844069366
+                }
+            ]
+        },
+        "46": {
+            "execution_time": 0.1877901554107666,
+            "results": [
+                {
+                    "id": 11971064021,
+                    "tags": {
+                        "name": "The Fish and Chip Shop",
+                        "shop": "kiosk",
+                        "operator": "The Baths Middle Brighton"
+                    },
+                    "distance": 11054.81294144,
+                    "sims": 0.5417253921359464
+                }
+            ]
+        },
+        "47": {
+            "execution_time": 0.18749403953552246,
+            "results": [
+                {
+                    "id": 9129657964,
+                    "tags": {
+                        "name": "Indian Takeaway Fish and Chips",
+                        "amenity": "fast_food",
+                        "cuisine": "curry"
+                    },
+                    "distance": 21593.13032748,
+                    "sims": 0.5356506428510419
+                }
+            ]
+        },
+        "48": {
+            "execution_time": 0.18780159950256348,
+            "results": [
+                {
+                    "id": 730239967,
+                    "tags": {
+                        "tourism": "hotel"
+                    },
+                    "distance": 20974.77465603,
+                    "sims": 0.7305577843562284
+                }
+            ]
+        },
+        "49": {
+            "execution_time": 0.18518495559692383,
+            "results": [
+                {
+                    "id": 4111633183,
+                    "tags": {
+                        "name": "Fielder",
+                        "railway": "halt",
+                        "wikidata": "Q5447152",
+                        "wikipedia": "en:Fielder railway station"
+                    },
+                    "distance": 50181.99522358,
+                    "sims": 0.4870174366549348
+                }
+            ]
+        }
+    }
+}

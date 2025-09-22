@@ -1,0 +1,740 @@
+{
+    "insertion_time": 17.141063451766968,
+    "index_creation": {
+        "func": [
+            "CREATE INDEX IF NOT EXISTS idx_pois_embedding ON PoIs USING hnsw (embedding vector_cosine_ops) WITH (m = 16, ef_construction = 64);"
+        ],
+        "time": 1.2733304500579834
+    },
+    "query_results": {
+        "0": {
+            "execution_time": 0.057478904724121094,
+            "results": [
+                {
+                    "id": 9280539866,
+                    "tags": {
+                        "amenity": "restaurant",
+                        "cuisine": "kebab"
+                    },
+                    "distance": 52493.69575596,
+                    "sims": 0.6263841691933483
+                }
+            ]
+        },
+        "1": {
+            "execution_time": 0.055881500244140625,
+            "results": [
+                {
+                    "id": 5211050076,
+                    "tags": {
+                        "name": "Meryem Ana Ma\u011faras\u0131",
+                        "source": "bing",
+                        "tourism": "attraction",
+                        "historic": "ruins"
+                    },
+                    "distance": 126065.83342886,
+                    "sims": 0.7295924634956049
+                }
+            ]
+        },
+        "2": {
+            "execution_time": 0.05691027641296387,
+            "results": [
+                {
+                    "id": 9609299619,
+                    "tags": {
+                        "name": "Nigde Archeological Museum",
+                        "museum": "archaeological",
+                        "tourism": "museum"
+                    },
+                    "distance": 236651.6740647,
+                    "sims": 0.7102284336634918
+                }
+            ]
+        },
+        "3": {
+            "execution_time": 0.05883455276489258,
+            "results": [
+                {
+                    "id": 8638273434,
+                    "tags": {
+                        "name": "Plaj",
+                        "natural": "beach"
+                    },
+                    "distance": 26159.96873656,
+                    "sims": 0.5853222593808015
+                }
+            ]
+        },
+        "4": {
+            "execution_time": 0.058669328689575195,
+            "results": [
+                {
+                    "id": 4541140993,
+                    "tags": {
+                        "name": "Adana mar",
+                        "shop": "supermarket",
+                        "name:tr": "Adana mar"
+                    },
+                    "distance": 4958.31591728,
+                    "sims": 0.7333847919977207
+                }
+            ]
+        },
+        "5": {
+            "execution_time": 0.05751657485961914,
+            "results": [
+                {
+                    "id": 7159568910,
+                    "tags": {
+                        "name": "Lord Market",
+                        "shop": "convenience"
+                    },
+                    "distance": 166735.0953294,
+                    "sims": 0.6002420605600227
+                }
+            ]
+        },
+        "6": {
+            "execution_time": 0.05398988723754883,
+            "results": [
+                {
+                    "id": 11290341169,
+                    "tags": {
+                        "amenity": "hospital"
+                    },
+                    "distance": 120559.7582227,
+                    "sims": 0.5859230202666125
+                }
+            ]
+        },
+        "7": {
+            "execution_time": 0.05576181411743164,
+            "results": [
+                {
+                    "id": 8938575102,
+                    "tags": {
+                        "name": "Ala\u00e7at\u0131 Muhallebicisi",
+                        "shop": "coffee"
+                    },
+                    "distance": 5449.97165465,
+                    "sims": 0.6460150095215446
+                }
+            ]
+        },
+        "8": {
+            "execution_time": 0.05919837951660156,
+            "results": [
+                {
+                    "id": 1576983160,
+                    "tags": {
+                        "name": "Hasanl\u0131",
+                        "place": "village",
+                        "name:ar": "\u0627\u0644\u0634\u064a\u062e \u062d\u0633\u0646",
+                        "old_name": "\u015eeyhhasan",
+                        "wikidata": "Q10765946",
+                        "wikipedia": "tr:Hasanl\u0131, Antakya"
+                    },
+                    "distance": 10130.1268045,
+                    "sims": 0.7007005397263395
+                }
+            ]
+        },
+        "9": {
+            "execution_time": 0.05376124382019043,
+            "results": [
+                {
+                    "id": 11337177531,
+                    "tags": {
+                        "name": "Paribu Cineverse",
+                        "amenity": "cinema"
+                    },
+                    "distance": 80610.25166384,
+                    "sims": 0.6064345728936038
+                }
+            ]
+        },
+        "10": {
+            "execution_time": 0.05804085731506348,
+            "results": [
+                {
+                    "id": 6919798793,
+                    "tags": {
+                        "shop": "seafood"
+                    },
+                    "distance": 66814.47153702,
+                    "sims": 0.7601868343019307
+                }
+            ]
+        },
+        "11": {
+            "execution_time": 0.0581202507019043,
+            "results": [
+                {
+                    "id": 5731760644,
+                    "tags": {
+                        "leisure": "park"
+                    },
+                    "distance": 6281.57513041,
+                    "sims": 0.7398694002550497
+                }
+            ]
+        },
+        "12": {
+            "execution_time": 0.056211233139038086,
+            "results": [
+                {
+                    "id": 4570960853,
+                    "tags": {
+                        "name": "C&A",
+                        "shop": "mall"
+                    },
+                    "distance": 67805.9512333,
+                    "sims": 0.7639687798041954
+                }
+            ]
+        },
+        "13": {
+            "execution_time": 0.055329084396362305,
+            "results": [
+                {
+                    "id": 12094838586,
+                    "tags": {
+                        "shop": "clothes"
+                    },
+                    "distance": 8901.30374407,
+                    "sims": 0.6521701773861761
+                }
+            ]
+        },
+        "14": {
+            "execution_time": 0.058173179626464844,
+            "results": [
+                {
+                    "id": 12102599402,
+                    "tags": {
+                        "name": "\u00c7ukurova \u00dcniversitesi \u0130lahiyat Fak\u00fcltesi",
+                        "email": "ilahiyat@cu.edu.tr",
+                        "amenity": "university",
+                        "website": "https://ilahiyat.cu.edu.tr"
+                    },
+                    "distance": 1231.12401289,
+                    "sims": 0.6141349213284204
+                }
+            ]
+        },
+        "15": {
+            "execution_time": 0.05601763725280762,
+            "results": [
+                {
+                    "id": 6699339386,
+                    "tags": {
+                        "tourism": "viewpoint"
+                    },
+                    "distance": 80767.73034584,
+                    "sims": 0.5898927985983735
+                }
+            ]
+        },
+        "16": {
+            "execution_time": 0.05659127235412598,
+            "results": [
+                {
+                    "id": 2968178943,
+                    "tags": {
+                        "name": "St George's",
+                        "amenity": "place_of_worship",
+                        "religion": "christian"
+                    },
+                    "distance": 42029.20696488,
+                    "sims": 0.6275530235500957
+                }
+            ]
+        },
+        "17": {
+            "execution_time": 0.05830574035644531,
+            "results": [
+                {
+                    "id": 1782818954,
+                    "tags": {
+                        "tourism": "hotel"
+                    },
+                    "distance": 118455.18297681,
+                    "sims": 0.7499349713016272
+                }
+            ]
+        },
+        "18": {
+            "execution_time": 0.05841946601867676,
+            "results": [
+                {
+                    "id": 11896834369,
+                    "tags": {
+                        "amenity": "bbq",
+                        "tourism": "picnic_site"
+                    },
+                    "distance": 76627.61195649,
+                    "sims": 0.4975590999530216
+                }
+            ]
+        },
+        "19": {
+            "execution_time": 0.05668926239013672,
+            "results": [
+                {
+                    "id": 1757257952,
+                    "tags": {
+                        "name": "I\u015f\u0131kkale",
+                        "historic": "ruins"
+                    },
+                    "distance": 195931.42373712,
+                    "sims": 0.7522323416279191
+                }
+            ]
+        },
+        "20": {
+            "execution_time": 0.05530881881713867,
+            "results": [
+                {
+                    "id": 7418521039,
+                    "tags": {
+                        "name": "Adana Demir Store",
+                        "shop": "clothes"
+                    },
+                    "distance": 1039.356396,
+                    "sims": 0.8100647443494483
+                }
+            ]
+        },
+        "21": {
+            "execution_time": 0.0557405948638916,
+            "results": [
+                {
+                    "id": 10109913385,
+                    "tags": {
+                        "amenity": "cafe"
+                    },
+                    "distance": 104862.97990511,
+                    "sims": 0.7560635754116888
+                }
+            ]
+        },
+        "22": {
+            "execution_time": 0.0542142391204834,
+            "results": [
+                {
+                    "id": 5802910757,
+                    "tags": {
+                        "tourism": "artwork"
+                    },
+                    "distance": 22096.63000773,
+                    "sims": 0.6725234584496451
+                }
+            ]
+        },
+        "23": {
+            "execution_time": 0.055104732513427734,
+            "results": [
+                {
+                    "id": 4582033501,
+                    "tags": {
+                        "amenity": "bus_station"
+                    },
+                    "distance": 61608.97514665,
+                    "sims": 0.7241075532244372
+                }
+            ]
+        },
+        "24": {
+            "execution_time": 0.05656886100769043,
+            "results": [
+                {
+                    "id": 1650366936,
+                    "tags": {
+                        "place": "suburb"
+                    },
+                    "distance": 124118.37529554,
+                    "sims": 0.5553945435034299
+                }
+            ]
+        },
+        "25": {
+            "execution_time": 0.05868101119995117,
+            "results": [
+                {
+                    "id": 1576983019,
+                    "tags": {
+                        "name": "G\u00f6k\u00e7eg\u00f6z",
+                        "place": "village",
+                        "wikidata": "Q10763618",
+                        "wikipedia": "tr:G\u00f6k\u00e7eg\u00f6z, Antakya"
+                    },
+                    "distance": 7557.3071295,
+                    "sims": 0.6251949071884155
+                }
+            ]
+        },
+        "26": {
+            "execution_time": 0.05321812629699707,
+            "results": [
+                {
+                    "id": 11237837337,
+                    "tags": {
+                        "shop": "furniture"
+                    },
+                    "distance": 76878.88832567,
+                    "sims": 0.5938722668252073
+                }
+            ]
+        },
+        "27": {
+            "execution_time": 0.05878400802612305,
+            "results": [
+                {
+                    "id": 9311797185,
+                    "tags": {
+                        "amenity": "restaurant"
+                    },
+                    "distance": 59478.45973959,
+                    "sims": 0.7625350557415027
+                }
+            ]
+        },
+        "28": {
+            "execution_time": 0.057376861572265625,
+            "results": [
+                {
+                    "id": 5313792334,
+                    "tags": {
+                        "name": "Park",
+                        "historic": "monument"
+                    },
+                    "distance": 199860.30125013,
+                    "sims": 0.6611180906488292
+                }
+            ]
+        },
+        "29": {
+            "execution_time": 0.05975651741027832,
+            "results": [
+                {
+                    "id": 9280539866,
+                    "tags": {
+                        "amenity": "restaurant",
+                        "cuisine": "kebab"
+                    },
+                    "distance": 51253.94698449,
+                    "sims": 0.7282890081405692
+                }
+            ]
+        },
+        "30": {
+            "execution_time": 0.05774998664855957,
+            "results": [
+                {
+                    "id": 6200877294,
+                    "tags": {
+                        "name": "Kervan Ekmek Patisserie",
+                        "shop": "bakery"
+                    },
+                    "distance": 1588.33938779,
+                    "sims": 0.586807692837266
+                }
+            ]
+        },
+        "31": {
+            "execution_time": 0.05841374397277832,
+            "results": [
+                {
+                    "id": 5216231124,
+                    "tags": {
+                        "shop": "alcohol"
+                    },
+                    "distance": 115023.26600965,
+                    "sims": 0.6181700771540711
+                }
+            ]
+        },
+        "32": {
+            "execution_time": 0.05590558052062988,
+            "results": [
+                {
+                    "id": 2973569730,
+                    "tags": {
+                        "name": "Roman Baths",
+                        "historic": "archaeological_site"
+                    },
+                    "distance": 40919.85154976,
+                    "sims": 0.6765342547575095
+                }
+            ]
+        },
+        "33": {
+            "execution_time": 0.05974078178405762,
+            "results": [
+                {
+                    "id": 4135584605,
+                    "tags": {
+                        "amenity": "nightclub"
+                    },
+                    "distance": 142869.74880034,
+                    "sims": 0.69729355605918
+                }
+            ]
+        },
+        "34": {
+            "execution_time": 0.05743670463562012,
+            "results": [
+                {
+                    "id": 12092510814,
+                    "tags": {
+                        "name": "Atat\u00fcrk Evi",
+                        "name:ja": "\u30a2\u30bf\u30c1\u30e5\u30eb\u30af\u5bb6",
+                        "tourism": "museum"
+                    },
+                    "distance": 114932.02925058,
+                    "sims": 0.6218896733588186
+                }
+            ]
+        },
+        "35": {
+            "execution_time": 0.05912661552429199,
+            "results": [
+                {
+                    "id": 4570960853,
+                    "tags": {
+                        "name": "C&A",
+                        "shop": "mall"
+                    },
+                    "distance": 1365.8384091,
+                    "sims": 0.697107517374458
+                }
+            ]
+        },
+        "36": {
+            "execution_time": 0.058405399322509766,
+            "results": [
+                {
+                    "id": 4234748790,
+                    "tags": {
+                        "name": "Vegetarian Food",
+                        "amenity": "fast_food"
+                    },
+                    "distance": 1394.70527918,
+                    "sims": 0.7840727825078088
+                }
+            ]
+        },
+        "37": {
+            "execution_time": 0.05816936492919922,
+            "results": [
+                {
+                    "id": 3050730542,
+                    "tags": {
+                        "name": "Y\u00fcr\u00fc K\u00fcnefe",
+                        "shop": "bakery"
+                    },
+                    "distance": 151232.95987807,
+                    "sims": 0.7737334775209183
+                }
+            ]
+        },
+        "38": {
+            "execution_time": 0.05544090270996094,
+            "results": [
+                {
+                    "id": 4069989148,
+                    "tags": {
+                        "shop": "electronics"
+                    },
+                    "distance": 147083.05387039,
+                    "sims": 0.77813720703125
+                }
+            ]
+        },
+        "39": {
+            "execution_time": 0.05623173713684082,
+            "results": [
+                {
+                    "id": 4135584605,
+                    "tags": {
+                        "amenity": "nightclub"
+                    },
+                    "distance": 120360.76494905,
+                    "sims": 0.7401253205575411
+                }
+            ]
+        },
+        "40": {
+            "execution_time": 0.055451154708862305,
+            "results": [
+                {
+                    "id": 4386685309,
+                    "tags": {
+                        "name": "Ak\u015femsettin",
+                        "place": "suburb"
+                    },
+                    "distance": 139894.09305199,
+                    "sims": 0.6618615384574122
+                }
+            ]
+        },
+        "41": {
+            "execution_time": 0.0572352409362793,
+            "results": [
+                {
+                    "id": 4831605469,
+                    "tags": {
+                        "shop": "coffee"
+                    },
+                    "distance": 121396.36751901,
+                    "sims": 0.7470264448993946
+                }
+            ]
+        },
+        "42": {
+            "execution_time": 0.05321478843688965,
+            "results": [
+                {
+                    "id": 11085298305,
+                    "tags": {
+                        "shop": "grocery"
+                    },
+                    "distance": 66652.6282311,
+                    "sims": 0.7541778145936411
+                }
+            ]
+        },
+        "43": {
+            "execution_time": 0.05937457084655762,
+            "results": [
+                {
+                    "id": 11372680214,
+                    "tags": {
+                        "shop": "stationery"
+                    },
+                    "distance": 2118.02297846,
+                    "sims": 0.615227557136272
+                }
+            ]
+        },
+        "44": {
+            "execution_time": 0.055495262145996094,
+            "results": [
+                {
+                    "id": 10708294533,
+                    "tags": {
+                        "name": "Mck ileti\u015fim / adana bilgisayar hastanesi",
+                        "note": "Cumhuriyet Mah. S\u00fcleyman Vahit Cad. no288/a Y\u00fcre\u011fir/adana",
+                        "shop": "mobile_phone",
+                        "fixme": "Cep telefonu ve bilgisayar bak\u0131m onar\u0131m ve al\u0131m-sat\u0131m\u0131",
+                        "phone": "+905375873214",
+                        "source": "SafeGraph;local knowledge;streetlevel imagery",
+                        "operator": "TURKCELL",
+                        "addr:city": "G\u00fcne\u015fli Mahallesi",
+                        "check_date": "2023-02-12",
+                        "addr:street": "s\u00fcleyman vahit caddesi",
+                        "payment:cash": "yes",
+                        "addr:district": "Adana",
+                        "addr:postcode": "01280",
+                        "opening_hours": "Mo-Fr 08:30-21:00",
+                        "addr:housenumber": "288/a",
+                        "addr:neighbourhood": "G\u00dcNE\u015eL\u0130 MAH. S\u00dcLEYMAN VAH\u0130T CAD. NO.288/A y\u00fcre\u011fir/adana",
+                        "payment:mastercard": "yes",
+                        "payment:debit_cards": "yes",
+                        "payment:credit_cards": "yes",
+                        "payment:cryptocurrencies": "yes"
+                    },
+                    "distance": 3943.36164796,
+                    "sims": 0.4857020957114846
+                }
+            ]
+        },
+        "45": {
+            "execution_time": 0.055565834045410156,
+            "results": [
+                {
+                    "id": 8817850286,
+                    "tags": {
+                        "name": "Akhisar",
+                        "place": "village",
+                        "wikidata": "Q10731291",
+                        "wikipedia": "tr:Akhisar, Antakya"
+                    },
+                    "distance": 12088.63350176,
+                    "sims": 0.6260734651351625
+                }
+            ]
+        },
+        "46": {
+            "execution_time": 0.05798459053039551,
+            "results": [
+                {
+                    "id": 12151593683,
+                    "tags": {
+                        "name": "Mekan Sitesi",
+                        "resort": "resort",
+                        "leisure": "resort",
+                        "addr:city": "Mersin",
+                        "addr:street": "115.Sokak",
+                        "addr:district": "Silifke",
+                        "addr:postcode": "33940",
+                        "addr:neighbourhood": "Arkum"
+                    },
+                    "distance": 13595.47571502,
+                    "sims": 0.6880146079072135
+                }
+            ]
+        },
+        "47": {
+            "execution_time": 0.0564422607421875,
+            "results": [
+                {
+                    "id": 3708195436,
+                    "tags": {
+                        "name": "G\u00f6zne Kalesi",
+                        "name:bg": "\u0413\u044c\u043e\u0437\u043d\u0435",
+                        "name:ca": "Castell de G\u00f6zne",
+                        "name:en": "G\u00f6zne Castle",
+                        "historic": "castle",
+                        "wikidata": "Q18639253",
+                        "wikipedia": "tr:G\u00f6zne Kalesi",
+                        "wikimedia_commons": "Category:G\u00f6zne Castle"
+                    },
+                    "distance": 71135.87512663,
+                    "sims": 0.6591899814636144
+                }
+            ]
+        },
+        "48": {
+            "execution_time": 0.05700182914733887,
+            "results": [
+                {
+                    "id": 5313792334,
+                    "tags": {
+                        "name": "Park",
+                        "historic": "monument"
+                    },
+                    "distance": 79603.48572625,
+                    "sims": 0.5953965214512005
+                }
+            ]
+        },
+        "49": {
+            "execution_time": 0.05242037773132324,
+            "results": [
+                {
+                    "id": 11370592057,
+                    "tags": {
+                        "name": "Co\u015far Baharat",
+                        "shop": "spices",
+                        "addr:city": "Hatay",
+                        "addr:district": "Antakya"
+                    },
+                    "distance": 14674.04587567,
+                    "sims": 0.7640036170476181
+                }
+            ]
+        }
+    }
+}

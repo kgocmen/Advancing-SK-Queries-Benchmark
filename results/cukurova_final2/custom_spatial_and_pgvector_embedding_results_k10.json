@@ -1,0 +1,5177 @@
+{
+    "insertion_time": 17.425434112548828,
+    "index_creation": {
+        "func": [
+            "CREATE INDEX IF NOT EXISTS idx_pois_geom ON PoIs USING GIST (geom);",
+            "CREATE INDEX IF NOT EXISTS idx_pois_embedding ON PoIs USING hnsw (embedding vector_cosine_ops) WITH (m = 16, ef_construction = 64);"
+        ],
+        "time": 1.1755366325378418
+    },
+    "query_results": {
+        "0": {
+            "execution_time": 0.021508216857910156,
+            "results": [
+                {
+                    "id": 5132640532,
+                    "tags": {
+                        "name": "Bayram Kebap",
+                        "amenity": "restaurant"
+                    },
+                    "distance": 1532.42967099,
+                    "sims": 0.5383992562299396
+                },
+                {
+                    "id": 5635212266,
+                    "tags": {
+                        "name": "D\u00f6nerci \u0130bo",
+                        "amenity": "restaurant",
+                        "cuisine": "kebab"
+                    },
+                    "distance": 2247.17929851,
+                    "sims": 0.518585372814406
+                },
+                {
+                    "id": 10310264109,
+                    "tags": {
+                        "name": "Erciyes Kebap",
+                        "amenity": "restaurant"
+                    },
+                    "distance": 1636.56659863,
+                    "sims": 0.5111631088477633
+                },
+                {
+                    "id": 6838335100,
+                    "tags": {
+                        "name": "Elit Kebap Salonu",
+                        "amenity": "fast_food",
+                        "cuisine": "kebab"
+                    },
+                    "distance": 6332.16326683,
+                    "sims": 0.5039646601888478
+                },
+                {
+                    "id": 6563312186,
+                    "tags": {
+                        "name": "Kebapci Mallun",
+                        "amenity": "restaurant",
+                        "cuisine": "turkish",
+                        "name:en": "Mallun Kebab"
+                    },
+                    "distance": 1616.45849323,
+                    "sims": 0.49676343991560223
+                },
+                {
+                    "id": 11286207885,
+                    "tags": {
+                        "name": "Bey Kebap Kasap",
+                        "amenity": "fast_food",
+                        "cuisine": "kebab"
+                    },
+                    "distance": 9318.64013059,
+                    "sims": 0.4951471718181554
+                },
+                {
+                    "id": 642198497,
+                    "tags": {
+                        "name": "Darda\u011fan kebap",
+                        "amenity": "fast_food",
+                        "cuisine": "kebab"
+                    },
+                    "distance": 6830.616769,
+                    "sims": 0.48834572006453625
+                },
+                {
+                    "id": 4567571197,
+                    "tags": {
+                        "name": "Lider Kebap",
+                        "amenity": "restaurant"
+                    },
+                    "distance": 1539.46075276,
+                    "sims": 0.4877631141168066
+                },
+                {
+                    "id": 6838335099,
+                    "tags": {
+                        "name": "Eymen Kebap Salonu",
+                        "amenity": "fast_food",
+                        "cuisine": "kebab"
+                    },
+                    "distance": 6365.49234709,
+                    "sims": 0.48364303393450014
+                },
+                {
+                    "id": 5398040721,
+                    "tags": {
+                        "name": "ali baba kebab",
+                        "amenity": "restaurant"
+                    },
+                    "distance": 7295.20353992,
+                    "sims": 0.4796597780825882
+                }
+            ]
+        },
+        "1": {
+            "execution_time": 0.018588781356811523,
+            "results": [
+                {
+                    "id": 6174746585,
+                    "tags": {
+                        "tourism": "viewpoint"
+                    },
+                    "distance": 9252.00572917,
+                    "sims": 0.5736046017429373
+                },
+                {
+                    "id": 6174746485,
+                    "tags": {
+                        "tourism": "viewpoint"
+                    },
+                    "distance": 9379.21036336,
+                    "sims": 0.5736046017429373
+                },
+                {
+                    "id": 11197873537,
+                    "tags": {
+                        "fixme": "Needs more information",
+                        "tourism": "attraction"
+                    },
+                    "distance": 2690.14001512,
+                    "sims": 0.5655935304146419
+                },
+                {
+                    "id": 8269591018,
+                    "tags": {
+                        "tourism": "caravan_site"
+                    },
+                    "distance": 10523.19026051,
+                    "sims": 0.5449651531719765
+                },
+                {
+                    "id": 8315417318,
+                    "tags": {
+                        "name": "Kent Tarihi M\u00fczesi",
+                        "tourism": "museum",
+                        "wikidata": "Q28221092",
+                        "wikipedia": "en:Mersin Urban History Museum",
+                        "wikimedia_commons": "Category:Mersin Urban History Museum"
+                    },
+                    "distance": 454.23173516,
+                    "sims": 0.5330626208447888
+                },
+                {
+                    "id": 2221940520,
+                    "tags": {
+                        "name": "Mersin Serberst B\u00f6lge",
+                        "name:en": "Mersin Free Zone",
+                        "tourism": "information",
+                        "board_type": "welcome_sign",
+                        "information": "board"
+                    },
+                    "distance": 3518.75365257,
+                    "sims": 0.5203918005671122
+                },
+                {
+                    "id": 3989449876,
+                    "tags": {
+                        "name": "Mermar Market",
+                        "shop": "convenience",
+                        "addr:city": "Mezitli/Mersin"
+                    },
+                    "distance": 8536.47338042,
+                    "sims": 0.5010998254298652
+                },
+                {
+                    "id": 7023130942,
+                    "tags": {
+                        "name": "Mersin Uluslararas\u0131 M\u00fczik Festivali",
+                        "tourism": "information",
+                        "operator": "Sanat Etkinlikleri Derne\u011fi",
+                        "addr:city": "Mersin",
+                        "information": "office",
+                        "addr:district": "Akdeniz",
+                        "addr:neighbourhood": "K\u00fclt\u00fcr Mahallesi"
+                    },
+                    "distance": 1121.05167463,
+                    "sims": 0.49827927268950445
+                },
+                {
+                    "id": 6186053872,
+                    "tags": {
+                        "name": "29 Haziran 2017",
+                        "leisure": "park"
+                    },
+                    "distance": 3871.46648212,
+                    "sims": 0.49810409444196346
+                },
+                {
+                    "id": 11900583080,
+                    "tags": {
+                        "name": "Nacar Evi",
+                        "tourism": "attraction",
+                        "addr:city": "Mersin",
+                        "addr:street": "Atat\u00fcrk Caddesi",
+                        "addr:district": "Akdeniz",
+                        "addr:neighbourhood": "K\u00fclt\u00fcr Mahallesi"
+                    },
+                    "distance": 1213.78559602,
+                    "sims": 0.49491008903809464
+                }
+            ]
+        },
+        "2": {
+            "execution_time": 0.023986101150512695,
+            "results": [
+                {
+                    "id": 12840609718,
+                    "tags": {
+                        "name": "Necmi Asfuroglu Antakya Museum",
+                        "museum": "history",
+                        "tourism": "museum"
+                    },
+                    "distance": 1771.55415884,
+                    "sims": 0.5439237727733397
+                },
+                {
+                    "id": 4678305526,
+                    "tags": {
+                        "name": "T\u00fcrbe",
+                        "historic": "tomb"
+                    },
+                    "distance": 1338.10472681,
+                    "sims": 0.43486048349468676
+                },
+                {
+                    "id": 9525060548,
+                    "tags": {
+                        "name": "Ruined Arch",
+                        "access": "yes",
+                        "historic": "fort"
+                    },
+                    "distance": 2144.74921124,
+                    "sims": 0.4252105467963365
+                },
+                {
+                    "id": 4678305518,
+                    "tags": {
+                        "name": "Hz. H\u0131d\u0131r Makam\u0131 T\u00fcrbesi",
+                        "historic": "tomb"
+                    },
+                    "distance": 589.19798446,
+                    "sims": 0.39705082028703853
+                },
+                {
+                    "id": 7299169129,
+                    "tags": {
+                        "name": "Bozo\u011flan Malikanesi",
+                        "access": "yes",
+                        "historic": "manor"
+                    },
+                    "distance": 13148.22370295,
+                    "sims": 0.3780152554002738
+                },
+                {
+                    "id": 9673966653,
+                    "tags": {
+                        "name": "Old French town",
+                        "tourism": "attraction"
+                    },
+                    "distance": 213.94139569,
+                    "sims": 0.3745825325569324
+                },
+                {
+                    "id": 10752712802,
+                    "tags": {
+                        "name": "Charon",
+                        "historic": "memorial",
+                        "memorial": "sculpture"
+                    },
+                    "distance": 2065.41152854,
+                    "sims": 0.3698649492176094
+                },
+                {
+                    "id": 7969149935,
+                    "tags": {
+                        "name": "\u015eih Yusuf Ebu TIRHAN",
+                        "historic": "tomb"
+                    },
+                    "distance": 6348.8972446,
+                    "sims": 0.35688047947675905
+                },
+                {
+                    "id": 6994684643,
+                    "tags": {
+                        "name": "Ferito\u011flu Ya\u015far Havare T\u00fcrbesi",
+                        "historic": "tomb"
+                    },
+                    "distance": 16337.00498548,
+                    "sims": 0.34732486603181423
+                },
+                {
+                    "id": 2619402922,
+                    "tags": {
+                        "name": "G\u00fcneys\u00f6\u011f\u00fct",
+                        "place": "village",
+                        "wikidata": "Q10764058",
+                        "wikipedia": "tr:G\u00fcneys\u00f6\u011f\u00fct, Defne"
+                    },
+                    "distance": 5026.51894224,
+                    "sims": 0.32734861702415397
+                }
+            ]
+        },
+        "3": {
+            "execution_time": 0.01294398307800293,
+            "results": [
+                {
+                    "id": 6681075986,
+                    "tags": {
+                        "name": "Wonasis Resort & Aqua Spa",
+                        "tourism": "hotel"
+                    },
+                    "distance": 10275.01494747,
+                    "sims": 0.38391673139732374
+                },
+                {
+                    "id": 11237429937,
+                    "tags": {
+                        "tourism": "hostel"
+                    },
+                    "distance": 16014.62618772,
+                    "sims": 0.3206580242357503
+                },
+                {
+                    "id": 5699036493,
+                    "tags": {
+                        "name": "Turuva Apart Otel",
+                        "tourism": "hotel"
+                    },
+                    "distance": 16604.44112843,
+                    "sims": 0.31349185996125484
+                },
+                {
+                    "id": 9389449247,
+                    "tags": {
+                        "name": "Alata",
+                        "place": "suburb"
+                    },
+                    "distance": 607.32281303,
+                    "sims": 0.3057531721952679
+                },
+                {
+                    "id": 9389449243,
+                    "tags": {
+                        "name": "Barbaros",
+                        "place": "suburb"
+                    },
+                    "distance": 4366.84860975,
+                    "sims": 0.29325108531817745
+                },
+                {
+                    "id": 6747042013,
+                    "tags": {
+                        "name": "Ye\u015fildere",
+                        "place": "neighbourhood"
+                    },
+                    "distance": 8203.72670598,
+                    "sims": 0.29010706956691823
+                },
+                {
+                    "id": 9389449251,
+                    "tags": {
+                        "name": "T\u00fcrbe",
+                        "place": "suburb"
+                    },
+                    "distance": 1862.89080812,
+                    "sims": 0.2836649684319317
+                },
+                {
+                    "id": 9382917772,
+                    "tags": {
+                        "name": "\u015eahin Tepesi",
+                        "place": "suburb"
+                    },
+                    "distance": 16149.41421448,
+                    "sims": 0.2834807901783766
+                },
+                {
+                    "id": 9389449246,
+                    "tags": {
+                        "name": "Tabiye",
+                        "place": "suburb"
+                    },
+                    "distance": 2048.38700745,
+                    "sims": 0.28332267602796146
+                },
+                {
+                    "id": 12948956073,
+                    "tags": {
+                        "amenity": "shelter",
+                        "shelter_type": "gazebo"
+                    },
+                    "distance": 229.04428256,
+                    "sims": 0.2817380873021984
+                }
+            ]
+        },
+        "4": {
+            "execution_time": 0.024179458618164062,
+            "results": [
+                {
+                    "id": 7418521039,
+                    "tags": {
+                        "name": "Adana Demir Store",
+                        "shop": "clothes"
+                    },
+                    "distance": 2843.05316713,
+                    "sims": 0.6723116471241566
+                },
+                {
+                    "id": 4541140993,
+                    "tags": {
+                        "name": "Adana mar",
+                        "shop": "supermarket",
+                        "name:tr": "Adana mar"
+                    },
+                    "distance": 4958.31591728,
+                    "sims": 0.6359894111100576
+                },
+                {
+                    "id": 4572798495,
+                    "tags": {
+                        "name": "\u0130lk Adana Market",
+                        "shop": "convenience",
+                        "name:tr": "\u0130lk Adana Market"
+                    },
+                    "distance": 5009.60173623,
+                    "sims": 0.6150750837133668
+                },
+                {
+                    "id": 4544639392,
+                    "tags": {
+                        "name": "Maya Market",
+                        "shop": "supermarket"
+                    },
+                    "distance": 5270.53389067,
+                    "sims": 0.5666984121194603
+                },
+                {
+                    "id": 1889656874,
+                    "tags": {
+                        "name": "\u00d6zel Adana G\u00fcndo\u011fdu Koleji",
+                        "shop": "mall"
+                    },
+                    "distance": 6572.01692056,
+                    "sims": 0.5564675237482746
+                },
+                {
+                    "id": 4159187890,
+                    "tags": {
+                        "name": "Pasabahce Magazalari Adana",
+                        "shop": "department_store"
+                    },
+                    "distance": 7182.42634476,
+                    "sims": 0.5527558311703095
+                },
+                {
+                    "id": 11510751084,
+                    "tags": {
+                        "name": "3B - Ada Aksesuar",
+                        "shop": "fashion_accessories",
+                        "addr:city": "Adana",
+                        "addr:street": "78142. Sokak",
+                        "addr:district": "\u00c7ukurova",
+                        "addr:postcode": "01170",
+                        "addr:neighbourhood": "Toros Mahallesi"
+                    },
+                    "distance": 5036.59152478,
+                    "sims": 0.5510058913852708
+                },
+                {
+                    "id": 11510751081,
+                    "tags": {
+                        "name": "1E - Anfora Silver",
+                        "shop": "jewelry",
+                        "addr:city": "Adana",
+                        "addr:street": "78142. Sokak",
+                        "addr:district": "\u00c7ukurova",
+                        "addr:postcode": "01170",
+                        "addr:neighbourhood": "Toros Mahallesi"
+                    },
+                    "distance": 5033.94647268,
+                    "sims": 0.5436036794680986
+                },
+                {
+                    "id": 10703783342,
+                    "tags": {
+                        "shop": "supermarket"
+                    },
+                    "distance": 1958.07827322,
+                    "sims": 0.5419721530527285
+                },
+                {
+                    "id": 6919778063,
+                    "tags": {
+                        "shop": "supermarket"
+                    },
+                    "distance": 3122.95659082,
+                    "sims": 0.5419721530527285
+                }
+            ]
+        },
+        "5": {
+            "execution_time": 0.020740509033203125,
+            "results": [
+                {
+                    "id": 11392325965,
+                    "tags": {
+                        "name": "Black White Market",
+                        "shop": "convenience"
+                    },
+                    "distance": 7383.24749145,
+                    "sims": 0.4640311088487974
+                },
+                {
+                    "id": 11392304438,
+                    "tags": {
+                        "name": "Karaali Market",
+                        "shop": "convenience"
+                    },
+                    "distance": 6323.05832835,
+                    "sims": 0.443500465929481
+                },
+                {
+                    "id": 11382003056,
+                    "tags": {
+                        "shop": "farm"
+                    },
+                    "distance": 4428.9402271,
+                    "sims": 0.42085023621316286
+                },
+                {
+                    "id": 11392160472,
+                    "tags": {
+                        "shop": "farm"
+                    },
+                    "distance": 6419.95781949,
+                    "sims": 0.42085023621316286
+                },
+                {
+                    "id": 12109712559,
+                    "tags": {
+                        "shop": "farm"
+                    },
+                    "distance": 12194.14530883,
+                    "sims": 0.42085023621316286
+                },
+                {
+                    "id": 2905989091,
+                    "tags": {
+                        "name": "G\u00fcler Market",
+                        "shop": "yes",
+                        "name:ar": "\u0645\u062a\u062c\u0631 \u063a\u0648\u0644\u0631"
+                    },
+                    "distance": 6885.04902311,
+                    "sims": 0.4208052739601378
+                },
+                {
+                    "id": 11392250482,
+                    "tags": {
+                        "name": "G\u00fcl Market",
+                        "shop": "convenience"
+                    },
+                    "distance": 8048.04792172,
+                    "sims": 0.42059071291853045
+                },
+                {
+                    "id": 11391493152,
+                    "tags": {
+                        "name": "Mervan Market",
+                        "shop": "convenience"
+                    },
+                    "distance": 5455.73598993,
+                    "sims": 0.41842216465012294
+                },
+                {
+                    "id": 9134426559,
+                    "tags": {
+                        "name": "Mavi Market",
+                        "shop": "supermarket"
+                    },
+                    "distance": 1542.65934837,
+                    "sims": 0.40677388189307795
+                },
+                {
+                    "id": 11392344693,
+                    "tags": {
+                        "name": "Haydaro\u011flu Market",
+                        "shop": "convenience"
+                    },
+                    "distance": 6613.74789341,
+                    "sims": 0.39835821419511164
+                }
+            ]
+        },
+        "6": {
+            "execution_time": 0.02513861656188965,
+            "results": [
+                {
+                    "id": 10709779820,
+                    "tags": {
+                        "name": "Baskent Universitesi Hastanesi",
+                        "note": "Dadalo\u011flu Mah.",
+                        "fixme": "resurvey after recovery",
+                        "phone": "+903223272727",
+                        "source": "SafeGraph",
+                        "amenity": "hospital",
+                        "check_date": "2023-02-07",
+                        "healthcare": "hospital",
+                        "addr:district": "Adana"
+                    },
+                    "distance": 6062.54230034,
+                    "sims": 0.4621113629075747
+                },
+                {
+                    "id": 10728276713,
+                    "tags": {
+                        "name": "Baskent Universitesi Seyhan Hastanesi",
+                        "note": "Baraj Yolu",
+                        "fixme": "resurvey after recovery",
+                        "phone": "+903224586868",
+                        "source": "SafeGraph",
+                        "amenity": "hospital",
+                        "check_date": "2023-02-07",
+                        "healthcare": "hospital",
+                        "addr:district": "Adana"
+                    },
+                    "distance": 2563.26804923,
+                    "sims": 0.43725870181466464
+                },
+                {
+                    "id": 5001018421,
+                    "tags": {
+                        "name": "\u00d6z\u00fclk\u00fc T\u0131p Merkezi",
+                        "amenity": "hospital",
+                        "healthcare": "hospital"
+                    },
+                    "distance": 4909.70784475,
+                    "sims": 0.43418683190660956
+                },
+                {
+                    "id": 12240958085,
+                    "tags": {
+                        "amenity": "clinic",
+                        "healthcare": "clinic"
+                    },
+                    "distance": 7136.91099907,
+                    "sims": 0.42462447367993583
+                },
+                {
+                    "id": 4567435304,
+                    "tags": {
+                        "name": "\u00d6zel Adana Hastanesi",
+                        "amenity": "hospital",
+                        "healthcare": "hospital"
+                    },
+                    "distance": 3162.96672762,
+                    "sims": 0.41933294073751193
+                },
+                {
+                    "id": 764558066,
+                    "tags": {
+                        "name:en": "Public health",
+                        "entrance": "yes"
+                    },
+                    "distance": 8058.64875135,
+                    "sims": 0.40306985286777275
+                },
+                {
+                    "id": 4284101191,
+                    "tags": {
+                        "name": "Hacetepeliler Cerrahi T\u0131p Merkezi",
+                        "amenity": "hospital",
+                        "healthcare": "hospital"
+                    },
+                    "distance": 2787.38804131,
+                    "sims": 0.39880227475113217
+                },
+                {
+                    "id": 642354657,
+                    "tags": {
+                        "amenity": "cafe",
+                        "name:en": "Outdoor Student Cafe of the Faculty of Medicine"
+                    },
+                    "distance": 8258.837517,
+                    "sims": 0.39547112096045645
+                },
+                {
+                    "id": 10743172308,
+                    "tags": {
+                        "name": "Ozel BSK Metropark Hastanesi",
+                        "note": "Belediye Evleri Mah. Turgut \u00d6zal Bulv.",
+                        "fixme": "resurvey after recovery",
+                        "phone": "+903224552550",
+                        "source": "SafeGraph",
+                        "amenity": "hospital",
+                        "check_date": "2023-02-07",
+                        "healthcare": "hospital",
+                        "addr:district": "Adana"
+                    },
+                    "distance": 5240.9712735,
+                    "sims": 0.38483309511350416
+                },
+                {
+                    "id": 10736961605,
+                    "tags": {
+                        "name": "\u00d6zel Galeria G\u00f6z Kulak Burun Bo\u011faz Teshis ve Tedavi Merkezi",
+                        "note": "Cemalpa\u015fa Mah. Fuzuli Cad.",
+                        "fixme": "resurvey after recovery",
+                        "phone": "+903224541515",
+                        "source": "SafeGraph",
+                        "amenity": "clinic",
+                        "check_date": "2023-02-07",
+                        "healthcare": "clinic",
+                        "addr:district": "Adana"
+                    },
+                    "distance": 3492.25556609,
+                    "sims": 0.37858796757818847
+                }
+            ]
+        },
+        "7": {
+            "execution_time": 0.021596670150756836,
+            "results": [
+                {
+                    "id": 8938575102,
+                    "tags": {
+                        "name": "Ala\u00e7at\u0131 Muhallebicisi",
+                        "shop": "coffee"
+                    },
+                    "distance": 5449.97165465,
+                    "sims": 0.6198875736788575
+                },
+                {
+                    "id": 6218527252,
+                    "tags": {
+                        "name": "K\u00f6ryusuflar Baharat\u00e7\u0131",
+                        "shop": "coffee"
+                    },
+                    "distance": 1980.29666653,
+                    "sims": 0.6170724452993472
+                },
+                {
+                    "id": 11212658038,
+                    "tags": {
+                        "name": "Starbucks",
+                        "shop": "coffee",
+                        "brand": "Starbucks",
+                        "amenity": "cafe",
+                        "cuisine": "coffee_shop",
+                        "takeaway": "yes",
+                        "addr:street": "Gazi Mustafa Kemal Bulvar\u0131",
+                        "official_name": "Starbucks Coffee",
+                        "opening_hours": "Mo-Su 07:00-23:00",
+                        "brand:wikidata": "Q37158",
+                        "outdoor_seating": "no",
+                        "addr:housenumber": "680"
+                    },
+                    "distance": 10660.62741416,
+                    "sims": 0.5445911176287073
+                },
+                {
+                    "id": 9792385824,
+                    "tags": {
+                        "name": "Starbucks",
+                        "shop": "coffee",
+                        "brand": "Starbucks",
+                        "amenity": "cafe",
+                        "cuisine": "coffee_shop",
+                        "takeaway": "yes",
+                        "addr:street": "Akkent Mahallesi H\u00fcseyin Okan Merzeci Bulvar\u0131",
+                        "official_name": "Starbucks Coffee",
+                        "brand:wikidata": "Q37158",
+                        "addr:housenumber": "759"
+                    },
+                    "distance": 9138.09100602,
+                    "sims": 0.5445430762649739
+                },
+                {
+                    "id": 6283967592,
+                    "tags": {
+                        "name": "Seyyah Kuruyemi\u015f",
+                        "shop": "coffee"
+                    },
+                    "distance": 2534.17559739,
+                    "sims": 0.5142392567060049
+                },
+                {
+                    "id": 8631928539,
+                    "tags": {
+                        "name": "Starbucks",
+                        "brand": "Starbucks",
+                        "amenity": "cafe",
+                        "cuisine": "coffee_shop",
+                        "takeaway": "yes",
+                        "addr:street": "Adnan Menderes Bulvar\u0131",
+                        "official_name": "Starbucks Coffee",
+                        "brand:wikidata": "Q37158",
+                        "brand:wikipedia": "en:Starbucks",
+                        "addr:housenumber": "48"
+                    },
+                    "distance": 5087.15140119,
+                    "sims": 0.4828410087255579
+                },
+                {
+                    "id": 11328719155,
+                    "tags": {
+                        "name": "Kahve D\u00fcnyas\u0131",
+                        "brand": "Kahve D\u00fcnyas\u0131",
+                        "amenity": "cafe",
+                        "cuisine": "coffee_shop",
+                        "takeaway": "yes",
+                        "addr:city": "Mersin",
+                        "addr:street": "Mersin Marina",
+                        "addr:district": "Yeni\u015fehir",
+                        "brand:wikidata": "Q28008050",
+                        "outdoor_seating": "yes"
+                    },
+                    "distance": 7827.09841984,
+                    "sims": 0.4802715850928865
+                },
+                {
+                    "id": 9792385829,
+                    "tags": {
+                        "name": "K\u0131ska\u00e7 Cafe Bar",
+                        "amenity": "cafe"
+                    },
+                    "distance": 7377.64710847,
+                    "sims": 0.47832142531448985
+                },
+                {
+                    "id": 6297084597,
+                    "tags": {
+                        "name": "Melek Kuruyemi\u015f Kahve",
+                        "shop": "coffee"
+                    },
+                    "distance": 970.23540639,
+                    "sims": 0.46505350010682167
+                },
+                {
+                    "id": 8614507178,
+                    "tags": {
+                        "name": "Gloria Jean's",
+                        "shop": "coffee",
+                        "brand": "Gloria Jean's",
+                        "amenity": "cafe",
+                        "cuisine": "coffee_shop",
+                        "website": "https://www.gloriajeans.com.tr/",
+                        "takeaway": "yes",
+                        "addr:street": "Akkent Mahallesi H\u00fcseyin Okan Merzeci Bulvar\u0131",
+                        "official_name": "Gloria Jean's Coffees",
+                        "opening_hours": "Mo-Fr 10:00-22:00",
+                        "brand:wikidata": "Q2666365",
+                        "addr:housenumber": "759"
+                    },
+                    "distance": 9119.62436188,
+                    "sims": 0.45535634351602494
+                }
+            ]
+        },
+        "8": {
+            "execution_time": 0.020048856735229492,
+            "results": [
+                {
+                    "id": 1576983160,
+                    "tags": {
+                        "name": "Hasanl\u0131",
+                        "place": "village",
+                        "name:ar": "\u0627\u0644\u0634\u064a\u062e \u062d\u0633\u0646",
+                        "old_name": "\u015eeyhhasan",
+                        "wikidata": "Q10765946",
+                        "wikipedia": "tr:Hasanl\u0131, Antakya"
+                    },
+                    "distance": 10130.1268045,
+                    "sims": 0.5814925487362209
+                },
+                {
+                    "id": 1576983835,
+                    "tags": {
+                        "name": "Tan\u0131\u015fma",
+                        "place": "village",
+                        "name:ar": "\u062a\u0627\u0646\u064a\u0634\u0645\u0629",
+                        "old_name": "Dani\u015fmaniye",
+                        "wikidata": "Q10823957",
+                        "wikipedia": "tr:Tan\u0131\u015fma, Antakya"
+                    },
+                    "distance": 11741.19954088,
+                    "sims": 0.5687907857687112
+                },
+                {
+                    "id": 8817850286,
+                    "tags": {
+                        "name": "Akhisar",
+                        "place": "village",
+                        "wikidata": "Q10731291",
+                        "wikipedia": "tr:Akhisar, Antakya"
+                    },
+                    "distance": 11953.60181495,
+                    "sims": 0.5569833313286667
+                },
+                {
+                    "id": 2619402923,
+                    "tags": {
+                        "name": "G\u00fcnyaz\u0131",
+                        "place": "village",
+                        "name:ar": "\u0627\u0644\u0639\u0642\u0644\u064a\u0629",
+                        "old_name": "Ak\u0131ll\u0131;Akliye;Akilliye",
+                        "wikidata": "Q10764095",
+                        "wikipedia": "tr:G\u00fcnyaz\u0131, Antakya"
+                    },
+                    "distance": 4207.34371685,
+                    "sims": 0.5562230147518222
+                },
+                {
+                    "id": 4678305518,
+                    "tags": {
+                        "name": "Hz. H\u0131d\u0131r Makam\u0131 T\u00fcrbesi",
+                        "historic": "tomb"
+                    },
+                    "distance": 1147.89795209,
+                    "sims": 0.5414939970395922
+                },
+                {
+                    "id": 1576982790,
+                    "tags": {
+                        "name": "Arpahan",
+                        "place": "village",
+                        "name:ar": "\u0639\u0631\u0628 \u062e\u0627\u0646",
+                        "old_name": "Araphan",
+                        "wikidata": "Q10735325",
+                        "wikipedia": "tr:Arpahan, Antakya"
+                    },
+                    "distance": 17485.65400395,
+                    "sims": 0.5398195243527552
+                },
+                {
+                    "id": 1576983392,
+                    "tags": {
+                        "name": "Kuruyer",
+                        "place": "village",
+                        "name:ar": "\u0627\u0644\u0642\u0648\u0631\u064a\u0629",
+                        "old_name": "Kuriye",
+                        "wikidata": "Q5999103",
+                        "wikipedia": "tr:Kuruyer, Antakya"
+                    },
+                    "distance": 4518.39054644,
+                    "sims": 0.5372401502835661
+                },
+                {
+                    "id": 9242450450,
+                    "tags": {
+                        "name": "Orhanl\u0131",
+                        "place": "suburb",
+                        "name:hy": "\u0542\u0568\u0576\u056b\u0565",
+                        "wikidata": "Q16392311",
+                        "wikipedia": "tr:Orhanl\u0131, Antakya"
+                    },
+                    "distance": 1751.01554427,
+                    "sims": 0.5296854866676121
+                },
+                {
+                    "id": 1576983802,
+                    "tags": {
+                        "name": "Suvatl\u0131",
+                        "place": "village",
+                        "name:ar": "\u0643\u0631\u062f \u0645\u064a\u0645\u0631\u0645\u064a\u0631\u0627\u0646",
+                        "old_name": "K\u00fcrd Mirmiran",
+                        "wikidata": "Q18460603",
+                        "wikipedia": "tr:Suvatl\u0131, Antakya"
+                    },
+                    "distance": 16500.18025136,
+                    "sims": 0.5245809183774098
+                },
+                {
+                    "id": 1576987627,
+                    "tags": {
+                        "name": "\u00dcz\u00fcmdal\u0131",
+                        "place": "village",
+                        "name:ar": "\u0627\u0644\u0635\u0627\u0628\u0648\u062d\u064a\u0629",
+                        "old_name": "Sabunluk;Sabuhiye",
+                        "wikidata": "Q10839934",
+                        "wikipedia": "tr:\u00dcz\u00fcmdal\u0131, Antakya"
+                    },
+                    "distance": 12164.84107998,
+                    "sims": 0.522406183956256
+                }
+            ]
+        },
+        "9": {
+            "execution_time": 0.02460956573486328,
+            "results": [
+                {
+                    "id": 11337126248,
+                    "tags": {
+                        "name": "Paribu Cineverse",
+                        "amenity": "cinema"
+                    },
+                    "distance": 7831.64418287,
+                    "sims": 0.49075972011945845
+                },
+                {
+                    "id": 628077479,
+                    "tags": {
+                        "name": "A\u00e7\u0131k Hava Tiyatrosu",
+                        "amenity": "theatre",
+                        "name:en": "Open Air Amphitheater"
+                    },
+                    "distance": 4847.69739216,
+                    "sims": 0.4125629238447357
+                },
+                {
+                    "id": 7418521036,
+                    "tags": {
+                        "name": "Los Angeles Playstation Salonu",
+                        "leisure": "amusement_arcade"
+                    },
+                    "distance": 1766.28776814,
+                    "sims": 0.3724657683258643
+                },
+                {
+                    "id": 1423978322,
+                    "tags": {
+                        "name": "Hodja Inn",
+                        "tourism": "hostel"
+                    },
+                    "distance": 10084.04771925,
+                    "sims": 0.3653540548379133
+                },
+                {
+                    "id": 4623704527,
+                    "tags": {
+                        "tourism": "guest_house"
+                    },
+                    "distance": 3441.34710486,
+                    "sims": 0.3525200769185962
+                },
+                {
+                    "id": 12383219286,
+                    "tags": {
+                        "amenity": "dressing_room",
+                        "check_date": "2024-11-28",
+                        "wheelchair": "no"
+                    },
+                    "distance": 3764.78105114,
+                    "sims": 0.3514317877787798
+                },
+                {
+                    "id": 6206505386,
+                    "tags": {
+                        "name": "Madi Hotel",
+                        "tourism": "motel"
+                    },
+                    "distance": 3179.85038489,
+                    "sims": 0.3501350402188732
+                },
+                {
+                    "id": 10270066149,
+                    "tags": {
+                        "name": "Hanedan",
+                        "place": "suburb"
+                    },
+                    "distance": 3760.30497049,
+                    "sims": 0.3470729698060655
+                },
+                {
+                    "id": 10270111612,
+                    "tags": {
+                        "name": "Bey",
+                        "place": "suburb"
+                    },
+                    "distance": 6107.61030007,
+                    "sims": 0.3371909638570376
+                },
+                {
+                    "id": 5216231124,
+                    "tags": {
+                        "shop": "alcohol"
+                    },
+                    "distance": 2293.76925916,
+                    "sims": 0.3346118423819685
+                }
+            ]
+        },
+        "10": {
+            "execution_time": 0.01858663558959961,
+            "results": [
+                {
+                    "id": 4973361623,
+                    "tags": {
+                        "amenity": "restaurant"
+                    },
+                    "distance": 675.25460887,
+                    "sims": 0.5061714663914506
+                },
+                {
+                    "id": 4227737989,
+                    "tags": {
+                        "amenity": "restaurant"
+                    },
+                    "distance": 13807.89355324,
+                    "sims": 0.5061714663914506
+                },
+                {
+                    "id": 6717464887,
+                    "tags": {
+                        "amenity": "restaurant"
+                    },
+                    "distance": 18995.01521117,
+                    "sims": 0.5061714663914506
+                },
+                {
+                    "id": 4972610721,
+                    "tags": {
+                        "amenity": "restaurant"
+                    },
+                    "distance": 19327.40147255,
+                    "sims": 0.5061714663914506
+                },
+                {
+                    "id": 4972610622,
+                    "tags": {
+                        "amenity": "restaurant"
+                    },
+                    "distance": 19626.43194059,
+                    "sims": 0.5061714663914506
+                },
+                {
+                    "id": 3673523202,
+                    "tags": {
+                        "name": "mersin marina",
+                        "amenity": "restaurant"
+                    },
+                    "distance": 3188.47796807,
+                    "sims": 0.5010668935299548
+                },
+                {
+                    "id": 9197475118,
+                    "tags": {
+                        "name": "Popeyes",
+                        "brand": "Popeyes",
+                        "amenity": "fast_food",
+                        "cuisine": "chicken",
+                        "takeaway": "yes",
+                        "official_name": "Popeyes Louisiana Kitchen",
+                        "brand:wikidata": "Q1330910"
+                    },
+                    "distance": 1984.61293384,
+                    "sims": 0.47711073806543225
+                },
+                {
+                    "id": 9757388103,
+                    "tags": {
+                        "name": "Rastlant\u0131 boutique cafe restorant",
+                        "amenity": "restaurant"
+                    },
+                    "distance": 732.6048027,
+                    "sims": 0.45615406517806334
+                },
+                {
+                    "id": 7899655589,
+                    "tags": {
+                        "name": "63 Ciger Kebap",
+                        "amenity": "restaurant"
+                    },
+                    "distance": 2414.77374036,
+                    "sims": 0.4525613373664359
+                },
+                {
+                    "id": 11114844707,
+                    "tags": {
+                        "name": "Rest mersin",
+                        "amenity": "restaurant"
+                    },
+                    "distance": 2953.43515286,
+                    "sims": 0.4490129826099959
+                }
+            ]
+        },
+        "11": {
+            "execution_time": 0.02027153968811035,
+            "results": [
+                {
+                    "id": 10229163301,
+                    "tags": {
+                        "leisure": "park"
+                    },
+                    "distance": 1141.40028499,
+                    "sims": 0.603994832756378
+                },
+                {
+                    "id": 10703769045,
+                    "tags": {
+                        "leisure": "park"
+                    },
+                    "distance": 2901.03468442,
+                    "sims": 0.603994832756378
+                },
+                {
+                    "id": 5731760644,
+                    "tags": {
+                        "leisure": "park"
+                    },
+                    "distance": 6281.57513041,
+                    "sims": 0.603994832756378
+                },
+                {
+                    "id": 628077460,
+                    "tags": {
+                        "amenity": "parking"
+                    },
+                    "distance": 5876.54698721,
+                    "sims": 0.5562007423755009
+                },
+                {
+                    "id": 764572021,
+                    "tags": {
+                        "amenity": "parking"
+                    },
+                    "distance": 5884.93517692,
+                    "sims": 0.5562007423755009
+                },
+                {
+                    "id": 639284079,
+                    "tags": {
+                        "amenity": "parking"
+                    },
+                    "distance": 5937.42768243,
+                    "sims": 0.5562007423755009
+                },
+                {
+                    "id": 630510163,
+                    "tags": {
+                        "amenity": "parking"
+                    },
+                    "distance": 5939.06994469,
+                    "sims": 0.5562007423755009
+                },
+                {
+                    "id": 630510164,
+                    "tags": {
+                        "amenity": "parking"
+                    },
+                    "distance": 5992.82469815,
+                    "sims": 0.5562007423755009
+                },
+                {
+                    "id": 675370673,
+                    "tags": {
+                        "amenity": "parking"
+                    },
+                    "distance": 6044.48214561,
+                    "sims": 0.5562007423755009
+                },
+                {
+                    "id": 675370772,
+                    "tags": {
+                        "amenity": "parking"
+                    },
+                    "distance": 6050.17975637,
+                    "sims": 0.5562007423755009
+                }
+            ]
+        },
+        "12": {
+            "execution_time": 0.02139759063720703,
+            "results": [
+                {
+                    "id": 4227738090,
+                    "tags": {
+                        "shop": "supermarket"
+                    },
+                    "distance": 14337.18071425,
+                    "sims": 0.6206002852439225
+                },
+                {
+                    "id": 6968902508,
+                    "tags": {
+                        "name": "Saya Park",
+                        "shop": "mall"
+                    },
+                    "distance": 5620.97424669,
+                    "sims": 0.582577939150085
+                },
+                {
+                    "id": 12130250950,
+                    "tags": {
+                        "shop": "clothes"
+                    },
+                    "distance": 7507.06029259,
+                    "sims": 0.5731395475879043
+                },
+                {
+                    "id": 10281243609,
+                    "tags": {
+                        "shop": "toys"
+                    },
+                    "distance": 9532.3071656,
+                    "sims": 0.5078174292557285
+                },
+                {
+                    "id": 4227737992,
+                    "tags": {
+                        "name": "Forum mall",
+                        "shop": "supermarket",
+                        "name:tr": "Forum A.V.M"
+                    },
+                    "distance": 2023.26368964,
+                    "sims": 0.5027228284443268
+                },
+                {
+                    "id": 11257559537,
+                    "tags": {
+                        "shop": "bakery"
+                    },
+                    "distance": 2429.61812399,
+                    "sims": 0.5000570118121876
+                },
+                {
+                    "id": 11257559538,
+                    "tags": {
+                        "shop": "bakery"
+                    },
+                    "distance": 2656.25520529,
+                    "sims": 0.5000570118121876
+                },
+                {
+                    "id": 11348179956,
+                    "tags": {
+                        "shop": "bakery"
+                    },
+                    "distance": 2683.3488807,
+                    "sims": 0.5000570118121876
+                },
+                {
+                    "id": 11257570155,
+                    "tags": {
+                        "shop": "bakery"
+                    },
+                    "distance": 3099.37982152,
+                    "sims": 0.5000570118121876
+                },
+                {
+                    "id": 11257570156,
+                    "tags": {
+                        "shop": "bakery"
+                    },
+                    "distance": 3192.83214998,
+                    "sims": 0.5000570118121876
+                }
+            ]
+        },
+        "13": {
+            "execution_time": 0.0206296443939209,
+            "results": [
+                {
+                    "id": 11382037060,
+                    "tags": {
+                        "shop": "perfumery"
+                    },
+                    "distance": 498.33041156,
+                    "sims": 0.5559209716555807
+                },
+                {
+                    "id": 11381962910,
+                    "tags": {
+                        "name": "Gazel Market",
+                        "shop": "convenience",
+                        "addr:city": "Hatay"
+                    },
+                    "distance": 3697.31838743,
+                    "sims": 0.5479941090361478
+                },
+                {
+                    "id": 11396076688,
+                    "tags": {
+                        "shop": "convenience",
+                        "addr:city": "Hatay"
+                    },
+                    "distance": 7956.43666363,
+                    "sims": 0.5381651705011457
+                },
+                {
+                    "id": 12094838586,
+                    "tags": {
+                        "shop": "clothes"
+                    },
+                    "distance": 8901.30374407,
+                    "sims": 0.5280060701356104
+                },
+                {
+                    "id": 11392303431,
+                    "tags": {
+                        "name": "Karaali Market",
+                        "shop": "convenience",
+                        "addr:city": "Hatay"
+                    },
+                    "distance": 4672.06511924,
+                    "sims": 0.527117678826379
+                },
+                {
+                    "id": 11381972715,
+                    "tags": {
+                        "name": "Merkez Toptan",
+                        "shop": "convenience",
+                        "addr:city": "Hatay"
+                    },
+                    "distance": 3664.73275594,
+                    "sims": 0.5235321153604873
+                },
+                {
+                    "id": 11381954847,
+                    "tags": {
+                        "name": "LC Waikiki",
+                        "shop": "clothes",
+                        "brand": "LC Waikiki",
+                        "addr:city": "Hatay",
+                        "brand:wikidata": "Q3205965"
+                    },
+                    "distance": 3680.22050427,
+                    "sims": 0.5126468799570788
+                },
+                {
+                    "id": 11392362321,
+                    "tags": {
+                        "name": "\u00d6zt\u00fcrk Tekstil",
+                        "shop": "clothes",
+                        "clothes": "uniforma;okulkiyafeti",
+                        "addr:city": "Hatay"
+                    },
+                    "distance": 5805.76140549,
+                    "sims": 0.5114240314293041
+                },
+                {
+                    "id": 11381990678,
+                    "tags": {
+                        "shop": "kiosk",
+                        "addr:city": "Hatay"
+                    },
+                    "distance": 3983.35934564,
+                    "sims": 0.5042701203098842
+                },
+                {
+                    "id": 11391465563,
+                    "tags": {
+                        "shop": "trade"
+                    },
+                    "distance": 4797.64528029,
+                    "sims": 0.5041795959044789
+                }
+            ]
+        },
+        "14": {
+            "execution_time": 0.029953956604003906,
+            "results": [
+                {
+                    "id": 3727671269,
+                    "tags": {
+                        "name": "Anadolu \u00dcniversitesi A\u00d6F Toros B\u00fcrosu",
+                        "amenity": "university"
+                    },
+                    "distance": 5267.68280357,
+                    "sims": 0.5470548002156506
+                },
+                {
+                    "id": 11594889433,
+                    "tags": {
+                        "name": "Rekt\u00f6rl\u00fck \u0130dari Birimler",
+                        "amenity": "university"
+                    },
+                    "distance": 303.2158076,
+                    "sims": 0.4560373697303166
+                },
+                {
+                    "id": 12102599402,
+                    "tags": {
+                        "name": "\u00c7ukurova \u00dcniversitesi \u0130lahiyat Fak\u00fcltesi",
+                        "email": "ilahiyat@cu.edu.tr",
+                        "amenity": "university",
+                        "website": "https://ilahiyat.cu.edu.tr"
+                    },
+                    "distance": 1231.12401289,
+                    "sims": 0.439562197897566
+                },
+                {
+                    "id": 6468916728,
+                    "tags": {
+                        "name": "\u00dcniversite",
+                        "noref": "yes",
+                        "highway": "motorway_junction"
+                    },
+                    "distance": 3465.81324064,
+                    "sims": 0.4248435281077203
+                },
+                {
+                    "id": 6469540466,
+                    "tags": {
+                        "name": "\u00dcniversite",
+                        "noref": "yes",
+                        "highway": "motorway_junction"
+                    },
+                    "distance": 3756.41223296,
+                    "sims": 0.4248435281077203
+                },
+                {
+                    "id": 6468916778,
+                    "tags": {
+                        "name": "\u00dcniversite",
+                        "noref": "yes",
+                        "highway": "motorway_junction"
+                    },
+                    "distance": 3930.08873652,
+                    "sims": 0.4248435281077203
+                },
+                {
+                    "id": 642354657,
+                    "tags": {
+                        "amenity": "cafe",
+                        "name:en": "Outdoor Student Cafe of the Faculty of Medicine"
+                    },
+                    "distance": 969.01339354,
+                    "sims": 0.40404751324936905
+                },
+                {
+                    "id": 4411939693,
+                    "tags": {
+                        "name": "Adana Bilim ve Teknoloji \u00dcniversitesi YADYO",
+                        "amenity": "school",
+                        "name:tr": "Adana Bilim ve Teknoloji \u00dcniversitesi YADYO"
+                    },
+                    "distance": 8274.11183567,
+                    "sims": 0.3887851768007986
+                },
+                {
+                    "id": 7906206167,
+                    "tags": {
+                        "name": "Mert S\u00fcr\u00fcc\u00fc Kursu",
+                        "amenity": "driving_school"
+                    },
+                    "distance": 6536.54962597,
+                    "sims": 0.3884827428151818
+                },
+                {
+                    "id": 11957668511,
+                    "tags": {
+                        "name": "Arma Et\u00fct",
+                        "office": "educational_institution"
+                    },
+                    "distance": 5272.08025183,
+                    "sims": 0.34761294850226787
+                }
+            ]
+        },
+        "15": {
+            "execution_time": 0.022214412689208984,
+            "results": [
+                {
+                    "id": 6174746585,
+                    "tags": {
+                        "tourism": "viewpoint"
+                    },
+                    "distance": 3446.90913599,
+                    "sims": 0.4979531760104201
+                },
+                {
+                    "id": 6174746485,
+                    "tags": {
+                        "tourism": "viewpoint"
+                    },
+                    "distance": 3575.36198122,
+                    "sims": 0.4979531760104201
+                },
+                {
+                    "id": 11276706813,
+                    "tags": {
+                        "access": "yes",
+                        "amenity": "toilets",
+                        "wheelchair": "yes",
+                        "toilets:disposal": "flush"
+                    },
+                    "distance": 3400.99161099,
+                    "sims": 0.16524774795717212
+                },
+                {
+                    "id": 5959242985,
+                    "tags": {
+                        "shop": "optician"
+                    },
+                    "distance": 1737.3139586,
+                    "sims": 0.1583064230723702
+                },
+                {
+                    "id": 9812681492,
+                    "tags": {
+                        "layer": "-1",
+                        "amenity": "parking",
+                        "parking": "underground"
+                    },
+                    "distance": 1716.077351,
+                    "sims": 0.1558972624326036
+                },
+                {
+                    "id": 9812681495,
+                    "tags": {
+                        "layer": "-1",
+                        "amenity": "parking",
+                        "parking": "underground"
+                    },
+                    "distance": 1749.16953826,
+                    "sims": 0.1558972624326036
+                },
+                {
+                    "id": 9812681498,
+                    "tags": {
+                        "layer": "-1",
+                        "amenity": "parking",
+                        "parking": "underground"
+                    },
+                    "distance": 1893.88309171,
+                    "sims": 0.1558972624326036
+                },
+                {
+                    "id": 10715887805,
+                    "tags": {
+                        "amenity": "toilets"
+                    },
+                    "distance": 644.00075445,
+                    "sims": 0.15445026997184763
+                },
+                {
+                    "id": 4965284722,
+                    "tags": {
+                        "amenity": "toilets"
+                    },
+                    "distance": 1576.46563244,
+                    "sims": 0.15445026997184763
+                },
+                {
+                    "id": 11886488167,
+                    "tags": {
+                        "amenity": "toilets"
+                    },
+                    "distance": 1984.19690833,
+                    "sims": 0.15445026997184763
+                }
+            ]
+        },
+        "16": {
+            "execution_time": 0.018904685974121094,
+            "results": [
+                {
+                    "id": 364696567,
+                    "tags": {
+                        "name": "St.Pierre Kilisesi",
+                        "amenity": "place_of_worship",
+                        "name:ar": "\u0643\u0646\u064a\u0633\u0629 \u0627\u0644\u0642\u062f\u064a\u0633 \u0628\u0637\u0631\u0633",
+                        "name:de": "St.-Petrus-Grotte",
+                        "name:en": "Church of Saint Peter",
+                        "name:es": "Gruta de San Pedro",
+                        "name:fa": "\u06a9\u0644\u06cc\u0633\u0627\u06cc \u0633\u06cc\u0646\u062a \u067e\u06cc\u062a\u0631",
+                        "name:fr": "\u00c9glise Saint-Pierre",
+                        "name:hy": "\u054d\u0578\u0582\u0580\u0562 \u054a\u0565\u057f\u0580\u0578\u057d \u0565\u056f\u0565\u0572\u0565\u0581\u056b",
+                        "name:ru": "\u0426\u0435\u0440\u043a\u043e\u0432\u044c \u0421\u0432\u044f\u0442\u043e\u0433\u043e \u041f\u0435\u0442\u0440\u0430",
+                        "name:uk": "\u0426\u0435\u0440\u043a\u0432\u0430 \u0441\u0432\u044f\u0442\u043e\u0433\u043e \u041f\u0435\u0442\u0440\u0430",
+                        "name:zh": "\u8056\u5f7c\u5f97\u6559\u5802",
+                        "natural": "cave_entrance",
+                        "tourism": "attraction",
+                        "alt_name": "Senpiyer;St.Pierre Church",
+                        "historic": "church",
+                        "religion": "christian",
+                        "wikidata": "Q516472",
+                        "wikipedia": "tr:Saint Pierre Kilisesi",
+                        "wheelchair": "no",
+                        "description": "It is composed of a cave carved into the mountainside on Mount Starius with a depth of 13 m, a width of 9.5 m and a height of 7 m. This cave, which has been used by the first Christians in the Antakya region, is one of Christianity's oldest churches",
+                        "wikimedia_commons": "Category:Church of Saint Peter"
+                    },
+                    "distance": 3099.53527434,
+                    "sims": 0.4092346862628037
+                },
+                {
+                    "id": 9673966653,
+                    "tags": {
+                        "name": "Old French town",
+                        "tourism": "attraction"
+                    },
+                    "distance": 1574.43810169,
+                    "sims": 0.3281314196038756
+                },
+                {
+                    "id": 4678305526,
+                    "tags": {
+                        "name": "T\u00fcrbe",
+                        "historic": "tomb"
+                    },
+                    "distance": 1571.78012149,
+                    "sims": 0.31451870020223605
+                },
+                {
+                    "id": 9589151363,
+                    "tags": {
+                        "name": "\u0130sa Mesih Kilisesi",
+                        "amenity": "place_of_worship",
+                        "religion": "christian"
+                    },
+                    "distance": 13590.1427546,
+                    "sims": 0.3114513647461652
+                },
+                {
+                    "id": 9589087057,
+                    "tags": {
+                        "name": "Meryem Ana Rum Ortodoks Kilisesi",
+                        "amenity": "place_of_worship",
+                        "religion": "christian",
+                        "denomination": "orthodox"
+                    },
+                    "distance": 15200.5503975,
+                    "sims": 0.31059974522606315
+                },
+                {
+                    "id": 9589151362,
+                    "tags": {
+                        "name": "Rum Ortodoks Kilisesi",
+                        "amenity": "place_of_worship",
+                        "religion": "christian"
+                    },
+                    "distance": 13346.35703092,
+                    "sims": 0.30216168671065113
+                },
+                {
+                    "id": 9242450448,
+                    "tags": {
+                        "name": "Habib-i Neccar",
+                        "place": "suburb",
+                        "old_name": "Akbaba Mah.;Akbaba"
+                    },
+                    "distance": 1896.32428614,
+                    "sims": 0.30028442130835065
+                },
+                {
+                    "id": 7969075688,
+                    "tags": {
+                        "name": "ziyaret",
+                        "amenity": "place_of_worship"
+                    },
+                    "distance": 14691.49965072,
+                    "sims": 0.2905882788055262
+                },
+                {
+                    "id": 9525060548,
+                    "tags": {
+                        "name": "Ruined Arch",
+                        "access": "yes",
+                        "historic": "fort"
+                    },
+                    "distance": 3341.15055884,
+                    "sims": 0.2879310791862433
+                },
+                {
+                    "id": 5077304250,
+                    "tags": {
+                        "name": "\u015eih Mhammed el Arab\u0131",
+                        "amenity": "place_of_worship"
+                    },
+                    "distance": 13974.81166018,
+                    "sims": 0.26923536337122955
+                }
+            ]
+        },
+        "17": {
+            "execution_time": 0.020780324935913086,
+            "results": [
+                {
+                    "id": 6206505386,
+                    "tags": {
+                        "name": "Madi Hotel",
+                        "tourism": "motel"
+                    },
+                    "distance": 3576.88710738,
+                    "sims": 0.5396602522719367
+                },
+                {
+                    "id": 2923497497,
+                    "tags": {
+                        "name": "Park Royal Hotel",
+                        "tourism": "hotel"
+                    },
+                    "distance": 3975.65302085,
+                    "sims": 0.5207381558858333
+                },
+                {
+                    "id": 9238338975,
+                    "tags": {
+                        "name": "Hosta Otel",
+                        "tourism": "hotel"
+                    },
+                    "distance": 3857.50335703,
+                    "sims": 0.501618966797971
+                },
+                {
+                    "id": 1423978322,
+                    "tags": {
+                        "name": "Hodja Inn",
+                        "tourism": "hostel"
+                    },
+                    "distance": 14346.17559052,
+                    "sims": 0.4810041905945843
+                },
+                {
+                    "id": 4976188421,
+                    "tags": {
+                        "name": "sirin park hotel",
+                        "name:tr": "sirin park hotel",
+                        "tourism": "hotel",
+                        "wikidata": "Q111856391",
+                        "internet_access": "wlan"
+                    },
+                    "distance": 4351.41620066,
+                    "sims": 0.47629955269692426
+                },
+                {
+                    "id": 12151785550,
+                    "tags": {
+                        "name": "Aksoy hotel",
+                        "tourism": "hotel",
+                        "website": "https://www.adanaaksoyotel.com/"
+                    },
+                    "distance": 4507.77905097,
+                    "sims": 0.45882638798074904
+                },
+                {
+                    "id": 12802356601,
+                    "tags": {
+                        "amenity": "cafe"
+                    },
+                    "distance": 3029.83296983,
+                    "sims": 0.4566596966969433
+                },
+                {
+                    "id": 12832223281,
+                    "tags": {
+                        "amenity": "cafe"
+                    },
+                    "distance": 3033.69075598,
+                    "sims": 0.4566596966969433
+                },
+                {
+                    "id": 10703783339,
+                    "tags": {
+                        "amenity": "cafe"
+                    },
+                    "distance": 3718.69562112,
+                    "sims": 0.4566596966969433
+                },
+                {
+                    "id": 764572011,
+                    "tags": {
+                        "amenity": "cafe"
+                    },
+                    "distance": 9462.33224895,
+                    "sims": 0.4566596966969433
+                }
+            ]
+        },
+        "18": {
+            "execution_time": 0.020833253860473633,
+            "results": [
+                {
+                    "id": 4227738290,
+                    "tags": {
+                        "name": "Unlikely & Cities (Sweet things)",
+                        "amenity": "cafe"
+                    },
+                    "distance": 3234.81071656,
+                    "sims": 0.323573899609122
+                },
+                {
+                    "id": 9812681498,
+                    "tags": {
+                        "layer": "-1",
+                        "amenity": "parking",
+                        "parking": "underground"
+                    },
+                    "distance": 3183.96216701,
+                    "sims": 0.30958192120030303
+                },
+                {
+                    "id": 9812681492,
+                    "tags": {
+                        "layer": "-1",
+                        "amenity": "parking",
+                        "parking": "underground"
+                    },
+                    "distance": 3323.61173955,
+                    "sims": 0.30958192120030303
+                },
+                {
+                    "id": 9812681495,
+                    "tags": {
+                        "layer": "-1",
+                        "amenity": "parking",
+                        "parking": "underground"
+                    },
+                    "distance": 3326.95283732,
+                    "sims": 0.30958192120030303
+                },
+                {
+                    "id": 9785072122,
+                    "tags": {
+                        "amenity": "parking"
+                    },
+                    "distance": 1609.73408229,
+                    "sims": 0.30412176128573865
+                },
+                {
+                    "id": 11252379655,
+                    "tags": {
+                        "amenity": "parking"
+                    },
+                    "distance": 8261.21759751,
+                    "sims": 0.30412176128573865
+                },
+                {
+                    "id": 9890632061,
+                    "tags": {
+                        "name": "Halkkent",
+                        "place": "suburb"
+                    },
+                    "distance": 4510.65027147,
+                    "sims": 0.29460314608757376
+                },
+                {
+                    "id": 12317611649,
+                    "tags": {
+                        "name": "Small forest dunes",
+                        "tourism": "camp_site"
+                    },
+                    "distance": 14683.87564966,
+                    "sims": 0.29289638846294985
+                },
+                {
+                    "id": 11271160476,
+                    "tags": {
+                        "amenity": "cafe"
+                    },
+                    "distance": 4652.82053307,
+                    "sims": 0.29242620603570935
+                },
+                {
+                    "id": 12130250951,
+                    "tags": {
+                        "amenity": "cafe"
+                    },
+                    "distance": 5876.47798903,
+                    "sims": 0.29242620603570935
+                }
+            ]
+        },
+        "19": {
+            "execution_time": 0.017307519912719727,
+            "results": [
+                {
+                    "id": 9525060548,
+                    "tags": {
+                        "name": "Ruined Arch",
+                        "access": "yes",
+                        "historic": "fort"
+                    },
+                    "distance": 2326.65385653,
+                    "sims": 0.46963042563848123
+                },
+                {
+                    "id": 7969149935,
+                    "tags": {
+                        "name": "\u015eih Yusuf Ebu TIRHAN",
+                        "historic": "tomb"
+                    },
+                    "distance": 7755.22421189,
+                    "sims": 0.40896326846103914
+                },
+                {
+                    "id": 364696567,
+                    "tags": {
+                        "name": "St.Pierre Kilisesi",
+                        "amenity": "place_of_worship",
+                        "name:ar": "\u0643\u0646\u064a\u0633\u0629 \u0627\u0644\u0642\u062f\u064a\u0633 \u0628\u0637\u0631\u0633",
+                        "name:de": "St.-Petrus-Grotte",
+                        "name:en": "Church of Saint Peter",
+                        "name:es": "Gruta de San Pedro",
+                        "name:fa": "\u06a9\u0644\u06cc\u0633\u0627\u06cc \u0633\u06cc\u0646\u062a \u067e\u06cc\u062a\u0631",
+                        "name:fr": "\u00c9glise Saint-Pierre",
+                        "name:hy": "\u054d\u0578\u0582\u0580\u0562 \u054a\u0565\u057f\u0580\u0578\u057d \u0565\u056f\u0565\u0572\u0565\u0581\u056b",
+                        "name:ru": "\u0426\u0435\u0440\u043a\u043e\u0432\u044c \u0421\u0432\u044f\u0442\u043e\u0433\u043e \u041f\u0435\u0442\u0440\u0430",
+                        "name:uk": "\u0426\u0435\u0440\u043a\u0432\u0430 \u0441\u0432\u044f\u0442\u043e\u0433\u043e \u041f\u0435\u0442\u0440\u0430",
+                        "name:zh": "\u8056\u5f7c\u5f97\u6559\u5802",
+                        "natural": "cave_entrance",
+                        "tourism": "attraction",
+                        "alt_name": "Senpiyer;St.Pierre Church",
+                        "historic": "church",
+                        "religion": "christian",
+                        "wikidata": "Q516472",
+                        "wikipedia": "tr:Saint Pierre Kilisesi",
+                        "wheelchair": "no",
+                        "description": "It is composed of a cave carved into the mountainside on Mount Starius with a depth of 13 m, a width of 9.5 m and a height of 7 m. This cave, which has been used by the first Christians in the Antakya region, is one of Christianity's oldest churches",
+                        "wikimedia_commons": "Category:Church of Saint Peter"
+                    },
+                    "distance": 2274.44805847,
+                    "sims": 0.40344021875379155
+                },
+                {
+                    "id": 4678305518,
+                    "tags": {
+                        "name": "Hz. H\u0131d\u0131r Makam\u0131 T\u00fcrbesi",
+                        "historic": "tomb"
+                    },
+                    "distance": 1421.75326978,
+                    "sims": 0.4017730472358437
+                },
+                {
+                    "id": 4678305526,
+                    "tags": {
+                        "name": "T\u00fcrbe",
+                        "historic": "tomb"
+                    },
+                    "distance": 1535.63004201,
+                    "sims": 0.39210395954180555
+                },
+                {
+                    "id": 2936740421,
+                    "tags": {
+                        "name": "\u015e\u0131h Isa Ghilam",
+                        "note": "sih isa gilam",
+                        "shrine": "yes",
+                        "amenity": "place_of_worship",
+                        "building": "shrine"
+                    },
+                    "distance": 7936.45373653,
+                    "sims": 0.37685908355008824
+                },
+                {
+                    "id": 2937056878,
+                    "tags": {
+                        "name": "Hz. H\u0131z\u0131r",
+                        "note": "Tomruksuyu",
+                        "amenity": "place_of_worship",
+                        "building": "shrine"
+                    },
+                    "distance": 12447.59568357,
+                    "sims": 0.37429327521960887
+                },
+                {
+                    "id": 9565545772,
+                    "tags": {
+                        "name": "Esenbulak",
+                        "place": "neighbourhood",
+                        "old_name": "Aparl\u0131;Abbara"
+                    },
+                    "distance": 4326.42579911,
+                    "sims": 0.3623231135414233
+                },
+                {
+                    "id": 10741216582,
+                    "tags": {
+                        "fixme": "resurvey after recovery",
+                        "source": "NeedsMap",
+                        "amenity": "refugee_site",
+                        "addr:full": "Atat\u00fcrk Park\u0131",
+                        "damage:date": "2023-02-06",
+                        "damage:type": "earthquake",
+                        "damage:event": "#T\u00fcrkiyeEQ060223",
+                        "addr:district": "Antakya",
+                        "addr:province": "Hatay"
+                    },
+                    "distance": 1542.01254456,
+                    "sims": 0.3598259640051198
+                },
+                {
+                    "id": 1179043925,
+                    "tags": {
+                        "name": "Sofular",
+                        "place": "village",
+                        "wikidata": "Q109384354",
+                        "wikipedia": "tr:Sofular, Alt\u0131n\u00f6z\u00fc"
+                    },
+                    "distance": 8633.94121293,
+                    "sims": 0.35214250062197694
+                }
+            ]
+        },
+        "20": {
+            "execution_time": 0.02102208137512207,
+            "results": [
+                {
+                    "id": 7418521039,
+                    "tags": {
+                        "name": "Adana Demir Store",
+                        "shop": "clothes"
+                    },
+                    "distance": 1039.356396,
+                    "sims": 0.76000154256858
+                },
+                {
+                    "id": 7418471299,
+                    "tags": {
+                        "name": "Fullamoda",
+                        "shop": "clothes"
+                    },
+                    "distance": 1044.46202635,
+                    "sims": 0.6024361733978201
+                },
+                {
+                    "id": 5741736791,
+                    "tags": {
+                        "name": "Saltanlar",
+                        "shop": "clothes"
+                    },
+                    "distance": 4202.04245374,
+                    "sims": 0.5852998945653344
+                },
+                {
+                    "id": 5741726014,
+                    "tags": {
+                        "name": "Poti",
+                        "shop": "clothes"
+                    },
+                    "distance": 4019.79762327,
+                    "sims": 0.5612043120989321
+                },
+                {
+                    "id": 11510751084,
+                    "tags": {
+                        "name": "3B - Ada Aksesuar",
+                        "shop": "fashion_accessories",
+                        "addr:city": "Adana",
+                        "addr:street": "78142. Sokak",
+                        "addr:district": "\u00c7ukurova",
+                        "addr:postcode": "01170",
+                        "addr:neighbourhood": "Toros Mahallesi"
+                    },
+                    "distance": 2910.24224527,
+                    "sims": 0.5471203653288348
+                },
+                {
+                    "id": 4541140993,
+                    "tags": {
+                        "name": "Adana mar",
+                        "shop": "supermarket",
+                        "name:tr": "Adana mar"
+                    },
+                    "distance": 4053.59869451,
+                    "sims": 0.5449657222567387
+                },
+                {
+                    "id": 6814990363,
+                    "tags": {
+                        "name": "Mavi",
+                        "shop": "clothes"
+                    },
+                    "distance": 4312.72401266,
+                    "sims": 0.5412157872237691
+                },
+                {
+                    "id": 4567605339,
+                    "tags": {
+                        "name": "Bo\u011fa \u0130\u00e7 Giyim",
+                        "shop": "clothes"
+                    },
+                    "distance": 4645.61879459,
+                    "sims": 0.5339549701716003
+                },
+                {
+                    "id": 4567533403,
+                    "tags": {
+                        "name": "Defacto",
+                        "shop": "clothes"
+                    },
+                    "distance": 4487.8368711,
+                    "sims": 0.532771086592281
+                },
+                {
+                    "id": 7913533174,
+                    "tags": {
+                        "name": "DeFacto",
+                        "shop": "clothes"
+                    },
+                    "distance": 4666.80561109,
+                    "sims": 0.532771086592281
+                }
+            ]
+        },
+        "21": {
+            "execution_time": 0.017333984375,
+            "results": [
+                {
+                    "id": 12825712701,
+                    "tags": {
+                        "amenity": "cafe"
+                    },
+                    "distance": 303.60057565,
+                    "sims": 0.588463997153283
+                },
+                {
+                    "id": 12825698701,
+                    "tags": {
+                        "amenity": "cafe"
+                    },
+                    "distance": 439.78803993,
+                    "sims": 0.588463997153283
+                },
+                {
+                    "id": 4927100554,
+                    "tags": {
+                        "amenity": "cafe"
+                    },
+                    "distance": 14798.41917506,
+                    "sims": 0.588463997153283
+                },
+                {
+                    "id": 4927100555,
+                    "tags": {
+                        "amenity": "cafe"
+                    },
+                    "distance": 18433.04766408,
+                    "sims": 0.588463997153283
+                },
+                {
+                    "id": 3796799111,
+                    "tags": {
+                        "amenity": "cafe",
+                        "smoking": "separated"
+                    },
+                    "distance": 3537.9351306,
+                    "sims": 0.48850449988219236
+                },
+                {
+                    "id": 6852449380,
+                    "tags": {
+                        "name": "Cadde Cafe",
+                        "amenity": "food_court"
+                    },
+                    "distance": 595.71559922,
+                    "sims": 0.47898128628730774
+                },
+                {
+                    "id": 6561702685,
+                    "tags": {
+                        "name": "Caf\u00e9 Ma",
+                        "amenity": "cafe",
+                        "name:en": "Caf\u00e9 Ma\u00e7a",
+                        "name:tr": "Caf\u00e9 Ma\u00e7a"
+                    },
+                    "distance": 495.2352492,
+                    "sims": 0.4723470492569841
+                },
+                {
+                    "id": 6852449381,
+                    "tags": {
+                        "name": "Limon Cafe",
+                        "amenity": "food_court"
+                    },
+                    "distance": 593.66641972,
+                    "sims": 0.45859210069752065
+                },
+                {
+                    "id": 12825440301,
+                    "tags": {
+                        "name": "Mor\u00f6tesi",
+                        "amenity": "cafe"
+                    },
+                    "distance": 694.33230689,
+                    "sims": 0.4390993118286133
+                },
+                {
+                    "id": 4340309989,
+                    "tags": {
+                        "name": "Sidar internet c@fe",
+                        "amenity": "cafe"
+                    },
+                    "distance": 1659.63819644,
+                    "sims": 0.43375349439659827
+                }
+            ]
+        },
+        "22": {
+            "execution_time": 0.016945600509643555,
+            "results": [
+                {
+                    "id": 12840609718,
+                    "tags": {
+                        "name": "Necmi Asfuroglu Antakya Museum",
+                        "museum": "history",
+                        "tourism": "museum"
+                    },
+                    "distance": 2481.83104204,
+                    "sims": 0.5206010578271806
+                },
+                {
+                    "id": 1782818948,
+                    "tags": {
+                        "tourism": "hotel"
+                    },
+                    "distance": 851.39098052,
+                    "sims": 0.4832050572374301
+                },
+                {
+                    "id": 1782818954,
+                    "tags": {
+                        "tourism": "hotel"
+                    },
+                    "distance": 1216.77269589,
+                    "sims": 0.4832050572374301
+                },
+                {
+                    "id": 10162198217,
+                    "tags": {
+                        "tourism": "viewpoint"
+                    },
+                    "distance": 1685.55983612,
+                    "sims": 0.45732003105045993
+                },
+                {
+                    "id": 4365425590,
+                    "tags": {
+                        "tourism": "picnic_site"
+                    },
+                    "distance": 2031.69174753,
+                    "sims": 0.448459816346241
+                },
+                {
+                    "id": 9673966653,
+                    "tags": {
+                        "name": "Old French town",
+                        "tourism": "attraction"
+                    },
+                    "distance": 878.73287824,
+                    "sims": 0.4446929527061383
+                },
+                {
+                    "id": 10224938534,
+                    "tags": {
+                        "name": "Antakya Uzun \u00c7ar\u015f\u0131",
+                        "tourism": "attraction"
+                    },
+                    "distance": 1113.02220886,
+                    "sims": 0.3759336543281083
+                },
+                {
+                    "id": 10752712802,
+                    "tags": {
+                        "name": "Charon",
+                        "historic": "memorial",
+                        "memorial": "sculpture"
+                    },
+                    "distance": 2760.80287149,
+                    "sims": 0.36421896093520323
+                },
+                {
+                    "id": 2937058049,
+                    "tags": {
+                        "name": "Hazreti H\u0131z\u0131r T\u00fcrbesi",
+                        "tourism": "attraction",
+                        "alt_name": "Hazreti H\u0131z\u0131r Aleyh\u00fcsselam T\u00fcrbesi",
+                        "historic": "tomb"
+                    },
+                    "distance": 3820.72924465,
+                    "sims": 0.33721878015436824
+                },
+                {
+                    "id": 11373116533,
+                    "tags": {
+                        "name": "Saadet Grand Otel",
+                        "tourism": "hotel"
+                    },
+                    "distance": 720.7898984,
+                    "sims": 0.32516332710883655
+                }
+            ]
+        },
+        "23": {
+            "execution_time": 0.02160334587097168,
+            "results": [
+                {
+                    "id": 11422686646,
+                    "tags": {
+                        "bus": "yes",
+                        "name": "\u00c7ukurova \u00dcni\u0307versi\u0307tesi\u0307 4A/B",
+                        "highway": "bus_stop",
+                        "public_transport": "platform"
+                    },
+                    "distance": 7460.58223209,
+                    "sims": 0.5951898225802595
+                },
+                {
+                    "id": 11422686644,
+                    "tags": {
+                        "bus": "yes",
+                        "name": "\u00c7UKUROVA \u00dcN\u0130VERS\u0130TES\u0130 2A/B",
+                        "highway": "bus_stop",
+                        "public_transport": "platform"
+                    },
+                    "distance": 8089.44712572,
+                    "sims": 0.5902843367714649
+                },
+                {
+                    "id": 11422686645,
+                    "tags": {
+                        "bus": "yes",
+                        "name": "\u00c7ukurova \u00dcni\u0307versi\u0307tesi\u0307 3A/B",
+                        "highway": "bus_stop",
+                        "public_transport": "platform"
+                    },
+                    "distance": 7727.69011903,
+                    "sims": 0.5884083053335691
+                },
+                {
+                    "id": 11352803506,
+                    "tags": {
+                        "bus": "yes",
+                        "name": "AL\u0130 BOZDO\u011eANO\u011eLU 6B",
+                        "highway": "bus_stop",
+                        "public_transport": "platform"
+                    },
+                    "distance": 4179.86906688,
+                    "sims": 0.5878204739628821
+                },
+                {
+                    "id": 11422686615,
+                    "tags": {
+                        "bus": "yes",
+                        "name": "G\u00fcney Kamp\u00fcs 1B",
+                        "highway": "bus_stop",
+                        "public_transport": "platform"
+                    },
+                    "distance": 6396.22096634,
+                    "sims": 0.5873440153990044
+                },
+                {
+                    "id": 11422686618,
+                    "tags": {
+                        "bus": "yes",
+                        "name": "15 TEMMUZ \u015eEH\u0130TLER K\u00d6PR\u00dcS\u00dc 1B",
+                        "highway": "bus_stop",
+                        "public_transport": "platform"
+                    },
+                    "distance": 4579.16639356,
+                    "sims": 0.5860477830086236
+                },
+                {
+                    "id": 11422686638,
+                    "tags": {
+                        "bus": "yes",
+                        "name": "G\u00fcney Kamp\u00fcs 3A",
+                        "highway": "bus_stop",
+                        "public_transport": "platform"
+                    },
+                    "distance": 6834.60039777,
+                    "sims": 0.5852061059702539
+                },
+                {
+                    "id": 11146646273,
+                    "tags": {
+                        "bus": "yes",
+                        "name": "S\u00dcLEYMAN DEM\u0130REL 6B",
+                        "highway": "bus_stop",
+                        "public_transport": "platform"
+                    },
+                    "distance": 6800.75133385,
+                    "sims": 0.584347620425063
+                },
+                {
+                    "id": 11422686639,
+                    "tags": {
+                        "bus": "yes",
+                        "name": "G\u00fcney Kamp\u00fcs 4A",
+                        "highway": "bus_stop",
+                        "public_transport": "platform"
+                    },
+                    "distance": 7370.78638152,
+                    "sims": 0.5835039416542234
+                },
+                {
+                    "id": 11422686614,
+                    "tags": {
+                        "bus": "yes",
+                        "name": "G\u00fcney Kamp\u00fcs 2B",
+                        "highway": "bus_stop",
+                        "public_transport": "platform"
+                    },
+                    "distance": 6637.13880603,
+                    "sims": 0.5828904659347987
+                }
+            ]
+        },
+        "24": {
+            "execution_time": 0.018581390380859375,
+            "results": [
+                {
+                    "id": 4974972226,
+                    "tags": {
+                        "amenity": "restaurant",
+                        "addr:street": "G\u00f6zne yolu"
+                    },
+                    "distance": 16615.00381948,
+                    "sims": 0.42166890293400416
+                },
+                {
+                    "id": 9871342768,
+                    "tags": {
+                        "name": "Siteler",
+                        "place": "suburb"
+                    },
+                    "distance": 583.52646485,
+                    "sims": 0.40412397458386606
+                },
+                {
+                    "id": 9382917722,
+                    "tags": {
+                        "name": "Bekirde",
+                        "place": "suburb"
+                    },
+                    "distance": 6143.39787222,
+                    "sims": 0.38424086791059486
+                },
+                {
+                    "id": 3707938812,
+                    "tags": {
+                        "name": "mahalle",
+                        "place": "neighbourhood"
+                    },
+                    "distance": 11799.68137952,
+                    "sims": 0.38169018298808643
+                },
+                {
+                    "id": 6968902508,
+                    "tags": {
+                        "name": "Saya Park",
+                        "shop": "mall"
+                    },
+                    "distance": 9660.58668752,
+                    "sims": 0.37311851933444273
+                },
+                {
+                    "id": 9890632061,
+                    "tags": {
+                        "name": "Halkkent",
+                        "place": "suburb"
+                    },
+                    "distance": 3034.96936428,
+                    "sims": 0.36845502101302907
+                },
+                {
+                    "id": 3707798498,
+                    "tags": {
+                        "name": "Hacgedi\u011fi",
+                        "place": "neighbourhood"
+                    },
+                    "distance": 16683.74878937,
+                    "sims": 0.36767113034037147
+                },
+                {
+                    "id": 8169463717,
+                    "tags": {
+                        "shop": "massage"
+                    },
+                    "distance": 6572.63622462,
+                    "sims": 0.3655927021018015
+                },
+                {
+                    "id": 4973361623,
+                    "tags": {
+                        "amenity": "restaurant"
+                    },
+                    "distance": 5904.07764276,
+                    "sims": 0.3616718700537507
+                },
+                {
+                    "id": 4227737989,
+                    "tags": {
+                        "amenity": "restaurant"
+                    },
+                    "distance": 9952.24342022,
+                    "sims": 0.3616718700537507
+                }
+            ]
+        },
+        "25": {
+            "execution_time": 0.01573920249938965,
+            "results": [
+                {
+                    "id": 9242450466,
+                    "tags": {
+                        "name": "Akasya",
+                        "place": "suburb",
+                        "wikidata": "Q109384356",
+                        "wikipedia": "tr:Akasya, Antakya"
+                    },
+                    "distance": 1830.82556622,
+                    "sims": 0.5962777596845
+                },
+                {
+                    "id": 12080300211,
+                    "tags": {
+                        "shop": "farm",
+                        "addr:city": "Hatay",
+                        "addr:district": "Antakya"
+                    },
+                    "distance": 10075.56404002,
+                    "sims": 0.5905926835559937
+                },
+                {
+                    "id": 1576983019,
+                    "tags": {
+                        "name": "G\u00f6k\u00e7eg\u00f6z",
+                        "place": "village",
+                        "wikidata": "Q10763618",
+                        "wikipedia": "tr:G\u00f6k\u00e7eg\u00f6z, Antakya"
+                    },
+                    "distance": 7557.3071295,
+                    "sims": 0.588243526574914
+                },
+                {
+                    "id": 12080354828,
+                    "tags": {
+                        "name": "Uydukent Market",
+                        "shop": "convenience",
+                        "addr:city": "Hatay",
+                        "addr:district": "Antakya"
+                    },
+                    "distance": 10119.22716118,
+                    "sims": 0.5811553984429858
+                },
+                {
+                    "id": 11372712916,
+                    "tags": {
+                        "shop": "convenience",
+                        "addr:city": "Hatay",
+                        "addr:district": "Antakya"
+                    },
+                    "distance": 1702.76737578,
+                    "sims": 0.5781580661552355
+                },
+                {
+                    "id": 8817850286,
+                    "tags": {
+                        "name": "Akhisar",
+                        "place": "village",
+                        "wikidata": "Q10731291",
+                        "wikipedia": "tr:Akhisar, Antakya"
+                    },
+                    "distance": 11634.72520686,
+                    "sims": 0.5687520066285732
+                },
+                {
+                    "id": 11372664906,
+                    "tags": {
+                        "name": "Manav",
+                        "shop": "farm",
+                        "addr:city": "Hatay",
+                        "addr:district": "Antakya"
+                    },
+                    "distance": 1660.95578072,
+                    "sims": 0.5598271011533855
+                },
+                {
+                    "id": 1576983106,
+                    "tags": {
+                        "name": "G\u00fczelbur\u00e7",
+                        "place": "suburb",
+                        "name:ar": "\u0643\u0648\u0632\u0644 \u0628\u0631\u062c",
+                        "wikidata": "Q10764211",
+                        "wikipedia": "tr:G\u00fczelbur\u00e7, Antakya"
+                    },
+                    "distance": 5203.31813558,
+                    "sims": 0.5586410874014551
+                },
+                {
+                    "id": 9242629546,
+                    "tags": {
+                        "name": "Akevler",
+                        "place": "suburb",
+                        "wikidata": "Q109384358",
+                        "wikipedia": "tr:Akevler, Antakya"
+                    },
+                    "distance": 643.11742882,
+                    "sims": 0.5584820954262325
+                },
+                {
+                    "id": 12080343214,
+                    "tags": {
+                        "name": "Dilaver Market",
+                        "shop": "convenience",
+                        "addr:city": "Hatay",
+                        "addr:district": "Antakya"
+                    },
+                    "distance": 10243.9899031,
+                    "sims": 0.5565069685755071
+                }
+            ]
+        },
+        "26": {
+            "execution_time": 0.02139735221862793,
+            "results": [
+                {
+                    "id": 6833662492,
+                    "tags": {
+                        "shop": "bakery"
+                    },
+                    "distance": 4253.23124172,
+                    "sims": 0.4723366432992864
+                },
+                {
+                    "id": 664140423,
+                    "tags": {
+                        "shop": "hairdresser"
+                    },
+                    "distance": 3445.95872665,
+                    "sims": 0.4635253737942704
+                },
+                {
+                    "id": 6996917901,
+                    "tags": {
+                        "shop": "hairdresser"
+                    },
+                    "distance": 4164.59326554,
+                    "sims": 0.4635253737942704
+                },
+                {
+                    "id": 6919778066,
+                    "tags": {
+                        "shop": "hairdresser"
+                    },
+                    "distance": 4238.28706547,
+                    "sims": 0.4635253737942704
+                },
+                {
+                    "id": 6919778064,
+                    "tags": {
+                        "shop": "hairdresser"
+                    },
+                    "distance": 4252.5349747,
+                    "sims": 0.4635253737942704
+                },
+                {
+                    "id": 628953361,
+                    "tags": {
+                        "name": "Nobel Kitabevi",
+                        "shop": "books",
+                        "amenity": "library",
+                        "name:en": "Nobel bookshop"
+                    },
+                    "distance": 3132.64836355,
+                    "sims": 0.459158449442988
+                },
+                {
+                    "id": 4570960853,
+                    "tags": {
+                        "name": "C&A",
+                        "shop": "mall"
+                    },
+                    "distance": 4467.71789185,
+                    "sims": 0.4481432550465908
+                },
+                {
+                    "id": 4586815790,
+                    "tags": {
+                        "shop": "supermarket"
+                    },
+                    "distance": 2317.17247647,
+                    "sims": 0.4440013897423315
+                },
+                {
+                    "id": 10703783342,
+                    "tags": {
+                        "shop": "supermarket"
+                    },
+                    "distance": 2667.22706483,
+                    "sims": 0.4440013897423315
+                },
+                {
+                    "id": 6833710661,
+                    "tags": {
+                        "shop": "supermarket"
+                    },
+                    "distance": 4207.58550567,
+                    "sims": 0.4440013897423315
+                }
+            ]
+        },
+        "27": {
+            "execution_time": 0.021177053451538086,
+            "results": [
+                {
+                    "id": 4973361623,
+                    "tags": {
+                        "amenity": "restaurant"
+                    },
+                    "distance": 3117.95974975,
+                    "sims": 0.5976342689351433
+                },
+                {
+                    "id": 4227737989,
+                    "tags": {
+                        "amenity": "restaurant"
+                    },
+                    "distance": 13482.33000208,
+                    "sims": 0.5976342689351433
+                },
+                {
+                    "id": 6717464887,
+                    "tags": {
+                        "amenity": "restaurant"
+                    },
+                    "distance": 16238.00550982,
+                    "sims": 0.5976342689351433
+                },
+                {
+                    "id": 4972610721,
+                    "tags": {
+                        "amenity": "restaurant"
+                    },
+                    "distance": 16575.04067657,
+                    "sims": 0.5976342689351433
+                },
+                {
+                    "id": 4972610622,
+                    "tags": {
+                        "amenity": "restaurant"
+                    },
+                    "distance": 16871.24166755,
+                    "sims": 0.5976342689351433
+                },
+                {
+                    "id": 6405000427,
+                    "tags": {
+                        "amenity": "restaurant"
+                    },
+                    "distance": 17442.07221653,
+                    "sims": 0.5976342689351433
+                },
+                {
+                    "id": 12130250951,
+                    "tags": {
+                        "amenity": "cafe"
+                    },
+                    "distance": 5357.09250436,
+                    "sims": 0.5305925778063081
+                },
+                {
+                    "id": 11271160476,
+                    "tags": {
+                        "amenity": "cafe"
+                    },
+                    "distance": 5985.79632321,
+                    "sims": 0.5305925778063081
+                },
+                {
+                    "id": 11114844707,
+                    "tags": {
+                        "name": "Rest mersin",
+                        "amenity": "restaurant"
+                    },
+                    "distance": 2770.03721566,
+                    "sims": 0.5273179877672853
+                },
+                {
+                    "id": 7902176087,
+                    "tags": {
+                        "name": "6 Kardesler Kebap Salonu",
+                        "amenity": "restaurant"
+                    },
+                    "distance": 4238.56884396,
+                    "sims": 0.5121582688531175
+                }
+            ]
+        },
+        "28": {
+            "execution_time": 0.020757436752319336,
+            "results": [
+                {
+                    "id": 1179046010,
+                    "tags": {
+                        "place": "neighbourhood"
+                    },
+                    "distance": 12538.97828234,
+                    "sims": 0.44581658690570203
+                },
+                {
+                    "id": 1179045987,
+                    "tags": {
+                        "place": "neighbourhood"
+                    },
+                    "distance": 13648.61259622,
+                    "sims": 0.44581658690570203
+                },
+                {
+                    "id": 9562968196,
+                    "tags": {
+                        "place": "neighbourhood"
+                    },
+                    "distance": 17931.90826406,
+                    "sims": 0.44581658690570203
+                },
+                {
+                    "id": 7299169129,
+                    "tags": {
+                        "name": "Bozo\u011flan Malikanesi",
+                        "access": "yes",
+                        "historic": "manor"
+                    },
+                    "distance": 11726.81078361,
+                    "sims": 0.4437184132522757
+                },
+                {
+                    "id": 4678305526,
+                    "tags": {
+                        "name": "T\u00fcrbe",
+                        "historic": "tomb"
+                    },
+                    "distance": 2566.86244832,
+                    "sims": 0.3885966869823435
+                },
+                {
+                    "id": 10752712802,
+                    "tags": {
+                        "name": "Charon",
+                        "historic": "memorial",
+                        "memorial": "sculpture"
+                    },
+                    "distance": 3476.86422793,
+                    "sims": 0.3879466318925291
+                },
+                {
+                    "id": 2516004569,
+                    "tags": {
+                        "name": "Dere",
+                        "place": "neighbourhood"
+                    },
+                    "distance": 12420.08952421,
+                    "sims": 0.3867699695003033
+                },
+                {
+                    "id": 9525060548,
+                    "tags": {
+                        "name": "Ruined Arch",
+                        "access": "yes",
+                        "historic": "fort"
+                    },
+                    "distance": 3703.2143338,
+                    "sims": 0.386129620344573
+                },
+                {
+                    "id": 11383665788,
+                    "tags": {
+                        "name": "Katar 2 Konteyner Kent",
+                        "landuse": "residential",
+                        "addr:city": "Hatay",
+                        "residential": "apartments"
+                    },
+                    "distance": 4559.03762898,
+                    "sims": 0.3841855776863202
+                },
+                {
+                    "id": 4678305518,
+                    "tags": {
+                        "name": "Hz. H\u0131d\u0131r Makam\u0131 T\u00fcrbesi",
+                        "historic": "tomb"
+                    },
+                    "distance": 2126.34945351,
+                    "sims": 0.37884690727202996
+                }
+            ]
+        },
+        "29": {
+            "execution_time": 0.02366042137145996,
+            "results": [
+                {
+                    "id": 10310258409,
+                    "tags": {
+                        "name": "\u0130\u015ftah Kebap",
+                        "amenity": "restaurant"
+                    },
+                    "distance": 3029.48788389,
+                    "sims": 0.6719783945070741
+                },
+                {
+                    "id": 10310264109,
+                    "tags": {
+                        "name": "Erciyes Kebap",
+                        "amenity": "restaurant"
+                    },
+                    "distance": 2353.4781627,
+                    "sims": 0.6515906647321783
+                },
+                {
+                    "id": 5635212266,
+                    "tags": {
+                        "name": "D\u00f6nerci \u0130bo",
+                        "amenity": "restaurant",
+                        "cuisine": "kebab"
+                    },
+                    "distance": 1699.09830086,
+                    "sims": 0.6434383584093561
+                },
+                {
+                    "id": 5398040721,
+                    "tags": {
+                        "name": "ali baba kebab",
+                        "amenity": "restaurant"
+                    },
+                    "distance": 6477.84264707,
+                    "sims": 0.6335742066375678
+                },
+                {
+                    "id": 4567571197,
+                    "tags": {
+                        "name": "Lider Kebap",
+                        "amenity": "restaurant"
+                    },
+                    "distance": 2599.16327672,
+                    "sims": 0.6245933957276762
+                },
+                {
+                    "id": 12802711501,
+                    "tags": {
+                        "name": "Kebap\u00e7i Aziz",
+                        "amenity": "cafe",
+                        "cuisine": "kebab;turkish",
+                        "outdoor_seating": "yes"
+                    },
+                    "distance": 3294.59257143,
+                    "sims": 0.620399255168416
+                },
+                {
+                    "id": 5132640532,
+                    "tags": {
+                        "name": "Bayram Kebap",
+                        "amenity": "restaurant"
+                    },
+                    "distance": 2569.89060962,
+                    "sims": 0.6198542898849934
+                },
+                {
+                    "id": 3727527087,
+                    "tags": {
+                        "name": "Kebap\u00e7\u0131 O\u011fuz",
+                        "amenity": "restaurant",
+                        "addr:city": "\u00c7ukurova/Adana"
+                    },
+                    "distance": 3674.48772402,
+                    "sims": 0.6133334406217004
+                },
+                {
+                    "id": 11691115269,
+                    "tags": {
+                        "name": "5 Karde\u015fler Kebap & Izgara",
+                        "amenity": "restaurant"
+                    },
+                    "distance": 9495.71420872,
+                    "sims": 0.6116273585446884
+                },
+                {
+                    "id": 6563312186,
+                    "tags": {
+                        "name": "Kebapci Mallun",
+                        "amenity": "restaurant",
+                        "cuisine": "turkish",
+                        "name:en": "Mallun Kebab"
+                    },
+                    "distance": 2733.48112804,
+                    "sims": 0.605415660304298
+                }
+            ]
+        },
+        "30": {
+            "execution_time": 0.02089405059814453,
+            "results": [
+                {
+                    "id": 12130250949,
+                    "tags": {
+                        "name": "Rosa Patiseri",
+                        "shop": "pastry"
+                    },
+                    "distance": 8168.2021263,
+                    "sims": 0.43888750606183935
+                },
+                {
+                    "id": 6200877294,
+                    "tags": {
+                        "name": "Kervan Ekmek Patisserie",
+                        "shop": "bakery"
+                    },
+                    "distance": 1588.33938779,
+                    "sims": 0.3869385066326072
+                },
+                {
+                    "id": 9197475118,
+                    "tags": {
+                        "name": "Popeyes",
+                        "brand": "Popeyes",
+                        "amenity": "fast_food",
+                        "cuisine": "chicken",
+                        "takeaway": "yes",
+                        "official_name": "Popeyes Louisiana Kitchen",
+                        "brand:wikidata": "Q1330910"
+                    },
+                    "distance": 2951.47660317,
+                    "sims": 0.35225553405025
+                },
+                {
+                    "id": 7036855815,
+                    "tags": {
+                        "name": "\u00dcnl\u00fco\u011flu ve Cici",
+                        "shop": "pastry",
+                        "amenity": "cafe"
+                    },
+                    "distance": 1142.10617789,
+                    "sims": 0.3289597253991856
+                },
+                {
+                    "id": 6155691344,
+                    "tags": {
+                        "name": "K\u00fcnefeci Ali Baba",
+                        "shop": "pastry"
+                    },
+                    "distance": 3344.59656992,
+                    "sims": 0.3228077541314711
+                },
+                {
+                    "id": 6284158585,
+                    "tags": {
+                        "name": "G\u00f6n\u00fcl Cezerye",
+                        "shop": "confectionery"
+                    },
+                    "distance": 4193.03524993,
+                    "sims": 0.3186034328028524
+                },
+                {
+                    "id": 4973361623,
+                    "tags": {
+                        "amenity": "restaurant"
+                    },
+                    "distance": 2415.08125601,
+                    "sims": 0.31077423774043855
+                },
+                {
+                    "id": 4227737989,
+                    "tags": {
+                        "amenity": "restaurant"
+                    },
+                    "distance": 12071.11119282,
+                    "sims": 0.31077423774043855
+                },
+                {
+                    "id": 6717464887,
+                    "tags": {
+                        "amenity": "restaurant"
+                    },
+                    "distance": 19261.08829426,
+                    "sims": 0.31077423774043855
+                },
+                {
+                    "id": 4972610721,
+                    "tags": {
+                        "amenity": "restaurant"
+                    },
+                    "distance": 19615.2310081,
+                    "sims": 0.31077423774043855
+                }
+            ]
+        },
+        "31": {
+            "execution_time": 0.024970293045043945,
+            "results": [
+                {
+                    "id": 1179046010,
+                    "tags": {
+                        "place": "neighbourhood"
+                    },
+                    "distance": 11528.65113765,
+                    "sims": 0.3879870905891659
+                },
+                {
+                    "id": 1179045987,
+                    "tags": {
+                        "place": "neighbourhood"
+                    },
+                    "distance": 12709.32254702,
+                    "sims": 0.3879870905891659
+                },
+                {
+                    "id": 9562968196,
+                    "tags": {
+                        "place": "neighbourhood"
+                    },
+                    "distance": 16768.61128012,
+                    "sims": 0.3879870905891659
+                },
+                {
+                    "id": 11381987245,
+                    "tags": {
+                        "amenity": "bbq"
+                    },
+                    "distance": 5481.1676934,
+                    "sims": 0.37179687695577956
+                },
+                {
+                    "id": 4577960080,
+                    "tags": {
+                        "amenity": "cafe"
+                    },
+                    "distance": 2792.25216986,
+                    "sims": 0.3558747940212834
+                },
+                {
+                    "id": 12080270004,
+                    "tags": {
+                        "name": "Enes Mini AVM",
+                        "shop": "bathroom_furnishing",
+                        "addr:city": "Hatay",
+                        "addr:district": "Antakya",
+                        "addr:neighbourhood": "Alaattin"
+                    },
+                    "distance": 11717.66382214,
+                    "sims": 0.35581340124448335
+                },
+                {
+                    "id": 10633878697,
+                    "tags": {
+                        "building": "Vak\u0131fl\u0131 Village Tea Garden"
+                    },
+                    "distance": 16786.13376207,
+                    "sims": 0.35448413709090254
+                },
+                {
+                    "id": 11373141395,
+                    "tags": {
+                        "name": "Nuri Restaurant",
+                        "amenity": "restaurant",
+                        "cuisine": "turkish",
+                        "addr:city": "Hatay",
+                        "diet:halal": "yes",
+                        "diet:vegan": "yes",
+                        "addr:district": "Antakya",
+                        "diet:vegetarian": "yes",
+                        "addr:neighbourhood": "Honda Kav\u015fa\u011f\u0131"
+                    },
+                    "distance": 7734.31472641,
+                    "sims": 0.35067975210910074
+                },
+                {
+                    "id": 11382003056,
+                    "tags": {
+                        "shop": "farm"
+                    },
+                    "distance": 5593.53025348,
+                    "sims": 0.34892222006520224
+                },
+                {
+                    "id": 11392160472,
+                    "tags": {
+                        "shop": "farm"
+                    },
+                    "distance": 8854.71463621,
+                    "sims": 0.34892222006520224
+                }
+            ]
+        },
+        "32": {
+            "execution_time": 0.02418661117553711,
+            "results": [
+                {
+                    "id": 6813458549,
+                    "tags": {
+                        "name": "\u015e\u0131rdanc\u0131 Cumali",
+                        "amenity": "restaurant",
+                        "cuisine": "turkish"
+                    },
+                    "distance": 7308.30450335,
+                    "sims": 0.48743274283585336
+                },
+                {
+                    "id": 9963525586,
+                    "tags": {
+                        "name": "Babao\u011flu D\u00f6ner ve Pide F\u0131r\u0131n\u0131",
+                        "amenity": "restaurant",
+                        "cuisine": "turkish"
+                    },
+                    "distance": 8205.07417114,
+                    "sims": 0.47034635079375564
+                },
+                {
+                    "id": 4567441624,
+                    "tags": {
+                        "name": "Kahvalt\u0131 D\u00fcnyas\u0131",
+                        "amenity": "restaurant"
+                    },
+                    "distance": 2550.45844778,
+                    "sims": 0.46575862332770057
+                },
+                {
+                    "id": 6820853340,
+                    "tags": {
+                        "name": "Adana B\u00fcy\u00fck\u015fehir Belediyesi Kapal\u0131 Y\u00fczme Havuzu",
+                        "leisure": "swimming_pool"
+                    },
+                    "distance": 6857.16431467,
+                    "sims": 0.4599833941400563
+                },
+                {
+                    "id": 11205476957,
+                    "tags": {
+                        "name": "\u015e\u0131rdanc\u0131 Kemal",
+                        "amenity": "restaurant",
+                        "cuisine": "turkish;\u015f\u0131rdan;kokore\u00e7",
+                        "diet:meat": "yes",
+                        "diet:halal": "yes",
+                        "diet:non-vegetarian": "yes"
+                    },
+                    "distance": 5489.41209023,
+                    "sims": 0.4545578794090608
+                },
+                {
+                    "id": 4348797391,
+                    "tags": {
+                        "name": "Pozant\u0131 Dinlenme Tesisleri",
+                        "amenity": "restaurant"
+                    },
+                    "distance": 5197.53837852,
+                    "sims": 0.45321257229303835
+                },
+                {
+                    "id": 10270066135,
+                    "tags": {
+                        "name": "T\u00fcrkoca\u011f\u0131",
+                        "place": "suburb"
+                    },
+                    "distance": 4040.70916462,
+                    "sims": 0.4524230758525054
+                },
+                {
+                    "id": 5254278524,
+                    "tags": {
+                        "name": "Kay\u0131khane",
+                        "amenity": "restaurant"
+                    },
+                    "distance": 3269.50274793,
+                    "sims": 0.4503427104489818
+                },
+                {
+                    "id": 11556490937,
+                    "tags": {
+                        "name": "S. S. \u00c7ukurova G\u00fclen Y\u00fczler Kad\u0131n T\u00fcketim Kooperatifi",
+                        "amenity": "restaurant",
+                        "cuisine": "s\u0131kma"
+                    },
+                    "distance": 5487.24113271,
+                    "sims": 0.44660569308010567
+                },
+                {
+                    "id": 4567517440,
+                    "tags": {
+                        "name": "Simit Saray\u0131",
+                        "amenity": "cafe"
+                    },
+                    "distance": 3327.36121521,
+                    "sims": 0.4465528668519281
+                }
+            ]
+        },
+        "33": {
+            "execution_time": 0.011713743209838867,
+            "results": [
+                {
+                    "id": 12948956055,
+                    "tags": {
+                        "amenity": "cafe"
+                    },
+                    "distance": 1093.28005675,
+                    "sims": 0.42890481015188797
+                },
+                {
+                    "id": 9287432552,
+                    "tags": {
+                        "amenity": "cafe"
+                    },
+                    "distance": 8286.37767251,
+                    "sims": 0.42890481015188797
+                },
+                {
+                    "id": 4228682589,
+                    "tags": {
+                        "amenity": "restaurant"
+                    },
+                    "distance": 9528.87104943,
+                    "sims": 0.4115792039507392
+                },
+                {
+                    "id": 1547480489,
+                    "tags": {
+                        "amenity": "parking"
+                    },
+                    "distance": 14346.076395,
+                    "sims": 0.360371936548594
+                },
+                {
+                    "id": 12726490676,
+                    "tags": {
+                        "name": "G\u00fcl Cafe & Restaurant",
+                        "amenity": "fast_food"
+                    },
+                    "distance": 1321.47429198,
+                    "sims": 0.3377546373982405
+                },
+                {
+                    "id": 9389449243,
+                    "tags": {
+                        "name": "Barbaros",
+                        "place": "suburb"
+                    },
+                    "distance": 4789.35815118,
+                    "sims": 0.32607789791094643
+                },
+                {
+                    "id": 6578893064,
+                    "tags": {
+                        "name": "Sancak",
+                        "amenity": "restaurant",
+                        "cuisine": "fish",
+                        "internet_access": "wlan"
+                    },
+                    "distance": 12908.85096048,
+                    "sims": 0.32014379023220385
+                },
+                {
+                    "id": 6077277085,
+                    "tags": {
+                        "name": "\u00d6yk\u00fc Restaurant",
+                        "amenity": "restaurant"
+                    },
+                    "distance": 13280.70717338,
+                    "sims": 0.3098823818529364
+                },
+                {
+                    "id": 11804762269,
+                    "tags": {
+                        "amenity": "toilets"
+                    },
+                    "distance": 200.52987652,
+                    "sims": 0.306483754708879
+                },
+                {
+                    "id": 7887464320,
+                    "tags": {
+                        "name": "Ci\u011ferci \u00d6mer",
+                        "amenity": "restaurant"
+                    },
+                    "distance": 12117.1897277,
+                    "sims": 0.30133969489752355
+                }
+            ]
+        },
+        "34": {
+            "execution_time": 0.02129387855529785,
+            "results": [
+                {
+                    "id": 12840609718,
+                    "tags": {
+                        "name": "Necmi Asfuroglu Antakya Museum",
+                        "museum": "history",
+                        "tourism": "museum"
+                    },
+                    "distance": 2016.63376254,
+                    "sims": 0.511928295105625
+                },
+                {
+                    "id": 12110587584,
+                    "tags": {
+                        "name": "Hatay",
+                        "place": "city",
+                        "name:ar": "\u062d\u0637\u0627\u064a",
+                        "name:en": "Hatay",
+                        "name:fa": "\u062e\u062a\u0627\u06cc",
+                        "name:ml": "\u0d39\u0d24\u0d4d\u0d24\u0d3e\u0d2f\u0d4d",
+                        "wikidata": "Q83274",
+                        "wikipedia": "tr:Hatay",
+                        "population": "1544640",
+                        "name:tr:suffix": "B\u00fcy\u00fck\u015fehir Belediyesi",
+                        "population:date": "2023-12-31",
+                        "wikimedia_commons": "Category:Hatay Province"
+                    },
+                    "distance": 616.07661164,
+                    "sims": 0.47047589801595735
+                },
+                {
+                    "id": 11382037076,
+                    "tags": {
+                        "name": "Leonardo Foto\u011fraf\u00e7\u0131l\u0131k",
+                        "shop": "photo"
+                    },
+                    "distance": 1582.88658287,
+                    "sims": 0.4111780802648821
+                },
+                {
+                    "id": 11371005803,
+                    "tags": {
+                        "name": "G\u00f6zde Kuyumculuk",
+                        "shop": "jewelry",
+                        "addr:city": "Hatay",
+                        "addr:street": "Hatay 2 Caddesi",
+                        "addr:district": "Antakya",
+                        "addr:postcode": "31000",
+                        "addr:neighbourhood": "Serinyol"
+                    },
+                    "distance": 18939.59551568,
+                    "sims": 0.410636710232146
+                },
+                {
+                    "id": 11381958112,
+                    "tags": {
+                        "shop": "optician",
+                        "addr:city": "Hatay"
+                    },
+                    "distance": 5339.17860311,
+                    "sims": 0.4047426425183758
+                },
+                {
+                    "id": 11370678502,
+                    "tags": {
+                        "name": "Ertan Pastanesi",
+                        "shop": "pastry",
+                        "addr:city": "Hatay",
+                        "addr:street": "Hatay 2 Caddesi",
+                        "addr:district": "Antakya",
+                        "addr:postcode": "31000",
+                        "addr:neighbourhood": "Serinyol"
+                    },
+                    "distance": 18925.2349299,
+                    "sims": 0.401652503703124
+                },
+                {
+                    "id": 11371217189,
+                    "tags": {
+                        "name": "3'S Bijuteri",
+                        "shop": "general",
+                        "addr:city": "Hatay",
+                        "addr:street": "Hatay 2 Caddesi",
+                        "addr:district": "Antakya",
+                        "addr:postcode": "31000",
+                        "addr:neighbourhood": "SER\u0130NYOL"
+                    },
+                    "distance": 17319.44910559,
+                    "sims": 0.40124592240720536
+                },
+                {
+                    "id": 11371071238,
+                    "tags": {
+                        "name": "Roza Kuaf\u00f6r",
+                        "shop": "hairdresser",
+                        "addr:city": "Hatay",
+                        "addr:street": "Hatay 2 Caddesi",
+                        "addr:district": "Antakya",
+                        "addr:postcode": "31000",
+                        "addr:neighbourhood": "Serinyol Mahallesi"
+                    },
+                    "distance": 16683.45601868,
+                    "sims": 0.39980335823441093
+                },
+                {
+                    "id": 11379065996,
+                    "tags": {
+                        "name": "Zeha Giyim",
+                        "shop": "clothes",
+                        "addr:city": "Hatay",
+                        "addr:street": "Hatay 2 Caddesi",
+                        "addr:district": "Antakya",
+                        "addr:postcode": "31000",
+                        "addr:neighbourhood": "SER\u0130NYOL"
+                    },
+                    "distance": 17329.16524258,
+                    "sims": 0.39551915962193673
+                },
+                {
+                    "id": 11371211056,
+                    "tags": {
+                        "name": "Dalyan Pastanesi",
+                        "shop": "pastry",
+                        "addr:city": "Hatay",
+                        "addr:street": "Hatay 2 Caddesi",
+                        "addr:district": "Antakya",
+                        "addr:postcode": "31000",
+                        "addr:neighbourhood": "SER\u0130NYOL"
+                    },
+                    "distance": 17330.92482213,
+                    "sims": 0.39496640949043293
+                }
+            ]
+        },
+        "35": {
+            "execution_time": 0.02261185646057129,
+            "results": [
+                {
+                    "id": 4570960853,
+                    "tags": {
+                        "name": "C&A",
+                        "shop": "mall"
+                    },
+                    "distance": 1365.8384091,
+                    "sims": 0.5526971424763789
+                },
+                {
+                    "id": 10703783342,
+                    "tags": {
+                        "shop": "supermarket"
+                    },
+                    "distance": 1194.76751768,
+                    "sims": 0.5288057258592456
+                },
+                {
+                    "id": 6919778063,
+                    "tags": {
+                        "shop": "supermarket"
+                    },
+                    "distance": 2782.63605531,
+                    "sims": 0.5288057258592456
+                },
+                {
+                    "id": 6919778065,
+                    "tags": {
+                        "shop": "supermarket"
+                    },
+                    "distance": 2786.23618632,
+                    "sims": 0.5288057258592456
+                },
+                {
+                    "id": 6919778062,
+                    "tags": {
+                        "shop": "supermarket"
+                    },
+                    "distance": 2933.5161086,
+                    "sims": 0.5288057258592456
+                },
+                {
+                    "id": 6833710661,
+                    "tags": {
+                        "shop": "supermarket"
+                    },
+                    "distance": 3061.15526632,
+                    "sims": 0.5288057258592456
+                },
+                {
+                    "id": 4586815790,
+                    "tags": {
+                        "shop": "supermarket"
+                    },
+                    "distance": 3895.75778226,
+                    "sims": 0.5288057258592456
+                },
+                {
+                    "id": 10735443246,
+                    "tags": {
+                        "shop": "supermarket"
+                    },
+                    "distance": 10910.27516384,
+                    "sims": 0.5288057258592456
+                },
+                {
+                    "id": 10735443247,
+                    "tags": {
+                        "shop": "supermarket"
+                    },
+                    "distance": 10938.17754147,
+                    "sims": 0.5288057258592456
+                },
+                {
+                    "id": 4284101192,
+                    "tags": {
+                        "shop": "convenience"
+                    },
+                    "distance": 2604.92981047,
+                    "sims": 0.48286347346554703
+                }
+            ]
+        },
+        "36": {
+            "execution_time": 0.02332782745361328,
+            "results": [
+                {
+                    "id": 4234748790,
+                    "tags": {
+                        "name": "Vegetarian Food",
+                        "amenity": "fast_food"
+                    },
+                    "distance": 1394.70527918,
+                    "sims": 0.616600513458252
+                },
+                {
+                    "id": 4228871589,
+                    "tags": {
+                        "name": "Vegetarian ",
+                        "amenity": "fast_food"
+                    },
+                    "distance": 4137.51114222,
+                    "sims": 0.5975790023803711
+                },
+                {
+                    "id": 4228871689,
+                    "tags": {
+                        "name": "Vegetarian",
+                        "amenity": "fast_food"
+                    },
+                    "distance": 4442.3845225,
+                    "sims": 0.5975790023803711
+                },
+                {
+                    "id": 4973361623,
+                    "tags": {
+                        "amenity": "restaurant"
+                    },
+                    "distance": 4409.12294622,
+                    "sims": 0.5206911563873291
+                },
+                {
+                    "id": 4227737989,
+                    "tags": {
+                        "amenity": "restaurant"
+                    },
+                    "distance": 10086.97755694,
+                    "sims": 0.5206911563873291
+                },
+                {
+                    "id": 6717464887,
+                    "tags": {
+                        "amenity": "restaurant"
+                    },
+                    "distance": 18623.1742596,
+                    "sims": 0.5206911563873291
+                },
+                {
+                    "id": 4972610721,
+                    "tags": {
+                        "amenity": "restaurant"
+                    },
+                    "distance": 18998.64031377,
+                    "sims": 0.5206911563873291
+                },
+                {
+                    "id": 4972610622,
+                    "tags": {
+                        "amenity": "restaurant"
+                    },
+                    "distance": 19263.55975423,
+                    "sims": 0.5206911563873291
+                },
+                {
+                    "id": 9757388103,
+                    "tags": {
+                        "name": "Rastlant\u0131 boutique cafe restorant",
+                        "amenity": "restaurant"
+                    },
+                    "distance": 3129.06521276,
+                    "sims": 0.4966635702051869
+                },
+                {
+                    "id": 6282813449,
+                    "tags": {
+                        "name": "Halep \u00c7i\u00e7e\u011fi Lokantas\u0131",
+                        "amenity": "restaurant"
+                    },
+                    "distance": 2177.04269396,
+                    "sims": 0.48773449659347534
+                }
+            ]
+        },
+        "37": {
+            "execution_time": 0.01974630355834961,
+            "results": [
+                {
+                    "id": 11366797026,
+                    "tags": {
+                        "food": "dessert",
+                        "name": "Onur K\u00fcnefe",
+                        "amenity": "restaurant"
+                    },
+                    "distance": 5146.77878985,
+                    "sims": 0.6092466088394594
+                },
+                {
+                    "id": 12080252166,
+                    "tags": {
+                        "name": "K\u00fcnefeci",
+                        "amenity": "restaurant",
+                        "cuisine": "turkish",
+                        "addr:city": "Hatay",
+                        "addr:district": "Antakya"
+                    },
+                    "distance": 9980.44488838,
+                    "sims": 0.5191964020021502
+                },
+                {
+                    "id": 11370614397,
+                    "tags": {
+                        "name": "Ahmet Kundura",
+                        "shop": "shoes",
+                        "addr:city": "Hatay",
+                        "addr:district": "Antakya"
+                    },
+                    "distance": 15035.01023402,
+                    "sims": 0.51439889836345
+                },
+                {
+                    "id": 11370649013,
+                    "tags": {
+                        "name": "Prenses Kundura",
+                        "shop": "shoes",
+                        "addr:city": "Hatay",
+                        "addr:district": "Antakya"
+                    },
+                    "distance": 15477.97453352,
+                    "sims": 0.5114785100583784
+                },
+                {
+                    "id": 12080347095,
+                    "tags": {
+                        "name": "Tand\u0131r",
+                        "shop": "bakery"
+                    },
+                    "distance": 10415.49778288,
+                    "sims": 0.4918762474502667
+                },
+                {
+                    "id": 12080347096,
+                    "tags": {
+                        "name": "Tand\u0131r",
+                        "shop": "bakery"
+                    },
+                    "distance": 10470.12889618,
+                    "sims": 0.4918762474502667
+                },
+                {
+                    "id": 11370609829,
+                    "tags": {
+                        "name": "Y\u0131lmaz Kundura",
+                        "shop": "shoes",
+                        "addr:city": "Hatay",
+                        "addr:district": "Antakya"
+                    },
+                    "distance": 15029.11980361,
+                    "sims": 0.49123072833283676
+                },
+                {
+                    "id": 11513809488,
+                    "tags": {
+                        "name": "B\u00fclent B\u00f6rek\u00e7ilik",
+                        "shop": "pastry"
+                    },
+                    "distance": 12066.52301433,
+                    "sims": 0.48955306659865183
+                },
+                {
+                    "id": 4577915346,
+                    "tags": {
+                        "name": "karadeniz petek pastanesi",
+                        "amenity": "cafe"
+                    },
+                    "distance": 1213.68043694,
+                    "sims": 0.4866486835544084
+                },
+                {
+                    "id": 11370592057,
+                    "tags": {
+                        "name": "Co\u015far Baharat",
+                        "shop": "spices",
+                        "addr:city": "Hatay",
+                        "addr:district": "Antakya"
+                    },
+                    "distance": 15025.06355354,
+                    "sims": 0.48622593529954883
+                }
+            ]
+        },
+        "38": {
+            "execution_time": 0.021998167037963867,
+            "results": [
+                {
+                    "id": 6815015543,
+                    "tags": {
+                        "name": "Teknosa",
+                        "shop": "electronics"
+                    },
+                    "distance": 4080.77414426,
+                    "sims": 0.4397382808043653
+                },
+                {
+                    "id": 12579292204,
+                    "tags": {
+                        "name": "G\u00fcrsu Yap\u0131 Market",
+                        "shop": "hardware"
+                    },
+                    "distance": 2661.14170443,
+                    "sims": 0.43810134189415395
+                },
+                {
+                    "id": 10219382156,
+                    "tags": {
+                        "name": "A\u015fan Elektronik",
+                        "shop": "electronics",
+                        "phone": "+903222242232"
+                    },
+                    "distance": 732.32286566,
+                    "sims": 0.37588618685172026
+                },
+                {
+                    "id": 12017425669,
+                    "tags": {
+                        "name": "URUN ELEKTRON\u0130K",
+                        "shop": "electronics",
+                        "repair": "yes"
+                    },
+                    "distance": 4914.54092924,
+                    "sims": 0.3675465145651706
+                },
+                {
+                    "id": 4573080827,
+                    "tags": {
+                        "name": "\u00d6nc\u00fc Market",
+                        "shop": "convenience"
+                    },
+                    "distance": 3380.6363519,
+                    "sims": 0.3407860981012414
+                },
+                {
+                    "id": 8957915822,
+                    "tags": {
+                        "shop": "tyres"
+                    },
+                    "distance": 6412.03947043,
+                    "sims": 0.33844906000213804
+                },
+                {
+                    "id": 7418471296,
+                    "tags": {
+                        "name": "ARC Outlet",
+                        "shop": "mall"
+                    },
+                    "distance": 504.90343726,
+                    "sims": 0.334717372970743
+                },
+                {
+                    "id": 764558027,
+                    "tags": {
+                        "shop": "photo"
+                    },
+                    "distance": 5871.73662707,
+                    "sims": 0.3326953848963541
+                },
+                {
+                    "id": 7417383947,
+                    "tags": {
+                        "name": "Media Markt",
+                        "shop": "electronics",
+                        "brand": "Media Markt",
+                        "brand:wikidata": "Q2381223",
+                        "brand:wikipedia": "en:Media Markt"
+                    },
+                    "distance": 3569.63877379,
+                    "sims": 0.3301792943263919
+                },
+                {
+                    "id": 3581454003,
+                    "tags": {
+                        "name": "Media Markt",
+                        "shop": "electronics",
+                        "brand": "Media Markt",
+                        "brand:wikidata": "Q2381223",
+                        "brand:wikipedia": "en:Media Markt"
+                    },
+                    "distance": 4694.63243077,
+                    "sims": 0.3301792943263919
+                }
+            ]
+        },
+        "39": {
+            "execution_time": 0.020061254501342773,
+            "results": [
+                {
+                    "id": 9872451207,
+                    "tags": {
+                        "name": "Barbaros",
+                        "place": "suburb"
+                    },
+                    "distance": 6393.05687108,
+                    "sims": 0.5838829104935279
+                },
+                {
+                    "id": 4107719106,
+                    "tags": {
+                        "name": "Cheers",
+                        "amenity": "bar"
+                    },
+                    "distance": 9318.08791328,
+                    "sims": 0.5648307631960306
+                },
+                {
+                    "id": 11271160476,
+                    "tags": {
+                        "amenity": "cafe"
+                    },
+                    "distance": 2857.74370103,
+                    "sims": 0.5317651033401527
+                },
+                {
+                    "id": 12130250951,
+                    "tags": {
+                        "amenity": "cafe"
+                    },
+                    "distance": 5987.40499114,
+                    "sims": 0.5317651033401527
+                },
+                {
+                    "id": 4973361623,
+                    "tags": {
+                        "amenity": "restaurant"
+                    },
+                    "distance": 4690.64380359,
+                    "sims": 0.5115471177371084
+                },
+                {
+                    "id": 4227737989,
+                    "tags": {
+                        "amenity": "restaurant"
+                    },
+                    "distance": 10366.55527427,
+                    "sims": 0.5115471177371084
+                },
+                {
+                    "id": 6717464887,
+                    "tags": {
+                        "amenity": "restaurant"
+                    },
+                    "distance": 17113.08376337,
+                    "sims": 0.5115471177371084
+                },
+                {
+                    "id": 4972610721,
+                    "tags": {
+                        "amenity": "restaurant"
+                    },
+                    "distance": 17488.64645338,
+                    "sims": 0.5115471177371084
+                },
+                {
+                    "id": 4972610622,
+                    "tags": {
+                        "amenity": "restaurant"
+                    },
+                    "distance": 17753.46824992,
+                    "sims": 0.5115471177371084
+                },
+                {
+                    "id": 6405000427,
+                    "tags": {
+                        "amenity": "restaurant"
+                    },
+                    "distance": 18355.81981194,
+                    "sims": 0.5115471177371084
+                }
+            ]
+        },
+        "40": {
+            "execution_time": 0.019428253173828125,
+            "results": [
+                {
+                    "id": 364696567,
+                    "tags": {
+                        "name": "St.Pierre Kilisesi",
+                        "amenity": "place_of_worship",
+                        "name:ar": "\u0643\u0646\u064a\u0633\u0629 \u0627\u0644\u0642\u062f\u064a\u0633 \u0628\u0637\u0631\u0633",
+                        "name:de": "St.-Petrus-Grotte",
+                        "name:en": "Church of Saint Peter",
+                        "name:es": "Gruta de San Pedro",
+                        "name:fa": "\u06a9\u0644\u06cc\u0633\u0627\u06cc \u0633\u06cc\u0646\u062a \u067e\u06cc\u062a\u0631",
+                        "name:fr": "\u00c9glise Saint-Pierre",
+                        "name:hy": "\u054d\u0578\u0582\u0580\u0562 \u054a\u0565\u057f\u0580\u0578\u057d \u0565\u056f\u0565\u0572\u0565\u0581\u056b",
+                        "name:ru": "\u0426\u0435\u0440\u043a\u043e\u0432\u044c \u0421\u0432\u044f\u0442\u043e\u0433\u043e \u041f\u0435\u0442\u0440\u0430",
+                        "name:uk": "\u0426\u0435\u0440\u043a\u0432\u0430 \u0441\u0432\u044f\u0442\u043e\u0433\u043e \u041f\u0435\u0442\u0440\u0430",
+                        "name:zh": "\u8056\u5f7c\u5f97\u6559\u5802",
+                        "natural": "cave_entrance",
+                        "tourism": "attraction",
+                        "alt_name": "Senpiyer;St.Pierre Church",
+                        "historic": "church",
+                        "religion": "christian",
+                        "wikidata": "Q516472",
+                        "wikipedia": "tr:Saint Pierre Kilisesi",
+                        "wheelchair": "no",
+                        "description": "It is composed of a cave carved into the mountainside on Mount Starius with a depth of 13 m, a width of 9.5 m and a height of 7 m. This cave, which has been used by the first Christians in the Antakya region, is one of Christianity's oldest churches",
+                        "wikimedia_commons": "Category:Church of Saint Peter"
+                    },
+                    "distance": 2668.50400311,
+                    "sims": 0.3839418451716743
+                },
+                {
+                    "id": 9242450448,
+                    "tags": {
+                        "name": "Habib-i Neccar",
+                        "place": "suburb",
+                        "old_name": "Akbaba Mah.;Akbaba"
+                    },
+                    "distance": 1447.36877759,
+                    "sims": 0.363766653986773
+                },
+                {
+                    "id": 9673966653,
+                    "tags": {
+                        "name": "Old French town",
+                        "tourism": "attraction"
+                    },
+                    "distance": 1129.82358566,
+                    "sims": 0.3305549616613921
+                },
+                {
+                    "id": 9589087057,
+                    "tags": {
+                        "name": "Meryem Ana Rum Ortodoks Kilisesi",
+                        "amenity": "place_of_worship",
+                        "religion": "christian",
+                        "denomination": "orthodox"
+                    },
+                    "distance": 14898.29318468,
+                    "sims": 0.3141814844824675
+                },
+                {
+                    "id": 9589151363,
+                    "tags": {
+                        "name": "\u0130sa Mesih Kilisesi",
+                        "amenity": "place_of_worship",
+                        "religion": "christian"
+                    },
+                    "distance": 13265.6649961,
+                    "sims": 0.30331107437212657
+                },
+                {
+                    "id": 9525060548,
+                    "tags": {
+                        "name": "Ruined Arch",
+                        "access": "yes",
+                        "historic": "fort"
+                    },
+                    "distance": 2905.36493763,
+                    "sims": 0.29955669042806443
+                },
+                {
+                    "id": 10224987294,
+                    "tags": {
+                        "name": "Bistro XXSmall",
+                        "amenity": "bar",
+                        "brewery": "yes",
+                        "min_age": "18",
+                        "addr:city": "Hatay",
+                        "addr:street": "Kahraman Sokak",
+                        "addr:district": "Antakya",
+                        "addr:postcode": "31070",
+                        "addr:housenumber": "26",
+                        "addr:neighbourhood": "Zenginler Mah."
+                    },
+                    "distance": 1059.7570517,
+                    "sims": 0.2931457511360369
+                },
+                {
+                    "id": 9589151362,
+                    "tags": {
+                        "name": "Rum Ortodoks Kilisesi",
+                        "amenity": "place_of_worship",
+                        "religion": "christian"
+                    },
+                    "distance": 13020.81527191,
+                    "sims": 0.2802904153389486
+                },
+                {
+                    "id": 4577960080,
+                    "tags": {
+                        "amenity": "cafe"
+                    },
+                    "distance": 1013.43689716,
+                    "sims": 0.2690167908102501
+                },
+                {
+                    "id": 11371058544,
+                    "tags": {
+                        "name": "Esmer Z\u00fcccaciye",
+                        "shop": "bathroom_furnishing",
+                        "addr:city": "Hatay",
+                        "addr:street": "Hatay 2 Caddesi",
+                        "addr:district": "Antakya",
+                        "addr:postcode": "31000",
+                        "addr:neighbourhood": "Serinyol"
+                    },
+                    "distance": 17962.64196084,
+                    "sims": 0.26496344983142206
+                }
+            ]
+        },
+        "41": {
+            "execution_time": 0.022006511688232422,
+            "results": [
+                {
+                    "id": 10703783339,
+                    "tags": {
+                        "amenity": "cafe"
+                    },
+                    "distance": 2872.46461625,
+                    "sims": 0.5501164406330041
+                },
+                {
+                    "id": 764572011,
+                    "tags": {
+                        "amenity": "cafe"
+                    },
+                    "distance": 3435.31603587,
+                    "sims": 0.5501164406330041
+                },
+                {
+                    "id": 12802356601,
+                    "tags": {
+                        "amenity": "cafe"
+                    },
+                    "distance": 5579.55050779,
+                    "sims": 0.5501164406330041
+                },
+                {
+                    "id": 12832223281,
+                    "tags": {
+                        "amenity": "cafe"
+                    },
+                    "distance": 5611.94530822,
+                    "sims": 0.5501164406330041
+                },
+                {
+                    "id": 10703769046,
+                    "tags": {
+                        "name": "REGS CAFE",
+                        "amenity": "restaurant"
+                    },
+                    "distance": 2807.4408026,
+                    "sims": 0.5150923692960006
+                },
+                {
+                    "id": 642354657,
+                    "tags": {
+                        "amenity": "cafe",
+                        "name:en": "Outdoor Student Cafe of the Faculty of Medicine"
+                    },
+                    "distance": 3852.14628332,
+                    "sims": 0.4980362360391195
+                },
+                {
+                    "id": 8957915919,
+                    "tags": {
+                        "amenity": "cafe",
+                        "name:en": "Mart"
+                    },
+                    "distance": 7240.41344081,
+                    "sims": 0.4976699359208616
+                },
+                {
+                    "id": 7418533994,
+                    "tags": {
+                        "name": "Nazcaa Cafe",
+                        "amenity": "cafe"
+                    },
+                    "distance": 1902.60921628,
+                    "sims": 0.49331566850766906
+                },
+                {
+                    "id": 7418471302,
+                    "tags": {
+                        "name": "Garfield Cafe & Nargile",
+                        "amenity": "cafe"
+                    },
+                    "distance": 2087.00040563,
+                    "sims": 0.48981063280481574
+                },
+                {
+                    "id": 4567459879,
+                    "tags": {
+                        "name": "G\u00f6k\u00e7eli Cafe",
+                        "amenity": "cafe"
+                    },
+                    "distance": 5922.91937533,
+                    "sims": 0.4883231548492678
+                }
+            ]
+        },
+        "42": {
+            "execution_time": 0.023388385772705078,
+            "results": [
+                {
+                    "id": 4253791589,
+                    "tags": {
+                        "amenity": "fast_food"
+                    },
+                    "distance": 1547.57347484,
+                    "sims": 0.6162234270905619
+                },
+                {
+                    "id": 4250620994,
+                    "tags": {
+                        "amenity": "fast_food"
+                    },
+                    "distance": 1661.50033773,
+                    "sims": 0.6162234270905619
+                },
+                {
+                    "id": 4227738090,
+                    "tags": {
+                        "shop": "supermarket"
+                    },
+                    "distance": 14337.18071425,
+                    "sims": 0.5280160341281969
+                },
+                {
+                    "id": 6292775565,
+                    "tags": {
+                        "name": "Can Ci\u011fer",
+                        "amenity": "fast_food"
+                    },
+                    "distance": 1427.87023303,
+                    "sims": 0.5105035317544415
+                },
+                {
+                    "id": 6276104625,
+                    "tags": {
+                        "name": "Ci\u011ferci Halit Usta",
+                        "amenity": "fast_food"
+                    },
+                    "distance": 3194.45240501,
+                    "sims": 0.509822875846804
+                },
+                {
+                    "id": 4973361623,
+                    "tags": {
+                        "amenity": "restaurant"
+                    },
+                    "distance": 1723.07839906,
+                    "sims": 0.4842120986237678
+                },
+                {
+                    "id": 4227737989,
+                    "tags": {
+                        "amenity": "restaurant"
+                    },
+                    "distance": 12821.13090721,
+                    "sims": 0.4842120986237678
+                },
+                {
+                    "id": 6717464887,
+                    "tags": {
+                        "amenity": "restaurant"
+                    },
+                    "distance": 18559.24951329,
+                    "sims": 0.4842120986237678
+                },
+                {
+                    "id": 4972610721,
+                    "tags": {
+                        "amenity": "restaurant"
+                    },
+                    "distance": 18904.04200215,
+                    "sims": 0.4842120986237678
+                },
+                {
+                    "id": 4972610622,
+                    "tags": {
+                        "amenity": "restaurant"
+                    },
+                    "distance": 19195.28875875,
+                    "sims": 0.4842120986237678
+                }
+            ]
+        },
+        "43": {
+            "execution_time": 0.021421194076538086,
+            "results": [
+                {
+                    "id": 11391465563,
+                    "tags": {
+                        "shop": "trade"
+                    },
+                    "distance": 5145.12347687,
+                    "sims": 0.4856988770602795
+                },
+                {
+                    "id": 11372680214,
+                    "tags": {
+                        "shop": "stationery"
+                    },
+                    "distance": 2118.02297846,
+                    "sims": 0.46623080968857145
+                },
+                {
+                    "id": 12080256545,
+                    "tags": {
+                        "shop": "shoes"
+                    },
+                    "distance": 9036.95488012,
+                    "sims": 0.4516693026822398
+                },
+                {
+                    "id": 4678305527,
+                    "tags": {
+                        "name": "Carffour",
+                        "shop": "supermarket"
+                    },
+                    "distance": 3433.59672963,
+                    "sims": 0.449065923690799
+                },
+                {
+                    "id": 11392325965,
+                    "tags": {
+                        "name": "Black White Market",
+                        "shop": "convenience"
+                    },
+                    "distance": 7555.87183528,
+                    "sims": 0.42602785980867575
+                },
+                {
+                    "id": 11373184055,
+                    "tags": {
+                        "name": "Akdeniz Kad\u0131n Giri\u015fimi",
+                        "craft": "handicraft",
+                        "addr:city": "Hatay",
+                        "addr:district": "Antakya",
+                        "addr:neighbourhood": "Honda Kav\u015fa\u011f\u0131"
+                    },
+                    "distance": 5840.26254561,
+                    "sims": 0.4204462468624145
+                },
+                {
+                    "id": 11382003056,
+                    "tags": {
+                        "shop": "farm"
+                    },
+                    "distance": 4434.85459855,
+                    "sims": 0.4190133761771553
+                },
+                {
+                    "id": 11392160472,
+                    "tags": {
+                        "shop": "farm"
+                    },
+                    "distance": 5954.07428644,
+                    "sims": 0.4190133761771553
+                },
+                {
+                    "id": 12109712559,
+                    "tags": {
+                        "shop": "farm"
+                    },
+                    "distance": 11700.14172333,
+                    "sims": 0.4190133761771553
+                },
+                {
+                    "id": 11392304438,
+                    "tags": {
+                        "name": "Karaali Market",
+                        "shop": "convenience"
+                    },
+                    "distance": 6506.80968031,
+                    "sims": 0.41446690222029203
+                }
+            ]
+        },
+        "44": {
+            "execution_time": 0.022954702377319336,
+            "results": [
+                {
+                    "id": 11707596485,
+                    "tags": {
+                        "ref": "11C",
+                        "entrance": "yes",
+                        "addr:city": "Adana",
+                        "addr:street": "78142. Sokak",
+                        "addr:district": "\u00c7ukurova",
+                        "addr:postcode": "01170",
+                        "addr:neighbourhood": "Toros Mahallesi"
+                    },
+                    "distance": 5093.87287354,
+                    "sims": 0.4545635391322571
+                },
+                {
+                    "id": 11207920988,
+                    "tags": {
+                        "ref": "3C",
+                        "entrance": "yes",
+                        "addr:city": "Adana",
+                        "addr:street": "78142. Sokak",
+                        "addr:district": "\u00c7ukurova",
+                        "addr:postcode": "01170",
+                        "addr:neighbourhood": "Toros Mahallesi"
+                    },
+                    "distance": 5031.08990679,
+                    "sims": 0.45424036555281344
+                },
+                {
+                    "id": 11707596484,
+                    "tags": {
+                        "ref": "11B",
+                        "entrance": "yes",
+                        "addr:city": "Adana",
+                        "addr:street": "78142. Sokak",
+                        "addr:district": "\u00c7ukurova",
+                        "addr:postcode": "01170",
+                        "addr:neighbourhood": "Toros Mahallesi"
+                    },
+                    "distance": 5091.68288039,
+                    "sims": 0.45332626899296
+                },
+                {
+                    "id": 12125426019,
+                    "tags": {
+                        "ref": "5",
+                        "entrance": "yes",
+                        "addr:city": "Adana",
+                        "addr:street": "78148. Sokak",
+                        "addr:district": "\u00c7ukurova",
+                        "addr:postcode": "01170",
+                        "addr:neighbourhood": "Toros Mahallesi"
+                    },
+                    "distance": 4913.53819296,
+                    "sims": 0.4531193543245846
+                },
+                {
+                    "id": 11707596493,
+                    "tags": {
+                        "ref": "7B",
+                        "entrance": "yes",
+                        "addr:city": "Adana",
+                        "addr:street": "78142. Sokak",
+                        "addr:district": "\u00c7ukurova",
+                        "addr:postcode": "01170",
+                        "addr:neighbourhood": "Toros Mahallesi"
+                    },
+                    "distance": 5052.18521607,
+                    "sims": 0.4531134804745278
+                },
+                {
+                    "id": 12125420681,
+                    "tags": {
+                        "ref": "7",
+                        "entrance": "yes",
+                        "addr:city": "Adana",
+                        "addr:street": "78148. Sokak",
+                        "addr:district": "\u00c7ukurova",
+                        "addr:postcode": "01170",
+                        "addr:neighbourhood": "Toros Mahallesi"
+                    },
+                    "distance": 4960.35564792,
+                    "sims": 0.45282535170755267
+                },
+                {
+                    "id": 12109472344,
+                    "tags": {
+                        "ref": "14",
+                        "entrance": "yes",
+                        "addr:city": "Adana",
+                        "addr:street": "78148. Sokak",
+                        "addr:district": "\u00c7ukurova",
+                        "addr:postcode": "01170",
+                        "addr:neighbourhood": "Toros Mahallesi"
+                    },
+                    "distance": 5064.29774879,
+                    "sims": 0.45227990976576726
+                },
+                {
+                    "id": 12125426010,
+                    "tags": {
+                        "ref": "2",
+                        "entrance": "yes",
+                        "addr:city": "Adana",
+                        "addr:street": "78148. Sokak",
+                        "addr:district": "\u00c7ukurova",
+                        "addr:postcode": "01170",
+                        "addr:neighbourhood": "Toros Mahallesi"
+                    },
+                    "distance": 4870.96446004,
+                    "sims": 0.4521478365351642
+                },
+                {
+                    "id": 6643528195,
+                    "tags": {
+                        "name": "Arena PlayStation",
+                        "leisure": "amusement_arcade",
+                        "addr:city": "Adana",
+                        "addr:street": "84213 Sokak",
+                        "addr:district": "\u00c7ukurova",
+                        "addr:postcode": "01170",
+                        "opening_hours": "Mo-Su 08:00-00:00",
+                        "addr:neighbourhood": "Belediye Evleri Mahallesi"
+                    },
+                    "distance": 7361.8468971,
+                    "sims": 0.45191903068568484
+                },
+                {
+                    "id": 11707596491,
+                    "tags": {
+                        "ref": "9B",
+                        "entrance": "yes",
+                        "addr:city": "Adana",
+                        "addr:street": "78142. Sokak",
+                        "addr:district": "\u00c7ukurova",
+                        "addr:postcode": "01170",
+                        "addr:neighbourhood": "Toros Mahallesi"
+                    },
+                    "distance": 5058.43360477,
+                    "sims": 0.4518048368314662
+                }
+            ]
+        },
+        "45": {
+            "execution_time": 0.022686243057250977,
+            "results": [
+                {
+                    "id": 8817850286,
+                    "tags": {
+                        "name": "Akhisar",
+                        "place": "village",
+                        "wikidata": "Q10731291",
+                        "wikipedia": "tr:Akhisar, Antakya"
+                    },
+                    "distance": 12088.63350176,
+                    "sims": 0.556595050781234
+                },
+                {
+                    "id": 9242629546,
+                    "tags": {
+                        "name": "Akevler",
+                        "place": "suburb",
+                        "wikidata": "Q109384358",
+                        "wikipedia": "tr:Akevler, Antakya"
+                    },
+                    "distance": 1201.92050328,
+                    "sims": 0.5399744445032234
+                },
+                {
+                    "id": 9242450466,
+                    "tags": {
+                        "name": "Akasya",
+                        "place": "suburb",
+                        "wikidata": "Q109384356",
+                        "wikipedia": "tr:Akasya, Antakya"
+                    },
+                    "distance": 1905.78503427,
+                    "sims": 0.5342059494625278
+                },
+                {
+                    "id": 1576982723,
+                    "tags": {
+                        "name": "Ak\u00e7aova",
+                        "place": "village",
+                        "wikidata": "Q10731525",
+                        "wikipedia": "tr:Ak\u00e7aova, Antakya"
+                    },
+                    "distance": 12052.517008,
+                    "sims": 0.5164990886896146
+                },
+                {
+                    "id": 12080252166,
+                    "tags": {
+                        "name": "K\u00fcnefeci",
+                        "amenity": "restaurant",
+                        "cuisine": "turkish",
+                        "addr:city": "Hatay",
+                        "addr:district": "Antakya"
+                    },
+                    "distance": 10306.63279068,
+                    "sims": 0.5074392272423353
+                },
+                {
+                    "id": 1576982955,
+                    "tags": {
+                        "name": "Derince",
+                        "place": "suburb",
+                        "wikidata": "Q10754562",
+                        "wikipedia": "tr:Derince, Antakya"
+                    },
+                    "distance": 12081.06774576,
+                    "sims": 0.5046402076626277
+                },
+                {
+                    "id": 1576983019,
+                    "tags": {
+                        "name": "G\u00f6k\u00e7eg\u00f6z",
+                        "place": "village",
+                        "wikidata": "Q10763618",
+                        "wikipedia": "tr:G\u00f6k\u00e7eg\u00f6z, Antakya"
+                    },
+                    "distance": 8002.31394866,
+                    "sims": 0.50391820143191
+                },
+                {
+                    "id": 1576982700,
+                    "tags": {
+                        "name": "Akcurun",
+                        "place": "village",
+                        "old_name": "A\u011fcurun",
+                        "wikidata": "Q10731260",
+                        "wikipedia": "tr:Akcurun, Antakya"
+                    },
+                    "distance": 9619.96464761,
+                    "sims": 0.49854902901486553
+                },
+                {
+                    "id": 1576982894,
+                    "tags": {
+                        "name": "Bitiren",
+                        "place": "village",
+                        "name:ar": "\u0628\u062a\u064a\u0631\u0646",
+                        "old_name": "Bitrin",
+                        "wikidata": "Q10740245",
+                        "wikipedia": "tr:Bitiren, Antakya"
+                    },
+                    "distance": 11241.76495782,
+                    "sims": 0.49124388266264196
+                },
+                {
+                    "id": 2619402916,
+                    "tags": {
+                        "name": "Dikmece",
+                        "place": "village",
+                        "name:ar": "\u062f\u0643\u0645\u062c\u0629",
+                        "old_name": "Tillit Ahmar;Arkud",
+                        "wikidata": "Q6782940",
+                        "wikipedia": "tr:Dikmece, Antakya"
+                    },
+                    "distance": 9646.90829757,
+                    "sims": 0.4852085836542577
+                }
+            ]
+        },
+        "46": {
+            "execution_time": 0.013395547866821289,
+            "results": [
+                {
+                    "id": 12151593683,
+                    "tags": {
+                        "name": "Mekan Sitesi",
+                        "resort": "resort",
+                        "leisure": "resort",
+                        "addr:city": "Mersin",
+                        "addr:street": "115.Sokak",
+                        "addr:district": "Silifke",
+                        "addr:postcode": "33940",
+                        "addr:neighbourhood": "Arkum"
+                    },
+                    "distance": 13595.47571502,
+                    "sims": 0.5413186998419989
+                },
+                {
+                    "id": 7016257147,
+                    "tags": {
+                        "name": "Silifke Nakliyeciler Kooperatifi",
+                        "leisure": "park"
+                    },
+                    "distance": 3291.67316063,
+                    "sims": 0.5304370413648082
+                },
+                {
+                    "id": 12151593676,
+                    "tags": {
+                        "name": "G\u00fcrkent Sitesi",
+                        "resort": "resort",
+                        "leisure": "resort",
+                        "operator": "G\u00fcrkent",
+                        "addr:city": "Mersin",
+                        "addr:street": "115.Sokak",
+                        "addr:district": "Silifke",
+                        "addr:postcode": "33940",
+                        "addr:housenumber": "21",
+                        "addr:neighbourhood": "Arkum"
+                    },
+                    "distance": 12788.2716942,
+                    "sims": 0.5101334416389405
+                },
+                {
+                    "id": 1207140236,
+                    "tags": {
+                        "name": "Silifke Kalesi teras",
+                        "tourism": "viewpoint"
+                    },
+                    "distance": 1226.19522624,
+                    "sims": 0.5089246598751894
+                },
+                {
+                    "id": 12151593682,
+                    "tags": {
+                        "name": "Seyran Sitesi",
+                        "resort": "resort",
+                        "leisure": "resort",
+                        "operator": "Seyran",
+                        "addr:street": "115.Sokak",
+                        "addr:neighbourhood": "Arkum"
+                    },
+                    "distance": 13383.00098355,
+                    "sims": 0.49938720486624877
+                },
+                {
+                    "id": 11601268477,
+                    "tags": {
+                        "tourism": "camp_site"
+                    },
+                    "distance": 16118.36071028,
+                    "sims": 0.4728625199608857
+                },
+                {
+                    "id": 11896834369,
+                    "tags": {
+                        "amenity": "bbq",
+                        "tourism": "picnic_site"
+                    },
+                    "distance": 1403.80694193,
+                    "sims": 0.46413626952475917
+                },
+                {
+                    "id": 3106373410,
+                    "tags": {
+                        "name": "Marina Otel Ta\u015fucu",
+                        "tourism": "hotel",
+                        "website": "http://www.marinaoteltasucu.com/",
+                        "addr:city": "Mersin",
+                        "addr:street": "Mersin-Antalya yolu"
+                    },
+                    "distance": 8102.63779914,
+                    "sims": 0.4606312356122184
+                },
+                {
+                    "id": 6510941391,
+                    "tags": {
+                        "tourism": "picnic_site"
+                    },
+                    "distance": 341.28966992,
+                    "sims": 0.45296521396485523
+                },
+                {
+                    "id": 9914509717,
+                    "tags": {
+                        "tourism": "picnic_site"
+                    },
+                    "distance": 15061.66209446,
+                    "sims": 0.45296521396485523
+                }
+            ]
+        },
+        "47": {
+            "execution_time": 0.021770715713500977,
+            "results": [
+                {
+                    "id": 10270111612,
+                    "tags": {
+                        "name": "Bey",
+                        "place": "suburb"
+                    },
+                    "distance": 11449.60255231,
+                    "sims": 0.38832422599278293
+                },
+                {
+                    "id": 11147959846,
+                    "tags": {
+                        "name": "Toros Mahallesi",
+                        "amenity": "townhall",
+                        "name:ja": "\u5f37\u5c71\u8fd1\u6240",
+                        "operator": "\u00c7ukurova Belediyesi",
+                        "townhall:type": "city"
+                    },
+                    "distance": 6666.80479728,
+                    "sims": 0.3639413497482984
+                },
+                {
+                    "id": 12335197202,
+                    "tags": {
+                        "leisure": "playground"
+                    },
+                    "distance": 6661.67826402,
+                    "sims": 0.3627183004953529
+                },
+                {
+                    "id": 6833700558,
+                    "tags": {
+                        "leisure": "playground"
+                    },
+                    "distance": 8308.5601353,
+                    "sims": 0.3627183004953529
+                },
+                {
+                    "id": 6984880763,
+                    "tags": {
+                        "leisure": "playground"
+                    },
+                    "distance": 8352.13694726,
+                    "sims": 0.3627183004953529
+                },
+                {
+                    "id": 6919802627,
+                    "tags": {
+                        "leisure": "playground"
+                    },
+                    "distance": 8586.31483132,
+                    "sims": 0.3627183004953529
+                },
+                {
+                    "id": 12832242641,
+                    "tags": {
+                        "leisure": "playground"
+                    },
+                    "distance": 8726.94677186,
+                    "sims": 0.3627183004953529
+                },
+                {
+                    "id": 1423992295,
+                    "tags": {
+                        "leisure": "playground"
+                    },
+                    "distance": 9364.58409082,
+                    "sims": 0.3627183004953529
+                },
+                {
+                    "id": 1424643832,
+                    "tags": {
+                        "leisure": "playground"
+                    },
+                    "distance": 9671.5992482,
+                    "sims": 0.3627183004953529
+                },
+                {
+                    "id": 11764930247,
+                    "tags": {
+                        "name": "Elif Su Uluda\u011f",
+                        "place": "suburb"
+                    },
+                    "distance": 5156.93646707,
+                    "sims": 0.3594590891052404
+                }
+            ]
+        },
+        "48": {
+            "execution_time": 0.020743370056152344,
+            "results": [
+                {
+                    "id": 11328791237,
+                    "tags": {
+                        "name": "Kuru\u00e7e\u015fme",
+                        "historic": "yes"
+                    },
+                    "distance": 1292.57116149,
+                    "sims": 0.3435687729926814
+                },
+                {
+                    "id": 11345894766,
+                    "tags": {
+                        "name": "\u0130smet \u0130n\u00f6n\u00fc",
+                        "historic": "memorial"
+                    },
+                    "distance": 1083.16739932,
+                    "sims": 0.34351868461128143
+                },
+                {
+                    "id": 11826983745,
+                    "tags": {
+                        "name": "Dikilita\u015f, Mersin",
+                        "historic": "yes"
+                    },
+                    "distance": 4767.66858554,
+                    "sims": 0.3396797776222229
+                },
+                {
+                    "id": 11345894765,
+                    "tags": {
+                        "name": "\u015eerbet\u00e7i An\u0131t\u0131",
+                        "historic": "memorial"
+                    },
+                    "distance": 1698.21165148,
+                    "sims": 0.3287176489830017
+                },
+                {
+                    "id": 8104631812,
+                    "tags": {
+                        "name": "Roma Hamam\u0131",
+                        "historic": "archaeological_site",
+                        "historic:civilization": "ancient_roman"
+                    },
+                    "distance": 11187.45830049,
+                    "sims": 0.31661370396614075
+                },
+                {
+                    "id": 8104631809,
+                    "tags": {
+                        "name": "Roma Hamam\u0131",
+                        "historic": "archaeological_site",
+                        "historic:civilization": "ancient_roman"
+                    },
+                    "distance": 11728.83728627,
+                    "sims": 0.31661370396614075
+                },
+                {
+                    "id": 11250661195,
+                    "tags": {
+                        "name": "P-145Te\u011fmen Caner G\u00f6nyeli Gemisi",
+                        "historic": "memorial",
+                        "inscription": "Te\u011fmen Caner G\u00f6nyeli"
+                    },
+                    "distance": 4791.00801978,
+                    "sims": 0.29841428995132446
+                },
+                {
+                    "id": 12644799877,
+                    "tags": {
+                        "name": "Hazreti Hamza Cami",
+                        "amenity": "place_of_worship",
+                        "religion": "muslim"
+                    },
+                    "distance": 3624.03769337,
+                    "sims": 0.29693483980907676
+                },
+                {
+                    "id": 3153791089,
+                    "tags": {
+                        "name": "\u015eeyh Muhammet Abbari T\u00fcrbesi",
+                        "historic": "tomb"
+                    },
+                    "distance": 1967.81840122,
+                    "sims": 0.2955580177570576
+                },
+                {
+                    "id": 8104631808,
+                    "tags": {
+                        "name": "Nekropol",
+                        "historic": "archaeological_site",
+                        "historic:civilization": "ancient_roman"
+                    },
+                    "distance": 11970.95471509,
+                    "sims": 0.2891806450241998
+                }
+            ]
+        },
+        "49": {
+            "execution_time": 0.017625093460083008,
+            "results": [
+                {
+                    "id": 11370592057,
+                    "tags": {
+                        "name": "Co\u015far Baharat",
+                        "shop": "spices",
+                        "addr:city": "Hatay",
+                        "addr:district": "Antakya"
+                    },
+                    "distance": 14674.04587567,
+                    "sims": 0.7140405179094135
+                },
+                {
+                    "id": 11371224458,
+                    "tags": {
+                        "name": "Vural Baharat",
+                        "shop": "spices",
+                        "addr:city": "Hatay",
+                        "addr:street": "Hatay 2 Caddesi",
+                        "addr:district": "Antakya",
+                        "addr:postcode": "31000",
+                        "addr:neighbourhood": "Serinyol"
+                    },
+                    "distance": 17975.43710036,
+                    "sims": 0.6277287215258135
+                },
+                {
+                    "id": 12080343214,
+                    "tags": {
+                        "name": "Dilaver Market",
+                        "shop": "convenience",
+                        "addr:city": "Hatay",
+                        "addr:district": "Antakya"
+                    },
+                    "distance": 9771.1826893,
+                    "sims": 0.6163487704313974
+                },
+                {
+                    "id": 12080354828,
+                    "tags": {
+                        "name": "Uydukent Market",
+                        "shop": "convenience",
+                        "addr:city": "Hatay",
+                        "addr:district": "Antakya"
+                    },
+                    "distance": 9696.29062372,
+                    "sims": 0.5876508708369573
+                },
+                {
+                    "id": 11370650804,
+                    "tags": {
+                        "name": "Mira Market",
+                        "shop": "convenience",
+                        "addr:city": "Hatay",
+                        "addr:district": "Antakya"
+                    },
+                    "distance": 15068.16140825,
+                    "sims": 0.5857668706098885
+                },
+                {
+                    "id": 11405616096,
+                    "tags": {
+                        "shop": "butcher",
+                        "addr:city": "Hatay",
+                        "addr:district": "Antakya"
+                    },
+                    "distance": 16779.75457411,
+                    "sims": 0.5828345022991355
+                },
+                {
+                    "id": 12108234737,
+                    "tags": {
+                        "name": "Lidya Bijuteri",
+                        "shop": "yes",
+                        "addr:city": "Hatay",
+                        "addr:district": "Antakya"
+                    },
+                    "distance": 9721.811728,
+                    "sims": 0.5813109660249356
+                },
+                {
+                    "id": 11370614397,
+                    "tags": {
+                        "name": "Ahmet Kundura",
+                        "shop": "shoes",
+                        "addr:city": "Hatay",
+                        "addr:district": "Antakya"
+                    },
+                    "distance": 14684.14922061,
+                    "sims": 0.5806227191922888
+                },
+                {
+                    "id": 11396030652,
+                    "tags": {
+                        "name": "Danyel Market",
+                        "shop": "convenience",
+                        "addr:city": "Hatay",
+                        "addr:district": "Antakya"
+                    },
+                    "distance": 7243.58963756,
+                    "sims": 0.5800816285172814
+                },
+                {
+                    "id": 11370609829,
+                    "tags": {
+                        "name": "Y\u0131lmaz Kundura",
+                        "shop": "shoes",
+                        "addr:city": "Hatay",
+                        "addr:district": "Antakya"
+                    },
+                    "distance": 14678.16076994,
+                    "sims": 0.5690626172721474
+                }
+            ]
+        }
+    }
+}

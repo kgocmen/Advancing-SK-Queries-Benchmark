@@ -128,7 +128,7 @@ EXP-8
 
 : <<'train'
 T="./data/melbourne_cleaned_sampled_100k.csv"
-DIMS=(256 384)
+DIMS=(128 256 384)
 for DIM in "${DIMS[@]}"; do
   CKPT="./contrastive/d${DIM}.pt"
   echo "=== Training Contrastive DIM=${DIM} ==="

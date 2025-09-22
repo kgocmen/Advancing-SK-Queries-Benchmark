@@ -19,11 +19,11 @@ CONTRASTIVE = {
 CONTRASTIVE_DIM = CONTRASTIVE["proj_dim"]
 
 
-EXPERIMENT = "melbourne_sampled"
+EXPERIMENT = "ANA"
 SOURCE = ["custom"]
-K_VALUES = [10]
-λ = 1
-RADIUS = 10000
+K_VALUES = [1, 10]
+λ = 2
+RADIUS = 20000
 POINT_COUNT = 50
 INPUT_CSV = "./data/melbourne_cleaned_sampled_100k.csv"
 SCENARIO = "embedded"

@@ -1,0 +1,176 @@
+=== Query Generator Config ===
+Input CSV    : ./data/melbourne_cleaned_sampled_100k.csv
+K Values     : [1, 10]
+Lambda (λ)   : 2
+Experiment   : melbourne_final2
+Source       : ['custom']
+Radius       : 20000
+Point Count  : 50
+Query CSV/TXT: data/queries/melbourne.csv
+Contrastive : {'ckpt': './contrastive/melbourne_d384.pt', 'proj_dim': 384, 'w_text': 1.0, 'w_spatial': 0.1}
+==============================
+Wrote 50 custom_queries_k1.sql queries
+Wrote 50 custom_queries_k10.sql queries
+Wrote 50 custom_embedded_queries_k1.sql queries
+Wrote 50 custom_embedded_queries_k10.sql queries
+Wrote 50 custom_concat_embedded_queries_k1.sql queries
+Wrote 50 custom_concat_embedded_queries_k10.sql queries
+Wrote 50 custom_contrastive_embedded_queries_k1.sql queries
+Wrote 50 custom_contrastive_embedded_queries_k10.sql queries
+Custom queries written to ./data/workloads/melbourne_final2
+Nothing created from the input file!
+=== Benchmark Config ===
+Scenario     : embedded
+Input CSV    : ./data/melbourne_cleaned_sampled_100k.csv
+K Values     : [1, 10]
+Lambda (λ)   : 2
+Index Type   : hnsw
+Experiment   : melbourne_final2
+Source       : ['custom']
+Contrastive  : {'ckpt': './contrastive/melbourne_d384.pt', 'proj_dim': 384, 'w_text': 1.0, 'w_spatial': 0.1}
+========================
+./data/melbourne_cleaned_sampled_100k.csv has 100000 rows.
+Running scenario: spatial_and_pgvector_embedding on custom, k=1
+Semantic Embeddings: True
+0 seconds for semantic embedding.
+Table 'PoIs' constructed.
+Inserted 100000 records in 75.50 seconds (1324.56 records/s)
+All indexes created in: 32.43927216529846
+All queries executed.
+Results saved to ./results/melbourne_final2/custom_spatial_and_pgvector_embedding_results_k1.json
+
+Running scenario: spatial_and_pgvector_embedding on custom, k=10
+Semantic Embeddings: True
+0 seconds for semantic embedding.
+Table 'PoIs' constructed.
+Inserted 100000 records in 76.30 seconds (1310.62 records/s)
+All indexes created in: 31.87700581550598
+All queries executed.
+Results saved to ./results/melbourne_final2/custom_spatial_and_pgvector_embedding_results_k10.json
+
+Running scenario: concat_embedding on custom, k=1
+Semantic Embeddings: True
+0 seconds for semantic embedding.
+Spatial Embeddings: True
+0 seconds for spatial embedding.
+Table 'PoIs' constructed.
+Inserted 100000 records in 79.67 seconds (1255.11 records/s)
+All indexes created in: 31.72268319129944
+All queries executed.
+Results saved to ./results/melbourne_final2/custom_concat_embedding_results_k1.json
+
+Running scenario: concat_embedding on custom, k=10
+Semantic Embeddings: True
+0 seconds for semantic embedding.
+Spatial Embeddings: True
+0 seconds for spatial embedding.
+Table 'PoIs' constructed.
+Inserted 100000 records in 77.61 seconds (1288.48 records/s)
+All indexes created in: 31.253254175186157
+All queries executed.
+Results saved to ./results/melbourne_final2/custom_concat_embedding_results_k10.json
+
+Running scenario: contrastive_embedding on custom, k=1
+Building contrastive embeddings…
+Created contrastive embeddings: ./contrastive/melbourne_d384_wt1.0_ws0.1.npy  (100000, 384)
+Table 'PoIs' constructed.
+Inserted 100000 records in 76.96 seconds (1299.36 records/s)
+All indexes created in: 34.25555753707886
+All queries executed.
+Results saved to ./results/melbourne_final2/custom_contrastive_embedding_results_k1.json
+
+Running scenario: contrastive_embedding on custom, k=10
+Building contrastive embeddings…
+Contrastive embeddings already exist: ./contrastive/melbourne_d384_wt1.0_ws0.1.npy  (100000, 384)
+Table 'PoIs' constructed.
+Inserted 100000 records in 76.24 seconds (1311.62 records/s)
+All indexes created in: 34.02563285827637
+All queries executed.
+Results saved to ./results/melbourne_final2/custom_contrastive_embedding_results_k10.json
+
+=== Result Reader Config ===
+Scenario     : embedded
+Experiment   : melbourne_final2
+Source(s)    : ['custom']
+K Values     : [1, 10]
+============================
+source: custom, k: 1 
+
+Saved line chart: ./results/melbourne_final2/plots/custom_k1_execution_embedded.png
+Saved bars chart: ./results/melbourne_final2/plots/custom_k1_insertion_indexing_embedded.png
+Saved semantic coherence line chart: ./results/melbourne_final2/plots/custom_k1_coherence_embedded.png
+Saved spatial range line chart: ./results/melbourne_final2/plots/custom_k1_spatial_range_embedded.png
+source: custom, k: 10 
+
+Saved line chart: ./results/melbourne_final2/plots/custom_k10_execution_embedded.png
+Saved bars chart: ./results/melbourne_final2/plots/custom_k10_insertion_indexing_embedded.png
+Saved semantic coherence line chart: ./results/melbourne_final2/plots/custom_k10_coherence_embedded.png
+Saved spatial range line chart: ./results/melbourne_final2/plots/custom_k10_spatial_range_embedded.png
+=== Query Generator Config ===
+Input CSV    : ./data/melbourne_cleaned_sampled_100k.csv
+K Values     : [1, 10]
+Lambda (λ)   : 2
+Experiment   : melbourne_final_contrastive
+Source       : ['custom']
+Radius       : 20000
+Point Count  : 50
+Query CSV/TXT: data/queries/melbourne.csv
+Contrastive : {'ckpt': './contrastive/melbourne_d384.pt', 'proj_dim': 384, 'w_text': 1.0, 'w_spatial': 0.05}
+==============================
+Wrote 50 custom_queries_k1.sql queries
+Wrote 50 custom_queries_k10.sql queries
+Wrote 50 custom_embedded_queries_k1.sql queries
+Wrote 50 custom_embedded_queries_k10.sql queries
+Wrote 50 custom_concat_embedded_queries_k1.sql queries
+Wrote 50 custom_concat_embedded_queries_k10.sql queries
+Wrote 50 custom_contrastive_embedded_queries_k1.sql queries
+Wrote 50 custom_contrastive_embedded_queries_k10.sql queries
+Custom queries written to ./data/workloads/melbourne_final_contrastive
+Nothing created from the input file!
+=== Benchmark Config ===
+Scenario     : contrast
+Input CSV    : ./data/melbourne_cleaned_sampled_100k.csv
+K Values     : [1, 10]
+Lambda (λ)   : 2
+Index Type   : hnsw
+Experiment   : melbourne_final_contrastive
+Source       : ['custom']
+Contrastive  : {'ckpt': './contrastive/melbourne_d384.pt', 'proj_dim': 384, 'w_text': 1.0, 'w_spatial': 0.05}
+========================
+./data/melbourne_cleaned_sampled_100k.csv has 100000 rows.
+Running scenario: contrastive_embedding on custom, k=1
+Building contrastive embeddings…
+Created contrastive embeddings: ./contrastive/melbourne_d384_wt1.0_ws0.05.npy  (100000, 384)
+Table 'PoIs' constructed.
+Inserted 100000 records in 76.53 seconds (1306.76 records/s)
+All indexes created in: 34.8086519241333
+All queries executed.
+Results saved to ./results/melbourne_final_contrastive/custom_contrastive_embedding_results_k1.json
+
+Running scenario: contrastive_embedding on custom, k=10
+Building contrastive embeddings…
+Contrastive embeddings already exist: ./contrastive/melbourne_d384_wt1.0_ws0.05.npy  (100000, 384)
+Table 'PoIs' constructed.
+Inserted 100000 records in 89.74 seconds (1114.30 records/s)
+All indexes created in: 38.08879899978638
+All queries executed.
+Results saved to ./results/melbourne_final_contrastive/custom_contrastive_embedding_results_k10.json
+
+=== Result Reader Config ===
+Scenario     : contrast
+Experiment   : melbourne_final_contrastive
+Source(s)    : ['custom']
+K Values     : [1, 10]
+============================
+source: custom, k: 1 
+
+Saved line chart: ./results/melbourne_final_contrastive/plots/custom_k1_execution_embedded.png
+Saved bars chart: ./results/melbourne_final_contrastive/plots/custom_k1_insertion_indexing_embedded.png
+Saved semantic coherence line chart: ./results/melbourne_final_contrastive/plots/custom_k1_coherence_embedded.png
+Saved spatial range line chart: ./results/melbourne_final_contrastive/plots/custom_k1_spatial_range_embedded.png
+source: custom, k: 10 
+
+Saved line chart: ./results/melbourne_final_contrastive/plots/custom_k10_execution_embedded.png
+Saved bars chart: ./results/melbourne_final_contrastive/plots/custom_k10_insertion_indexing_embedded.png
+Saved semantic coherence line chart: ./results/melbourne_final_contrastive/plots/custom_k10_coherence_embedded.png
+Saved spatial range line chart: ./results/melbourne_final_contrastive/plots/custom_k10_spatial_range_embedded.png

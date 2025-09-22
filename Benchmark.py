@@ -45,7 +45,6 @@ SCENARIOS = {
         "spatial_keyword_index": create_spatial_keyword_index
     },
     "embedded": {
-        "pgvector_embedding": create_pgvector_index,
         "spatial_and_pgvector_embedding": create_embedding_spatial_index,
         "concat_embedding": create_concat_pgvector_index,
         "contrastive_embedding": create_contrastive_pgvector_index
@@ -218,7 +217,7 @@ if __name__ == "__main__":
 
     # propagate overrides for downstream modules
     import Indexing as IDX, DataEmbedding as DE
-    λ = args.l; DE.λ = args.l
+    λ = args.l; DE.λ = args.l; DE.INPUT_CSV = args.input
     INDEX_TYPE = args.idx; IDX.INDEX_TYPE = args.idx
     INPUT_CSV = args.input
     EXPERIMENT = args.exp

@@ -1,0 +1,761 @@
+{
+    "insertion_time": 79.67419505119324,
+    "index_creation": {
+        "func": [
+            "CREATE INDEX IF NOT EXISTS idx_pois_embedding ON PoIs USING hnsw (embedding vector_cosine_ops) WITH (m = 16, ef_construction = 64);"
+        ],
+        "time": 31.72268319129944
+    },
+    "query_results": {
+        "0": {
+            "execution_time": 0.20613312721252441,
+            "results": [
+                {
+                    "id": 1357413436,
+                    "tags": {
+                        "source": "local_knowledge",
+                        "amenity": "pharmacy",
+                        "healthcare": "pharmacy"
+                    },
+                    "distance": 8807.3378546,
+                    "sims": 0.7984032623783235
+                }
+            ]
+        },
+        "1": {
+            "execution_time": 0.20509648323059082,
+            "results": [
+                {
+                    "id": 6237887803,
+                    "tags": {
+                        "name": "Readings",
+                        "shop": "books"
+                    },
+                    "distance": 4712.10607486,
+                    "sims": 0.8529673656918888
+                }
+            ]
+        },
+        "2": {
+            "execution_time": 0.2046980857849121,
+            "results": [
+                {
+                    "id": 3840017767,
+                    "tags": {
+                        "amenity": "restaurant"
+                    },
+                    "distance": 8588.38303553,
+                    "sims": 0.8608293276778098
+                }
+            ]
+        },
+        "3": {
+            "execution_time": 0.20265913009643555,
+            "results": [
+                {
+                    "id": 6741639490,
+                    "tags": {
+                        "tourism": "artwork"
+                    },
+                    "distance": 1869.1109788,
+                    "sims": 0.8682626485824647
+                }
+            ]
+        },
+        "4": {
+            "execution_time": 0.20630598068237305,
+            "results": [
+                {
+                    "id": 2596278947,
+                    "tags": {
+                        "name": "Dandenong North",
+                        "place": "suburb"
+                    },
+                    "distance": 3055.98993639,
+                    "sims": 0.8945080952322215
+                }
+            ]
+        },
+        "5": {
+            "execution_time": 0.20093107223510742,
+            "results": [
+                {
+                    "id": 9135519890,
+                    "tags": {
+                        "name": "Brew Tower Museum",
+                        "tourism": "museum"
+                    },
+                    "distance": 2182.6886083,
+                    "sims": 0.8039819691300559
+                }
+            ]
+        },
+        "6": {
+            "execution_time": 0.20347285270690918,
+            "results": [
+                {
+                    "id": 6138135274,
+                    "tags": {
+                        "name": "Treasury Pharmacy",
+                        "amenity": "pharmacy",
+                        "healthcare": "pharmacy",
+                        "wheelchair": "yes",
+                        "opening_hours": "Mo-Fr 08:00-18:00"
+                    },
+                    "distance": 2406.7298085,
+                    "sims": 0.8558082325515712
+                }
+            ]
+        },
+        "7": {
+            "execution_time": 0.2006540298461914,
+            "results": [
+                {
+                    "id": 9748242993,
+                    "tags": {
+                        "name": "Woodfrog Bakery",
+                        "shop": "bakery"
+                    },
+                    "distance": 2361.43064881,
+                    "sims": 0.8265554157033305
+                }
+            ]
+        },
+        "8": {
+            "execution_time": 0.2011885643005371,
+            "results": [
+                {
+                    "id": 6297092810,
+                    "tags": {
+                        "name": "Foodmax",
+                        "shop": "convenience",
+                        "source": "survey"
+                    },
+                    "distance": 24878.47252118,
+                    "sims": 0.8158863343921563
+                }
+            ]
+        },
+        "9": {
+            "execution_time": 0.19971776008605957,
+            "results": [
+                {
+                    "id": 6989600887,
+                    "tags": {
+                        "name": "Roundabout Pizza",
+                        "amenity": "fast_food",
+                        "cuisine": "pizza",
+                        "opening_hours": "Mo-Su 17:00-23:00"
+                    },
+                    "distance": 2364.83691786,
+                    "sims": 0.7709747266340177
+                }
+            ]
+        },
+        "10": {
+            "execution_time": 0.19477510452270508,
+            "results": [
+                {
+                    "id": 6741639490,
+                    "tags": {
+                        "tourism": "artwork"
+                    },
+                    "distance": 2140.60727065,
+                    "sims": 0.8691175814060736
+                }
+            ]
+        },
+        "11": {
+            "execution_time": 0.19471168518066406,
+            "results": [
+                {
+                    "id": 3841977822,
+                    "tags": {
+                        "name": "Crown Asian Supermarket",
+                        "shop": "supermarket"
+                    },
+                    "distance": 3862.68246527,
+                    "sims": 0.8822333462955732
+                }
+            ]
+        },
+        "12": {
+            "execution_time": 0.19287610054016113,
+            "results": [
+                {
+                    "id": 2332735915,
+                    "tags": {
+                        "mtb": "yes",
+                        "hiking": "yes",
+                        "tourism": "information",
+                        "information": "guidepost"
+                    },
+                    "distance": 35682.46103843,
+                    "sims": 0.7904591117647992
+                }
+            ]
+        },
+        "13": {
+            "execution_time": 0.1839604377746582,
+            "results": [
+                {
+                    "id": 687164065,
+                    "tags": {
+                        "shop": "car_repair"
+                    },
+                    "distance": 15192.43119358,
+                    "sims": 0.8545234111163414
+                }
+            ]
+        },
+        "14": {
+            "execution_time": 0.1822981834411621,
+            "results": [
+                {
+                    "id": 1636014201,
+                    "tags": {
+                        "lit": "yes",
+                        "sport": "swimming",
+                        "access": "customers",
+                        "leisure": "swimming_pool",
+                        "location": "indoor",
+                        "check_date": "2024-03-13",
+                        "swimming_pool": "inground"
+                    },
+                    "distance": 6553.44817989,
+                    "sims": 0.8158633833910763
+                }
+            ]
+        },
+        "15": {
+            "execution_time": 0.1867811679840088,
+            "results": [
+                {
+                    "id": 7844240440,
+                    "tags": {
+                        "leisure": "park"
+                    },
+                    "distance": 10680.26580332,
+                    "sims": 0.8799250388123423
+                }
+            ]
+        },
+        "16": {
+            "execution_time": 0.18462634086608887,
+            "results": [
+                {
+                    "id": 11607743497,
+                    "tags": {
+                        "name": "Sassone Cucina Italiana",
+                        "amenity": "restaurant",
+                        "cuisine": "italian"
+                    },
+                    "distance": 3284.08675362,
+                    "sims": 0.8463352621305149
+                }
+            ]
+        },
+        "17": {
+            "execution_time": 0.18805599212646484,
+            "results": [
+                {
+                    "id": 6033469818,
+                    "tags": {
+                        "name": "D&K",
+                        "shop": "seafood"
+                    },
+                    "distance": 7957.26695708,
+                    "sims": 0.8900775903047912
+                }
+            ]
+        },
+        "18": {
+            "execution_time": 0.19148015975952148,
+            "results": [
+                {
+                    "id": 9141577934,
+                    "tags": {
+                        "name": "Coon Cheese",
+                        "office": "yes"
+                    },
+                    "distance": 3490.32894115,
+                    "sims": 0.7976627952865504
+                }
+            ]
+        },
+        "19": {
+            "execution_time": 0.18273186683654785,
+            "results": [
+                {
+                    "id": 5288512523,
+                    "tags": {
+                        "bus": "yes",
+                        "name": "Southern Cross Coach Terminal (Bay 75)",
+                        "level": "0",
+                        "highway": "bus_stop",
+                        "network": "Skybus",
+                        "shelter": "yes",
+                        "operator": "SkyBus",
+                        "description": "This bay is for SkyBus departures (https://www.skybus.com.au/).",
+                        "network:wikidata": "Q7537617",
+                        "public_transport": "platform",
+                        "network:wikipedia": "en:SkyBus (airport bus)"
+                    },
+                    "distance": 674.48487627,
+                    "sims": 0.8537099215677145
+                }
+            ]
+        },
+        "20": {
+            "execution_time": 0.18653631210327148,
+            "results": [
+                {
+                    "id": 4064857397,
+                    "tags": {
+                        "name": "Wine Bar",
+                        "amenity": "pub"
+                    },
+                    "distance": 5174.53564499,
+                    "sims": 0.8547969200844405
+                }
+            ]
+        },
+        "21": {
+            "execution_time": 0.18847870826721191,
+            "results": [
+                {
+                    "id": 711750998,
+                    "tags": {
+                        "amenity": "cafe"
+                    },
+                    "distance": 3112.78933647,
+                    "sims": 0.8406725776395974
+                }
+            ]
+        },
+        "22": {
+            "execution_time": 0.18387532234191895,
+            "results": [
+                {
+                    "id": 10223008755,
+                    "tags": {
+                        "ref": "7724",
+                        "name": "Coles",
+                        "note": "Estimated location from survey",
+                        "shop": "supermarket",
+                        "brand": "Coles",
+                        "image": "https://web.archive.org/web/20221219000703/https://i.imgur.com/TwJn5sC_d.webp?maxwidth=2560&shape=thumb&fidelity=high",
+                        "phone": "+61 3 9056 0000",
+                        "branch": "Caulfield Village",
+                        "alt_name": "Caulfield Village Coles;Coles Caulfield Village",
+                        "operator": "Coles Group",
+                        "wheelchair": "yes",
+                        "official_name": "Coles Supermarkets Australia Pty Ltd",
+                        "opening_hours": "Mo-Su 07:00-23:00",
+                        "brand:wikidata": "Q1108172",
+                        "operator:ref:abn": "45004189708",
+                        "operator:wikidata": "Q1339055"
+                    },
+                    "distance": 11031.14404828,
+                    "sims": 0.7895063350231366
+                }
+            ]
+        },
+        "23": {
+            "execution_time": 0.18677401542663574,
+            "results": [
+                {
+                    "id": 1299188310,
+                    "tags": {
+                        "tourism": "picnic_site"
+                    },
+                    "distance": 4312.7655502,
+                    "sims": 0.8192546525727535
+                }
+            ]
+        },
+        "24": {
+            "execution_time": 0.18497824668884277,
+            "results": [
+                {
+                    "id": 6237887803,
+                    "tags": {
+                        "name": "Readings",
+                        "shop": "books"
+                    },
+                    "distance": 208.8559168,
+                    "sims": 0.862910064957151
+                }
+            ]
+        },
+        "25": {
+            "execution_time": 0.18412423133850098,
+            "results": [
+                {
+                    "id": 2272227680,
+                    "tags": {
+                        "name": "St Kilda West",
+                        "place": "suburb"
+                    },
+                    "distance": 1306.2643095,
+                    "sims": 0.8675142785165992
+                }
+            ]
+        },
+        "26": {
+            "execution_time": 0.1834888458251953,
+            "results": [
+                {
+                    "id": 7587892185,
+                    "tags": {
+                        "name": "Shisha bar",
+                        "amenity": "bar"
+                    },
+                    "distance": 1078.35705828,
+                    "sims": 0.827959944484232
+                }
+            ]
+        },
+        "27": {
+            "execution_time": 0.18538761138916016,
+            "results": [
+                {
+                    "id": 617905595,
+                    "tags": {
+                        "tourism": "picnic_site"
+                    },
+                    "distance": 3602.92725916,
+                    "sims": 0.7740097200813952
+                }
+            ]
+        },
+        "28": {
+            "execution_time": 0.1849358081817627,
+            "results": [
+                {
+                    "id": 5417495955,
+                    "tags": {
+                        "amenity": "toilets"
+                    },
+                    "distance": 2311.56033758,
+                    "sims": 0.8967366587865444
+                }
+            ]
+        },
+        "29": {
+            "execution_time": 0.1898806095123291,
+            "results": [
+                {
+                    "id": 11927507933,
+                    "tags": {
+                        "amenity": "bicycle_repair_station"
+                    },
+                    "distance": 7096.052097,
+                    "sims": 0.8647117614746094
+                }
+            ]
+        },
+        "30": {
+            "execution_time": 0.1850447654724121,
+            "results": [
+                {
+                    "id": 7205047634,
+                    "tags": {
+                        "bin": "no",
+                        "bus": "yes",
+                        "lit": "yes",
+                        "ref": "ID.1135",
+                        "name": "Clifton Hill Station/Hoddle Street",
+                        "bench": "yes",
+                        "highway": "bus_stop",
+                        "shelter": "yes",
+                        "route_ref": "246;train replacement",
+                        "not_served_by": "504;546",
+                        "tactile_paving": "no",
+                        "public_transport": "platform"
+                    },
+                    "distance": 5119.51319312,
+                    "sims": 0.829195614278988
+                }
+            ]
+        },
+        "31": {
+            "execution_time": 0.18578076362609863,
+            "results": [
+                {
+                    "id": 6560019185,
+                    "tags": {
+                        "name": "Shuji Sushi",
+                        "amenity": "restaurant",
+                        "cuisine": "japanese"
+                    },
+                    "distance": 4691.42935547,
+                    "sims": 0.8637790327467402
+                }
+            ]
+        },
+        "32": {
+            "execution_time": 0.19027447700500488,
+            "results": [
+                {
+                    "id": 10923065422,
+                    "tags": {
+                        "amenity": "childcare"
+                    },
+                    "distance": 4264.41462238,
+                    "sims": 0.8810999010027023
+                }
+            ]
+        },
+        "33": {
+            "execution_time": 0.18884897232055664,
+            "results": [
+                {
+                    "id": 6359523427,
+                    "tags": {
+                        "amenity": "atm"
+                    },
+                    "distance": 10625.33620083,
+                    "sims": 0.8354192775987777
+                }
+            ]
+        },
+        "34": {
+            "execution_time": 0.18730759620666504,
+            "results": [
+                {
+                    "id": 3369761893,
+                    "tags": {
+                        "name": "The Beer & Burger Bar",
+                        "amenity": "restaurant",
+                        "cuisine": "burger"
+                    },
+                    "distance": 2518.35267674,
+                    "sims": 0.8154998265505482
+                }
+            ]
+        },
+        "35": {
+            "execution_time": 0.19127821922302246,
+            "results": [
+                {
+                    "id": 9679144752,
+                    "tags": {
+                        "name": "Fresh Flowers",
+                        "shop": "florist"
+                    },
+                    "distance": 6949.69460989,
+                    "sims": 0.8821797300684306
+                }
+            ]
+        },
+        "36": {
+            "execution_time": 0.18791437149047852,
+            "results": [
+                {
+                    "id": 6741639491,
+                    "tags": {
+                        "name": "Push Fitness",
+                        "leisure": "fitness_centre"
+                    },
+                    "distance": 3064.67735346,
+                    "sims": 0.804554033550862
+                }
+            ]
+        },
+        "37": {
+            "execution_time": 0.1939237117767334,
+            "results": [
+                {
+                    "id": 4332286415,
+                    "tags": {
+                        "name": "Tesla Destination Charger",
+                        "brand": "Tesla, Inc.",
+                        "amenity": "charging_station",
+                        "capacity": "4",
+                        "short_name": "Tesla",
+                        "addr:street": "Dandenong Road",
+                        "description": "Tesla Chadstone",
+                        "brand:wikidata": "Q478214",
+                        "addr:housenumber": "1341",
+                        "socket:tesla_supercharger": "4"
+                    },
+                    "distance": 13256.02561721,
+                    "sims": 0.8190633819254588
+                }
+            ]
+        },
+        "38": {
+            "execution_time": 0.18963289260864258,
+            "results": [
+                {
+                    "id": 2395180465,
+                    "tags": {
+                        "amenity": "library"
+                    },
+                    "distance": 5717.78534728,
+                    "sims": 0.8312836389968625
+                }
+            ]
+        },
+        "39": {
+            "execution_time": 0.19007515907287598,
+            "results": [
+                {
+                    "id": 9898554816,
+                    "tags": {
+                        "name": "Tora Dumplings",
+                        "level": "0",
+                        "amenity": "restaurant",
+                        "cuisine": "japanese",
+                        "check_date": "2022-07-20"
+                    },
+                    "distance": 1101.6392712,
+                    "sims": 0.8209300637245237
+                }
+            ]
+        },
+        "40": {
+            "execution_time": 0.19001340866088867,
+            "results": [
+                {
+                    "id": 2272227680,
+                    "tags": {
+                        "name": "St Kilda West",
+                        "place": "suburb"
+                    },
+                    "distance": 1162.81123986,
+                    "sims": 0.8815159382419502
+                }
+            ]
+        },
+        "41": {
+            "execution_time": 0.1916654109954834,
+            "results": [
+                {
+                    "id": 7759495313,
+                    "tags": {
+                        "name": "Former Russell Street Police Headquarters",
+                        "historic": "building"
+                    },
+                    "distance": 1168.62014088,
+                    "sims": 0.8240474600594279
+                }
+            ]
+        },
+        "42": {
+            "execution_time": 0.18316006660461426,
+            "results": [
+                {
+                    "id": 730239967,
+                    "tags": {
+                        "tourism": "hotel"
+                    },
+                    "distance": 21258.34234109,
+                    "sims": 0.7751392126083374
+                }
+            ]
+        },
+        "43": {
+            "execution_time": 0.1835944652557373,
+            "results": [
+                {
+                    "id": 7057414373,
+                    "tags": {
+                        "shop": "clothes"
+                    },
+                    "distance": 4379.43489475,
+                    "sims": 0.8753584695920379
+                }
+            ]
+        },
+        "44": {
+            "execution_time": 0.18569087982177734,
+            "results": [
+                {
+                    "id": 6447134890,
+                    "tags": {
+                        "barrier": "fence",
+                        "leisure": "dog_park"
+                    },
+                    "distance": 28848.3997944,
+                    "sims": 0.8452767336115995
+                }
+            ]
+        },
+        "45": {
+            "execution_time": 0.18240857124328613,
+            "results": [
+                {
+                    "id": 5824763959,
+                    "tags": {
+                        "shop": "houseware"
+                    },
+                    "distance": 12397.39343934,
+                    "sims": 0.8375939686047373
+                }
+            ]
+        },
+        "46": {
+            "execution_time": 0.18311333656311035,
+            "results": [
+                {
+                    "id": 3276141237,
+                    "tags": {
+                        "name": "Plates On bourke",
+                        "amenity": "restaurant"
+                    },
+                    "distance": 1627.71469401,
+                    "sims": 0.7862727030220764
+                }
+            ]
+        },
+        "47": {
+            "execution_time": 0.18467211723327637,
+            "results": [
+                {
+                    "id": 2911249230,
+                    "tags": {
+                        "amenity": "fast_food",
+                        "cuisine": "fish_and_chips"
+                    },
+                    "distance": 13921.60901988,
+                    "sims": 0.8751501515418216
+                }
+            ]
+        },
+        "48": {
+            "execution_time": 0.1869795322418213,
+            "results": [
+                {
+                    "id": 9121765712,
+                    "tags": {
+                        "tourism": "information",
+                        "information": "map"
+                    },
+                    "distance": 8545.41077216,
+                    "sims": 0.8990641531539564
+                }
+            ]
+        },
+        "49": {
+            "execution_time": 0.18729877471923828,
+            "results": [
+                {
+                    "id": 585128132,
+                    "tags": {
+                        "name": "BP",
+                        "brand": "BP",
+                        "source": "bp.com.au",
+                        "amenity": "fuel",
+                        "website": "https://map.bp.com/en-AU/AU/gas-station/south-melbourne/bp-clarendon-vic/3759",
+                        "brand:wikidata": "Q152057",
+                        "brand:wikipedia": "en:BP"
+                    },
+                    "distance": 840.19819718,
+                    "sims": 0.7933406233788044
+                }
+            ]
+        }
+    }
+}

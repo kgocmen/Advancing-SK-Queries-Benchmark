@@ -1,0 +1,732 @@
+{
+    "insertion_time": 67.48045921325684,
+    "index_creation": {
+        "func": [
+            "CREATE INDEX IF NOT EXISTS idx_pois_geom ON PoIs USING GIST (geom);",
+            "CREATE INDEX IF NOT EXISTS idx_pois_embedding ON PoIs USING hnsw (embedding vector_cosine_ops) WITH (m = 16, ef_construction = 64);"
+        ],
+        "time": 14.018577098846436
+    },
+    "query_results": {
+        "0": {
+            "execution_time": 0.20585227012634277,
+            "results": [
+                {
+                    "id": 3658718390,
+                    "tags": {
+                        "name": "View of the Bosphorus",
+                        "name:uk": "\u041e\u0433\u043b\u044f\u0434\u043d\u0438\u0439 \u043c\u0430\u0439\u0434\u0430\u043d\u0447\u0438\u043a \u0442\u0456\u043b\u044c\u043a\u0438 \u043d\u0430 \u0442\u0435\u0440\u0438\u0442\u043e\u0440\u0456\u0457 \u043c\u0435\u0447\u0435\u0442\u0456",
+                        "tourism": "viewpoint"
+                    },
+                    "distance": 1954.23871154,
+                    "sims": 0.514908041087385
+                }
+            ]
+        },
+        "1": {
+            "execution_time": 0.1958141326904297,
+            "results": [
+                {
+                    "id": 9498225011,
+                    "tags": {
+                        "name": "Taksim & T\u00fcnel Cafe",
+                        "amenity": "cafe"
+                    },
+                    "distance": 13800.39756527,
+                    "sims": 0.5875380318668556
+                }
+            ]
+        },
+        "2": {
+            "execution_time": 0.19841742515563965,
+            "results": [
+                {
+                    "id": 12768472401,
+                    "tags": {
+                        "name": "Padi\u015fah Mahfili - Yeni Cami",
+                        "name:en": "Sultans Pavillion - the new Mosque",
+                        "historic": "castle",
+                        "addr:street": "Bankacilar 1"
+                    },
+                    "distance": 1320.44197004,
+                    "sims": 0.5366654308640082
+                }
+            ]
+        },
+        "3": {
+            "execution_time": 0.19627046585083008,
+            "results": [
+                {
+                    "id": 5895099931,
+                    "tags": {
+                        "name": "K\u0131rm\u0131z\u0131 Kedi Book Store",
+                        "shop": "books"
+                    },
+                    "distance": 2801.85430945,
+                    "sims": 0.5877207096731877
+                }
+            ]
+        },
+        "4": {
+            "execution_time": 0.1959388256072998,
+            "results": [
+                {
+                    "id": 9911193863,
+                    "tags": {
+                        "shop": "electronics"
+                    },
+                    "distance": 829.13888742,
+                    "sims": 0.7217841695144285
+                }
+            ]
+        },
+        "5": {
+            "execution_time": 0.2022075653076172,
+            "results": [
+                {
+                    "id": 2481849097,
+                    "tags": {
+                        "name": "Karak\u00f6y",
+                        "ferry": "yes",
+                        "amenity": "ferry_terminal",
+                        "public_transport": "station"
+                    },
+                    "distance": 895.3701639,
+                    "sims": 0.47294316824668425
+                }
+            ]
+        },
+        "6": {
+            "execution_time": 0.1958003044128418,
+            "results": [
+                {
+                    "id": 6968692361,
+                    "tags": {
+                        "name": "Esmer Chef Fish House",
+                        "amenity": "restaurant"
+                    },
+                    "distance": 4318.13866443,
+                    "sims": 0.6164049089891438
+                }
+            ]
+        },
+        "7": {
+            "execution_time": 0.2100362777709961,
+            "results": [
+                {
+                    "id": 3279345565,
+                    "tags": {
+                        "name": "Hamal",
+                        "historic": "memorial"
+                    },
+                    "distance": 1085.26325301,
+                    "sims": 0.6412836076741851
+                }
+            ]
+        },
+        "8": {
+            "execution_time": 0.19908452033996582,
+            "results": [
+                {
+                    "id": 8178363517,
+                    "tags": {
+                        "name": "Baklava",
+                        "shop": "confectionery"
+                    },
+                    "distance": 3073.40125065,
+                    "sims": 0.5728884593910907
+                }
+            ]
+        },
+        "9": {
+            "execution_time": 0.19565176963806152,
+            "results": [
+                {
+                    "id": 6531825660,
+                    "tags": {
+                        "name": "\u0130stanbul \u00dcniversitesi Devlet Konservatuvar\u0131",
+                        "amenity": "music_school"
+                    },
+                    "distance": 5576.8710684,
+                    "sims": 0.6463767711667141
+                }
+            ]
+        },
+        "10": {
+            "execution_time": 0.19788885116577148,
+            "results": [
+                {
+                    "id": 8225587100,
+                    "tags": {
+                        "name": "Alibeyk\u00f6y Metro",
+                        "tram": "yes",
+                        "railway": "tram_stop",
+                        "public_transport": "stop_position"
+                    },
+                    "distance": 8003.58800187,
+                    "sims": 0.5022786412058416
+                }
+            ]
+        },
+        "11": {
+            "execution_time": 0.18738007545471191,
+            "results": [
+                {
+                    "id": 9585845891,
+                    "tags": {
+                        "name": "K\u0131l\u0131\u00e7lar Market",
+                        "shop": "convenience"
+                    },
+                    "distance": 13731.66818602,
+                    "sims": 0.7031185482619032
+                }
+            ]
+        },
+        "12": {
+            "execution_time": 0.18696904182434082,
+            "results": [
+                {
+                    "id": 6924994019,
+                    "tags": {
+                        "shop": "vacant",
+                        "cuisine": "kebab"
+                    },
+                    "distance": 15985.90606607,
+                    "sims": 0.7221442361812285
+                }
+            ]
+        },
+        "13": {
+            "execution_time": 0.20093488693237305,
+            "results": [
+                {
+                    "id": 5450459392,
+                    "tags": {
+                        "name": "Bayan Yan\u0131 Art Project",
+                        "amenity": "cafe"
+                    },
+                    "distance": 5519.8327193,
+                    "sims": 0.6341248750686646
+                }
+            ]
+        },
+        "14": {
+            "execution_time": 0.20177865028381348,
+            "results": [
+                {
+                    "id": 6850778494,
+                    "tags": {
+                        "shop": "seafood"
+                    },
+                    "distance": 2033.96927756,
+                    "sims": 0.6119677727050442
+                }
+            ]
+        },
+        "15": {
+            "execution_time": 0.20466256141662598,
+            "results": [
+                {
+                    "id": 4889959425,
+                    "tags": {
+                        "shop": "bakery"
+                    },
+                    "distance": 793.63816977,
+                    "sims": 0.6582922513164412
+                }
+            ]
+        },
+        "16": {
+            "execution_time": 0.2000124454498291,
+            "results": [
+                {
+                    "id": 3749623162,
+                    "tags": {
+                        "ferry": "yes",
+                        "amenity": "ferry_terminal",
+                        "public_transport": "station"
+                    },
+                    "distance": 1749.58923091,
+                    "sims": 0.5274474214684497
+                }
+            ]
+        },
+        "17": {
+            "execution_time": 0.19737625122070312,
+            "results": [
+                {
+                    "id": 11296163215,
+                    "tags": {
+                        "name": "Antique 50",
+                        "shop": "antiques"
+                    },
+                    "distance": 6257.98220914,
+                    "sims": 0.7308731067299148
+                }
+            ]
+        },
+        "18": {
+            "execution_time": 0.19846463203430176,
+            "results": [
+                {
+                    "id": 7047093864,
+                    "tags": {
+                        "name": "Barasti Cafe & Restaurant",
+                        "amenity": "cafe"
+                    },
+                    "distance": 11722.61062285,
+                    "sims": 0.5382786117958205
+                }
+            ]
+        },
+        "19": {
+            "execution_time": 0.1970844268798828,
+            "results": [
+                {
+                    "id": 4459098190,
+                    "tags": {
+                        "name": "Ko\u00e7 \u00dcniversitesi Hastanesi",
+                        "image": "https://kuhcdn.azureedge.net/getmedia/88ab84d2-3604-4c13-82f9-ff8db4acdeee/kurumsal-slider-kuh.jpg.aspx?width=1920&height=1080&ext=.jpg",
+                        "amenity": "hospital",
+                        "name:en": "Koc University Hospital",
+                        "website": "https://www.kuh.ku.edu.tr/",
+                        "emergency": "yes",
+                        "wikipedia": "tr:Ko\u00e7 \u00dcniversitesi Hastanesi",
+                        "healthcare": "hospital",
+                        "wikimedia_commons": "File:Koc University Hospital.jpg"
+                    },
+                    "distance": 4538.68555571,
+                    "sims": 0.5404824340631038
+                }
+            ]
+        },
+        "20": {
+            "execution_time": 0.1972062587738037,
+            "results": [
+                {
+                    "id": 12510989011,
+                    "tags": {
+                        "name": "Taksim Park Club",
+                        "amenity": "nightclub",
+                        "check_date": "2025-01-17"
+                    },
+                    "distance": 624.9909826,
+                    "sims": 0.692161949824766
+                }
+            ]
+        },
+        "21": {
+            "execution_time": 0.1997523307800293,
+            "results": [
+                {
+                    "id": 8871767972,
+                    "tags": {
+                        "name": "Kay\u0131 Hal\u0131",
+                        "shop": "carpet"
+                    },
+                    "distance": 12612.7120214,
+                    "sims": 0.7133500959470868
+                }
+            ]
+        },
+        "22": {
+            "execution_time": 0.19661808013916016,
+            "results": [
+                {
+                    "id": 10086546422,
+                    "tags": {
+                        "name": "Payidar galata",
+                        "amenity": "restaurant"
+                    },
+                    "distance": 182.59238774,
+                    "sims": 0.49782046623719345
+                }
+            ]
+        },
+        "23": {
+            "execution_time": 0.20009231567382812,
+            "results": [
+                {
+                    "id": 6050767390,
+                    "tags": {
+                        "tourism": "information"
+                    },
+                    "distance": 13686.97138262,
+                    "sims": 0.7250541664676123
+                }
+            ]
+        },
+        "24": {
+            "execution_time": 0.1998460292816162,
+            "results": [
+                {
+                    "id": 6744432585,
+                    "tags": {
+                        "amenity": "toilets"
+                    },
+                    "distance": 507.97326476,
+                    "sims": 0.690867981042504
+                }
+            ]
+        },
+        "25": {
+            "execution_time": 0.19824576377868652,
+            "results": [
+                {
+                    "id": 4351252489,
+                    "tags": {
+                        "amenity": "atm"
+                    },
+                    "distance": 97.07768406,
+                    "sims": 0.5191911086286708
+                }
+            ]
+        },
+        "26": {
+            "execution_time": 0.2055509090423584,
+            "results": [
+                {
+                    "id": 3179952672,
+                    "tags": {
+                        "name": "\u015eehbender 14",
+                        "note": "Meyhane style restaurant. Lively place with delicious mezes, raki and wines",
+                        "phone": "+90 212 292 06 67",
+                        "amenity": "restaurant",
+                        "website": "http://www.sehbender14.com/"
+                    },
+                    "distance": 3502.1816155,
+                    "sims": 0.5358438853938413
+                }
+            ]
+        },
+        "27": {
+            "execution_time": 0.1980571746826172,
+            "results": [
+                {
+                    "id": 3661832936,
+                    "tags": {
+                        "name": "M2, \u015ei\u015fhane Metro \u0130stasyon Giri\u015fi",
+                        "railway": "subway_entrance"
+                    },
+                    "distance": 1516.14051342,
+                    "sims": 0.47416018515594827
+                }
+            ]
+        },
+        "28": {
+            "execution_time": 0.1975691318511963,
+            "results": [
+                {
+                    "id": 9682631003,
+                    "tags": {
+                        "name": "Maqsad Shisha Lounge",
+                        "amenity": "cafe"
+                    },
+                    "distance": 7218.30975619,
+                    "sims": 0.6465063637065216
+                }
+            ]
+        },
+        "29": {
+            "execution_time": 0.19849896430969238,
+            "results": [
+                {
+                    "id": 9911103569,
+                    "tags": {
+                        "name": "Asian vegan kitchen",
+                        "amenity": "restaurant",
+                        "diet:vegan": "yes"
+                    },
+                    "distance": 1598.47085819,
+                    "sims": 0.6158698888057768
+                }
+            ]
+        },
+        "30": {
+            "execution_time": 0.20137953758239746,
+            "results": [
+                {
+                    "id": 7145569885,
+                    "tags": {
+                        "tourism": "museum"
+                    },
+                    "distance": 659.6252941,
+                    "sims": 0.5935192461919345
+                }
+            ]
+        },
+        "31": {
+            "execution_time": 0.1975250244140625,
+            "results": [
+                {
+                    "id": 10536221814,
+                    "tags": {
+                        "name": "Sultan 1.Mahmut \u00c7e\u015fmesi",
+                        "historic": "memorial"
+                    },
+                    "distance": 10215.45950768,
+                    "sims": 0.6708140365814204
+                }
+            ]
+        },
+        "32": {
+            "execution_time": 0.2018442153930664,
+            "results": [
+                {
+                    "id": 1768294289,
+                    "tags": {
+                        "name": "Sunset",
+                        "email": "info@sunsetgrillbar.com",
+                        "phone": "+90 212 287 03 57;+90 212 287 03 58",
+                        "amenity": "restaurant",
+                        "website": "https://www.sunsetgrillbar.com/",
+                        "official_name": "Sunset Grill&Bar"
+                    },
+                    "distance": 3554.45950428,
+                    "sims": 0.4787076711654663
+                }
+            ]
+        },
+        "33": {
+            "execution_time": 0.19761061668395996,
+            "results": [
+                {
+                    "id": 12352274168,
+                    "tags": {
+                        "name": "\u0130stanbul Kitap\u00e7\u0131s\u0131",
+                        "shop": "books"
+                    },
+                    "distance": 1163.04863771,
+                    "sims": 0.7501150668079113
+                }
+            ]
+        },
+        "34": {
+            "execution_time": 0.19033527374267578,
+            "results": [
+                {
+                    "id": 11092475458,
+                    "tags": {
+                        "name": "Kad\u0131k\u00f6y Body Art",
+                        "shop": "tattoo"
+                    },
+                    "distance": 158.03278282,
+                    "sims": 0.7275041396174559
+                }
+            ]
+        },
+        "35": {
+            "execution_time": 0.19173645973205566,
+            "results": [
+                {
+                    "id": 6882112886,
+                    "tags": {
+                        "shop": "wine"
+                    },
+                    "distance": 1592.42815127,
+                    "sims": 0.6591493500800395
+                }
+            ]
+        },
+        "36": {
+            "execution_time": 0.20064210891723633,
+            "results": [
+                {
+                    "id": 6878148103,
+                    "tags": {
+                        "name": "Aktar Ambalaj",
+                        "shop": "spices"
+                    },
+                    "distance": 16881.30497567,
+                    "sims": 0.6343282954907089
+                }
+            ]
+        },
+        "37": {
+            "execution_time": 0.19704103469848633,
+            "results": [
+                {
+                    "id": 5163071221,
+                    "tags": {
+                        "tourism": "hostel"
+                    },
+                    "distance": 2308.27943945,
+                    "sims": 0.6877354680369835
+                }
+            ]
+        },
+        "38": {
+            "execution_time": 0.1982288360595703,
+            "results": [
+                {
+                    "id": 5291970807,
+                    "tags": {
+                        "name": "Brillant Home",
+                        "shop": "houseware"
+                    },
+                    "distance": 12336.4715495,
+                    "sims": 0.33553557686504887
+                }
+            ]
+        },
+        "39": {
+            "execution_time": 0.19689559936523438,
+            "results": [
+                {
+                    "id": 12289800904,
+                    "tags": {
+                        "amenity": "pharmacy"
+                    },
+                    "distance": 2667.1365389,
+                    "sims": 0.5944929251981522
+                }
+            ]
+        },
+        "40": {
+            "execution_time": 0.19742822647094727,
+            "results": [
+                {
+                    "id": 5244811451,
+                    "tags": {
+                        "name": "\u00c7ukurova Home Collection",
+                        "shop": "furniture",
+                        "name:ar": "\u062a\u0634\u0648\u0643\u0648\u0631\u0648\u0641\u0627 \u0647\u0648\u0645 \u0643\u0648\u0644\u064a\u0643\u0634\u0646",
+                        "addr:city": "Istanbul",
+                        "addr:street": "\u00c7akmak\u00e7\u0131lar Yoku\u015fu",
+                        "addr:district": "Fatih"
+                    },
+                    "distance": 2198.39986412,
+                    "sims": 0.6155786514282227
+                }
+            ]
+        },
+        "41": {
+            "execution_time": 0.20098042488098145,
+            "results": [
+                {
+                    "id": 11212829439,
+                    "tags": {
+                        "name": "Sultanahmet Bazaar Turkish Delight",
+                        "shop": "confectionery"
+                    },
+                    "distance": 1091.68687077,
+                    "sims": 0.7089281753769348
+                }
+            ]
+        },
+        "42": {
+            "execution_time": 0.20131993293762207,
+            "results": [
+                {
+                    "id": 10002325117,
+                    "tags": {
+                        "name:en": "Rohan Hotel Hagia Radisson",
+                        "tourism": "hotel"
+                    },
+                    "distance": 289.20481348,
+                    "sims": 0.6154674750330366
+                }
+            ]
+        },
+        "43": {
+            "execution_time": 0.20009732246398926,
+            "results": [
+                {
+                    "id": 656087306,
+                    "tags": {
+                        "shop": "bakery"
+                    },
+                    "distance": 744.07202113,
+                    "sims": 0.6400799560523072
+                }
+            ]
+        },
+        "44": {
+            "execution_time": 0.19466924667358398,
+            "results": [
+                {
+                    "id": 11038649325,
+                    "tags": {
+                        "amenity": "bicycle_rental"
+                    },
+                    "distance": 8674.85276561,
+                    "sims": 0.7031019781681891
+                }
+            ]
+        },
+        "45": {
+            "execution_time": 0.20041728019714355,
+            "results": [
+                {
+                    "id": 7040747585,
+                    "tags": {
+                        "shop": "jewelry",
+                        "name:en": "Jewelry Street"
+                    },
+                    "distance": 819.8657438,
+                    "sims": 0.7583725802495522
+                }
+            ]
+        },
+        "46": {
+            "execution_time": 0.19643402099609375,
+            "results": [
+                {
+                    "id": 6850778494,
+                    "tags": {
+                        "shop": "seafood"
+                    },
+                    "distance": 2025.27897752,
+                    "sims": 0.5629024637800111
+                }
+            ]
+        },
+        "47": {
+            "execution_time": 0.20072460174560547,
+            "results": [
+                {
+                    "id": 5113486810,
+                    "tags": {
+                        "name": "\u0130stanbul \u00dcniversitesi Rekt\u00f6rl\u00fc\u011f\u00fc K\u00fct\u00fcphane Ve Dok\u00fcmantasyon Daire Ba\u015fkanl\u0131\u011f\u0131",
+                        "amenity": "university",
+                        "name:ar": "\u062c\u0627\u0645\u0639\u0629 \u0627\u0633\u0637\u0646\u0628\u0648\u0644 \u0631\u064a\u062a\u0648\u0631\u0644\u0648\u063a\u0648 \u0643\u0648\u062a\u0628\u0647\u0627\u0646\u0647 \u0641\u064a \u062f\u0648\u0643\u0648\u0646\u0645\u0627\u0646\u062a\u0627\u0633\u064a\u0648\u0646 \u062f\u0627\u064a\u0631\u0647 \u0628\u0627\u0634\u0643\u0627\u0646\u0644\u064a\u063a\u064a",
+                        "name:en": "Directorate of Library and Documentation Department, Istanbul University",
+                        "addr:city": "Istanbul",
+                        "addr:street": "\u0130stanbul \u00fcniversitesi"
+                    },
+                    "distance": 1970.06940403,
+                    "sims": 0.7857724534665783
+                }
+            ]
+        },
+        "48": {
+            "execution_time": 0.20327353477478027,
+            "results": [
+                {
+                    "id": 11968450327,
+                    "tags": {
+                        "name": "Istanbul Tours",
+                        "office": "guide",
+                        "check_date": "2024-06-06"
+                    },
+                    "distance": 1504.09544079,
+                    "sims": 0.5242655942761834
+                }
+            ]
+        },
+        "49": {
+            "execution_time": 0.19831275939941406,
+            "results": [
+                {
+                    "id": 5385351123,
+                    "tags": {
+                        "name": "imes petrol 089",
+                        "amenity": "fuel"
+                    },
+                    "distance": 15190.84103005,
+                    "sims": 0.43337325256269543
+                }
+            ]
+        }
+    }
+}

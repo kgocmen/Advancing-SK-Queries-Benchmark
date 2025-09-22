@@ -1,0 +1,177 @@
+=== Query Generator Config ===
+Input CSV    : ./data/cukurova_cleaned.csv
+K Values     : [1, 10]
+Lambda (λ)   : 2
+Experiment   : cukurova_final2
+Source       : ['custom']
+Radius       : 20000
+Point Count  : 50
+Query CSV/TXT: data/queries/cukurova.csv
+Contrastive : {'ckpt': './contrastive/cukurova_d384.pt', 'proj_dim': 384, 'w_text': 1.0, 'w_spatial': 0.1}
+==============================
+Wrote 50 custom_queries_k1.sql queries
+Wrote 50 custom_queries_k10.sql queries
+Wrote 50 custom_embedded_queries_k1.sql queries
+Wrote 50 custom_embedded_queries_k10.sql queries
+Wrote 50 custom_concat_embedded_queries_k1.sql queries
+Wrote 50 custom_concat_embedded_queries_k10.sql queries
+Wrote 50 custom_contrastive_embedded_queries_k1.sql queries
+Wrote 50 custom_contrastive_embedded_queries_k10.sql queries
+Custom queries written to ./data/workloads/cukurova_final2
+Nothing created from the input file!
+=== Benchmark Config ===
+Scenario     : embedded
+Input CSV    : ./data/cukurova_cleaned.csv
+K Values     : [1, 10]
+Lambda (λ)   : 2
+Index Type   : hnsw
+Experiment   : cukurova_final2
+Source       : ['custom']
+Contrastive  : {'ckpt': './contrastive/cukurova_d384.pt', 'proj_dim': 384, 'w_text': 1.0, 'w_spatial': 0.1}
+========================
+./data/cukurova_cleaned.csv has 20977 rows.
+Running scenario: spatial_and_pgvector_embedding on custom, k=1
+Semantic Embeddings: True
+0 seconds for semantic embedding.
+Table 'PoIs' constructed.
+Inserted 20977 records in 17.56 seconds (1194.71 records/s)
+All indexes created in: 1.1866202354431152
+All queries executed.
+Results saved to ./results/cukurova_final2/custom_spatial_and_pgvector_embedding_results_k1.json
+
+Running scenario: spatial_and_pgvector_embedding on custom, k=10
+Semantic Embeddings: True
+0 seconds for semantic embedding.
+Table 'PoIs' constructed.
+Inserted 20977 records in 17.43 seconds (1203.82 records/s)
+All indexes created in: 1.1755366325378418
+All queries executed.
+Results saved to ./results/cukurova_final2/custom_spatial_and_pgvector_embedding_results_k10.json
+
+Running scenario: concat_embedding on custom, k=1
+Semantic Embeddings: True
+0 seconds for semantic embedding.
+Generating spatial-only embeddings
+Processing rows 0 to 20977
+0.5869956016540527 seconds for spatial embedding.
+Table 'PoIs' constructed.
+Inserted 20977 records in 17.27 seconds (1214.95 records/s)
+All indexes created in: 1.2408983707427979
+All queries executed.
+Results saved to ./results/cukurova_final2/custom_concat_embedding_results_k1.json
+
+Running scenario: concat_embedding on custom, k=10
+Semantic Embeddings: True
+0 seconds for semantic embedding.
+Spatial Embeddings: True
+0 seconds for spatial embedding.
+Table 'PoIs' constructed.
+Inserted 20977 records in 18.07 seconds (1160.89 records/s)
+All indexes created in: 1.2686069011688232
+All queries executed.
+Results saved to ./results/cukurova_final2/custom_concat_embedding_results_k10.json
+
+Running scenario: contrastive_embedding on custom, k=1
+Building contrastive embeddings…
+Created contrastive embeddings: ./contrastive/cukurova_d384_wt1.0_ws0.1.npy  (20977, 384)
+Table 'PoIs' constructed.
+Inserted 20977 records in 17.14 seconds (1223.79 records/s)
+All indexes created in: 1.2733304500579834
+All queries executed.
+Results saved to ./results/cukurova_final2/custom_contrastive_embedding_results_k1.json
+
+Running scenario: contrastive_embedding on custom, k=10
+Building contrastive embeddings…
+Contrastive embeddings already exist: ./contrastive/cukurova_d384_wt1.0_ws0.1.npy  (20977, 384)
+Table 'PoIs' constructed.
+Inserted 20977 records in 18.90 seconds (1109.79 records/s)
+All indexes created in: 1.3115942478179932
+All queries executed.
+Results saved to ./results/cukurova_final2/custom_contrastive_embedding_results_k10.json
+
+=== Result Reader Config ===
+Scenario     : embedded
+Experiment   : cukurova_final2
+Source(s)    : ['custom']
+K Values     : [1, 10]
+============================
+source: custom, k: 1 
+
+Saved line chart: ./results/cukurova_final2/plots/custom_k1_execution_embedded.png
+Saved bars chart: ./results/cukurova_final2/plots/custom_k1_insertion_indexing_embedded.png
+Saved semantic coherence line chart: ./results/cukurova_final2/plots/custom_k1_coherence_embedded.png
+Saved spatial range line chart: ./results/cukurova_final2/plots/custom_k1_spatial_range_embedded.png
+source: custom, k: 10 
+
+Saved line chart: ./results/cukurova_final2/plots/custom_k10_execution_embedded.png
+Saved bars chart: ./results/cukurova_final2/plots/custom_k10_insertion_indexing_embedded.png
+Saved semantic coherence line chart: ./results/cukurova_final2/plots/custom_k10_coherence_embedded.png
+Saved spatial range line chart: ./results/cukurova_final2/plots/custom_k10_spatial_range_embedded.png
+=== Query Generator Config ===
+Input CSV    : ./data/cukurova_cleaned.csv
+K Values     : [1, 10]
+Lambda (λ)   : 2
+Experiment   : cukurova_final_contrastive
+Source       : ['custom']
+Radius       : 20000
+Point Count  : 50
+Query CSV/TXT: data/queries/cukurova.csv
+Contrastive : {'ckpt': './contrastive/cukurova_d384.pt', 'proj_dim': 384, 'w_text': 1.0, 'w_spatial': 0.05}
+==============================
+Wrote 50 custom_queries_k1.sql queries
+Wrote 50 custom_queries_k10.sql queries
+Wrote 50 custom_embedded_queries_k1.sql queries
+Wrote 50 custom_embedded_queries_k10.sql queries
+Wrote 50 custom_concat_embedded_queries_k1.sql queries
+Wrote 50 custom_concat_embedded_queries_k10.sql queries
+Wrote 50 custom_contrastive_embedded_queries_k1.sql queries
+Wrote 50 custom_contrastive_embedded_queries_k10.sql queries
+Custom queries written to ./data/workloads/cukurova_final_contrastive
+Nothing created from the input file!
+=== Benchmark Config ===
+Scenario     : contrast
+Input CSV    : ./data/cukurova_cleaned.csv
+K Values     : [1, 10]
+Lambda (λ)   : 2
+Index Type   : hnsw
+Experiment   : cukurova_final_contrastive
+Source       : ['custom']
+Contrastive  : {'ckpt': './contrastive/cukurova_d384.pt', 'proj_dim': 384, 'w_text': 1.0, 'w_spatial': 0.05}
+========================
+./data/cukurova_cleaned.csv has 20977 rows.
+Running scenario: contrastive_embedding on custom, k=1
+Building contrastive embeddings…
+Created contrastive embeddings: ./contrastive/cukurova_d384_wt1.0_ws0.05.npy  (20977, 384)
+Table 'PoIs' constructed.
+Inserted 20977 records in 16.71 seconds (1255.02 records/s)
+All indexes created in: 1.361292839050293
+All queries executed.
+Results saved to ./results/cukurova_final_contrastive/custom_contrastive_embedding_results_k1.json
+
+Running scenario: contrastive_embedding on custom, k=10
+Building contrastive embeddings…
+Contrastive embeddings already exist: ./contrastive/cukurova_d384_wt1.0_ws0.05.npy  (20977, 384)
+Table 'PoIs' constructed.
+Inserted 20977 records in 17.03 seconds (1231.56 records/s)
+All indexes created in: 1.3942842483520508
+All queries executed.
+Results saved to ./results/cukurova_final_contrastive/custom_contrastive_embedding_results_k10.json
+
+=== Result Reader Config ===
+Scenario     : contrast
+Experiment   : cukurova_final_contrastive
+Source(s)    : ['custom']
+K Values     : [1, 10]
+============================
+source: custom, k: 1 
+
+Saved line chart: ./results/cukurova_final_contrastive/plots/custom_k1_execution_embedded.png
+Saved bars chart: ./results/cukurova_final_contrastive/plots/custom_k1_insertion_indexing_embedded.png
+Saved semantic coherence line chart: ./results/cukurova_final_contrastive/plots/custom_k1_coherence_embedded.png
+Saved spatial range line chart: ./results/cukurova_final_contrastive/plots/custom_k1_spatial_range_embedded.png
+source: custom, k: 10 
+
+Saved line chart: ./results/cukurova_final_contrastive/plots/custom_k10_execution_embedded.png
+Saved bars chart: ./results/cukurova_final_contrastive/plots/custom_k10_insertion_indexing_embedded.png
+Saved semantic coherence line chart: ./results/cukurova_final_contrastive/plots/custom_k10_coherence_embedded.png
+Saved spatial range line chart: ./results/cukurova_final_contrastive/plots/custom_k10_spatial_range_embedded.png

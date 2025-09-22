@@ -385,6 +385,9 @@ if __name__ == "__main__":
     POINT_COUNT = args.cnt
     INPUT_CSV = args.input
 
+    import DataEmbedding as DE
+    DE.λ = args.l; DE.INPUT_CSV = args.input
+
     gen = QueryGenerator(
         input_csv=args.input,
         output_dir="./data/workloads/" + args.exp,
