@@ -106,6 +106,7 @@ class QueryGenerator:
         if self.radius:
             # geometry distance → expects degrees for radius (approx)
             wcl = f"AND ST_DWithin(geom, {pt}, {deg_radius}) "
+            #wcl = f"AND ST_DWithin(geom::geography, {pt}::geography, {int(self.radius)}) "
 
         return (
             "SELECT id, tags, "
@@ -113,7 +114,7 @@ class QueryGenerator:
             "FROM PoIs "
             f"WHERE {predicate} "
             f"{wcl}"
-            f"ORDER BY distance "
+            f"ORDER BY geom <-> {pt} "
             f"LIMIT {int(k)};"
         )
 
